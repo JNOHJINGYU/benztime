@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>노진규 | 벤츠 상담 랜딩페이지</title>
+  <style>
+    :root {
+      --bg: #0b0b0d;
+      --panel: #141417;
+      --panel-2: #1b1b20;
+      --line: rgba(255,255,255,0.08);
+      --text: #f3f4f6;
+      --muted: #b8bcc7;
+      --accent: #d6b36a;
+      --accent-2: #8f7643;
+      --white: #ffffff;
+      --shadow: 0 20px 60px rgba(0,0,0,.35);
+      --radius: 22px;
+      --max: 1160px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Pretendard", "Noto Sans KR", Arial, sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(214,179,106,.18), transparent 24%),
+        linear-gradient(180deg, #08090b 0%, #0e1014 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: rgba(11,11,13,.72);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 0;
+    }
+
+    .brand {
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .brand small {
+      display: block;
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .nav {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .nav a:hover { color: var(--white); }
+
+    .hero {
+      padding: 72px 0 44px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .hero-card, .glass-card {
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border: 1px solid var(--line);
+      border-radius: calc(var(--radius) + 6px);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card {
+      padding: 40px;
+      min-height: 520px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      width: fit-content;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(214,179,106,.10);
+      border: 1px solid rgba(214,179,106,.28);
+      color: #efd8a7;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0 0 16px;
+      font-size: clamp(34px, 5vw, 62px);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+    }
+
+    .hero p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+      max-width: 760px;
+    }
+
+    .cta-row {
+      margin-top: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 18px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      font-weight: 700;
+      transition: .2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,.18);
+    }
+
+    .btn-primary {
+      background: linear-gradient(180deg, var(--accent), #b8914b);
+      color: #111;
+      border-color: transparent;
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,.03);
+      color: var(--white);
+    }
+
+    .stat-grid {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .stat {
+      background: rgba(255,255,255,.03);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 26px;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .hero-side {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .glass-card {
+      padding: 28px;
+    }
+
+    .glass-card h3 {
+      margin: 0 0 10px;
+      font-size: 22px;
+      letter-spacing: -0.03em;
+    }
+
+    .glass-card p {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .mini-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .mini-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 14px;
+      background: rgba(255,255,255,.03);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+    }
+
+    .mini-item span:last-child {
+      color: var(--accent);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    section {
+      padding: 32px 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(26px, 3vw, 40px);
+      letter-spacing: -0.04em;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 680px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.02));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow);
+      transition: .2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(214,179,106,.3);
+    }
+
+    .card .label {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(214,179,106,.1);
+      color: #efd8a7;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 22px;
+      letter-spacing: -0.03em;
+    }
+
+    .card p {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 15px;
+      min-height: 72px;
+    }
+
+    .link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .highlight {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .promo-box, .contact-box {
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border: 1px solid var(--line);
+      border-radius: calc(var(--radius) + 2px);
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .promo-list, .contact-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .promo-item, .contact-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.03);
+      border: 1px solid var(--line);
+    }
+
+    .promo-item strong, .contact-item strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .promo-item span, .contact-item span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .step {
+      padding: 22px;
+      background: rgba(255,255,255,.03);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+    }
+
+    .step .num {
+      width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: rgba(214,179,106,.12);
+      color: #efd8a7;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+
+    .step h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+    }
+
+    .step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer {
+      padding: 34px 0 88px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .floating-cta {
+      position: fixed;
+      left: 50%;
+      bottom: 18px;
+      transform: translateX(-50%);
+      width: min(720px, calc(100% - 20px));
+      z-index: 60;
+      display: flex;
+      gap: 10px;
+      padding: 10px;
+      border-radius: 20px;
+      background: rgba(10,10,12,.84);
+      border: 1px solid rgba(255,255,255,.08);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 16px 40px rgba(0,0,0,.35);
+    }
+
+    .floating-cta a {
+      flex: 1;
+      text-align: center;
+      padding: 14px 12px;
+      border-radius: 14px;
+      font-weight: 800;
+      font-size: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.03);
+    }
+
+    .floating-cta a.primary {
+      background: linear-gradient(180deg, var(--accent), #b8914b);
+      color: #111;
+      border-color: transparent;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .highlight,
+      .cards,
+      .process {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-side { grid-template-rows: auto; }
+      .stat-grid { grid-template-columns: 1fr; }
+      .nav { display: none; }
+    }
+
+    @media (max-width: 640px) {
+      .hero { padding-top: 36px; }
+      .hero-card, .glass-card, .promo-box, .contact-box, .card { padding: 22px; }
+      .hero-card { min-height: auto; }
+      .section-head { align-items: start; flex-direction: column; }
+      .floating-cta { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        노진규 | Mercedes‑Benz
+        <small>상담 · 견적 · 재고 · 출고까지 빠르게</small>
+      </div>
+      <nav class="nav">
+        <a href="#models">차종 안내</a>
+        <a href="#promo">프로모션</a>
+        <a href="#stock">즉시출고</a>
+        <a href="#process">상담 절차</a>
+        <a href="#contact">연락하기</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-card">
+          <div class="hero-badge">프리미엄 수입차 상담 랜딩페이지</div>
+          <h1>벤츠를 더 쉽게,<br>더 확신 있게 선택하도록.</h1>
+          <p>
+            고객이 가장 궁금해하는 <strong>차종 비교, 즉시출고 가능 재고, 이번 달 프로모션, 상담 연결</strong>까지
+            한 페이지에서 확인할 수 있도록 구성한 노진규 전용 벤츠 랜딩페이지입니다.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#contact">지금 상담 요청하기</a>
+            <a class="btn btn-secondary" href="#models">차종별 안내 보기</a>
+          </div>
+
+          <div class="stat-grid">
+            <div class="stat">
+              <strong>1:1</strong>
+              <span>맞춤형 상담</span>
+            </div>
+            <div class="stat">
+              <strong>Fast</strong>
+              <span>재고/출고 확인</span>
+            </div>
+            <div class="stat">
+              <strong>Premium</strong>
+              <span>벤츠 중심 전문 제안</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-side">
+          <div class="glass-card" id="stock">
+            <h3>즉시출고 가능 재고</h3>
+            <p>실시간 재고 링크나 수기 업데이트 영역입니다. 매일 수정하면 전환율이 올라갑니다.</p>
+            <div class="mini-list">
+              <div class="mini-item">
+                <span>E 450 4M AMG Line · Graphite Grey</span>
+                <span>출고 가능</span>
+              </div>
+              <div class="mini-item">
+                <span>GLE 450d 4M Coupe · Black</span>
+                <span>문의 요망</span>
+              </div>
+              <div class="mini-item">
+                <span>S 580 4M Long · Obsidian Black</span>
+                <span>한정 수량</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-card">
+            <h3>고객이 여기서 결정합니다</h3>
+            <p>이 페이지의 목적은 예쁜 홈페이지가 아니라, 고객이 망설이는 지점을 빠르게 없애는 것입니다.</p>
+            <div class="mini-list">
+              <div class="mini-item">
+                <span>차종 선택이 어렵다</span>
+                <span>비교자료</span>
+              </div>
+              <div class="mini-item">
+                <span>조건이 궁금하다</span>
+                <span>프로모션</span>
+              </div>
+              <div class="mini-item">
+                <span>바로 받을 수 있나</span>
+                <span>즉시출고</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="models">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>차종별 안내</h2>
+          </div>
+          <p>차종별 소개 페이지, 비교자료, 브로셔, 가격표 링크를 연결해두면 고객이 스스로 공부한 뒤 상담으로 들어옵니다.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <div class="label">Best Seller</div>
+            <h3>E-Class</h3>
+            <p>가장 많이 비교되는 모델입니다. E300 vs E450, 옵션 차이, 승차감과 가치 포인트를 정리해두세요.</p>
+            <a class="link-btn" href="#contact">상담 연결하기 →</a>
+          </article>
+          <article class="card">
+            <div class="label">Flagship</div>
+            <h3>S-Class</h3>
+            <p>브랜드의 상징성과 뒷좌석 만족감, 정숙성, 나파가죽·부메스터·안전사양을 중심으로 설득하는 구간입니다.</p>
+            <a class="link-btn" href="#contact">상담 연결하기 →</a>
+          </article>
+          <article class="card">
+            <div class="label">SUV</div>
+            <h3>GLE / GLS</h3>
+            <p>패밀리 수요와 사업가 고객에게 강합니다. 적재공간, 승하차 편의, 고속 안정감, 브랜드 이미지가 핵심입니다.</p>
+            <a class="link-btn" href="#contact">상담 연결하기 →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="promo">
+      <div class="container highlight">
+        <div class="promo-box">
+          <div class="section-head">
+            <div>
+              <h2>이번 달 프로모션</h2>
+            </div>
+          </div>
+          <div class="promo-list">
+            <div class="promo-item">
+              <div>
+                <strong>E-Class 특별 금융</strong>
+                <span>선수금/월 납입금 중심 상담용 문구 삽입</span>
+              </div>
+              <div>상담형</div>
+            </div>
+            <div class="promo-item">
+              <div>
+                <strong>S-Class 법인 제안</strong>
+                <span>사업자 고객 맞춤 리스/렌트 구조 정리</span>
+              </div>
+              <div>고급형</div>
+            </div>
+            <div class="promo-item">
+              <div>
+                <strong>SUV 즉시출고 우선 배정</strong>
+                <span>재고 보유 모델 우선 소개용</span>
+              </div>
+              <div>재고형</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-box" id="contact">
+          <div class="section-head">
+            <div>
+              <h2>바로 연락하기</h2>
+            </div>
+          </div>
+          <div class="contact-list">
+            <div class="contact-item">
+              <div>
+                <strong>전화 상담</strong>
+                <span>가장 빠르게 조건과 재고를 확인할 수 있습니다.</span>
+              </div>
+              <div><a href="tel:010-7299-7404">010-7299-7404</a></div>
+            </div>
+            <div class="contact-item">
+              <div>
+                <strong>카카오채널</strong>
+                <span>사진, 견적서, 조건표 전달에 가장 편합니다.</span>
+              </div>
+              <div><a href="#">채널 연결</a></div>
+            </div>
+            <div class="contact-item">
+              <div>
+                <strong>상담 신청 폼</strong>
+                <span>원하는 차종과 예산을 남기면 맞춤 제안을 드립니다.</span>
+              </div>
+              <div><a href="#">폼 작성</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>상담 진행 방식</h2>
+          </div>
+          <p>복잡하게 만들지 말고, 고객이 한 번에 이해하게 보여주는 게 핵심입니다.</p>
+        </div>
+        <div class="process">
+          <div class="step">
+            <div class="num">1</div>
+            <h3>차종 선택</h3>
+            <p>세단, SUV, 플래그십 중 어떤 목적의 차량인지 먼저 정리합니다.</p>
+          </div>
+          <div class="step">
+            <div class="num">2</div>
+            <h3>예산 확인</h3>
+            <p>일시불, 리스, 렌트, 법인 여부에 따라 가장 적합한 구조를 제안합니다.</p>
+          </div>
+          <div class="step">
+            <div class="num">3</div>
+            <h3>재고/일정 안내</h3>
+            <p>즉시출고 가능 여부, 색상, 옵션, 입항 일정을 빠르게 안내합니다.</p>
+          </div>
+          <div class="step">
+            <div class="num">4</div>
+            <h3>계약/출고</h3>
+            <p>조건 확정 후 계약과 출고까지 끊기지 않게 밀어붙입니다.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      노진규 벤츠 상담 랜딩페이지 · 전화번호/카카오/폼 링크만 실제 정보로 바꾸면 바로 사용 가능합니다.
+    </div>
+  </footer>
+
+  <div class="floating-cta">
+    <a href="tel:010-7299-7404">전화 상담</a>
+    <a href="#">카카오 상담</a>
+    <a class="primary" href="#contact">상담 신청하기</a>
+  </div>
+</body>
+</html>
