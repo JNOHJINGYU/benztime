@@ -589,7 +589,7 @@ body {
   from { opacity:0; transform:translateY(16px); }
   to { opacity:1; transform:translateY(0); }
 }
-.section.active { animation: fadeUp 0.4s ease; }
+
 
 @media (max-width: 600px) {
   .hero { padding: 30px 24px 30px; min-height: 280px; }
@@ -697,6 +697,12 @@ body {
     .ev-rate { font-size: 22px; }
   }
 
+
+  /* 앵커 스크롤 시 네비바 높이만큼 여백 */
+  .car-section, #finance-section {
+    scroll-margin-top: 70px;
+  }
+
 </style>
 </head>
 <body>
@@ -716,22 +722,22 @@ body {
 
 <!-- NAV TABS -->
 <nav class="nav-tabs">
-  <a class="nav-tab star active" data-tab="best" onclick="switchTab(event,'best')">★ 5월 베스트</a>
-  <a class="nav-tab" data-tab="finance" onclick="switchTab(event,'finance')">금융</a>
-  <a class="nav-tab" data-tab="a" onclick="switchTab(event,'a')">A클래스</a>
-  <a class="nav-tab" data-tab="cla" onclick="switchTab(event,'cla')">CLA</a>
-  <a class="nav-tab" data-tab="gla" onclick="switchTab(event,'gla')">GLA·GLB</a>
-  <a class="nav-tab" data-tab="c" onclick="switchTab(event,'c')">C클래스</a>
-  <a class="nav-tab" data-tab="e" onclick="switchTab(event,'e')">E클래스</a>
-  <a class="nav-tab" data-tab="s" onclick="switchTab(event,'s')">S클래스</a>
-  <a class="nav-tab" data-tab="cle" onclick="switchTab(event,'cle')">CLE</a>
-  <a class="nav-tab" data-tab="glc" onclick="switchTab(event,'glc')">GLC</a>
-  <a class="nav-tab" data-tab="gle" onclick="switchTab(event,'gle')">GLE</a>
-  <a class="nav-tab" data-tab="gls" onclick="switchTab(event,'gls')">GLS</a>
-  <a class="nav-tab" data-tab="g" onclick="switchTab(event,'g')">G클래스</a>
-  <a class="nav-tab" data-tab="amg" onclick="switchTab(event,'amg')">AMG GT·SL</a>
-  <a class="nav-tab" data-tab="eq" onclick="switchTab(event,'eq')">전동화 EQ</a>
-  <a class="nav-tab" data-tab="maybach" onclick="switchTab(event,'maybach')">Maybach</a>
+  <a class="nav-tab star" href="#finance-section">★ 5월 베스트</a>
+  <a class="nav-tab" data-tab="finance" href="#finance-section">금융</a>
+  <a class="nav-tab" data-tab="a" href="#tab-a-price">A클래스</a>
+  <a class="nav-tab" data-tab="cla" href="#tab-cla-price">CLA</a>
+  <a class="nav-tab" data-tab="gla" href="#tab-gla-price">GLA·GLB</a>
+  <a class="nav-tab" data-tab="c" href="#tab-c-price">C클래스</a>
+  <a class="nav-tab" data-tab="e" href="#tab-e-price">E클래스</a>
+  <a class="nav-tab" data-tab="s" href="#tab-s-price">S클래스</a>
+  <a class="nav-tab" data-tab="cle" href="#tab-cle-price">CLE</a>
+  <a class="nav-tab" data-tab="glc" href="#tab-glc-price">GLC</a>
+  <a class="nav-tab" data-tab="gle" href="#tab-gle-price">GLE</a>
+  <a class="nav-tab" data-tab="gls" href="#tab-gls-price">GLS</a>
+  <a class="nav-tab" data-tab="g" href="#tab-g-price">G클래스</a>
+  <a class="nav-tab" data-tab="amg" href="#tab-amg-price">AMG GT·SL</a>
+  <a class="nav-tab" data-tab="eq" href="#tab-eq-price">전동화 EQ</a>
+  <a class="nav-tab" data-tab="maybach" href="#tab-maybach-price">Maybach</a>
 </nav>
 
 <!-- NOTICE -->
@@ -769,7 +775,7 @@ body {
 <div id="tab-best" class="section active">
 
   <!-- 5월 금융 프로그램 -->
-  <div class="finance-header">
+  <div class="finance-header" id="finance-section">
     <div class="finance-eyebrow">2026 May · Finance Program</div>
     <h2 class="finance-title">5월 금융 프로그램</h2>
     <div class="finance-divider"></div>
@@ -844,7 +850,7 @@ body {
   </div>
 
   <!-- A클래스 -->
-  <div class="car-section">
+  <div class="car-section" id="tab-a-price">
     <div class="car-section-header">
       <div class="car-badge">A</div>
       <div class="car-section-info">
@@ -864,7 +870,7 @@ body {
   </div>
 
   <!-- CLA -->
-  <div class="car-section">
+  <div class="car-section" id="tab-cla-price">
     <div class="car-section-header">
       <div class="car-badge">CLA</div>
       <div class="car-section-info">
@@ -883,7 +889,7 @@ body {
   </div>
 
   <!-- GLA·GLB -->
-  <div class="car-section">
+  <div class="car-section" id="tab-gla-price">
     <div class="car-section-header">
       <div class="car-badge">GLA</div>
       <div class="car-section-info">
@@ -903,7 +909,7 @@ body {
   </div>
 
   <!-- C클래스 -->
-  <div class="car-section">
+  <div class="car-section" id="tab-c-price">
     <div class="car-section-header">
       <div class="car-badge">C</div>
       <div class="car-section-info">
@@ -924,7 +930,7 @@ body {
   </div>
 
   <!-- E클래스 -->
-  <div class="car-section">
+  <div class="car-section" id="tab-e-price">
     <div class="car-section-header">
       <div class="car-badge">E</div>
       <div class="car-section-info">
@@ -950,7 +956,7 @@ body {
   </div>
 
   <!-- S클래스 -->
-  <div class="car-section">
+  <div class="car-section" id="tab-s-price">
     <div class="car-section-header">
       <div class="car-badge">S</div>
       <div class="car-section-info">
@@ -976,7 +982,7 @@ body {
   </div>
 
   <!-- CLE -->
-  <div class="car-section">
+  <div class="car-section" id="tab-cle-price">
     <div class="car-section-header">
       <div class="car-badge">CLE</div>
       <div class="car-section-info">
@@ -998,7 +1004,7 @@ body {
   </div>
 
   <!-- GLC -->
-  <div class="car-section">
+  <div class="car-section" id="tab-glc-price">
     <div class="car-section-header">
       <div class="car-badge">GLC</div>
       <div class="car-section-info">
@@ -1021,7 +1027,7 @@ body {
   </div>
 
   <!-- GLE -->
-  <div class="car-section">
+  <div class="car-section" id="tab-gle-price">
     <div class="car-section-header">
       <div class="car-badge">GLE</div>
       <div class="car-section-info">
@@ -1045,7 +1051,7 @@ body {
   </div>
 
   <!-- GLS -->
-  <div class="car-section">
+  <div class="car-section" id="tab-gls-price">
     <div class="car-section-header">
       <div class="car-badge">GLS</div>
       <div class="car-section-info">
@@ -1067,7 +1073,7 @@ body {
   </div>
 
   <!-- G클래스 -->
-  <div class="car-section">
+  <div class="car-section" id="tab-g-price">
     <div class="car-section-header">
       <div class="car-badge">G</div>
       <div class="car-section-info">
@@ -1087,7 +1093,7 @@ body {
   </div>
 
   <!-- AMG GT·SL -->
-  <div class="car-section">
+  <div class="car-section" id="tab-amg-price">
     <div class="car-section-header">
       <div class="car-badge">AMG</div>
       <div class="car-section-info">
@@ -1108,7 +1114,7 @@ body {
   </div>
 
   <!-- 전동화 EQ -->
-  <div class="car-section">
+  <div class="car-section" id="tab-eq-price">
     <div class="car-section-header">
       <div class="car-badge">EQ</div>
       <div class="car-section-info">
@@ -1134,7 +1140,7 @@ body {
   </div>
 
   <!-- Maybach -->
-  <div class="car-section">
+  <div class="car-section" id="tab-maybach-price">
     <div class="car-section-header">
       <div class="car-badge" style="font-size:10px;">MYB</div>
       <div class="car-section-info">
@@ -1578,17 +1584,42 @@ body {
 </footer>
 
 <script>
-function switchTab(e, tabId) {
-  e.preventDefault();
-  // Remove active from all tabs
-  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
-  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-  // Activate clicked
-  e.target.classList.add('active');
-  document.getElementById('tab-' + tabId).classList.add('active');
-  // Scroll to top of content
-  document.querySelector('.notice').scrollIntoView({behavior:'smooth', block:'start'});
-}
+// 부드러운 스크롤 + 탭 활성화
+document.querySelectorAll('.nav-tab[href]').forEach(function(tab) {
+  tab.addEventListener('click', function(e) {
+    e.preventDefault();
+    var targetId = this.getAttribute('href').replace('#', '');
+    var target = document.getElementById(targetId);
+    if (!target) return;
+
+    // 탭 활성화
+    document.querySelectorAll('.nav-tab').forEach(function(t) { t.classList.remove('active'); });
+    tab.classList.add('active');
+
+    // 네비바 높이만큼 보정해서 스크롤
+    var navH = document.querySelector('.nav-tabs').offsetHeight;
+    var top = target.getBoundingClientRect().top + window.pageYOffset - navH - 12;
+    window.scrollTo({ top: top, behavior: 'smooth' });
+  });
+});
+
+// 스크롤 시 탭 자동 활성화
+window.addEventListener('scroll', function() {
+  var navH = document.querySelector('.nav-tabs').offsetHeight + 30;
+  var tabs = document.querySelectorAll('.nav-tab[href]');
+  var current = null;
+
+  tabs.forEach(function(tab) {
+    var id = tab.getAttribute('href').replace('#', '');
+    var el = document.getElementById(id);
+    if (el && el.getBoundingClientRect().top <= navH) {
+      current = tab;
+    }
+  });
+
+  tabs.forEach(function(t) { t.classList.remove('active'); });
+  if (current) current.classList.add('active');
+});
 </script>
 
 <script>
