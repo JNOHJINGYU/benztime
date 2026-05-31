@@ -498,6 +498,11 @@
     stroke-linejoin: round;
   }
 
+  /* ── PC 2열 그리드 래퍼 — 모바일 기본값 ── */
+  .pc-card-grid {
+    /* 모바일: 패딩 없음 (내부 .launch-card-section/.section-cards가 각자 패딩 담당) */
+  }
+
   /* ── SECTION CARDS ── */
   .section-cards {
     padding: 0 28px;
@@ -537,10 +542,16 @@
 
   .section-card:hover .card-bg { transform: scale(1.04); /* 모바일 기본값 — PC는 @media(min-width:769px)에서 override */ }
 
+  /* card-image-wrap: 모바일에서는 숨김, PC에서만 @media(min-width:769px)로 활성화 */
+  .card-image-wrap {
+    display: none;
+  }
+
   .section-card .card-overlay {
     position: absolute;
     inset: 0;
     background: linear-gradient(135deg, rgba(10,10,10,0.72) 0%, rgba(10,10,10,0.25) 100%);
+    z-index: 1;
   }
 
   .section-card .card-content {
@@ -727,8 +738,18 @@
     }
 
     /* 기존 섹션카드 모바일 - 높이 통일 */
+    /* PC에서 display:contents로 바뀐 section-cards를 모바일에서 flex로 복원 */
     .section-cards {
+      display: flex;
+      flex-direction: column;
       padding: 0 16px;
+    }
+
+    /* pc-card-grid: 모바일에서는 1열 세로 나열 */
+    .pc-card-grid {
+      display: block;
+      padding: 0;
+      margin: 0;
     }
 
     .section-card {
@@ -770,48 +791,114 @@
       height: auto !important;
     }
 
-    /* ── PC 이미지 최적화: 차량 전체 보임 + 화질 선명 ── */
+    /* ══════════════════════════════════════════════════════
+       PC 2열 그리드 컨테이너
+       4개 카드가 2 × 2 배치로 정렬됨
+    ══════════════════════════════════════════════════════ */
+    .pc-card-grid {
+      max-width: 1280px;
+      margin: 0 auto 48px;
+      padding: 0 28px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
 
-    /* 신규모델 출시 카드: 이미지 살짝 축소하여 차량 루프·범퍼·휠 확보 */
+    /* launch-card-section / section-cards:
+       그리드 아이템이 되므로 자체 패딩·마진 초기화 */
+    .launch-card-section {
+      padding: 0;
+      margin-bottom: 0;
+    }
+
+    /* section-cards: display:contents → 내부 3개 카드가
+       그리드 아이템으로 직접 올라와 2열에 자연스럽게 배치 */
+    .section-cards {
+      display: contents;
+    }
+
+    /* ══════════════════════════════════════════════════════
+       PC 카드 높이 — 1280px 2열 기준 최적 비율
+    ══════════════════════════════════════════════════════ */
+    .launch-card,
+    .section-card,
+    .card-catalog {
+      width: 100%;
+      height: 320px;
+      min-height: 320px;
+    }
+
+    .launch-card-body {
+      min-height: 320px;
+    }
+
+    /* ══════════════════════════════════════════════════════
+       신규모델 카드 이미지 — contain, 잘림 없음
+    ══════════════════════════════════════════════════════ */
     .launch-card-image-wrap {
+      position: absolute;
+      inset: 0;
+      background: #111;
       overflow: hidden;
     }
 
     .launch-image {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      object-position: center 55%;   /* 약간 아래 기준 → 루프가 잘릴 때 차량 중심 확보 */
-      transform: scale(0.88);        /* 12% 축소 → 원본 픽셀이 더 선명하게 표현 */
-      transform-origin: center center;
-      transition: none;              /* hover 시 크기 변화 없음 */
-      will-change: auto;
+      object-fit: contain !important;
+      object-position: center center !important;
+      display: block;
+      transform: none !important;
+      transition: none !important;
+      image-rendering: -webkit-optimize-contrast;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
     }
 
-    /* hover 시에도 이미지 크기 변화 없음 */
     .launch-card:hover .launch-image {
-      transform: scale(0.88);
+      transform: none !important;
     }
 
-    /* 섹션 카드(프로모션·시승·카탈로그): background-size 축소 */
+    /* ══════════════════════════════════════════════════════
+       섹션 카드 — background-image 숨기고 img 태그 활성화
+    ══════════════════════════════════════════════════════ */
     .section-card .card-bg {
-      background-size: 88%;
-      background-repeat: no-repeat;
-      background-position: center center;
-      transition: none;              /* hover scale 제거 */
-      will-change: auto;
+      display: none !important;
     }
 
-    /* 카탈로그 카드 - 산악 이미지는 가로가 넓으므로 center top으로 차량 포함 영역 표시 */
-    .card-catalog .card-bg {
-      background-size: 88% !important;
-      background-position: center center !important;
+    .card-image-wrap {
+      display: flex;
+      position: absolute;
+      inset: 0;
+      background: #111;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      z-index: 0;
     }
 
-    /* hover 시 배경 이미지 크기 변화 없음 */
-    .section-card:hover .card-bg {
-      transform: none;
+    .card-image {
+      width: 100%;
+      height: 100%;
+      object-fit: contain !important;
+      object-position: center center !important;
+      display: block;
+      transform: none !important;
+      transition: none !important;
+      image-rendering: -webkit-optimize-contrast;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
     }
+
+    /* hover 확대 완전 제거 */
+    .launch-card:hover          { box-shadow: 0 8px 28px rgba(184,151,90,0.18); }
+    .section-card:hover .card-bg    { transform: none !important; }
+    .section-card:hover .card-image { transform: none !important; }
+
+    /* overlay·content·arrow z-index */
+    .section-card .card-overlay { z-index: 1; }
+    .section-card .card-content { z-index: 2; }
+    .section-card .card-arrow   { z-index: 2; }
   }
 
   <script type="text/javascript">
@@ -912,96 +999,106 @@
 <!-- GOLD DIVIDER -->
 <div class="gold-line"></div>
 
-<!-- ★ 신규모델 출시 카드 ★ -->
-<div class="launch-card-section">
-  <!-- href 자리: 클릭 시 이동할 링크를 여기에 입력하세요 -->
-  <a href="https://jnohjingyu.github.io/S-Class/" target="_blank" class="launch-card">
+<!-- ★ PC 2열 그리드 래퍼 시작 ★
+     PC: 2열 그리드 / 모바일: 1열 세로 나열 -->
+<div class="pc-card-grid">
 
-    <!-- 배경 이미지: src에 GitHub 이미지 URL을 넣으세요 -->
-    <div class="launch-card-image-wrap">
-      <img
-        src="https://github.com/JNOHJINGYU/images/blob/main/%EC%B9%B4%EB%93%9C%EB%A9%94%EC%9D%B8.jpg?raw=true"
-        alt="The new S-Class MY27 페이스리프트"
-        class="launch-image"
-      />
-    </div>
+  <!-- 신규모델 출시 카드 -->
+  <div class="launch-card-section">
+    <a href="https://jnohjingyu.github.io/S-Class/" target="_blank" class="launch-card">
 
-    <!-- 그라디에이션 오버레이: 좌상단 텍스트 영역에만 -->
-    <div class="launch-card-overlay"></div>
+      <div class="launch-card-image-wrap">
+        <img
+          src="https://github.com/JNOHJINGYU/images/blob/main/%EC%B9%B4%EB%93%9C%EB%A9%94%EC%9D%B8.jpg?raw=true"
+          alt="The new S-Class MY27 페이스리프트"
+          class="launch-image"
+        />
+      </div>
 
-    <!-- 텍스트: 좌상단 -->
-    <div class="launch-card-body">
-      <p class="launch-eyebrow">New Model Launch</p>
-      <h2 class="launch-title">The new S-Class MY27<br>페이스리프트</h2>
-      <p class="launch-subtitle">드디어 완성된 최상위 세단</p>
-      <p class="launch-desc">
-        Standard, AMG Line, Maybach<br>
-        세 가지 외관 디자인, 달라진 포인트 총정리.
-      </p>
-    </div>
+      <div class="launch-card-overlay"></div>
 
-    <!-- 우상단 화살표 -->
-    <div class="launch-card-arrow">
-      <svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
-    </div>
+      <div class="launch-card-body">
+        <p class="launch-eyebrow">New Model Launch</p>
+        <h2 class="launch-title">The new S-Class MY27<br>페이스리프트</h2>
+        <p class="launch-subtitle">드디어 완성된 최상위 세단</p>
+        <p class="launch-desc">
+          Standard, AMG Line, Maybach<br>
+          세 가지 외관 디자인, 달라진 포인트 총정리.
+        </p>
+      </div>
 
-  </a>
-</div>
-<!-- ★ 신규모델 출시 카드 끝 ★ -->
+      <div class="launch-card-arrow">
+        <svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+      </div>
 
-<!-- SECTION CARDS -->
-<div class="section-cards">
+    </a>
+  </div>
+  <!-- 신규모델 출시 카드 끝 -->
 
-  <a href="motorone_promo.html" target="_blank" class="section-card card-promo">
-    <div class="card-bg"></div>
-    <div class="card-overlay" style="background:linear-gradient(to right, rgba(5,5,5,0.85) 0%, rgba(5,5,5,0.45) 45%, transparent 80%)"></div>
-    <div class="card-content">
-      <p class="card-eyebrow">Promotion</p>
-      <h2 class="card-title">프로모션 바로가기</h2>
-      <p class="card-sub">최신 혜택을 확인하세요</p>
-    </div>
-    <div class="card-arrow">
-      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M9 5l7 7-7 7"/>
-      </svg>
-    </div>
-  </a>
+  <!-- 섹션 카드 3개 -->
+  <div class="section-cards">
 
-  <a href="https://forms.gle/Ni25Uk5mT97fhY5X9" target="_blank" class="section-card card-testdrive">
-    <div class="card-bg"></div>
-    <div class="card-overlay" style="background:linear-gradient(to right, rgba(5,5,5,0.85) 0%, rgba(5,5,5,0.45) 45%, transparent 80%)"></div>
-    <div class="card-content">
-      <p class="card-eyebrow">Test Drive</p>
-      <h2 class="card-title">시승 신청 바로가기</h2>
-      <p class="card-sub">가장 빠른 전 차종 시승은 벤츠에서</p>
-    </div>
-    <div class="card-arrow">
-      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M9 5l7 7-7 7"/>
-      </svg>
-    </div>
-  </a>
+    <a href="motorone_promo.html" target="_blank" class="section-card card-promo">
+      <div class="card-bg"></div>
+      <div class="card-image-wrap">
+        <img src="https://jnohjingyu.github.io/benztime/images/landing-image-01.jpg" alt="프로모션" class="card-image" />
+      </div>
+      <div class="card-overlay" style="background:linear-gradient(to right, rgba(5,5,5,0.85) 0%, rgba(5,5,5,0.45) 45%, transparent 80%)"></div>
+      <div class="card-content">
+        <p class="card-eyebrow">Promotion</p>
+        <h2 class="card-title">프로모션 바로가기</h2>
+        <p class="card-sub">최신 혜택을 확인하세요</p>
+      </div>
+      <div class="card-arrow">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 5l7 7-7 7"/>
+        </svg>
+      </div>
+    </a>
 
-  <a href="https://www.mercedes-benz.co.kr/passengercars/models/catalog.html" target="_blank" class="section-card card-catalog">
-    <div class="card-bg"></div>
-    <div class="card-overlay" style="background:linear-gradient(to right, rgba(5,5,5,0.88) 0%, rgba(5,5,5,0.55) 40%, transparent 75%)"></div>
-    <div class="card-content">
-      <p class="card-eyebrow" style="font-size:16px;">Catalogue</p>
-      <h2 class="card-title" style="font-size:30px; display:flex; align-items:center; gap:10px;">
-        카탈로그 다운로드
-        <img src="https://jnohjingyu.github.io/benztime/images/landing-image-07.jpg"
-          style="width:28px;height:28px;object-fit:contain;filter:invert(1) brightness(2);opacity:0.9;vertical-align:middle;" />
-      </h2>
-      <p class="card-sub" style="font-size:17px;">벤츠에 대한 모든 것을 알고싶다면?</p>
-    </div>
-    <div class="card-arrow">
-      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
-      </svg>
-    </div>
-  </a>
+    <a href="https://forms.gle/Ni25Uk5mT97fhY5X9" target="_blank" class="section-card card-testdrive">
+      <div class="card-bg"></div>
+      <div class="card-image-wrap">
+        <img src="https://jnohjingyu.github.io/benztime/images/landing-image-02.jpg" alt="시승신청" class="card-image" />
+      </div>
+      <div class="card-overlay" style="background:linear-gradient(to right, rgba(5,5,5,0.85) 0%, rgba(5,5,5,0.45) 45%, transparent 80%)"></div>
+      <div class="card-content">
+        <p class="card-eyebrow">Test Drive</p>
+        <h2 class="card-title">시승 신청 바로가기</h2>
+        <p class="card-sub">가장 빠른 전 차종 시승은 벤츠에서</p>
+      </div>
+      <div class="card-arrow">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 5l7 7-7 7"/>
+        </svg>
+      </div>
+    </a>
 
-</div>
+    <a href="https://www.mercedes-benz.co.kr/passengercars/models/catalog.html" target="_blank" class="section-card card-catalog">
+      <div class="card-bg"></div>
+      <div class="card-image-wrap">
+        <img src="https://jnohjingyu.github.io/benztime/images/landing-image-03.jpg" alt="카탈로그" class="card-image" />
+      </div>
+      <div class="card-overlay" style="background:linear-gradient(to right, rgba(5,5,5,0.88) 0%, rgba(5,5,5,0.55) 40%, transparent 75%)"></div>
+      <div class="card-content">
+        <p class="card-eyebrow" style="font-size:16px;">Catalogue</p>
+        <h2 class="card-title" style="font-size:30px; display:flex; align-items:center; gap:10px;">
+          카탈로그 다운로드
+          <img src="https://jnohjingyu.github.io/benztime/images/landing-image-07.jpg"
+            style="width:28px;height:28px;object-fit:contain;filter:invert(1) brightness(2);opacity:0.9;vertical-align:middle;" />
+        </h2>
+        <p class="card-sub" style="font-size:17px;">벤츠에 대한 모든 것을 알고싶다면?</p>
+      </div>
+      <div class="card-arrow">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+        </svg>
+      </div>
+    </a>
+
+  </div><!-- /.section-cards -->
+
+</div><!-- /.pc-card-grid -->
 
 <!-- FOOTER -->
 <footer class="footer">
