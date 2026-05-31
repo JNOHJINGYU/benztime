@@ -404,12 +404,10 @@
     object-fit: cover;
     object-position: center center;
     display: block;
-    transition: transform 0.6s ease;
     image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    transform: translateZ(0);
   }
 
   .launch-card:hover {
@@ -417,7 +415,7 @@
   }
 
   .launch-card:hover .launch-image {
-    transform: scale(1.04);
+    transform: scale(1.04); /* 모바일 기본값 — PC는 @media(min-width:769px)에서 override */
   }
 
   /* 그라디에이션: 좌상단 텍스트 영역에만 걸림 — 왼→오, 상→하 두 방향 */
@@ -532,14 +530,12 @@
     inset: 0;
     background-size: cover;
     background-position: center;
-    transition: transform 0.6s ease;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    transform: translateZ(0);
-    will-change: transform;
+    will-change: auto;
   }
 
-  .section-card:hover .card-bg { transform: scale(1.04); }
+  .section-card:hover .card-bg { transform: scale(1.04); /* 모바일 기본값 — PC는 @media(min-width:769px)에서 override */ }
 
   .section-card .card-overlay {
     position: absolute;
@@ -772,6 +768,49 @@
     .profile-img-wrap video {
       width: 400px !important;
       height: auto !important;
+    }
+
+    /* ── PC 이미지 최적화: 차량 전체 보임 + 화질 선명 ── */
+
+    /* 신규모델 출시 카드: 이미지 살짝 축소하여 차량 루프·범퍼·휠 확보 */
+    .launch-card-image-wrap {
+      overflow: hidden;
+    }
+
+    .launch-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 55%;   /* 약간 아래 기준 → 루프가 잘릴 때 차량 중심 확보 */
+      transform: scale(0.88);        /* 12% 축소 → 원본 픽셀이 더 선명하게 표현 */
+      transform-origin: center center;
+      transition: none;              /* hover 시 크기 변화 없음 */
+      will-change: auto;
+    }
+
+    /* hover 시에도 이미지 크기 변화 없음 */
+    .launch-card:hover .launch-image {
+      transform: scale(0.88);
+    }
+
+    /* 섹션 카드(프로모션·시승·카탈로그): background-size 축소 */
+    .section-card .card-bg {
+      background-size: 88%;
+      background-repeat: no-repeat;
+      background-position: center center;
+      transition: none;              /* hover scale 제거 */
+      will-change: auto;
+    }
+
+    /* 카탈로그 카드 - 산악 이미지는 가로가 넓으므로 center top으로 차량 포함 영역 표시 */
+    .card-catalog .card-bg {
+      background-size: 88% !important;
+      background-position: center center !important;
+    }
+
+    /* hover 시 배경 이미지 크기 변화 없음 */
+    .section-card:hover .card-bg {
+      transform: none;
     }
   }
 
