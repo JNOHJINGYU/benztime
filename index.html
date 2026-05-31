@@ -833,19 +833,19 @@
     }
 
     /* ══════════════════════════════════════════════════════
-       신규모델 카드 이미지 — contain, 잘림 없음
+       신규모델 카드 이미지 — cover로 꽉 채움
     ══════════════════════════════════════════════════════ */
     .launch-card-image-wrap {
       position: absolute;
       inset: 0;
-      background: #111;
+      background: transparent !important;
       overflow: hidden;
     }
 
     .launch-image {
       width: 100%;
       height: 100%;
-      object-fit: contain !important;
+      object-fit: cover !important;
       object-position: center center !important;
       display: block;
       transform: none !important;
@@ -870,7 +870,7 @@
       display: flex;
       position: absolute;
       inset: 0;
-      background: #111;
+      background: transparent !important;
       align-items: center;
       justify-content: center;
       overflow: hidden;
@@ -880,7 +880,7 @@
     .card-image {
       width: 100%;
       height: 100%;
-      object-fit: contain !important;
+      object-fit: cover !important;
       object-position: center center !important;
       display: block;
       transform: none !important;
@@ -890,9 +890,15 @@
       backface-visibility: hidden;
     }
 
+    /* 카드별 이미지 포지션 개별 최적화 */
+    .launch-image                  { object-position: center center !important; }
+    .card-promo    .card-image     { object-position: center center !important; }
+    .card-testdrive .card-image    { object-position: center 60% !important; }   /* 차량 하단 바닥 살짝 여유 */
+    .card-catalog  .card-image     { object-position: center 40% !important; }   /* 산 + 차량 균형 */
+
     /* hover 확대 완전 제거 */
-    .launch-card:hover          { box-shadow: 0 8px 28px rgba(184,151,90,0.18); }
-    .section-card:hover .card-bg    { transform: none !important; }
+    .launch-card:hover             { box-shadow: 0 8px 28px rgba(184,151,90,0.18); }
+    .section-card:hover .card-bg   { transform: none !important; }
     .section-card:hover .card-image { transform: none !important; }
 
     /* overlay·content·arrow z-index */
