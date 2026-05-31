@@ -64,7 +64,7 @@
     gap: 10px;
   }
 
-  .mb-star { width: 36px; height: 36px; }
+  .mb-star { width: 120px; height: 120px; object-fit: contain; }
 
   .topbar-brand { display: flex; flex-direction: column; }
 
@@ -170,39 +170,154 @@
   }
 
   .cta-btn {
-    background: var(--white);
-    border: 1.5px solid var(--border);
-    border-radius: 14px;
-    padding: 18px 10px;
+    border-radius: 16px;
+    padding: 22px 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
+    justify-content: center;
+    gap: 10px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
     text-decoration: none;
-    color: var(--black);
-    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+    min-height: 100px;
   }
 
-  .cta-btn:hover {
-    border-color: var(--gold);
-    background: #fffdf8;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(184,151,90,0.15);
+  .cta-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 16px;
+  }
+
+  .cta-btn:active {
+    transform: scale(0.96) translateY(1px) !important;
+    transition: all 0.1s ease;
+  }
+
+  /* 전화걸기: 블랙 + 실버 포인트 */
+  .cta-btn-call {
+    background: linear-gradient(145deg, #1a1a1a 0%, #2d2d2d 50%, #111 100%);
+    border: 1px solid rgba(200,200,200,0.18);
+    box-shadow:
+      0 4px 16px rgba(0,0,0,0.35),
+      0 1px 0 rgba(255,255,255,0.08) inset,
+      0 -1px 0 rgba(0,0,0,0.4) inset;
+  }
+
+  .cta-btn-call::before {
+    background: linear-gradient(145deg, #2a2a2a 0%, #3d3d3d 100%);
+  }
+
+  .cta-btn-call:hover {
+    transform: translateY(-3px);
+    box-shadow:
+      0 8px 24px rgba(0,0,0,0.45),
+      0 1px 0 rgba(255,255,255,0.12) inset,
+      0 0 0 1px rgba(180,180,180,0.25);
+  }
+
+  .cta-btn-call:hover::before { opacity: 1; }
+
+  .cta-btn-call svg {
+    filter: drop-shadow(0 1px 3px rgba(180,180,180,0.4));
+  }
+
+  .cta-btn-call span {
+    color: #e8e8e8;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+  }
+
+  /* 문자메시지: 다크 블루 + 실버 포인트 */
+  .cta-btn-sms {
+    background: linear-gradient(145deg, #0d1b2a 0%, #1a2f45 50%, #0a1520 100%);
+    border: 1px solid rgba(100,160,220,0.18);
+    box-shadow:
+      0 4px 16px rgba(0,30,60,0.4),
+      0 1px 0 rgba(100,180,255,0.08) inset,
+      0 -1px 0 rgba(0,0,0,0.4) inset;
+  }
+
+  .cta-btn-sms::before {
+    background: linear-gradient(145deg, #152535 0%, #243d55 100%);
+  }
+
+  .cta-btn-sms:hover {
+    transform: translateY(-3px);
+    box-shadow:
+      0 8px 24px rgba(0,40,80,0.5),
+      0 1px 0 rgba(100,180,255,0.12) inset,
+      0 0 0 1px rgba(80,140,200,0.25);
+  }
+
+  .cta-btn-sms:hover::before { opacity: 1; }
+
+  .cta-btn-sms svg {
+    filter: drop-shadow(0 1px 3px rgba(100,160,220,0.4));
+  }
+
+  .cta-btn-sms span {
+    color: #cce0f5;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+  }
+
+  /* 전시장 위치: 골드 포인트 강조 */
+  .cta-btn-map {
+    background: linear-gradient(145deg, #1c1508 0%, #2e2010 50%, #15100a 100%);
+    border: 1px solid rgba(184,151,90,0.35);
+    box-shadow:
+      0 4px 16px rgba(100,70,0,0.35),
+      0 1px 0 rgba(212,180,122,0.12) inset,
+      0 -1px 0 rgba(0,0,0,0.4) inset;
+  }
+
+  .cta-btn-map::before {
+    background: linear-gradient(145deg, #252010 0%, #3a2c18 100%);
+  }
+
+  .cta-btn-map:hover {
+    transform: translateY(-3px);
+    box-shadow:
+      0 8px 24px rgba(140,100,20,0.4),
+      0 1px 0 rgba(212,180,122,0.18) inset,
+      0 0 0 1px rgba(184,151,90,0.4);
+  }
+
+  .cta-btn-map:hover::before { opacity: 1; }
+
+  .cta-btn-map svg {
+    filter: drop-shadow(0 1px 4px rgba(212,180,122,0.5));
+  }
+
+  .cta-btn-map span {
+    color: var(--gold-light);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
   }
 
   .cta-btn svg {
-    width: 22px; height: 22px;
+    width: 26px; height: 26px;
     stroke: var(--gold);
     fill: none;
     stroke-width: 1.5;
+    position: relative;
+    z-index: 1;
   }
 
+  .cta-btn-call svg { stroke: #d0d0d0; }
+  .cta-btn-sms svg  { stroke: #90c4e8; }
+  .cta-btn-map svg  { stroke: var(--gold-light); }
+
   .cta-btn span {
-    font-size: 19px;
+    font-size: 13px;
+    font-weight: 600;
     letter-spacing: 0.04em;
-    color: var(--charcoal);
+    position: relative;
+    z-index: 1;
   }
 
   /* ── GREETING CARD ── */
@@ -270,6 +385,7 @@
     overflow: hidden;
     position: relative;
     cursor: pointer;
+    height: 350px;
     min-height: 350px;
     box-shadow: 0 2px 12px rgba(0,0,0,0.10);
     transition: box-shadow 0.4s ease;
@@ -289,6 +405,11 @@
     object-position: center center;
     display: block;
     transition: transform 0.6s ease;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: translateZ(0);
   }
 
   .launch-card:hover {
@@ -395,13 +516,14 @@
     cursor: pointer;
     text-decoration: none;
     display: block;
+    height: 350px;
     min-height: 350px;
   }
 
-  .card-catalog { min-height: 350px; }
+  .card-catalog { height: 350px; min-height: 350px; }
 
   .card-catalog .card-bg {
-    background-size: 100% auto !important;
+    background-size: cover !important;
     background-position: center center !important;
   }
 
@@ -411,6 +533,10 @@
     background-size: cover;
     background-position: center;
     transition: transform 0.6s ease;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    will-change: transform;
   }
 
   .section-card:hover .card-bg { transform: scale(1.04); }
@@ -526,6 +652,28 @@
 
   /* ── 모바일 최적화 ── */
   @media (max-width: 768px) {
+    /* 1. 모바일 상단바 높이 축소 */
+    .topbar {
+      padding: 10px 16px;
+    }
+
+    .mb-star {
+      width: 68px !important;
+      height: 68px !important;
+    }
+
+    .topbar-brand .main-name {
+      font-size: 18px;
+    }
+
+    .topbar-brand .sub-name {
+      font-size: 13px;
+    }
+
+    .topbar-logo {
+      gap: 8px;
+    }
+
     .greeting-text {
       font-size: 13px !important;
       line-height: 1.9;
@@ -545,18 +693,19 @@
       border-radius: 20px !important;
     }
 
-    /* 신규모델 출시 카드 모바일 */
+    /* 신규모델 출시 카드 모바일 - 높이 통일 */
     .launch-card-section {
       padding: 0 16px;
       margin-bottom: 12px;
     }
 
     .launch-card {
-      min-height: 260px;
+      height: 240px;
+      min-height: 240px;
     }
 
     .launch-card-body {
-      min-height: 260px;
+      min-height: 240px;
       padding: 20px 18px;
     }
 
@@ -581,9 +730,41 @@
       line-height: 1.8;
     }
 
-    /* 기존 섹션카드 모바일 */
+    /* 기존 섹션카드 모바일 - 높이 통일 */
     .section-cards {
       padding: 0 16px;
+    }
+
+    .section-card {
+      height: 240px;
+      min-height: 240px;
+    }
+
+    .card-catalog {
+      height: 240px;
+      min-height: 240px;
+    }
+
+    /* 4. 카탈로그 카드 이미지 비율 수정 */
+    .card-catalog .card-bg {
+      background-size: cover !important;
+      background-position: center center !important;
+    }
+
+    /* CTA 버튼 모바일 */
+    .cta-btn {
+      padding: 18px 8px;
+      min-height: 90px;
+      border-radius: 14px;
+    }
+
+    .cta-btn svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .cta-btn span {
+      font-size: 12px;
     }
   }
 
@@ -619,8 +800,7 @@
 <!-- TOP BAR -->
 <header class="topbar">
   <div class="topbar-logo">
-    <img src="https://jnohjingyu.github.io/benztime/images/landing-image-04.png" class="mb-star"
-      style="width:120px;height:120px;object-fit:contain;" />
+    <img src="https://jnohjingyu.github.io/benztime/images/landing-image-04.png" class="mb-star" />
     <div class="topbar-brand">
       <span class="main-name">모터원</span>
       <span class="sub-name">Mercedes-Benz 공식 딜러</span>
@@ -658,19 +838,19 @@
 
   <!-- CTA BUTTONS -->
   <div class="cta-row">
-    <a href="tel:010-7299-7404" class="cta-btn">
+    <a href="tel:010-7299-7404" class="cta-btn cta-btn-call">
       <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
         <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
       </svg>
       <span>전화걸기</span>
     </a>
-    <a href="sms:010-7299-7404?body=안녕하세요, 모터원 의정부전시장 노진규 부장님께 문의드립니다." class="cta-btn">
+    <a href="sms:010-7299-7404?body=안녕하세요, 모터원 의정부전시장 노진규 부장님께 문의드립니다." class="cta-btn cta-btn-sms">
       <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
         <path d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/>
       </svg>
       <span>문자 메시지</span>
     </a>
-    <a href="https://map.naver.com/v5/search/벤츠+의정부전시장" target="_blank" class="cta-btn">
+    <a href="https://map.naver.com/v5/search/벤츠+의정부전시장" target="_blank" class="cta-btn cta-btn-map">
       <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
         <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
         <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
