@@ -1,0 +1,2301 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The new S-Class — Mercedes-Benz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Google Fonts replaced by SCDream -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
+:root {
+    --black: #060608;
+    --navy: #080c14;
+    --dark: #0d1117;
+    --card: #0f1318;
+    --card-border: rgba(180,180,200,0.12);
+    --silver: #e8eaee;
+    --silver-dim: #c8cdd8;
+    --white: #f4f5f7;
+    --white-dim: rgba(255,255,255,0.92);
+    --accent: #ffd86b;
+    --accent-dim: rgba(255,216,107,0.4);
+    --glass: rgba(15,19,24,0.85);
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  letter-spacing: -0.01em;
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Pretendard', 'Noto Sans KR', sans-serif, 'Noto Sans KR', sans-serif;
+    font-weight: 300;
+    overflow-x: clip;
+    cursor: default;
+    line-height: 1.8;
+  }
+  /* overflow-x clip on html for iOS fixed positioning fix */
+  html { overflow-x: hidden; }
+
+  /* ─── SCROLLBAR ─── */
+  ::-webkit-scrollbar { width: 3px; }
+  ::-webkit-scrollbar-track { background: var(--black); }
+  ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.3); border-radius: 2px; }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top:0; left:0; right:0; z-index:1000;
+    display:flex; align-items:center; justify-content:space-between;
+    padding: 0 48px;
+    height: 68px;
+    background: rgba(6,6,8,0.92);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    transition: all .3s ease;
+  }
+  nav.scrolled { height:56px; background: rgba(6,6,8,0.98); }
+  .nav-logo {
+    font-family:'Pretendard', 'Noto Sans KR', sans-serif, 'Noto Serif KR', sans-serif;
+    font-weight:900;
+    font-size:15px;
+    letter-spacing:.35em;
+    color: var(--white);
+    text-transform:uppercase;
+    display:flex; align-items:center;
+  }
+  .nav-logo span { 
+  color: #ffffff; 
+}
+  .nav-links {
+    display:flex; gap:32px; list-style:none; align-items:center;
+  }
+  .nav-links a {
+    font-size:13px; letter-spacing:.15em; color:rgba(255,255,255,0.78);
+    text-decoration:none; text-transform:uppercase;
+    transition: color .3s; display:flex; align-items:center;
+  }
+  .nav-links a:hover { color: var(--white); }
+  .nav-cta {
+    display:inline-flex; align-items:center; gap:7px;
+    font-size:13px; letter-spacing:.08em;
+    padding:10px 22px; border-radius:6px;
+    background: linear-gradient(135deg, #c8a84b 0%, #e8c86a 50%, #c8a84b 100%);
+    color: #0a0a0c; font-weight:700;
+    cursor:pointer; text-decoration:none;
+    font-family:'Pretendard', 'Noto Sans KR', sans-serif; 
+    transition: all .25s cubic-bezier(.25,.46,.45,.94);
+    box-shadow: 0 2px 16px rgba(200,168,75,0.30), 0 0 0 1px rgba(255,216,107,0.18);
+    white-space:nowrap; min-height:40px;
+    border: 1px solid rgba(255,216,107,0.35);
+    position:relative; overflow:hidden;
+  }
+  .nav-cta::before {
+    content:''; position:absolute; inset:0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, transparent 60%);
+    border-radius:6px; pointer-events:none;
+  }
+  .nav-cta:hover {
+    background: linear-gradient(135deg, #ddb94f 0%, #f5d87a 50%, #ddb94f 100%);
+    box-shadow: 0 4px 24px rgba(200,168,75,0.50), 0 0 0 1px rgba(255,216,107,0.35);
+    transform: translateY(-1px);
+    color: #060608;
+  }
+
+  /* ─── PLACEHOLDER ─── */
+  .ph {
+    background: linear-gradient(135deg, #141820 0%, #1a1f2a 50%, #141820 100%);
+    border: 1px solid rgba(255,216,107,0.08);
+    border-radius: 4px;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    gap:8px; color: rgba(255,255,255,0.5); user-select:none; position:relative; overflow:hidden;
+  }
+  .ph::before {
+    content:''; position:absolute; inset:0;
+    background: linear-gradient(120deg, transparent 30%, rgba(255,216,107,0.03) 50%, transparent 70%);
+  }
+  .ph-label {
+    font-size:10px; letter-spacing:.3em; text-transform:uppercase; color:rgba(255,216,107,0.3);
+  }
+  .ph-icon {
+    width:32px; height:32px; border:1px solid rgba(255,216,107,0.15);
+    border-radius:2px; display:flex; align-items:center; justify-content:center;
+  }
+  .ph-icon svg { opacity:.3; }
+
+  /* ─── SECTION WRAPPER ─── */
+  section { padding: 120px 0; }
+  .container { max-width:1280px; margin:0 auto; padding:0 48px; }
+
+  .section-eyebrow {
+    font-size:10px; letter-spacing:.4em; text-transform:uppercase;
+    color: var(--accent); margin-bottom:16px; display:block;
+    text-shadow: 0 0 20px rgba(255,216,107,0.4);
+  }
+  .section-title {
+    font-family:'Pretendard', 'Noto Sans KR', sans-serif, 'Noto Serif KR', sans-serif; font-weight:900;
+    font-size:clamp(32px,4vw,52px); line-height:1.2;
+    letter-spacing:-.01em; margin-bottom:20px;
+  }
+  .section-desc {
+    font-size:17px; color:rgba(255,255,255,0.88); line-height:2.0;
+    font-weight:300; max-width:580px;
+    word-break: keep-all; overflow-wrap: break-word;
+  }
+
+  /* ─── HERO ─── */
+  #hero {
+    min-height:100vh; display:flex; align-items:flex-end;
+    position:relative; overflow:hidden; padding:0;
+    background: #060608;
+  }
+  #hero .hero-fullbg {
+    position:absolute; inset:0; z-index:0;
+  }
+  #hero .hero-fullbg img {
+    width:100%; height:100%; object-fit:cover; object-position:center 30%;
+    display:block;
+  }
+  #hero .hero-fullbg::after {
+    content:'';
+    position:absolute; inset:0;
+    background:
+      linear-gradient(to top, rgba(6,6,8,0.95) 0%, rgba(6,6,8,0.55) 35%, rgba(6,6,8,0.15) 60%, transparent 100%),
+      linear-gradient(to right, rgba(6,6,8,0.7) 0%, rgba(6,6,8,0.2) 50%, transparent 100%);
+  }
+  .hero-bg-lines {
+    position:absolute; inset:0; pointer-events:none; overflow:hidden;
+  }
+  .hero-bg-lines::before {
+    content:''; position:absolute; left:0; top:0; right:0; bottom:0;
+    background-image:
+      linear-gradient(rgba(255,216,107,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,216,107,0.03) 1px, transparent 1px);
+    background-size: 80px 80px;
+  }
+  .hero-orb { display:none; }
+  .hero-content {
+    position:relative; z-index:2;
+    display:flex; flex-direction:column; justify-content:flex-end;
+    width:100%; max-width:900px; padding:0 64px 100px;
+  }
+  .hero-text {}
+
+  .hero-title {
+    font-family:'Pretendard', 'Noto Sans KR', sans-serif, 'Noto Serif KR', sans-serif; font-weight:900;
+    font-size:clamp(52px,7vw,96px); line-height:1.05;
+    letter-spacing:-.02em; margin-bottom:32px;
+    text-shadow: 0 4px 40px rgba(0,0,0,0.6);
+  }
+  .hero-title em { font-style:normal; color:rgba(255,255,255,0.7); display:block; font-size:.55em; letter-spacing:.1em; font-weight:100; margin-bottom:8px; }
+  .hero-copy { font-size:18px; color:rgba(255,255,255,0.92); line-height:2.0; margin-bottom:0px; font-weight:300; text-shadow:0 2px 16px rgba(0,0,0,.5); word-break:keep-all; }
+  .btn-primary {
+    padding:15px 34px; background:var(--white); color:var(--black);
+    font-size:13px; letter-spacing:.12em; text-transform:uppercase;
+    border:none; cursor:pointer; font-family:'Pretendard', 'Noto Sans KR', sans-serif,'Noto Sans KR',sans-serif;
+    font-weight:400; transition:all .3s;
+  }
+  .btn-primary:hover { background:var(--accent); }
+  .btn-kakao {
+    padding:15px 30px; background:#FEE500; color:#000;
+    font-size:13px; letter-spacing:.1em; text-transform:uppercase;
+    border:none; cursor:pointer; font-family:'Pretendard', 'Noto Sans KR', sans-serif,'Noto Sans KR',sans-serif;
+    font-weight:400; display:flex; align-items:center; gap:8px; transition:all .3s;
+  }
+  .btn-kakao:hover { opacity:.85; }
+  .btn-outline {
+    padding:15px 30px; background:transparent; color:var(--white);
+    font-size:13px; letter-spacing:.12em; text-transform:uppercase;
+    border:1px solid rgba(255,255,255,0.2); cursor:pointer;
+    font-family:'Pretendard', 'Noto Sans KR', sans-serif,'Noto Sans KR',sans-serif; font-weight:300; transition:all .3s;
+  }
+  .btn-outline:hover { border-color:var(--white); }
+  .hero-img { width:100%; aspect-ratio:4/3; }
+  .hero-scroll {
+    position:absolute; bottom:40px; left:50%; transform:translateX(-50%);
+    display:flex; flex-direction:column; align-items:center; gap:10px;
+    color:rgba(255,255,255,0.7); font-size:9px; letter-spacing:.3em; text-transform:uppercase;
+    animation: float 2s ease-in-out infinite;
+  }
+  .hero-scroll-line { width:1px; height:40px; background:linear-gradient(to bottom, rgba(255,255,255,0.5), transparent); }
+  @keyframes float { 0%,100%{transform:translateX(-50%) translateY(0);} 50%{transform:translateX(-50%) translateY(8px);} }
+
+  /* ─── FACELIFT HIGHLIGHTS ─── */
+  #facelift { background: var(--navy); }
+  .facelift-images {
+    display:grid; grid-template-columns:1fr 1fr; gap:2px;
+    margin:56px 0 64px;
+  }
+  .facelift-img { position:relative; aspect-ratio:16/10; overflow:hidden; }
+  .facelift-img.clickable { cursor:zoom-in; }
+  .facelift-img.clickable img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .6s cubic-bezier(.25,.46,.45,.94); }
+  .facelift-img.clickable:hover img { transform:scale(1.04); }
+  .facelift-img .zoom-hint { position:absolute; bottom:52px; right:16px; background:rgba(0,0,0,.55); border:1px solid rgba(255,255,255,.15); border-radius:20px; padding:5px 12px; font-size:10px; letter-spacing:.15em; color:rgba(255,255,255,.88); opacity:0; transition:opacity .3s; pointer-events:none; }
+  .facelift-img.clickable:hover .zoom-hint { opacity:1; }
+  .facelift-img-cap {
+    position:absolute; bottom:0; left:0; right:0;
+    padding:20px 24px;
+    background:linear-gradient(to top, rgba(0,0,0,.85) 0%, transparent 100%);
+    font-size:13px; color:rgba(255,255,255,.88); letter-spacing:.04em; word-break:keep-all;
+  }
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    background: transparent;
+  }
+  .feat-card {
+    background: linear-gradient(135deg, #0d1520 0%, #111827 55%, #0a1018 100%);
+    border: 1px solid rgba(160, 185, 255, 0.10);
+    border-radius: 20px;
+    padding: 36px 28px;
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: center;
+    text-align: center; gap: 10px;
+    transition: all .4s cubic-bezier(.25,.46,.45,.94);
+    position: relative; overflow: hidden; cursor: default;
+    min-height: 180px;
+    box-sizing: border-box;
+  }
+  .feat-card::before {
+    content: ''; position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(135deg, rgba(100,140,255,0.04) 0%, transparent 60%);
+    border-radius: 20px;
+  }
+  .feat-card::after {
+    content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+    width: 60%; height: 1px;
+    background: linear-gradient(to right, transparent, rgba(255,216,107,0.35), transparent);
+    opacity: 0; transition: opacity .4s;
+  }
+  .feat-card:hover {
+    background: linear-gradient(135deg, #111d2e 0%, #16202f 55%, #0d1520 100%);
+    border-color: rgba(255,216,107,0.22);
+    transform: translateY(-3px);
+    box-shadow: 0 14px 44px rgba(0,0,0,0.38), 0 0 0 1px rgba(255,216,107,0.06);
+  }
+  .feat-card:hover::after { opacity: 1; }
+  .feat-icon { display: none; }
+  .feat-icon svg { color: var(--accent); }
+  .feat-name {
+    font-size: 19px; font-weight: 700; letter-spacing: .01em;
+    line-height: 1.45; word-break: keep-all; white-space: normal;
+    width: 100%; overflow: hidden;
+    color: var(--white);
+  }
+  .feat-sub {
+    font-size: 15px; color: rgba(255,255,255,0.88);
+    line-height: 1.7; word-break: keep-all; white-space: normal;
+    width: 100%; margin-top: 4px; overflow: hidden;
+  }
+
+  /* ─── EXTERIOR ─── */
+  #exterior { background:var(--black); }
+  .exterior-grid {
+    display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:56px;
+  }
+  .ext-card {
+    background:var(--card); border:1px solid var(--card-border); border-radius:8px;
+    overflow:hidden; transition:all .4s;
+  }
+  .ext-card:hover { border-color:rgba(255,216,107,0.2); transform:translateY(-4px); box-shadow:0 20px 60px rgba(0,0,0,.5); }
+  .ext-card-header {
+    padding:18px 24px; border-bottom:1px solid var(--card-border);
+    font-size:14px; letter-spacing:.15em; text-transform:uppercase; font-weight:400;
+  }
+  .ext-images { display:flex; flex-direction:column; gap:2px; padding:2px; }
+  .ext-ph { aspect-ratio:16/10; box-sizing:border-box; }
+
+  /* ─── INTERIOR ─── */
+  #interior { background:var(--navy); }
+  .interior-grid {
+    display:grid; grid-template-columns:repeat(4,1fr); gap:20px; margin-top:56px;
+  }
+  .interior-grid .wide { grid-column:span 1; }
+  .int-card {
+    background:var(--card); border:1px solid var(--card-border); border-radius:8px;
+    overflow:hidden; transition:all .4s; cursor:default;
+    position: relative;
+  }
+  .int-card:hover { border-color:rgba(255,216,107,0.25); transform:translateY(-4px); box-shadow:0 24px 60px rgba(0,0,0,.5); }
+  .int-ph { aspect-ratio:4/3; }
+  .int-info { padding:20px; }
+  .int-name { font-size:15px; font-weight:400; margin-bottom:8px; letter-spacing:.03em; line-height:1.6; word-break:keep-all; }
+  .int-code { font-size:12px; color:rgba(255,255,255,0.88); letter-spacing:.12em; }
+  .int-card-last { grid-column:1; }
+
+  /* ─── LINEUP ─── */
+  #lineup { background:var(--black); }
+  .lineup-group { margin-top:72px; }
+  .lineup-group-title {
+    font-family:'Pretendard', 'Noto Sans KR', sans-serif, 'Noto Serif KR', sans-serif; font-size:22px; font-weight:900;
+    letter-spacing:.05em; margin-bottom:8px;
+  }
+  .lineup-group-sub { font-size:11px; color:var(--accent); letter-spacing:.15em; margin-bottom:4px; text-shadow:0 0 16px rgba(255,216,107,0.35); }
+  .lineup-divider { height:1px; background:rgba(255,255,255,0.07); margin:16px 0 32px; }
+  .lineup-cards {
+    display:grid; grid-template-columns:repeat(3,1fr); gap:20px;
+  }
+  .lineup-card {
+    background:var(--card); border:1px solid var(--card-border); border-radius:10px;
+    overflow:hidden; transition:all .4s;
+  }
+  .lineup-card:hover { border-color:rgba(255,216,107,0.2); transform:translateY(-4px); box-shadow:0 24px 60px rgba(0,0,0,.6); }
+  .lineup-img { aspect-ratio:16/10; }
+  .lineup-info { padding:24px; }
+  .lineup-code { font-size:11px; letter-spacing:.18em; color:rgba(255,255,255,0.88); margin-bottom:8px; }
+  .lineup-model { font-size:19px; font-weight:400; letter-spacing:.02em; margin-bottom:16px; line-height:1.4; word-break:keep-all; }
+  .lineup-specs {
+    display:grid; grid-template-columns:1fr 1fr; gap:1px;
+    background:rgba(255,255,255,0.05); margin-bottom:16px;
+  }
+  .lineup-spec {
+    background:var(--card); padding:11px 12px;
+    display:flex; justify-content:space-between; align-items:center;
+  }
+  .lineup-spec-key { font-size:12px; color:rgba(255,255,255,0.88); }
+  .lineup-spec-val { font-size:12px; font-weight:500; text-align:right; word-break:keep-all; }
+  .lineup-tags { display:flex; flex-wrap:wrap; gap:8px; }
+  .tag {
+    font-size:12px; padding:6px 14px; border:1px solid rgba(255,255,255,0.1);
+    border-radius:20px; color:rgba(255,255,255,0.88); letter-spacing:.04em;
+    transition:all .3s; word-break:keep-all;
+  }
+  .tag:hover { border-color:var(--accent-dim); color:var(--accent); }
+
+  /* ─── LAUNCH EDITION ─── */
+  #launch { background:var(--navy); }
+  .launch-card {
+    border:1px solid rgba(255,216,107,0.15); border-radius:12px;
+    overflow:hidden; margin-top:56px;
+  }
+  .launch-badge {
+    display:inline-block; font-size:11px; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--accent); border:1px solid var(--accent-dim);
+    padding:5px 14px; margin:28px 28px 0;
+  }
+  .launch-model-title {
+    font-family:'Pretendard', 'Noto Sans KR', sans-serif, 'Noto Serif KR', sans-serif; font-size:22px; font-weight:900;
+    padding:12px 28px 4px; letter-spacing:.03em; word-break:keep-all; line-height:1.4;
+  }
+  .launch-limited { font-size:13px; color:var(--accent); padding:0 28px 24px; letter-spacing:.1em; text-shadow:0 0 16px rgba(255,216,107,0.35); }
+  .launch-body { display:grid; grid-template-columns:55% 45%; min-height:420px; }
+  /* .launch-main-img 스타일은 아래 LAUNCH IMAGE CLICKABLE 섹션에서 정의 */
+  .launch-spec-panel {
+    padding:40px; display:flex; flex-direction:column; gap:24px;
+    background:rgba(0,0,0,.2);
+  }
+  .spec-group-title { font-size:10px; letter-spacing:.3em; text-transform:uppercase; color:var(--accent); }
+  .spec-row {
+    display:flex; justify-content:space-between; align-items:baseline;
+    padding:11px 0; border-bottom:1px solid rgba(255,255,255,0.06);
+    font-size:14px; word-break:keep-all;
+  }
+  .spec-key { color:rgba(255,255,255,0.88); }
+  .spec-val { font-weight:400; text-align:right; max-width:60%; }
+  .pkg-box {
+    background:rgba(255,216,107,0.07); border:1px solid rgba(255,216,107,0.2);
+    padding:16px 20px; display:flex; justify-content:space-between; align-items:center;
+  }
+  .pkg-name { font-size:14px; font-weight:400; word-break:keep-all; }
+  .pkg-price { font-size:16px; color:var(--accent); font-weight:400; white-space:nowrap; }
+  .excl-opts { list-style:none; }
+  .excl-opts li {
+    font-size:14px; padding:9px 0; color:rgba(255,255,255,0.92);
+    border-bottom:1px solid rgba(255,255,255,0.04); display:flex; align-items:center; gap:10px;
+    word-break:keep-all; line-height:1.6;
+  }
+  .excl-opts li::before { content:''; width:4px; height:1px; background:var(--accent-dim); flex-shrink:0; }
+  .launch-thumbs { display:grid; grid-template-columns:repeat(4,1fr); gap:2px; }
+  /* .launch-thumb 스타일은 아래 img-zoom-wrap 섹션에서 정의 */
+
+  /* ─── LAUNCH IMAGE CLICKABLE ─── */
+  .launch-img-clickable {
+    position:relative; overflow:hidden; cursor:zoom-in;
+    background:#0a0e14;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .launch-img-clickable img { width:100%; height:100%; object-fit:contain; display:block; padding:12px; box-sizing:border-box; transition:transform .6s cubic-bezier(.25,.46,.45,.94); }
+  .launch-img-clickable:hover img { transform:scale(1.04); }
+  .launch-img-zoom-hint {
+    position:absolute; bottom:12px; right:12px;
+    background:rgba(0,0,0,.55); border:1px solid rgba(255,255,255,.18);
+    border-radius:20px; padding:5px 12px;
+    font-size:10px; letter-spacing:.12em; color:rgba(255,255,255,.65);
+    opacity:0; transition:opacity .3s; pointer-events:none;
+  }
+  .launch-img-clickable:hover .launch-img-zoom-hint { opacity:1; }
+  .launch-main-img.launch-img-clickable { min-height:420px; }
+
+  /* ─── PRE-ORDER ─── */
+  #preorder { background:var(--black); }
+  .preorder-banner {
+    border:1px solid rgba(255,216,107,0.2); border-radius:8px;
+    padding:48px; text-align:center; margin:48px 0; position:relative; overflow:hidden;
+    background:linear-gradient(135deg,#0d1117 0%,#131820 100%);
+  }
+  .preorder-banner::before {
+    content:'PRE-ORDER'; position:absolute; top:16px; right:16px;
+    font-size:9px; letter-spacing:.3em; color:var(--accent);
+    border:1px solid var(--accent-dim); padding:5px 12px;
+  }
+  .preorder-eyebrow { font-size:11px; letter-spacing:.3em; color:var(--accent); margin-bottom:16px; }
+  .preorder-main { font-family:'Pretendard', 'Noto Sans KR', sans-serif, 'Noto Serif KR', sans-serif; font-size:clamp(24px,3vw,36px); font-weight:900; margin-bottom:12px; }
+  .preorder-sub { font-size:16px; color:rgba(255,255,255,0.88); word-break:keep-all; line-height:1.8; }
+  .preorder-grid { display:grid; grid-template-columns:1fr 2fr; gap:20px; margin-bottom:20px; }
+  .deposit-card {
+    background:var(--card); border:1px solid var(--card-border); border-radius:8px;
+    padding:40px 32px; text-align:center;
+  }
+  .deposit-label { font-size:9px; letter-spacing:.3em; color:var(--accent); margin-bottom:20px; display:block; }
+  .deposit-amount { font-family:'Pretendard', 'Noto Sans KR', sans-serif, 'Noto Serif KR', sans-serif; font-size:52px; font-weight:200; margin-bottom:4px; }
+  .deposit-unit { font-size:18px; color:rgba(255,255,255,0.88); }
+  .deposit-desc { font-size:14px; color:rgba(255,255,255,0.88); margin-top:16px; line-height:1.8; word-break:keep-all; }
+  .promo-table { background:var(--card); border:1px solid var(--card-border); border-radius:8px; overflow:hidden; }
+  .promo-table table { width:100%; border-collapse:collapse; }
+  .promo-table th {
+    font-size:11px; font-weight:400; letter-spacing:.08em; padding:16px;
+    background:rgba(255,216,107,0.08); border-bottom:1px solid rgba(255,255,255,0.06);
+    text-align:center;
+  }
+  .promo-table th.highlight { background:rgba(255,216,107,0.12); color:var(--accent); }
+  .promo-table td { font-size:11px; padding:14px 16px; text-align:center; border-bottom:1px solid rgba(255,255,255,0.04); color:rgba(255,255,255,0.88); }
+  .promo-table td.highlight { color:var(--white); font-weight:400; }
+  .cta-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  .cta-card {
+    border:1px solid var(--card-border); border-radius:8px; padding:36px 28px;
+    text-align:center; cursor:pointer; transition:all .4s; background:var(--card);
+  }
+  .cta-card:hover { border-color:rgba(255,216,107,0.3); transform:translateY(-4px); }
+  .cta-card.kakao { background:#FEE500; border-color:#FEE500; }
+  .cta-card.kakao:hover { background:#f0d800; }
+  .cta-card.kakao .cta-label, .cta-card.kakao .cta-sub { color:#000; }
+  .cta-icon { font-size:28px; margin-bottom:16px; }
+  .cta-badge { font-size:10px; letter-spacing:.25em; text-transform:uppercase; color:rgba(255,255,255,0.88); margin-bottom:8px; }
+  .cta-card.kakao .cta-badge { color:rgba(0,0,0,.5); }
+  .cta-label { font-size:16px; font-weight:400; margin-bottom:6px; }
+  .cta-sub { font-size:13px; color:rgba(255,255,255,0.88); line-height:1.7; word-break:keep-all; }
+
+  /* ─── CONSULTANT ─── */
+  #consultant {
+    background:linear-gradient(135deg,var(--navy) 0%, var(--black) 100%);
+    position:relative; overflow:hidden;
+  }
+  #consultant::before {
+    content:''; position:absolute; top:-1px; left:0; right:0; height:1px;
+    background:linear-gradient(to right, transparent, rgba(255,216,107,0.3), transparent);
+  }
+  .consultant-grid { display:grid; grid-template-columns:1fr 2fr; gap:80px; align-items:start; margin-top:64px; }
+  .consultant-profile { display:flex; flex-direction:column; gap:20px; }
+  .profile-ph { aspect-ratio:3/4; border-radius:4px; }
+  .profile-name { font-family:'Pretendard', 'Noto Sans KR', sans-serif, 'Noto Serif KR', sans-serif; font-size:24px; font-weight:900; margin-bottom:6px; }
+  .profile-title { font-size:13px; color:rgba(255,255,255,0.88); letter-spacing:.08em; margin-bottom:16px; }
+  .profile-cert {
+    display:inline-block; font-size:11px; letter-spacing:.15em; color:var(--accent);
+    border:1px solid var(--accent-dim); padding:5px 14px;
+  }
+  .consultant-info { display:flex; flex-direction:column; gap:48px; }
+  .info-block-title {
+    font-size:10px; letter-spacing:.3em; text-transform:uppercase; color:var(--accent); margin-bottom:16px;
+  }
+  .info-block-text { font-size:17px; color:rgba(255,255,255,0.92); line-height:2.0; word-break:keep-all; }
+  .info-features { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
+  .info-feat {
+    background:var(--card); border:1px solid var(--card-border); border-radius:6px;
+    padding:22px; transition:all .3s;
+  }
+  .info-feat:hover { border-color:rgba(255,216,107,0.2); }
+  .info-feat-title { font-size:14px; font-weight:500; margin-bottom:10px; word-break:keep-all; }
+  .info-feat-desc { font-size:13px; color:rgba(255,255,255,0.88); line-height:1.8; word-break:keep-all; }
+  .consultant-btns { display:flex; flex-wrap:wrap; gap:12px; margin-top:8px; }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background:var(--black); border-top:1px solid rgba(255,255,255,0.05);
+    padding:48px 0 32px;
+  }
+  .footer-inner {
+    max-width:1280px; margin:0 auto; padding:0 48px;
+    display:flex; justify-content:space-between; align-items:center;
+  }
+  .footer-logo { font-family:'Pretendard', 'Noto Sans KR', sans-serif, 'Noto Serif KR', sans-serif; font-weight:200; font-size:14px; letter-spacing:.3em; }
+  .footer-copy { font-size:13px; color:rgba(255,255,255,0.88); letter-spacing:.06em; }
+  .footer-legal { font-size:12px; color:rgba(255,255,255,0.4); max-width:1280px; margin:24px auto 0; padding:0 48px; line-height:1.9; word-break:keep-all; }
+
+  /* ─── FLOAT KAKAO ─── */
+  .float-kakao {
+    position:fixed; bottom:36px; right:36px; z-index:999;
+    width:56px; height:56px; border-radius:50%; background:#FEE500;
+    display:flex; align-items:center; justify-content:center;
+    cursor:pointer; box-shadow:0 8px 24px rgba(0,0,0,.4);
+    transition:all .3s; font-size:22px;
+  }
+  .float-kakao:hover { transform:scale(1.1) translateY(-2px); box-shadow:0 12px 32px rgba(0,0,0,.5); }
+
+  /* ─── ANIMATIONS ─── */
+  .fade-in { opacity:0; transform:translateY(24px); transition:opacity .8s ease, transform .8s ease; }
+  .fade-in.visible { opacity:1; transform:translateY(0); }
+  .fade-in-delay-1 { transition-delay:.1s; }
+  .fade-in-delay-2 { transition-delay:.2s; }
+  .fade-in-delay-3 { transition-delay:.3s; }
+
+  /* ─── LEATHER SLIDER ─── */
+  .int-card-leather { overflow:hidden; }
+  .int-slider {
+    position:relative; overflow:hidden;
+    aspect-ratio:16/10; background:#111;
+  }
+  .int-slider-track {
+    display:flex; height:100%;
+    transition:transform .45s cubic-bezier(.25,.46,.45,.94);
+    will-change:transform;
+  }
+  .int-slide {
+    min-width:100%; height:100%; position:relative;
+    cursor:zoom-in; overflow:hidden; flex-shrink:0;
+    pointer-events: all;
+  }
+  .int-slide img {
+    width:100%; height:100%; object-fit:cover;
+    display:block;
+    transition:transform .5s cubic-bezier(.25,.46,.45,.94);
+    pointer-events: none;
+  }
+  .int-slide:hover img { transform:scale(1.04); }
+  .int-slide-label {
+    position:absolute; bottom:10px; left:14px;
+    font-size:10px; letter-spacing:.15em; color:rgba(255,255,255,.7);
+    background:rgba(0,0,0,.45); border:1px solid rgba(255,255,255,.15);
+    border-radius:20px; padding:4px 10px; pointer-events:none;
+  }
+  .int-slide .zoom-hint {
+    position:absolute; bottom:10px; right:14px;
+    background:rgba(0,0,0,.45); border:1px solid rgba(255,255,255,.15);
+    border-radius:20px; padding:4px 10px;
+    font-size:10px; letter-spacing:.12em; color:rgba(255,255,255,.88);
+    opacity:0; transition:opacity .3s; pointer-events:none;
+  }
+  .int-slide:hover .zoom-hint { opacity:1; }
+  .slider-btn {
+    position:absolute; top:50%; transform:translateY(-50%);
+    width:36px; height:36px; border-radius:50%;
+    background:rgba(0,0,0,.5); border:1px solid rgba(255,255,255,.18);
+    color:#fff; font-size:20px; cursor:pointer; z-index:10;
+    display:flex; align-items:center; justify-content:center;
+    transition:all .25s; line-height:1;
+  }
+  .slider-btn:hover { background:rgba(200,170,114,.35); border-color:var(--accent-dim); }
+  .slider-prev { left:10px; }
+  .slider-next { right:10px; }
+  .slider-dots {
+    position:absolute; bottom:10px; left:50%; transform:translateX(-50%);
+    display:flex; gap:6px; z-index:10;
+  }
+  .slider-dot {
+    width:6px; height:6px; border-radius:50%;
+    background:rgba(255,255,255,.3); cursor:pointer;
+    transition:all .3s; border:1px solid rgba(255,255,255,.2);
+  }
+  .slider-dot.active {
+    background:var(--accent); border-color:var(--accent); transform:scale(1.2);
+  }
+
+  /* ─── LEATHER LIGHTBOX (레거시 CSS - 삭제됨, 공통 lightbox-overlay 사용) ─── */
+  .lb-leather-wrap {
+    position:relative; width:92vw; max-width:1300px;
+    display:flex; align-items:center; gap:0;
+  }
+  .lb-leather-track-outer { overflow:hidden; flex:1; border-radius:4px; }
+  .lb-leather-track {
+    display:flex;
+    transition:transform .4s cubic-bezier(.25,.46,.45,.94);
+  }
+  .lb-leather-slide {
+    min-width:100%; position:relative;
+  }
+  .lb-leather-slide img {
+    width:100%; height:auto; max-height:88vh; object-fit:contain;
+    display:block; border-radius:4px;
+    box-shadow:0 40px 120px rgba(0,0,0,.8);
+    animation:lbScaleIn .3s cubic-bezier(.25,.46,.45,.94);
+  }
+  .lb-leather-caption {
+    position:absolute; bottom:-28px; left:50%; transform:translateX(-50%);
+    font-size:12px; letter-spacing:.15em; color:rgba(255,255,255,.4);
+    white-space:nowrap;
+  }
+  .lb-nav-btn {
+    width:52px; height:52px; border-radius:50%;
+    background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.15);
+    color:#fff; font-size:26px; cursor:pointer;
+    display:flex; align-items:center; justify-content:center;
+    flex-shrink:0; transition:all .2s; margin:0 12px;
+  }
+  .lb-nav-btn:hover { background:rgba(200,170,114,.25); border-color:var(--accent-dim); }
+  .lb-close-btn {
+    position:fixed; top:28px; right:36px;
+    width:44px; height:44px; border-radius:50%;
+    background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.15);
+    color:#fff; font-size:20px; cursor:pointer;
+    display:flex; align-items:center; justify-content:center;
+    transition:all .2s; z-index:2147483647;
+  }
+  .lb-close-btn:hover { background:rgba(255,255,255,.18); transform:scale(1.1); }
+  .lb-dots {
+    position:fixed; bottom:32px; left:50%; transform:translateX(-50%);
+    display:flex; gap:8px; z-index:2147483647;
+  }
+  .lb-dot {
+    width:8px; height:8px; border-radius:50%;
+    background:rgba(255,255,255,.25); cursor:pointer; border:1px solid rgba(255,255,255,.2);
+    transition:all .3s;
+  }
+  .lb-dot.active { background:var(--accent); border-color:var(--accent); }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width:1024px) {
+    .hero-content { grid-template-columns:1fr; gap:40px; }
+    .hero-img { max-width:500px; }
+    .features-grid { grid-template-columns:repeat(2,1fr); gap:16px; }
+    .interior-grid { grid-template-columns:repeat(2,1fr); }
+    .lineup-cards { grid-template-columns:repeat(2,1fr); }
+    .preorder-grid { grid-template-columns:1fr; }
+    .consultant-grid { grid-template-columns:1fr; }
+    .cta-cards { grid-template-columns:1fr; }
+  }
+  @media (max-width:768px) {
+    nav { padding:0 20px; height:60px; }
+    .nav-logo { font-size:14px; letter-spacing:.2em; }
+    .nav-cta { font-size:13px; padding:9px 16px; min-height:38px; }
+    .nav-links { display:none; }
+    .container { padding:0 24px; }
+    section { padding:72px 0; }
+    .exterior-grid { grid-template-columns:1fr; }
+    .interior-grid {
+      grid-template-columns: 1fr !important;
+      gap: 24px !important;
+    }
+    .int-card,
+    .int-card-leather {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+    .int-slider {
+      aspect-ratio: 16/9 !important;
+    }
+    .int-slide img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+    }
+    .lineup-cards { grid-template-columns:1fr; }
+    .launch-body { grid-template-columns:1fr; }
+    .launch-thumbs { grid-template-columns:repeat(2,1fr); }
+    .info-features { grid-template-columns:1fr; }
+    .footer-inner { flex-direction:column; gap:16px; text-align:center; }
+    .facelift-images { grid-template-columns:1fr; }
+    .features-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    /* 모바일 글자 크기 최적화 */
+    .section-desc { font-size:16px; line-height:1.95; }
+    .hero-copy { font-size:16px; }
+    .info-block-text { font-size:16px; }
+    .feat-sub { font-size:14px; }
+    .feat-name { font-size:17px; }
+    .spec-row { font-size:13px; }
+    .pkg-name { font-size:13px; }
+    .excl-opts li { font-size:13px; }
+    .cta-sub { font-size:13px; }
+    .lineup-spec-key, .lineup-spec-val { font-size:12px; }
+    .lineup-model { font-size:17px; }
+    .int-name { font-size:14px; }
+    /* 모바일 여백 최적화 */
+    .lineup-info { padding:20px 16px; }
+    .launch-spec-panel { padding:28px 20px; }
+    .consultant-grid { gap:40px; }
+    .footer-legal { padding:0 24px; }
+    /* word-break 최적화 */
+    p, li, .section-desc, .info-block-text, .excl-opts li,
+    .feat-sub, .lineup-model, .tag, .cta-sub, .spec-row,
+    .launch-model-title, .preorder-sub {
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+  }
+
+  /* ─── LIGHTBOX ─── */
+  .lightbox-overlay {
+    display: none;
+    position: fixed; inset: 0; z-index: 2147483647;
+    background: rgba(0,0,0,0.96);
+    flex-direction: column;
+    align-items: center; justify-content: center;
+    cursor: zoom-out;
+    padding: 60px 16px 70px;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+  .lightbox-overlay.lb-visible { display: flex; }
+  .lightbox-overlay.active { opacity: 1; }
+  @keyframes lbFadeIn { from{opacity:0} to{opacity:1} }
+  @keyframes lbScaleIn { from{transform:scale(.92);opacity:0} to{transform:scale(1);opacity:1} }
+
+  .lightbox-img-wrap {
+    position: relative;
+    display: flex; align-items: center; justify-content: center;
+    max-width: 92vw; max-height: 78vh;
+    cursor: default;
+  }
+  .lightbox-overlay img {
+    width: auto !important;
+    height: auto !important;
+    max-width: 92vw !important;
+    max-height: 78vh !important;
+    object-fit: contain !important;
+    border-radius: 4px;
+    box-shadow: 0 40px 120px rgba(0,0,0,.8);
+    animation: lbScaleIn .3s cubic-bezier(.25,.46,.45,.94);
+    cursor: default;
+    display: block !important;
+    margin: auto !important;
+  }
+  .lightbox-close {
+    position: fixed; top: 20px; right: 24px;
+    width: 44px; height: 44px; border-radius: 50%;
+    background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18);
+    color: #fff; font-size: 20px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: all .2s; z-index: 10;
+  }
+  .lightbox-close:hover { background: rgba(255,255,255,0.18); transform: scale(1.1); }
+  .lightbox-caption {
+    position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%);
+    font-size: 13px; letter-spacing: .15em; color: rgba(255,255,255,.55);
+    text-transform: uppercase; white-space: nowrap; z-index: 10;
+    pointer-events: none;
+  }
+
+  /* Gallery nav buttons */
+  .lightbox-gallery-prev,
+  .lightbox-gallery-next {
+    position: fixed; top: 50%; transform: translateY(-50%);
+    width: 52px; height: 52px; border-radius: 50%;
+    background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18);
+    color: #fff; font-size: 28px; cursor: pointer;
+    display: none; align-items: center; justify-content: center;
+    transition: all .2s; z-index: 10; line-height: 1;
+  }
+  .lightbox-gallery-prev { left: 20px; }
+  .lightbox-gallery-next { right: 20px; }
+  .lightbox-gallery-prev:hover,
+  .lightbox-gallery-next:hover { background: rgba(200,170,114,.28); border-color: var(--accent-dim); }
+
+  /* Gallery dots */
+  .lightbox-gallery-dots {
+    position: fixed; bottom: 48px; left: 50%; transform: translateX(-50%);
+    display: flex; gap: 8px; z-index: 10;
+  }
+  .lb-gallery-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: rgba(255,255,255,.25); cursor: pointer;
+    border: 1px solid rgba(255,255,255,.2); transition: all .3s;
+  }
+  .lb-gallery-dot.active { background: var(--accent); border-color: var(--accent); transform: scale(1.2); }
+
+  /* show nav when in gallery mode */
+  .lightbox-overlay.gallery-mode .lightbox-gallery-prev,
+  .lightbox-overlay.gallery-mode .lightbox-gallery-next { display: flex; }
+
+  /* Mobile lightbox override — must win over all general img rules */
+  @media (max-width: 768px) {
+    .lightbox-overlay img {
+      width: auto !important;
+      height: auto !important;
+      max-width: 92vw !important;
+      max-height: 78vh !important;
+      object-fit: contain !important;
+      display: block !important;
+    }
+    .lightbox-gallery-prev { left: 8px; width: 40px; height: 40px; font-size: 22px; }
+    .lightbox-gallery-next { right: 8px; width: 40px; height: 40px; font-size: 22px; }
+  }
+
+  /* ─── EXTERIOR REAL IMAGE ─── */
+  .ext-real-img-wrap {
+    position:relative; overflow:hidden; cursor:zoom-in;
+    border-radius:4px;
+  }
+  .ext-real-img-wrap img {
+    width:100%; display:block;
+    transition:transform .6s cubic-bezier(.25,.46,.45,.94);
+  }
+  .ext-real-img-wrap:hover img { transform:scale(1.03); }
+  .ext-real-img-wrap .zoom-hint {
+    position:absolute; bottom:14px; right:14px;
+    background:rgba(0,0,0,.55); border:1px solid rgba(255,255,255,.15);
+    border-radius:20px; padding:5px 12px;
+    font-size:10px; letter-spacing:.15em; color:rgba(255,255,255,.88);
+    opacity:0; transition:opacity .3s; pointer-events:none;
+  }
+  .ext-real-img-wrap:hover .zoom-hint { opacity:1; }
+
+  /* ─── FEAT CARD WITH IMAGE (removed — text-only design) ─── */
+
+
+  /* ─── VIDEO LIGHTBOX ─── */
+  #lightbox.video-mode .lightbox-img-wrap { display:none; }
+  .lightbox-video-wrap {
+    display:none; position:relative;
+    max-width:92vw; max-height:88vh;
+  }
+  #lightbox.video-mode .lightbox-video-wrap { display:flex; align-items:center; justify-content:center; }
+  .lightbox-video-wrap video {
+    max-width:92vw; max-height:85vh;
+    border-radius:4px; outline:none;
+    box-shadow:0 40px 120px rgba(0,0,0,.8);
+    animation: lbScaleIn .3s cubic-bezier(.25,.46,.45,.94);
+  }
+
+  /* ─── EXT REAL IMAGE ─── */
+  .ext-ph.real-img {
+    background: #f0f0f0;
+    position: relative; overflow: hidden; cursor: zoom-in;
+  }
+  .ext-ph.real-img img {
+    width: 100%; height: 100%;
+    object-fit: contain;
+    display: block;
+    transition: transform .5s cubic-bezier(.25,.46,.45,.94);
+    padding: 8px;
+    box-sizing: border-box;
+  }
+  .ext-ph.real-img:hover img { transform: scale(1.05); }
+  .ext-ph.real-img .zoom-hint {
+    position: absolute; bottom: 10px; right: 10px;
+    background: rgba(0,0,0,.45); border: 1px solid rgba(255,255,255,.2);
+    border-radius: 20px; padding: 4px 10px;
+    font-size: 10px; letter-spacing: .12em; color: rgba(255,255,255,.7);
+    opacity: 0; transition: opacity .3s; pointer-events: none;
+  }
+  .ext-ph.real-img:hover .zoom-hint { opacity: 1; }
+
+
+/* Image zoom */
+.img-zoom-wrap { overflow: hidden; cursor: pointer; position:relative; }
+
+.launch-img {
+  width: 100%; height: 100%;
+  object-fit: contain; display: block;
+  transition: transform 0.45s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+
+.img-zoom-wrap:hover .launch-img { transform: scale(1.04); }
+
+/* Launch thumb contain */
+.launch-thumb {
+  aspect-ratio:4/3;
+  background:#0a0e14;
+  overflow:hidden;
+  position:relative;
+  cursor:zoom-in;
+}
+.launch-thumb img {
+  width:100%; height:100%;
+  object-fit:contain;
+  display:block;
+  transition:transform .5s ease;
+  padding:4px;
+  box-sizing:border-box;
+}
+.launch-thumb:hover img { transform:scale(1.04); }
+.launch-thumb .launch-img-zoom-hint {
+  position:absolute; bottom:8px; right:8px;
+  background:rgba(0,0,0,.55); border:1px solid rgba(255,255,255,.18);
+  border-radius:20px; padding:4px 10px;
+  font-size:10px; letter-spacing:.12em; color:rgba(255,255,255,.65);
+  opacity:0; transition:opacity .3s; pointer-events:none;
+}
+.launch-thumb:hover .launch-img-zoom-hint { opacity:1; }
+
+/* Launch main img contain */
+.launch-main-img {
+  min-height:420px;
+  background:#0a0e14;
+  display:flex; align-items:center; justify-content:center;
+  overflow:hidden;
+  position:relative;
+}
+.launch-main-img img {
+  width:100%; height:100%;
+  object-fit:contain !important;
+  display:block;
+  padding:16px;
+  box-sizing:border-box;
+  transition:transform .6s cubic-bezier(.25,.46,.45,.94);
+}
+.launch-main-img:hover img { transform:scale(1.04); }
+.launch-main-img .launch-img-zoom-hint {
+  position:absolute; bottom:12px; right:12px;
+  background:rgba(0,0,0,.55); border:1px solid rgba(255,255,255,.18);
+  border-radius:20px; padding:5px 12px;
+  font-size:10px; letter-spacing:.12em; color:rgba(255,255,255,.65);
+  opacity:0; transition:opacity .3s; pointer-events:none;
+}
+.launch-main-img:hover .launch-img-zoom-hint { opacity:1; }
+
+
+@media (max-width: 768px) {
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .car-image img,
+  .vehicle-image img,
+  .model-image img,
+  .product-card img,
+  .launch-card img,
+  .card img {
+    width: 100%;
+    height: auto !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+    display: block;
+  }
+
+  /* lightbox 이미지는 위 규칙 제외 — 반드시 독립 적용 */
+  .lightbox-overlay img,
+  .lightbox-img-wrap img {
+    width: auto !important;
+    height: auto !important;
+    max-width: 92vw !important;
+    max-height: 78vh !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+  }
+
+  .car-image,
+  .vehicle-image,
+  .model-image,
+  .image-wrapper,
+  .product-card,
+  .launch-card,
+  .card {
+    overflow: hidden;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .car-image,
+  .vehicle-image,
+  .model-image,
+  .image-wrapper {
+    height: auto !important;
+    min-height: 0 !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .product-card,
+  .launch-card,
+  .card {
+    padding-bottom: 24px !important;
+  }
+
+  .car-image img,
+  .vehicle-image img,
+  .model-image img,
+  .product-card img,
+  .launch-card img,
+  .card img {
+    margin-bottom: 0 !important;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .specification,
+  .spec-section,
+  .specs,
+  .spec-list {
+    margin-top: 20px !important;
+    padding-top: 20px !important;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .launch-main-img {
+    min-height: 240px !important;
+    height: auto !important;
+  }
+
+  .launch-main-img img,
+  .launch-img-clickable img {
+    object-fit: contain !important;
+    padding: 8px !important;
+  }
+}
+
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
+
+  /* ─── LINEUP PRICE ─── */
+  .lineup-price {
+    margin: 12px 0 14px;
+    padding: 13px 0;
+    border-top: 1px solid rgba(255,216,107,0.15);
+    border-bottom: 1px solid rgba(255,216,107,0.08);
+  }
+  .lineup-price-label {
+    font-size: 9px; letter-spacing: .3em; text-transform: uppercase;
+    color: rgba(255,216,107,0.55); margin-bottom: 5px; display: block;
+  }
+  .lineup-price-amount {
+    font-size: 20px; font-weight: 300;
+    letter-spacing: .02em;
+    color: var(--accent);
+    font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+    white-space: nowrap;
+    text-shadow: 0 0 20px rgba(255,216,107,0.25);
+  }
+  .lineup-price-amount span {
+    font-size: 14px; color: rgba(255,216,107,0.7); margin-left: 2px;
+  }
+  @media (max-width:768px) {
+    .lineup-price-amount { font-size: 18px; }
+  }
+
+ /* PC에서는 기존 로고 한 줄 */
+.logo-mobile {
+  display: none;
+}
+
+/* 전화상담 버튼 흰색 */
+.nav-cta {
+  background: white !important;
+  color: black !important;
+  border: 1px solid rgba(255,255,255,0.35) !important;
+  box-shadow: none !important;
+}
+
+/* 금색 효과 제거 */
+.nav-cta::before {
+  display: none !important;
+}
+
+.nav-cta:hover {
+  background: #f2f2f2 !important;
+  color: black !important;
+  box-shadow: none !important;
+}
+
+/* 모바일에서만 로고 두 줄 */
+@media (max-width: 768px) {
+  .logo-pc {
+    display: none;
+  }
+
+  .logo-mobile {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+  }
+
+  .logo-mobile span:first-child {
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: .18em;
+    color: white;
+  }
+
+  .logo-mobile span:last-child {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .38em;
+    color: rgba(255,255,255,0.55);
+    margin-top: 2px;
+  }
+}   
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <div class="nav-logo">
+  <span class="logo-pc">Mercedes-Benz <span>S-Class</span></span>
+  <span class="logo-mobile">
+    <span>MERCEDES-BENZ</span>
+    <span>S-CLASS</span>
+  </span>
+</div>
+  <ul class="nav-links">
+    <li><a href="#facelift">하이라이트</a></li>
+    <li><a href="#exterior">외관</a></li>
+    <li><a href="#interior">내장</a></li>
+    <li><a href="#lineup">라인업</a></li>
+    <li><a href="#launch">런치 에디션</a></li>
+    <li><a href="#preorder">사전계약</a></li>
+  </ul>
+  <a href="tel:01072997404" class="nav-cta">📞 전화상담</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg-lines"></div>
+  <div class="hero-fullbg">
+    <img id="heroBgImg" src="https://github.com/JNOHJINGYU/images/blob/main/hero_bg.jpg?raw=true" alt="The New S-Class World Premiere">
+  </div>
+  <div class="hero-content">
+    <div class="hero-text fade-in">
+      
+      <h1 class="hero-title">
+        The new<br>S-Class
+      </h1>
+      <p class="hero-copy">새로운 S-Class.<br>성공의 기준은 다시 한번 진화합니다.<br>압도적인 존재감과 미래를 향한 기술이 하나로.</p>
+
+    </div>
+  </div><!-- /hero-content -->
+
+  <div class="hero-scroll">
+    <div class="hero-scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- SECTION 2: FACELIFT -->
+<section id="facelift">
+  <div class="container">
+    <span class="section-eyebrow fade-in">Facelift Highlights</span>
+    <h2 class="section-title fade-in">페이스리프트 주요<br>변경사항</h2>
+    <p class="section-desc fade-in">전 모델 기본 적용 사양이 대폭 강화되었습니다. 일루미네이티드 그릴, 디지털 라이트, 슈퍼 스크린 등 플래그십에 걸맞은 첨단 사양이 기본으로 제공됩니다.</p>
+
+    <div class="facelift-images fade-in">
+      <div class="facelift-img clickable" onclick="openLightbox(this.querySelector('img').src, 'Mercedes-Benz S-Class · 일루미네이티드 그릴 · 디지털 라이트 · 리어 액슬 스티어링')">
+        <img src="https://github.com/JNOHJINGYU/images/blob/main/facelift_1.jpg?raw=true" alt="S-Class Exterior">
+        <div class="zoom-hint">⊕ 전체화면</div>
+        <div class="facelift-img-cap">일루미네이티드 그릴 · 디지털 라이트 · 리어 액슬 스티어링</div>
+      </div>
+      <div class="facelift-img clickable" onclick="openLightbox(this.querySelector('img').src, 'Mercedes-Benz S-Class · 슈퍼 스크린 · 액티브 앰비언트 라이트 · 앞좌석 열선 벨트')">
+        <img src="https://github.com/JNOHJINGYU/images/blob/main/facelift_2.jpg?raw=true" alt="S-Class Interior">
+        <div class="zoom-hint">⊕ 전체화면</div>
+        <div class="facelift-img-cap">슈퍼 스크린 · 액티브 앰비언트 라이트 · 앞좌석 열선 벨트</div>
+      </div>
+    </div>
+
+    <div class="features-grid">
+      <!-- Row 1 -->
+      <div class="feat-card fade-in">
+        <div class="feat-name">일루미네이티드 그릴</div>
+        <div class="feat-sub">전 모델 기본</div>
+      </div>
+      <div class="feat-card fade-in fade-in-delay-1">
+        <div class="feat-name">디지털 라이트</div>
+        <div class="feat-sub">전 모델 기본</div>
+      </div>
+      <div class="feat-card fade-in fade-in-delay-2">
+        <div class="feat-name">슈퍼스크린</div>
+        <div class="feat-sub">전 모델 기본</div>
+      </div>
+      <div class="feat-card fade-in fade-in-delay-3" style="cursor:pointer;" onclick="openVideoLightbox('feature_video.mp4', 'MB 드라이브 어시스트 · Digital Extra')">
+        <div class="feat-name">MB 드라이브 어시스트</div>
+        <div class="feat-sub">Digital Extra · 클릭하여 영상 보기</div>
+      </div>
+      <!-- Row 2 -->
+      <div class="feat-card fade-in">
+        <div class="feat-name">어쿠스틱 글라스</div>
+        <div class="feat-sub">S500 이상 IR 라미네이티드</div>
+      </div>
+      <div class="feat-card fade-in fade-in-delay-1">
+        <div class="feat-name">리어 액슬 스티어링</div>
+        <div class="feat-sub">모델별 각도 상이</div>
+      </div>
+      <div class="feat-card fade-in fade-in-delay-2">
+        <div class="feat-name">액티브 앰비언트 라이트</div>
+        <div class="feat-sub">전 모델 기본</div>
+      </div>
+      <div class="feat-card fade-in fade-in-delay-3">
+        <div class="feat-name">공기청정 시스템</div>
+        <div class="feat-sub">전 모델 기본</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: EXTERIOR -->
+<section id="exterior">
+  <div class="container">
+    <span class="section-eyebrow fade-in">Exterior Design</span>
+    <h2 class="section-title fade-in">외관 디자인</h2>
+    <p class="section-desc fade-in">Standard, AMG Line, Maybach 세 가지 외관 디자인으로 제공됩니다.</p>
+
+    
+    <!-- Real Exterior Image Gallery -->
+    <div class="fade-in" style="margin-top:56px; margin-bottom:-32px;">
+      <span style="font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:20px;">Gallery</span>
+      <div style="display:grid; grid-template-columns:1fr; gap:4px; border-radius:8px; overflow:hidden; border:1px solid rgba(255,216,107,0.12);">
+        <div class="ext-real-img-wrap" onclick="openLightbox(this.querySelector('img').src, 'Mercedes-Benz S-Class · The Fontenay')">
+          <img src="https://github.com/JNOHJINGYU/images/blob/main/exterior_main.jpg?raw=true" alt="Mercedes-Benz S-Class Exterior">
+          <div class="zoom-hint">⊕ 전체화면</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="exterior-grid fade-in">
+      <div class="ext-card">
+        <div class="ext-card-header">Standard</div>
+        <div class="ext-images">
+          <div class="ph ext-ph real-img" onclick="openLightbox(this.querySelector('img').src,'S-Class Standard · 후면')">
+            <img src="https://github.com/JNOHJINGYU/images/blob/main/standard_side.png?raw=true" alt="Standard 후면">
+            <div class="zoom-hint">⊕ 전체화면</div>
+          </div>
+          <div class="ph ext-ph real-img" onclick="openLightbox(this.querySelector('img').src,'S-Class Standard · 전면')">
+            <img src="https://github.com/JNOHJINGYU/images/blob/main/standard_rear.png?raw=true" alt="Standard 전면">
+            <div class="zoom-hint">⊕ 전체화면</div>
+          </div>
+        </div>
+      </div>
+      <div class="ext-card">
+        <div class="ext-card-header" style="color:var(--accent)">AMG Line</div>
+        <div class="ext-images">
+          <div class="ph ext-ph real-img" onclick="openLightbox(this.querySelector('img').src,'S-Class AMG Line · 전면')">
+            <img src="https://github.com/JNOHJINGYU/images/blob/main/ext_amg_side.png?raw=true" alt="AMG Line 전면">
+            <div class="zoom-hint">⊕ 전체화면</div>
+          </div>
+          <div class="ph ext-ph real-img" onclick="openLightbox(this.querySelector('img').src,'S-Class AMG Line · 후면')">
+            <img src="https://github.com/JNOHJINGYU/images/blob/main/ext_amg_rear.png?raw=true" alt="AMG Line 후면">
+            <div class="zoom-hint">⊕ 전체화면</div>
+          </div>
+        </div>
+      </div>
+      <div class="ext-card">
+        <div class="ext-card-header">Maybach</div>
+        <div class="ext-images">
+          <div class="ph ext-ph real-img" onclick="openLightbox(this.querySelector('img').src,'Mercedes-Maybach · 전면')">
+            <img src="https://github.com/JNOHJINGYU/images/blob/main/ext_maybach_side.png?raw=true" alt="Maybach 전면">
+            <div class="zoom-hint">⊕ 전체화면</div>
+          </div>
+          <div class="ph ext-ph real-img" onclick="openLightbox(this.querySelector('img').src,'Mercedes-Maybach · 후면')">
+            <img src="https://github.com/JNOHJINGYU/images/blob/main/ext_maybach_rear.png?raw=true" alt="Maybach 후면">
+            <div class="zoom-hint">⊕ 전체화면</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: INTERIOR -->
+<section id="interior">
+  <div class="container">
+    <span class="section-eyebrow fade-in">Interior Design</span>
+    <h2 class="section-title fade-in">내장 디자인</h2>
+    <p class="section-desc fade-in">가죽부터 MANUFAKTUR 마이바흐 익스클루시브 나파 레더까지, 5가지 내장 구성을 제공합니다.</p>
+
+    <div class="interior-grid fade-in">
+      <!-- LEATHER CARD with slider -->
+      <div class="int-card int-card-leather" style="cursor:default;">
+        <div class="int-slider" id="leatherSlider">
+          <div class="int-slider-track" id="leatherTrack">
+            <div class="int-slide">
+              <img src="https://github.com/JNOHJINGYU/images/blob/main/int_leather_black.jpg?raw=true" alt="가죽 · 블랙">
+              <div class="int-slide-label">블랙</div>
+              <div class="zoom-hint">⊕ 전체화면</div>
+            </div>
+            <div class="int-slide">
+              <img src="https://github.com/JNOHJINGYU/images/blob/main/int_leather_beige.png?raw=true" alt="가죽 · 베이지">
+              <div class="int-slide-label">베이지</div>
+              <div class="zoom-hint">⊕ 전체화면</div>
+            </div>
+            <div class="int-slide">
+              <img src="https://github.com/JNOHJINGYU/images/blob/main/int_leather_brown.png?raw=true" alt="가죽 · 브라운">
+              <div class="int-slide-label">브라운</div>
+              <div class="zoom-hint">⊕ 전체화면</div>
+            </div>
+          </div>
+          <button class="slider-btn slider-prev" onclick="event.stopPropagation(); slideLeather(-1)">&#8249;</button>
+          <button class="slider-btn slider-next" onclick="event.stopPropagation(); slideLeather(1)">&#8250;</button>
+          <div class="slider-dots" id="leatherDots">
+            <span class="slider-dot active" onclick="event.stopPropagation(); goLeatherSlide(0)"></span>
+            <span class="slider-dot" onclick="event.stopPropagation(); goLeatherSlide(1)"></span>
+            <span class="slider-dot" onclick="event.stopPropagation(); goLeatherSlide(2)"></span>
+          </div>
+        </div>
+        <div class="int-info">
+          <div class="int-name" style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+            가죽
+            <span style="font-size:9px;letter-spacing:.12em;color:var(--accent);border:1px solid var(--accent-dim);padding:3px 9px;border-radius:20px;font-weight:400;">S350d · S450 SWB 기본적용</span>
+            <span style="font-size:9px;letter-spacing:.1em;color:var(--accent);border:1px solid var(--accent-dim);padding:3px 9px;border-radius:20px;font-weight:400;">S450 4M L Standard</span>
+          </div>
+          <div class="int-code">213A / 214A / 215A</div>
+        </div>
+      </div>
+      <!-- NAPPA LEATHER CARD with slider -->
+      <div class="int-card int-card-leather" style="cursor:default;">
+        <div class="int-slider" id="nappaSlider">
+          <div class="int-slider-track" id="nappaTrack">
+            <div class="int-slide">
+              <img src="https://github.com/JNOHJINGYU/images/blob/main/int_nappa_brown.png?raw=true" alt="나파 가죽 · 브라운">
+              <div class="int-slide-label">브라운</div>
+              <div class="zoom-hint">⊕ 전체화면</div>
+            </div>
+            <div class="int-slide">
+              <img src="https://github.com/JNOHJINGYU/images/blob/main/int_nappa_beige.png?raw=true" alt="나파 가죽 · 베이지">
+              <div class="int-slide-label">베이지</div>
+              <div class="zoom-hint">⊕ 전체화면</div>
+            </div>
+            <div class="int-slide">
+              <img src="https://github.com/JNOHJINGYU/images/blob/main/int_nappa_black.png?raw=true" alt="나파 가죽 · 블랙">
+              <div class="int-slide-label">블랙</div>
+              <div class="zoom-hint">⊕ 전체화면</div>
+            </div>
+          </div>
+          <button class="slider-btn slider-prev" onclick="event.stopPropagation(); slideNappa(-1)">&#8249;</button>
+          <button class="slider-btn slider-next" onclick="event.stopPropagation(); slideNappa(1)">&#8250;</button>
+          <div class="slider-dots" id="nappaDots">
+            <span class="slider-dot active" onclick="event.stopPropagation(); goNappaSlide(0)"></span>
+            <span class="slider-dot" onclick="event.stopPropagation(); goNappaSlide(1)"></span>
+            <span class="slider-dot" onclick="event.stopPropagation(); goNappaSlide(2)"></span>
+          </div>
+        </div>
+        <div class="int-info">
+          <div class="int-name" style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+            나파 가죽
+            <span style="font-size:9px;letter-spacing:.1em;color:var(--accent);border:1px solid var(--accent-dim);padding:3px 9px;border-radius:20px;font-weight:400;">S450 4M L AMG라인 · S500 4M 기본적용</span>
+          </div>
+          <div class="int-code">823A / 824A / 825A</div>
+        </div>
+      </div>
+      <!-- EXCLUSIVE NAPPA LEATHER CARD with slider -->
+      <div class="int-card int-card-leather" style="cursor:default;">
+        <div class="int-slider" id="exclNappaSlider">
+          <div class="int-slider-track" id="exclNappaTrack">
+            <div class="int-slide">
+              <img src="https://github.com/JNOHJINGYU/images/blob/main/int_excl_nappa_beige.png?raw=true" alt="익스클루시브 나파 가죽 · 베이지">
+              <div class="int-slide-label">베이지</div>
+              <div class="zoom-hint">⊕ 전체화면</div>
+            </div>
+            <div class="int-slide">
+              <img src="https://github.com/JNOHJINGYU/images/blob/main/int_excl_nappa_black.png?raw=true" alt="익스클루시브 나파 가죽 · 블랙">
+              <div class="int-slide-label">블랙</div>
+              <div class="zoom-hint">⊕ 전체화면</div>
+            </div>
+            <div class="int-slide">
+              <img src="https://github.com/JNOHJINGYU/images/blob/main/int_excl_nappa_brown.png?raw=true" alt="익스클루시브 나파 가죽 · 브라운">
+              <div class="int-slide-label">브라운</div>
+              <div class="zoom-hint">⊕ 전체화면</div>
+            </div>
+          </div>
+          <button class="slider-btn slider-prev" onclick="event.stopPropagation(); slideExclNappa(-1)">&#8249;</button>
+          <button class="slider-btn slider-next" onclick="event.stopPropagation(); slideExclNappa(1)">&#8250;</button>
+          <div class="slider-dots" id="exclNappaDots">
+            <span class="slider-dot active" onclick="event.stopPropagation(); goExclNappaSlide(0)"></span>
+            <span class="slider-dot" onclick="event.stopPropagation(); goExclNappaSlide(1)"></span>
+            <span class="slider-dot" onclick="event.stopPropagation(); goExclNappaSlide(2)"></span>
+          </div>
+        </div>
+        <div class="int-info">
+          <div class="int-name" style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+            익스클루시브 나파 가죽
+            <span style="font-size:9px;letter-spacing:.1em;color:var(--accent);border:1px solid var(--accent-dim);padding:3px 9px;border-radius:20px;font-weight:400;">S580 4M L 기본적용</span>
+          </div>
+          <div class="int-code">523A / 524A / 525A</div>
+        </div>
+      </div>
+      <!-- MAYBACH EXCL NAPPA LEATHER CARD with slider -->
+      <div class="int-card int-card-leather" style="cursor:default;">
+        <div class="int-slider" id="maybachNappaSlider">
+          <div class="int-slider-track" id="maybachNappaTrack">
+            <div class="int-slide">
+              <img src="https://github.com/JNOHJINGYU/images/blob/main/Maybach_nappa_white.png?raw=true" alt="마이바흐 익스클루시브 나파 레더 · 화이트">
+              <div class="int-slide-label">화이트</div>
+              <div class="zoom-hint">⊕ 전체화면</div>
+            </div>
+            <div class="int-slide">
+              <img src="https://github.com/JNOHJINGYU/images/blob/main/Maybach_nappa_black.png?raw=true" alt="마이바흐 익스클루시브 나파 레더 · 블랙">
+              <div class="int-slide-label">블랙</div>
+              <div class="zoom-hint">⊕ 전체화면</div>
+            </div>
+            <div class="int-slide">
+              <img src="https://github.com/JNOHJINGYU/images/blob/main/Maybach_nappa_brown.png?raw=true" alt="마이바흐 익스클루시브 나파 레더 · 브라운">
+              <div class="int-slide-label">브라운</div>
+              <div class="zoom-hint">⊕ 전체화면</div>
+            </div>
+            <div class="int-slide">
+              <img src="https://github.com/JNOHJINGYU/images/blob/main/Maybach_nappa_beige.png?raw=true" alt="마이바흐 익스클루시브 나파 레더 · 베이지">
+              <div class="int-slide-label">베이지</div>
+              <div class="zoom-hint">⊕ 전체화면</div>
+            </div>
+          </div>
+          <button class="slider-btn slider-prev" onclick="event.stopPropagation(); slideMaybachNappa(-1)">&#8249;</button>
+          <button class="slider-btn slider-next" onclick="event.stopPropagation(); slideMaybachNappa(1)">&#8250;</button>
+          <div class="slider-dots" id="maybachNappaDots">
+            <span class="slider-dot active" onclick="event.stopPropagation(); goMaybachNappaSlide(0)"></span>
+            <span class="slider-dot" onclick="event.stopPropagation(); goMaybachNappaSlide(1)"></span>
+            <span class="slider-dot" onclick="event.stopPropagation(); goMaybachNappaSlide(2)"></span>
+            <span class="slider-dot" onclick="event.stopPropagation(); goMaybachNappaSlide(3)"></span>
+          </div>
+        </div>
+        <div class="int-info">
+          <div class="int-name" style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+            마이바흐 익스클루시브 나파 레더
+            <span style="font-size:9px;letter-spacing:.1em;color:#ffd86b;border:1px solid rgba(255,216,107,0.4);padding:3px 9px;border-radius:20px;font-weight:500;background:rgba(255,216,107,0.08);">✦ Maybach 전용</span>
+          </div>
+          <div class="int-code">533A / 534A / 535A</div>
+        </div>
+      </div>
+      <!-- MANUFAKTUR MAYBACH EXCL NAPPA LEATHER CARD with slider -->
+      <div class="int-card int-card-leather int-card-last" style="cursor:default;">
+        <div class="int-slider" id="manufakturSlider">
+          <div class="int-slider-track" id="manufakturTrack">
+            <div class="int-slide">
+              <img src="https://github.com/JNOHJINGYU/images/blob/main/manufaktur_beige.png?raw=true" alt="MANUFAKTUR 마이바흐 익스클루시브 나파 레더 · 베이지">
+              <div class="int-slide-label">베이지 / 골드</div>
+              <div class="zoom-hint">⊕ 전체화면</div>
+            </div>
+            <div class="int-slide">
+              <img src="https://github.com/JNOHJINGYU/images/blob/main/manufaktur_navy.png?raw=true" alt="MANUFAKTUR 마이바흐 익스클루시브 나파 레더 · 네이비">
+              <div class="int-slide-label">네이비 블루</div>
+              <div class="zoom-hint">⊕ 전체화면</div>
+            </div>
+          </div>
+          <button class="slider-btn slider-prev" onclick="event.stopPropagation(); slideManufaktur(-1)">&#8249;</button>
+          <button class="slider-btn slider-next" onclick="event.stopPropagation(); slideManufaktur(1)">&#8250;</button>
+          <div class="slider-dots" id="manufakturDots">
+            <span class="slider-dot active" onclick="event.stopPropagation(); goManufakturSlide(0)"></span>
+            <span class="slider-dot" onclick="event.stopPropagation(); goManufakturSlide(1)"></span>
+          </div>
+        </div>
+        <div class="int-info">
+          <div class="int-name" style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+            MANUFAKTUR 마이바흐 익스클루시브 나파 레더
+            <span style="font-size:9px;letter-spacing:.1em;color:#ffd86b;border:1px solid rgba(255,216,107,0.4);padding:3px 9px;border-radius:20px;font-weight:500;background:rgba(255,216,107,0.08);">✦ Maybach 전용</span>
+          </div>
+          <div class="int-code">941A / 991A / 992A / 993A / 996A / 997A</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5: LINEUP -->
+<section id="lineup">
+  <div class="container">
+    <span class="section-eyebrow fade-in">Product Line-Up</span>
+    <h2 class="section-title fade-in">전체 라인업</h2>
+    <p class="section-desc fade-in">스탠다드 휠베이스 2종, 롱 휠베이스 4종, 마이바흐 3종 — 총 9개 모델로 구성됩니다.</p>
+
+    <!-- Standard -->
+    <div class="lineup-group fade-in">
+      <div class="lineup-group-sub">스탠다드 휠베이스</div>
+      <div class="lineup-group-title">Standard Wheelbase</div>
+      <div class="lineup-divider"></div>
+      <div class="lineup-cards">
+        <div class="lineup-card">
+          <div class="lineup-img" style="background:#f2f2f0;overflow:hidden;cursor:zoom-in;position:relative;" onclick="openLightbox(this.querySelector('img').src,'S 350 d 4MATIC · 샴페인 실버')">
+            <img src="https://github.com/JNOHJINGYU/images/blob/main/s350d.jpg?raw=true" alt="S 350d 4MATIC" style="width:100%;height:100%;object-fit:contain;display:block;padding:10px;box-sizing:border-box;transition:transform .5s cubic-bezier(.25,.46,.45,.94);" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+            <span style="position:absolute;bottom:10px;right:12px;background:rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:4px 10px;font-size:10px;letter-spacing:.12em;color:rgba(255,255,255,.7);pointer-events:none;">⊕ 전체화면</span>
+          </div>
+          <div class="lineup-info">
+            <div class="lineup-code">22302412-KR1</div>
+            <div class="lineup-model">S 350 d 4MATIC</div>
+            <div class="lineup-price">
+              <span class="lineup-price-label">Starting Price</span>
+              <div class="lineup-price-amount">154,000,000<span>원</span></div>
+            </div>
+            <div class="lineup-specs">
+              <div class="lineup-spec"><span class="lineup-spec-key">Exterior</span><span class="lineup-spec-val">Standard</span></div>
+              <div class="lineup-spec"><span class="lineup-spec-key">Interior</span><span class="lineup-spec-val">가죽</span></div>
+              <div class="lineup-spec"><span class="lineup-spec-key">Wheel</span><span class="lineup-spec-val">19인치 멀티 트윈 스포크</span></div>
+              <div class="lineup-spec"><span class="lineup-spec-key">Suspension</span><span class="lineup-spec-val">에어매틱</span></div>
+            </div>
+            <div class="lineup-tags">
+              <span class="tag">앞좌석 열선/동풍</span>
+              <span class="tag">뒷좌석 열선</span>
+              <span class="tag">페이스리프트 기본사양</span>
+            </div>
+          </div>
+        </div>
+        <div class="lineup-card">
+          <div class="lineup-img" style="background:#f2f2f0;overflow:hidden;cursor:zoom-in;position:relative;" onclick="openLightbox(this.querySelector('img').src,'S 450 4MATIC · 폴라 화이트')">
+            <img src="https://github.com/JNOHJINGYU/images/blob/main/s450_swb.jpg?raw=true" alt="S 450 4MATIC" style="width:100%;height:100%;object-fit:contain;display:block;padding:10px;box-sizing:border-box;transition:transform .5s cubic-bezier(.25,.46,.45,.94);" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+            <span style="position:absolute;bottom:10px;right:12px;background:rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:4px 10px;font-size:10px;letter-spacing:.12em;color:rgba(255,255,255,.7);pointer-events:none;">⊕ 전체화면</span>
+          </div>
+          <div class="lineup-info">
+            <div class="lineup-code">22306512-KR1</div>
+            <div class="lineup-model">S 450 4MATIC</div>
+            <div class="lineup-price">
+              <span class="lineup-price-label">Starting Price</span>
+              <div class="lineup-price-amount">162,400,000<span>원</span></div>
+            </div>
+            <div class="lineup-specs">
+              <div class="lineup-spec"><span class="lineup-spec-key">Exterior</span><span class="lineup-spec-val">AMG Line</span></div>
+              <div class="lineup-spec"><span class="lineup-spec-key">Interior</span><span class="lineup-spec-val">가죽</span></div>
+              <div class="lineup-spec"><span class="lineup-spec-key">Wheel</span><span class="lineup-spec-val">19인치 AMG 5 트윈 스포크</span></div>
+              <div class="lineup-spec"><span class="lineup-spec-key">Suspension</span><span class="lineup-spec-val">에어매틱</span></div>
+            </div>
+            <div class="lineup-tags">
+              <span class="tag">앞좌석 열선/동풍</span>
+              <span class="tag">뒷좌석 열선</span>
+              <span class="tag">페이스리프트 기본사양</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Long -->
+    <div class="lineup-group fade-in">
+      <div class="lineup-group-sub">롱 휠베이스</div>
+      <div class="lineup-group-title">Long Wheelbase</div>
+      <div class="lineup-divider"></div>
+      <div class="lineup-cards">
+        <div class="lineup-card">
+          <div class="lineup-img" style="background:#f2f2f0;overflow:hidden;cursor:zoom-in;position:relative;" onclick="openLightbox(this.querySelector('img').src,'S 450 4MATIC Long Exclusive · 네이비 블루')"><img src="https://github.com/JNOHJINGYU/images/blob/main/s450L_EXCL.jpg?raw=true" alt="S 450 4MATIC Long Exclusive · 네이비 블루" style="width:100%;height:100%;object-fit:contain;display:block;padding:10px;box-sizing:border-box;transition:transform .5s cubic-bezier(.25,.46,.45,.94);" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"></div>
+          <div class="lineup-info">
+            <div class="lineup-code">22316512-KR1</div>
+            <div class="lineup-model">S 450 4MATIC Long Exclusive</div>
+            <div class="lineup-price">
+              <span class="lineup-price-label">Starting Price</span>
+              <div class="lineup-price-amount">175,400,000<span>원</span></div>
+            </div>
+            <div class="lineup-specs">
+              <div class="lineup-spec"><span class="lineup-spec-key">Exterior</span><span class="lineup-spec-val">Standard</span></div>
+              <div class="lineup-spec"><span class="lineup-spec-key">Interior</span><span class="lineup-spec-val">가죽</span></div>
+              <div class="lineup-spec"><span class="lineup-spec-key">Wheel</span><span class="lineup-spec-val">20인치 멀티 스포크</span></div>
+              <div class="lineup-spec"><span class="lineup-spec-key">Suspension</span><span class="lineup-spec-val">에어매틱</span></div>
+            </div>
+            <div class="lineup-tags">
+              <span class="tag">뒷좌석 컴포트 도어</span>
+              <span class="tag">뒷좌석 열선/통풍</span>
+            </div>
+          </div>
+        </div>
+        <div class="lineup-card">
+          <div class="lineup-img" style="background:#f2f2f0;overflow:hidden;cursor:zoom-in;position:relative;" onclick="openLightbox(this.querySelector('img').src,'S 450 4MATIC Long AMG Line · 세이지 그린')"><img src="https://github.com/JNOHJINGYU/images/blob/main/s450L_AMG.jpg?raw=true" alt="S 450 4MATIC Long AMG Line · 세이지 그린" style="width:100%;height:100%;object-fit:contain;display:block;padding:10px;box-sizing:border-box;transition:transform .5s cubic-bezier(.25,.46,.45,.94);" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"></div>
+          <div class="lineup-info">
+            <div class="lineup-code">22316512-KR2</div>
+            <div class="lineup-model">S 450 4MATIC Long AMG Line</div>
+            <div class="lineup-price">
+              <span class="lineup-price-label">Starting Price</span>
+              <div class="lineup-price-amount">195,400,000<span>원</span></div>
+            </div>
+            <div class="lineup-specs">
+              <div class="lineup-spec"><span class="lineup-spec-key">Exterior</span><span class="lineup-spec-val">AMG Line</span></div>
+              <div class="lineup-spec"><span class="lineup-spec-key">Interior</span><span class="lineup-spec-val">나파 가죽</span></div>
+              <div class="lineup-spec"><span class="lineup-spec-key">Wheel</span><span class="lineup-spec-val">20인치 AMG 크로스 스포크</span></div>
+              <div class="lineup-spec"><span class="lineup-spec-key">Suspension</span><span class="lineup-spec-val">에어매틱</span></div>
+            </div>
+            <div class="lineup-tags">
+              <span class="tag">MBUX 하이엔드</span>
+              <span class="tag">앞좌석 컨티테인먼트</span>
+            </div>
+          </div>
+        </div>
+        <div class="lineup-card">
+          <div class="lineup-img" style="background:#f2f2f0;overflow:hidden;cursor:zoom-in;position:relative;" onclick="openLightbox(this.querySelector('img').src,'S 500 4MATIC Long · 셀레나이트 그레이')"><img src="https://github.com/JNOHJINGYU/images/blob/main/s500.jpg?raw=true" alt="S 500 4MATIC Long · 셀레나이트 그레이" style="width:100%;height:100%;object-fit:contain;display:block;padding:10px;box-sizing:border-box;transition:transform .5s cubic-bezier(.25,.46,.45,.94);" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"></div>
+          <div class="lineup-info">
+            <div class="lineup-code">22316412-KR1</div>
+            <div class="lineup-model">S 500 4MATIC Long</div>
+            <div class="lineup-price">
+              <span class="lineup-price-label">Starting Price</span>
+              <div class="lineup-price-amount">220,000,000<span>원</span></div>
+            </div>
+            <div class="lineup-specs">
+              <div class="lineup-spec"><span class="lineup-spec-key">Exterior</span><span class="lineup-spec-val">Standard</span></div>
+              <div class="lineup-spec"><span class="lineup-spec-key">Interior</span><span class="lineup-spec-val">나파 가죽</span></div>
+              <div class="lineup-spec"><span class="lineup-spec-key">Wheel</span><span class="lineup-spec-val">20인치 멀티 스포크</span></div>
+              <div class="lineup-spec"><span class="lineup-spec-key">Suspension</span><span class="lineup-spec-val">에어매틱</span></div>
+            </div>
+            <div class="lineup-tags">
+              <span class="tag">소피 패키지</span>
+              <span class="tag">뒷좌석 마사지</span>
+              <span class="tag">IR 라미네이티드 글라스</span>
+            </div>
+          </div>
+        </div>
+        <div class="lineup-card">
+          <div class="lineup-img" style="background:#f2f2f0;overflow:hidden;cursor:zoom-in;position:relative;" onclick="openLightbox(this.querySelector('img').src,'S 580 4MATIC Long · 옵시디안 블랙')"><img src="https://github.com/JNOHJINGYU/images/blob/main/s580.jpg?raw=true" alt="S 580 4MATIC Long · 옵시디안 블랙" style="width:100%;height:100%;object-fit:contain;display:block;padding:10px;box-sizing:border-box;transition:transform .5s cubic-bezier(.25,.46,.45,.94);" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"></div>
+          <div class="lineup-info">
+            <div class="lineup-code">22317712-KR1</div>
+            <div class="lineup-model">S 580 4MATIC Long</div>
+            <div class="lineup-price">
+              <span class="lineup-price-label">Starting Price</span>
+              <div class="lineup-price-amount">270,000,000<span>원</span></div>
+            </div>
+            <div class="lineup-specs">
+              <div class="lineup-spec"><span class="lineup-spec-key">Exterior</span><span class="lineup-spec-val">Standard</span></div>
+              <div class="lineup-spec"><span class="lineup-spec-key">Interior</span><span class="lineup-spec-val">익스클루시브 나파 가죽</span></div>
+              <div class="lineup-spec"><span class="lineup-spec-key">Wheel</span><span class="lineup-spec-val">20인치 10 트윈 스포크 단초</span></div>
+              <div class="lineup-spec"><span class="lineup-spec-key">Suspension</span><span class="lineup-spec-val">E-액티브 바디 컨트롤</span></div>
+            </div>
+            <div class="lineup-tags">
+              <span class="tag">MBLIX AR 헤드업 디스플레이</span>
+              <span class="tag">익스클루시브 패키지</span>
+              <span class="tag">페이스리프트 기본사양</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Maybach -->
+    <div class="lineup-group fade-in">
+      <div class="lineup-group-sub">마이바흐</div>
+      <div class="lineup-group-title">Mercedes-Maybach</div>
+      <div class="lineup-divider"></div>
+      <div class="lineup-cards">
+        <div class="lineup-card">
+          <div class="lineup-img" style="background:#f2f2f0;overflow:hidden;cursor:zoom-in;position:relative;" onclick="openLightbox(this.querySelector('img').src,'Maybach S 580 · 네이비/실버')"><img src="https://github.com/JNOHJINGYU/images/blob/main/maybach_s580.jpg?raw=true" alt="Maybach S 580 · 네이비/실버" style="width:100%;height:100%;object-fit:contain;display:block;padding:10px;box-sizing:border-box;transition:transform .5s cubic-bezier(.25,.46,.45,.94);" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"></div>
+          <div class="lineup-info">
+            <div class="lineup-code">22397712-KR1</div>
+            <div class="lineup-model">Maybach S 580</div>
+            <div class="lineup-price">
+              <span class="lineup-price-label">Starting Price</span>
+              <div class="lineup-price-amount">317,000,000<span>원</span></div>
+            </div>
+            <div class="lineup-specs">
+              <div class="lineup-spec"><span class="lineup-spec-key">Exterior</span><span class="lineup-spec-val">Maybach</span></div>
+              <div class="lineup-spec"><span class="lineup-spec-key">Interior</span><span class="lineup-spec-val">마이바흐 익스클루시브 나파 레더</span></div>
+              <div class="lineup-spec"><span class="lineup-spec-key">Wheel</span><span class="lineup-spec-val">20인치 MAYBACH 5홀 단초</span></div>
+              <div class="lineup-spec"><span class="lineup-spec-key">Suspension</span><span class="lineup-spec-val">E-액티브 바디 컨트롤</span></div>
+            </div>
+            <div class="lineup-tags">
+              <span class="tag">닷좌석 컴포트 도어</span>
+              <span class="tag">MANUFAKTUR 팩레스트 트림</span>
+            </div>
+          </div>
+        </div>
+        <div class="lineup-card">
+          <div class="lineup-img" style="background:#f2f2f0;overflow:hidden;cursor:zoom-in;position:relative;" onclick="openLightbox(this.querySelector('img').src,'Maybach S 580 MANUFAKTUR · 블랙/화이트')"><img src="https://github.com/JNOHJINGYU/images/blob/main/maybach_s580_mfk.jpg?raw=true" alt="Maybach S 580 MANUFAKTUR · 블랙/화이트" style="width:100%;height:100%;object-fit:contain;display:block;padding:10px;box-sizing:border-box;transition:transform .5s cubic-bezier(.25,.46,.45,.94);" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"></div>
+          <div class="lineup-info">
+            <div class="lineup-code">22397712-KR2</div>
+            <div class="lineup-model">Maybach S 580 MANUFAKTUR</div>
+            <div class="lineup-price">
+              <span class="lineup-price-label">Starting Price</span>
+              <div class="lineup-price-amount">336,000,000<span>원</span></div>
+            </div>
+            <div class="lineup-specs">
+              <div class="lineup-spec"><span class="lineup-spec-key">Exterior</span><span class="lineup-spec-val">Maybach</span></div>
+              <div class="lineup-spec"><span class="lineup-spec-key">Interior</span><span class="lineup-spec-val">MANUFAKTUR 마이바흐 나파 레더</span></div>
+              <div class="lineup-spec"><span class="lineup-spec-key">Wheel</span><span class="lineup-spec-val">20인치 MAYBACH 5홀 단초</span></div>
+              <div class="lineup-spec"><span class="lineup-spec-key">Suspension</span><span class="lineup-spec-val">E-액티브 바디 컨트롤</span></div>
+            </div>
+            <div class="lineup-tags">
+              <span class="tag">MANUFAKTUR 인테리어 패키지</span>
+              <span class="tag">MANUFAKTUR 외장 컬러</span>
+            </div>
+          </div>
+        </div>
+        <div class="lineup-card">
+          <div class="lineup-img" style="background:#f2f2f0;overflow:hidden;cursor:zoom-in;position:relative;" onclick="openLightbox(this.querySelector('img').src,'Maybach S 680 · 그린/화이트')"><img src="https://github.com/JNOHJINGYU/images/blob/main/maybach_s680.jpg?raw=true" alt="Maybach S 680 · 그린/화이트" style="width:100%;height:100%;object-fit:contain;display:block;padding:10px;box-sizing:border-box;transition:transform .5s cubic-bezier(.25,.46,.45,.94);" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"></div>
+          <div class="lineup-info">
+            <div class="lineup-code">22397912-KR1</div>
+            <div class="lineup-model">Maybach S 680</div>
+            <div class="lineup-price">
+              <span class="lineup-price-label">Starting Price</span>
+              <div class="lineup-price-amount">407,000,000<span>원</span></div>
+            </div>
+            <div class="lineup-specs">
+              <div class="lineup-spec"><span class="lineup-spec-key">Exterior</span><span class="lineup-spec-val">Maybach</span></div>
+              <div class="lineup-spec"><span class="lineup-spec-key">Interior</span><span class="lineup-spec-val">마이바흐 익스클루시브 나파 레더</span></div>
+              <div class="lineup-spec"><span class="lineup-spec-key">Wheel</span><span class="lineup-spec-val">21인치 마이바흐 밀터 스포크 단초</span></div>
+              <div class="lineup-spec"><span class="lineup-spec-key">Engine</span><span class="lineup-spec-val">V12 엔진 (12기통)</span></div>
+            </div>
+            <div class="lineup-tags">
+              <span class="tag">MANUFAKTUR 가죽 패키지</span>
+              <span class="tag">360 프로덕션 플러스</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 6: LAUNCH EDITION -->
+<section id="launch">
+  <div class="container">
+    <span class="section-eyebrow fade-in">Launch Edition</span>
+    <h2 class="section-title fade-in">런치 에디션</h2>
+    <p class="section-desc fade-in">신형 S Class 출시를 기념하는 한정 에디션입니다. 별도 선택 불가한 에디션 전용 옵션이 적용됩니다.</p>
+
+    <!-- Edition 1 -->
+    <div class="launch-card fade-in">
+      <span class="launch-badge">Launch Edition</span>
+      <div class="launch-model-title">S 450 4M L AMG Line – AMG 라인 플러스 에디션</div>
+      <div class="launch-limited">22316512-KR2 · 140대 한정</div>
+      <div class="launch-body">
+        <div class="launch-main-img launch-img-clickable" onclick="openLightbox(this.querySelector('img').src, this.querySelector('img').alt)">
+          <img src="https://github.com/JNOHJINGYU/images/blob/main/amg_white_side.png?raw=true" alt="S 450 4M L AMG Line 측면" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.25,.46,.45,.94);">
+          <div class="launch-img-zoom-hint">클릭하여 확대</div>
+        </div>
+        <div class="launch-spec-panel">
+          <div>
+            <div class="spec-group-title">Specification</div>
+            <div class="spec-row"><span class="spec-key">외장</span><span class="spec-val">MANUFAKTUR 오팔라이트 화이트 브라이트 (885U)</span></div>
+            <div class="spec-row"><span class="spec-key">내장</span><span class="spec-val">나파 가죽, AMG 라인 플러스, 블랙 (803A)</span></div>
+          </div>
+          <div class="pkg-box">
+            <span class="pkg-name">AMG Line Plus (956)</span>
+            <span class="pkg-price">7,600,000원</span>
+          </div>
+          <div>
+            <div class="spec-group-title">Exclusive Options</div>
+            <ul class="excl-opts">
+              <li>AMG 라인 플러스 (956)</li>
+              <li>Digital Extra: 리어 액슬 스티어링 10도 (216)</li>
+              <li>라디에이터 그릴, 다크 크롬 (829)</li>
+              <li>나이트 패키지 (P56)</li>
+              <li>20인치 AMG 크로스 스포크 경광 알로이 휠 (RTX)</li>
+              <li>하이-글로스 상비 매달릭 믹스드 하이버 트림 (73H)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="launch-thumbs">
+        <div class="launch-thumb launch-img-clickable" onclick="openLightbox(this.querySelector('img').src, this.querySelector('img').alt)">
+          <img src="https://github.com/JNOHJINGYU/images/blob/main/amg_white_side.png?raw=true" alt="측면" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease;">
+          <div class="launch-img-zoom-hint">확대</div>
+        </div>
+        <div class="launch-thumb launch-img-clickable" onclick="openLightbox(this.querySelector('img').src, this.querySelector('img').alt)">
+          <img src="https://github.com/JNOHJINGYU/images/blob/main/amg_white_front.png?raw=true" alt="정면" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease;">
+          <div class="launch-img-zoom-hint">확대</div>
+        </div>
+        <div class="launch-thumb launch-img-clickable" onclick="openLightbox(this.querySelector('img').src, this.querySelector('img').alt)">
+          <img src="https://github.com/JNOHJINGYU/images/blob/main/amg_white_interior_rear.png?raw=true" alt="인테리어 후석" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease;">
+          <div class="launch-img-zoom-hint">확대</div>
+        </div>
+        <div class="launch-thumb launch-img-clickable" onclick="openLightbox(this.querySelector('img').src, this.querySelector('img').alt)">
+          <img src="https://github.com/JNOHJINGYU/images/blob/main/amg_interior_driver.png?raw=true" alt="대시보드" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease;">
+          <div class="launch-img-zoom-hint">확대</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Edition 2 -->
+    <div class="launch-card fade-in" style="margin-top:32px;">
+      <span class="launch-badge">Launch Edition</span>
+      <div class="launch-model-title">S 500 4M L – MANUFAKTUR 스파클링 블랙 에디션</div>
+      <div class="launch-limited">22316412-KR1 · 140대 한정</div>
+      <div class="launch-body">
+        <div class="launch-main-img launch-img-clickable" onclick="openLightbox(this.querySelector('img').src,'S 500 4MATIC Long – MANUFAKTUR 스파클링 블랙 측면')">
+          <img src="https://github.com/JNOHJINGYU/images/blob/main/sparkling_black_side.png?raw=true" alt="S 500 4MATIC L 메인 이미지" loading="lazy">
+          <div class="launch-img-zoom-hint">클릭하여 확대</div>
+        </div>
+        <div class="launch-spec-panel">
+          <div>
+            <div class="spec-group-title">Specification</div>
+            <div class="spec-row"><span class="spec-key">외장</span><span class="spec-val">MANUFAKTUR 스파클링 블랙 (944U)</span></div>
+            <div class="spec-row"><span class="spec-key">내장</span><span class="spec-val">익스클루시브 나파 가죽, 마카이아토 베이지/매그마 그레이 (525A)</span></div>
+          </div>
+          <div class="pkg-box">
+            <span class="pkg-name">Exclusive Package (P34)</span>
+            <span class="pkg-price">19,000,000원</span>
+          </div>
+          <div>
+            <div class="spec-group-title">Exclusive Options</div>
+            <ul class="excl-opts">
+              <li>익스클루시브 패키지 (P34)</li>
+              <li>마이크로컷 쿠프 라이너, 마카이아토 베이지 (65U)</li>
+              <li>프로이 매트 (U04)</li>
+              <li>익스클루시브 트림 패키지 (735)</li>
+              <li>크롬 핸들 및 스테인레스 스딩 로딩 실 매각 (B05)</li>
+              <li>유광 월넛 우드 트림, 블랙 (H37)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="launch-thumbs">
+        <div class="launch-thumb" onclick="openLightbox(this.querySelector('img').src,'S 500 4MATIC Long – 측면')">
+          <img src="https://github.com/JNOHJINGYU/images/blob/main/sparkling_black_side.png?raw=true" alt="외관 이미지 1" loading="lazy">
+          <div class="launch-img-zoom-hint">확대</div>
+        </div>
+        <div class="launch-thumb" onclick="openLightbox(this.querySelector('img').src,'S 500 4MATIC Long – 정면')">
+          <img src="https://github.com/JNOHJINGYU/images/blob/main/sparkling_black_front.png?raw=true" alt="외관 이미지 2" loading="lazy">
+          <div class="launch-img-zoom-hint">확대</div>
+        </div>
+        <div class="launch-thumb" onclick="openLightbox(this.querySelector('img').src,'S 500 4MATIC Long – 인테리어 후석')">
+          <img src="https://github.com/JNOHJINGYU/images/blob/main/sparkling_black_interior_rear.png?raw=true" alt="인테리어 이미지" loading="lazy">
+          <div class="launch-img-zoom-hint">확대</div>
+        </div>
+        <div class="launch-thumb" onclick="openLightbox(this.querySelector('img').src,'S 500 4MATIC Long – 대시보드')">
+          <img src="https://github.com/JNOHJINGYU/images/blob/main/sparkling_black_interior_driver.png?raw=true" alt="디테일 이미지" loading="lazy">
+          <div class="launch-img-zoom-hint">확대</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 7: PRE-ORDER -->
+<section id="preorder">
+  <div class="container">
+    <span class="section-eyebrow fade-in">Pre-Order & Promotion</span>
+    <h2 class="section-title fade-in">사전계약 &<br>재구매 프로모션</h2>
+    <p class="section-desc fade-in">신형 S Class MY27 사전계약이 5월 18일(월)부터 시작됩니다. 한정 수량 조기 마감이 예상되며, 재구매 고객 대상 특별 혜택이 함께 적용됩니다.</p>
+
+    <div class="preorder-banner fade-in">
+      <div class="preorder-eyebrow">Launch Pre-Order</div>
+      <div class="preorder-main">The new S-Class · 5월 18일 사전계약 시작</div>
+      <div class="preorder-sub">런치 에디션 한정 수량 · 조기 마감 예상</div>
+    </div>
+
+    <div class="preorder-grid fade-in">
+      <div class="deposit-card">
+        <span class="deposit-label">Contract Deposit</span>
+        <div class="deposit-amount">500<span class="deposit-unit">만원</span></div>
+        <div class="deposit-desc">신형 S-Class 사전계약 계약금<br>500만원으로 확정되었습니다</div>
+      </div>
+      <div class="promo-table">
+        <table>
+          <thead>
+            <tr>
+              <th>기본 프로모션 재구매 혜택</th>
+              <th class="highlight">[현금] S 스페셜 재구매 혜택</th>
+              <th>[MBFSK] S 스페셜 재구매 혜택</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Cash Retention (+2%)</td>
+              <td class="highlight">Cash Retention (+2%)</td>
+              <td>Cash Retention (+2%)</td>
+            </tr>
+            <tr>
+              <td>Trade-in (+1%)</td>
+              <td class="highlight">Trade-in (+1%)</td>
+              <td>Trade-in (+1%)</td>
+            </tr>
+            <tr>
+              <td>—</td>
+              <td class="highlight">보증연장 (+1년 / +3만 km)</td>
+              <td>(최대) 보증연장 (+2년 / +7만 km)<br>Special MBF Loyalty Care</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SECTION 8: CONSULTANT -->
+<section id="consultant">
+  <div class="container">
+    <span class="section-eyebrow fade-in">Your Consultant</span>
+    <h2 class="section-title fade-in">노진규 부장</h2>
+    <p class="section-desc fade-in">직판 시대, 누구에게 구매하느냐가 곧 서비스의 차이입니다. 20년 경력의 벤츠 전문 컨설턴트가 출고부터 이후까지 함께합니다.</p>
+
+    <div class="consultant-grid fade-in">
+      <div class="consultant-profile">
+        <!-- ↓ 프로필 이미지 URL을 아래 src에 입력하세요 -->
+        <div style="aspect-ratio:3/4;border-radius:8px;overflow:hidden;background:#0f1318;border:1px solid rgba(255,216,107,0.15);">
+          <img src="https://github.com/JNOHJINGYU/images/blob/main/nohjingyu.jpg?raw=true" alt="노진규 부장 프로필"
+            style="width:100%;height:100%;object-fit:cover;display:block;"
+            onerror="this.style.display='none';this.parentElement.style.display='flex';this.parentElement.style.alignItems='center';this.parentElement.style.justifyContent='center';this.parentElement.innerHTML='<span style=\'font-size:10px;letter-spacing:.3em;color:rgba(255,216,107,0.4);text-transform:uppercase;\'>PROFILE IMAGE</span>';"
+          >
+        </div>
+        <div>
+          <div class="profile-name">노진규</div>
+          <div class="profile-title">Mercedes-Benz Korea · 공식 딜러 부장</div>
+          <div class="profile-cert">공식 인증 S-Class 전문 컨설턴트</div>
+        </div>
+      </div>
+      <div class="consultant-info">
+        <div>
+          <div class="info-block-title">고객관리 철학</div>
+          <div class="info-block-text">단순히 차량을 판매하는 것이 아닙니다. 고객이 원하는 S-Class를 정확히 파악하고, 최적의 모델과 옵션을 제안합니다. 구매 이후에도 지속적인 케어를 통해 真의 프리미엄 경험을 제공합니다.</div>
+        </div>
+        <div class="info-features">
+          <div class="info-feat">
+            <div class="info-feat-title">출고 후 전담 관리</div>
+            <div class="info-feat-desc">출고 이후에도 전담 연락처를 통해 정비, 소모품, AS까지 원스톱 케어를 제공합니다.</div>
+          </div>
+          <div class="info-feat">
+            <div class="info-feat-title">VIP 컨설팅 서비스</div>
+            <div class="info-feat-desc">옵션 선택부터 색상 코디네이션까지 1:1 맞춤 상담으로 최적의 구성을 안내합니다.</div>
+          </div>
+          <div class="info-feat">
+            <div class="info-feat-title">벤츠 공식 딜러</div>
+            <div class="info-feat-desc">Mercedes-Benz Korea 공식 인증 딜러로 모든 프로세스가 공식 채널을 통해 진행됩니다.</div>
+          </div>
+          <div class="info-feat">
+            <div class="info-feat-title">시승 예약 대행</div>
+            <div class="info-feat-desc">신형 S-Class 전용 시승차 운영으로 구매 결정 전 충분한 체험 기회를 제공합니다.</div>
+          </div>
+        </div>
+        <div class="consultant-btns">
+          <a href="tel:01072997404" style="display:inline-block;padding:14px 40px;background:var(--white);color:var(--black);font-size:11px;letter-spacing:.15em;text-transform:uppercase;font-family:'Pretendard','Noto Sans KR',sans-serif;font-weight:500;text-decoration:none;cursor:pointer;transition:all .3s;border:none;border-radius:2px;" onmouseover="this.style.background='var(--accent)'" onmouseout="this.style.background='var(--white)'">📞 전화상담</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Mercedes-Benz · S-Class</div>
+    <div class="footer-copy">© 2025 Mercedes-Benz Korea · 노진규 공식 딜러</div>
+  </div>
+  <div class="footer-legal">
+    본 페이지는 공식 딜러 노진규 부장의 사전계약 상담 안내 목적으로 제작되었습니다. 표시된 사양 및 가격은 변경될 수 있으며 공식 발표 기준입니다. 본 혜택은 재구매 고객 기준이며 결제 방식(현금/MBFSK 금융)에 따라 적용 조건이 다릅니다.
+  </div>
+</footer>
+
+<!-- FLOATING KAKAO -->
+<div class="float-kakao" title="카카오톡 상담">💬</div>
+
+
+<!-- LIGHTBOX (공통) -->
+<div class="lightbox-overlay" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">✕</button>
+  <button class="lightbox-gallery-prev" id="lbGalleryPrev">&#8249;</button>
+  <button class="lightbox-gallery-next" id="lbGalleryNext">&#8250;</button>
+  <div class="lightbox-img-wrap" id="lightboxImgWrap">
+    <img id="lightboxImg" src="" alt="">
+  </div>
+  <div class="lightbox-video-wrap">
+    <video id="lightboxVideo" controls playsinline>
+      <source id="lightboxVideoSrc" src="" type="video/mp4">
+    </video>
+  </div>
+  <div class="lightbox-caption" id="lightboxCaption"></div>
+  <div class="lightbox-gallery-dots" id="lbGalleryDots"></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  <script>
+// Sticky nav
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // Scroll fade-in
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin:'0px 0px -40px 0px' });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Hero initial animation
+  setTimeout(() => {
+    document.querySelectorAll('#hero .fade-in').forEach(el => el.classList.add('visible'));
+  }, 200);
+
+
+  // ── NAPPA SLIDER ──
+  let nappaIdx = 0;
+  const nappaTotal = 3;
+  function updateNappaSlider() {
+    document.getElementById('nappaTrack').style.transform = `translateX(-${nappaIdx * 100}%)`;
+    document.querySelectorAll('#nappaDots .slider-dot').forEach((d,i) => d.classList.toggle('active', i === nappaIdx));
+  }
+  function slideNappa(dir) {
+    nappaIdx = (nappaIdx + dir + nappaTotal) % nappaTotal;
+    updateNappaSlider();
+  }
+  function goNappaSlide(i) {
+    nappaIdx = i;
+    updateNappaSlider();
+  }
+
+  // ── EXCL NAPPA SLIDER ──
+  let exclNappaIdx = 0;
+  const exclNappaTotal = 3;
+  function updateExclNappaSlider() {
+    document.getElementById('exclNappaTrack').style.transform = `translateX(-${exclNappaIdx * 100}%)`;
+    document.querySelectorAll('#exclNappaDots .slider-dot').forEach((d,i) => d.classList.toggle('active', i === exclNappaIdx));
+  }
+  function slideExclNappa(dir) {
+    exclNappaIdx = (exclNappaIdx + dir + exclNappaTotal) % exclNappaTotal;
+    updateExclNappaSlider();
+  }
+  function goExclNappaSlide(i) {
+    exclNappaIdx = i;
+    updateExclNappaSlider();
+  }
+
+  // ── LEATHER SLIDER ──
+  let leatherIdx = 0;
+  const leatherTotal = 3;
+  function updateLeatherSlider() {
+    document.getElementById('leatherTrack').style.transform = `translateX(-${leatherIdx * 100}%)`;
+    document.querySelectorAll('#leatherDots .slider-dot').forEach((d,i) => d.classList.toggle('active', i === leatherIdx));
+  }
+  function slideLeather(dir) {
+    leatherIdx = (leatherIdx + dir + leatherTotal) % leatherTotal;
+    updateLeatherSlider();
+  }
+  function goLeatherSlide(i) {
+    leatherIdx = i;
+    updateLeatherSlider();
+  }
+
+  // ── MAYBACH NAPPA SLIDER ──
+  let maybachNappaIdx = 0;
+  const maybachNappaTotal = 4;
+  function updateMaybachNappaSlider() {
+    document.getElementById('maybachNappaTrack').style.transform = `translateX(-${maybachNappaIdx * 100}%)`;
+    document.querySelectorAll('#maybachNappaDots .slider-dot').forEach((d,i) => d.classList.toggle('active', i === maybachNappaIdx));
+  }
+  function slideMaybachNappa(dir) {
+    maybachNappaIdx = (maybachNappaIdx + dir + maybachNappaTotal) % maybachNappaTotal;
+    updateMaybachNappaSlider();
+  }
+  function goMaybachNappaSlide(i) {
+    maybachNappaIdx = i;
+    updateMaybachNappaSlider();
+  }
+
+  // ── MANUFAKTUR SLIDER ──
+  let manufakturIdx = 0;
+  const manufakturTotal = 2;
+  function updateManufakturSlider() {
+    document.getElementById('manufakturTrack').style.transform = `translateX(-${manufakturIdx * 100}%)`;
+    document.querySelectorAll('#manufakturDots .slider-dot').forEach((d,i) => d.classList.toggle('active', i === manufakturIdx));
+  }
+  function slideManufaktur(dir) {
+    manufakturIdx = (manufakturIdx + dir + manufakturTotal) % manufakturTotal;
+    updateManufakturSlider();
+  }
+  function goManufakturSlide(i) {
+    manufakturIdx = i;
+    updateManufakturSlider();
+  }
+
+  // ── SCROLL LOCK (iOS-safe, smooth-scroll-safe) ──
+  let _scrollY = 0;
+  let _scrollLockCount = 0;
+
+  function lockBodyScroll() {
+    if (_scrollLockCount === 0) {
+      _scrollY = window.scrollY || window.pageYOffset;
+      document.documentElement.style.scrollBehavior = 'auto';
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${_scrollY}px`;
+      document.body.style.left = '0';
+      document.body.style.right = '0';
+      document.body.style.width = '100%';
+      document.body.style.overflow = 'hidden';
+    }
+    _scrollLockCount++;
+  }
+
+  function unlockBodyScroll() {
+    _scrollLockCount = Math.max(0, _scrollLockCount - 1);
+    if (_scrollLockCount === 0) {
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.left = '';
+      document.body.style.right = '';
+      document.body.style.width = '';
+      document.body.style.overflow = '';
+      // smooth-scroll 비활성화 후 위치 복원, 그 다음 프레임에서 복구
+      document.documentElement.style.scrollBehavior = 'auto';
+      window.scrollTo(0, _scrollY);
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          document.documentElement.style.scrollBehavior = '';
+        });
+      });
+    }
+  }
+
+  // ── LIGHTBOX 공통 열기 헬퍼 ──
+  function _lbOpen() {
+    const lb = document.getElementById('lightbox');
+    lb.classList.add('lb-visible');
+    // 다음 프레임에서 active 추가해야 opacity transition 작동
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => lb.classList.add('active'));
+    });
+    lockBodyScroll();
+  }
+
+  // ── 단일 이미지 라이트박스 ──
+  function openLightbox(src, caption) {
+    const lb = document.getElementById('lightbox');
+    lb.classList.remove('video-mode', 'gallery-mode');
+    document.getElementById('lightboxImg').src = src;
+    document.getElementById('lightboxCaption').textContent = caption || '';
+    document.getElementById('lbGalleryDots').innerHTML = '';
+    _galleryImages = [];
+    _isGalleryMode = false;
+    _lbOpen();
+  }
+
+  // ── 비디오 라이트박스 ──
+  function openVideoLightbox(src, caption) {
+    const lb = document.getElementById('lightbox');
+    lb.classList.remove('gallery-mode');
+    lb.classList.add('video-mode');
+    const vid = document.getElementById('lightboxVideo');
+    document.getElementById('lightboxVideoSrc').src = src;
+    vid.load();
+    vid.play();
+    document.getElementById('lightboxCaption').textContent = caption || '';
+    document.getElementById('lbGalleryDots').innerHTML = '';
+    _galleryImages = [];
+    _isGalleryMode = false;
+    _lbOpen();
+  }
+
+  // ── 갤러리 라이트박스 ──
+  let _galleryImages = [];
+  let _galleryIndex = 0;
+  let _isGalleryMode = false;
+
+  function openGalleryLightbox(images, startIndex) {
+    _galleryImages = images;
+    _galleryIndex = (startIndex || 0);
+    _isGalleryMode = true;
+
+    const lb = document.getElementById('lightbox');
+    lb.classList.remove('video-mode');
+    lb.classList.add('gallery-mode');
+
+    _updateGalleryUI();
+    _lbOpen();
+  }
+
+  function _updateGalleryUI() {
+    const current = _galleryImages[_galleryIndex];
+    document.getElementById('lightboxImg').src = current.src;
+    document.getElementById('lightboxCaption').textContent = current.caption || '';
+
+    // 도트 업데이트
+    const dotsEl = document.getElementById('lbGalleryDots');
+    dotsEl.innerHTML = '';
+    if (_galleryImages.length > 1) {
+      _galleryImages.forEach((_, i) => {
+        const dot = document.createElement('span');
+        dot.className = 'lb-gallery-dot' + (i === _galleryIndex ? ' active' : '');
+        dot.addEventListener('click', (e) => { e.stopPropagation(); _goGallerySlide(i); });
+        dotsEl.appendChild(dot);
+      });
+    }
+  }
+
+  function _gallerySlide(dir) {
+    if (!_isGalleryMode || _galleryImages.length === 0) return;
+    _galleryIndex = (_galleryIndex + dir + _galleryImages.length) % _galleryImages.length;
+    _updateGalleryUI();
+  }
+
+  function _goGallerySlide(i) {
+    _galleryIndex = i;
+    _updateGalleryUI();
+  }
+
+  // ── 라이트박스 닫기 ──
+  function closeLightboxFull() {
+    const lb = document.getElementById('lightbox');
+    lb.classList.remove('active');
+    // opacity transition 후 display:none
+    setTimeout(() => {
+      lb.classList.remove('lb-visible', 'video-mode', 'gallery-mode');
+      _isGalleryMode = false;
+      _galleryImages = [];
+      const vid = document.getElementById('lightboxVideo');
+      vid.pause();
+      vid.currentTime = 0;
+    }, 210);
+    unlockBodyScroll();
+  }
+
+  // ── 라이트박스 이벤트 바인딩 ──
+  const _lb = document.getElementById('lightbox');
+
+  // 배경 클릭 시 닫기
+  _lb.addEventListener('click', (e) => {
+    if (e.target === _lb) closeLightboxFull();
+  });
+
+  // 닫기 버튼
+  document.getElementById('lightboxClose').addEventListener('click', (e) => {
+    e.stopPropagation();
+    closeLightboxFull();
+  });
+
+  // 갤러리 이전/다음 버튼
+  document.getElementById('lbGalleryPrev').addEventListener('click', (e) => {
+    e.stopPropagation();
+    _gallerySlide(-1);
+  });
+  document.getElementById('lbGalleryNext').addEventListener('click', (e) => {
+    e.stopPropagation();
+    _gallerySlide(1);
+  });
+
+  // ESC 키
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeLightboxFull();
+    if (e.key === 'ArrowLeft' && _isGalleryMode) _gallerySlide(-1);
+    if (e.key === 'ArrowRight' && _isGalleryMode) _gallerySlide(1);
+  });
+
+  // ── 터치 스와이프 (모바일 갤러리) ──
+  let _touchStartX = 0;
+  _lb.addEventListener('touchstart', (e) => {
+    _touchStartX = e.touches[0].clientX;
+  }, { passive: true });
+  _lb.addEventListener('touchend', (e) => {
+    const diff = _touchStartX - e.changedTouches[0].clientX;
+    if (_isGalleryMode && Math.abs(diff) > 50) {
+      _gallerySlide(diff > 0 ? 1 : -1);
+    }
+  }, { passive: true });
+
+  // ── 내장디자인 int-slide 갤러리 클릭 이벤트 ──
+  // DOMContentLoaded 후 바인딩 (이미지 src 가 img 태그에 이미 로드됨)
+  document.querySelectorAll('.int-card-leather').forEach(card => {
+    const slides = card.querySelectorAll('.int-slide');
+    const images = Array.from(slides).map(slide => {
+      const img = slide.querySelector('img');
+      return { src: img.src, caption: img.alt };
+    });
+
+    slides.forEach((slide, index) => {
+      slide.addEventListener('click', (e) => {
+        e.stopPropagation();
+        // 슬라이더 버튼 클릭이면 무시
+        if (e.target.closest('.slider-btn')) return;
+        openGalleryLightbox(images, index);
+      });
+    });
+  });
+
+</script>
+</body>
+</html>
