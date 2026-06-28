@@ -848,6 +848,9 @@ body {
 /* ─── E클래스 랜딩페이지 CTA ───────────────────────── */
 /* 링크 URL을 변경할 때는 JS 상단의 ECLASS_LANDING_URL 값만 수정하세요 */
 
+/* ─── E/S클래스 랜딩페이지 CTA ─────────────────────── */
+/* 링크 URL을 변경할 때는 JS 상단의 ECLASS_LANDING_URL / SCLASS_LANDING_URL 값만 수정하세요 */
+
 .eclass-header-wrap {
   display: flex;
   align-items: center;
@@ -860,6 +863,7 @@ body {
   display: flex;
   align-items: center;
   gap: 14px;
+  flex-shrink: 0;
 }
 .eclass-cta-group {
   display: flex;
@@ -867,7 +871,10 @@ body {
   align-items: flex-end;
   gap: 5px;
 }
-.eclass-detail-btn {
+
+/* 버튼 공통 스타일 (E/S 동일) */
+.eclass-detail-btn,
+.sclass-detail-btn {
   display: inline-flex;
   align-items: center;
   gap: 9px;
@@ -883,31 +890,34 @@ body {
   text-decoration: none;
   letter-spacing: -0.01em;
   cursor: pointer;
+  white-space: nowrap;
   transition: background 0.28s ease, border-color 0.28s ease,
               color 0.28s ease, transform 0.28s ease, box-shadow 0.28s ease;
-  /* 등장 애니메이션 초기 상태 */
   opacity: 0;
   transform: translateY(8px);
   animation: eclassBtnFadeIn 0.5s 0.2s ease forwards;
-  white-space: nowrap;
 }
-.eclass-detail-btn:hover {
+.eclass-detail-btn:hover,
+.sclass-detail-btn:hover {
   background: linear-gradient(135deg, #23406F, #3E6EA8);
   border-color: #23406F;
   color: #FFFFFF;
   transform: translateY(-3px);
   box-shadow: 0 12px 30px rgba(20,40,80,.18);
 }
-.eclass-detail-btn:hover .eclass-btn-arrow {
+.eclass-detail-btn:hover .eclass-btn-arrow,
+.sclass-detail-btn:hover .eclass-btn-arrow {
   transform: translateX(4px);
 }
+.eclass-detail-btn:hover .eclass-btn-icon,
+.sclass-detail-btn:hover .eclass-btn-icon {
+  opacity: 1;
+}
+
 .eclass-btn-icon {
   flex-shrink: 0;
   opacity: 0.7;
   transition: opacity 0.28s;
-}
-.eclass-detail-btn:hover .eclass-btn-icon {
-  opacity: 1;
 }
 .eclass-btn-arrow {
   font-style: normal;
@@ -919,13 +929,28 @@ body {
   font-size: 12px;
   color: #7A7F89;
   letter-spacing: -0.01em;
-  animation: eclassBtnFadeIn 0.5s 0.4s ease forwards;
   opacity: 0;
+  animation: eclassBtnFadeIn 0.5s 0.4s ease forwards;
 }
 @keyframes eclassBtnFadeIn {
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* 태블릿 (601px ~ 768px): 버튼 약간 작게, 힌트 숨김 */
+@media (max-width: 768px) and (min-width: 601px) {
+  .eclass-detail-btn,
+  .sclass-detail-btn {
+    height: 40px;
+    padding: 0 16px;
+    font-size: 12.5px;
+    gap: 7px;
+  }
+  .eclass-cta-hint {
+    display: none;
+  }
+}
+
+/* 모바일 (600px 이하): 세로 배치, 좌측 정렬 */
 @media (max-width: 600px) {
   .eclass-header-wrap {
     flex-direction: column;
@@ -934,6 +959,15 @@ body {
   .eclass-cta-group {
     align-items: flex-start;
     margin-top: 4px;
+  }
+  .eclass-detail-btn,
+  .sclass-detail-btn {
+    height: 42px;
+    padding: 0 18px;
+    font-size: 13px;
+  }
+  .eclass-cta-hint {
+    font-size: 11px;
   }
 }
 /* ──────────────────────────────────────────────────── */
@@ -1307,10 +1341,27 @@ body {
   <!-- S클래스 MY27 -->
   <div class="car-section">
     <div class="car-section-header">
-      <div class="car-badge">S</div>
-      <div class="car-section-info">
-        <div class="car-brand">Mercedes-Benz</div>
-        <div class="car-model-name">S클래스 <span style="font-size:14px; font-weight:400; color:#7ab3d4; margin-left:8px;">MY27</span></div>
+      <div class="eclass-header-wrap">
+        <div class="eclass-title-group">
+          <div class="car-badge">S</div>
+          <div class="car-section-info">
+            <div class="car-brand">Mercedes-Benz</div>
+            <div class="car-model-name">S클래스 <span style="font-size:14px; font-weight:400; color:#7ab3d4; margin-left:8px;">MY27</span></div>
+          </div>
+        </div>
+        <div class="eclass-cta-group sclass-cta-group">
+          <a href="#" class="sclass-detail-btn" target="_blank" rel="noopener">
+            <svg class="eclass-btn-icon" width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 9.5h1M18 9.5h1M2.5 9.5H17.5M5 9.5L7 4.5h6l2 5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+              <ellipse cx="5.5" cy="10.5" rx="1.5" ry="1.5" stroke="currentColor" stroke-width="1.3"/>
+              <ellipse cx="14.5" cy="10.5" rx="1.5" ry="1.5" stroke="currentColor" stroke-width="1.3"/>
+              <path d="M7 4.5H5.5L3 7.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+            </svg>
+            S클래스 상세보기
+            <span class="eclass-btn-arrow">→</span>
+          </a>
+          <span class="eclass-cta-hint">S-Class 전체 라인업과 모델별 상세 정보를 확인해보세요.</span>
+        </div>
       </div>
     </div>
     
@@ -1729,10 +1780,27 @@ body {
 <div id="tab-s" class="section">
   <div class="car-section">
     <div class="car-section-header">
-      <div class="car-badge">S</div>
-      <div class="car-section-info">
-        <div class="car-brand">Mercedes-Benz</div>
-        <div class="car-model-name">S클래스</div>
+      <div class="eclass-header-wrap">
+        <div class="eclass-title-group">
+          <div class="car-badge">S</div>
+          <div class="car-section-info">
+            <div class="car-brand">Mercedes-Benz</div>
+            <div class="car-model-name">S클래스</div>
+          </div>
+        </div>
+        <div class="eclass-cta-group sclass-cta-group">
+          <a href="#" class="sclass-detail-btn" target="_blank" rel="noopener">
+            <svg class="eclass-btn-icon" width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 9.5h1M18 9.5h1M2.5 9.5H17.5M5 9.5L7 4.5h6l2 5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+              <ellipse cx="5.5" cy="10.5" rx="1.5" ry="1.5" stroke="currentColor" stroke-width="1.3"/>
+              <ellipse cx="14.5" cy="10.5" rx="1.5" ry="1.5" stroke="currentColor" stroke-width="1.3"/>
+              <path d="M7 4.5H5.5L3 7.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+            </svg>
+            S클래스 상세보기
+            <span class="eclass-btn-arrow">→</span>
+          </a>
+          <span class="eclass-cta-hint">S-Class 전체 라인업과 모델별 상세 정보를 확인해보세요.</span>
+        </div>
       </div>
     </div>
     <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><table class="price-table" style="min-width:340px;width:100%;">
@@ -1966,6 +2034,9 @@ body {
 <script>
 // ★ E클래스 랜딩페이지 URL – 변경 시 이 값만 수정하세요
 var ECLASS_LANDING_URL = 'e-class.html';
+
+// ★ S클래스 랜딩페이지 URL – 변경 시 이 값만 수정하세요
+var SCLASS_LANDING_URL = 's-class.html';
 // 실제 배포 후 GitHub Pages URL 예시:
 // var ECLASS_LANDING_URL = 'https://jnohjingyu.github.io/e-class/';
 
@@ -1973,6 +2044,9 @@ var ECLASS_LANDING_URL = 'e-class.html';
 document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('.eclass-detail-btn').forEach(function(btn) {
     btn.setAttribute('href', ECLASS_LANDING_URL);
+  });
+  document.querySelectorAll('.sclass-detail-btn').forEach(function(btn) {
+    btn.setAttribute('href', SCLASS_LANDING_URL);
   });
 });
 
