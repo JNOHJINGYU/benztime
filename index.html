@@ -105,14 +105,31 @@ body {
   display: flex;
   align-items: center;
   overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
   padding: 0 20px;
+  padding-right: 48px;
   gap: 0;
   position: sticky;
   top: 0;
   z-index: 100;
-  scrollbar-width: none;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
 }
-.nav-tabs::-webkit-scrollbar { display: none; }
+.nav-tabs::-webkit-scrollbar { height: 6px; }
+.nav-tabs::-webkit-scrollbar-thumb {
+  background: rgba(240,192,64,0.45);
+  border-radius: 999px;
+}
+.nav-tabs::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.08);
+}
+@media (max-width: 768px) {
+  .nav-tabs {
+    scrollbar-width: none;
+  }
+  .nav-tabs::-webkit-scrollbar { display: none; }
+}
 
 .nav-tab {
   padding: 16px 18px;
@@ -1205,45 +1222,6 @@ body {
   </div>
 </div>
 
-<!-- 사전계약 이벤트 카드 -->
-<div class="discount-box" style="max-width:860px; margin:0 auto 20px; border-color:#5ba3cc; position:relative; overflow:hidden;">
-  <div style="position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(to right, #5ba3cc, #7ab3d4, #5ba3cc);"></div>
-  <div style="display:flex; align-items:center; gap:10px; margin-bottom:20px;">
-    <span style="background:linear-gradient(135deg,#5ba3cc,#7ab3d4); color:#fff; font-size:13px; font-weight:700; padding:4px 10px; border-radius:4px; letter-spacing:0.1em;">EVENT</span>
-    <div class="discount-title" style="margin-bottom:0; font-size:22px; font-weight:700; color:#7ab3d4; letter-spacing:-0.02em;">신형 S클래스 사전계약 이벤트</div>
-  </div>
-  <div class="discount-row" style="padding:10px 0;">
-    <div class="discount-tag" style="background:rgba(91,163,204,0.15); border-color:#5ba3cc; color:#7ab3d4; min-width:76px; white-space:nowrap; font-size:13px;">기간</div>
-    <div class="discount-desc" style="color:rgba(255,255,255,0.9);">
-      <span style="color:#7ab3d4; font-weight:600;">5월 18일 ~ 6월 30일</span>
-    </div>
-  </div>
-  <div class="discount-row" style="padding:10px 0;">
-    <div class="discount-tag" style="background:rgba(91,163,204,0.15); border-color:#5ba3cc; color:#7ab3d4; min-width:76px; white-space:nowrap; font-size:13px;">기존</div>
-    <div class="discount-desc" style="color:rgba(255,255,255,0.85);">S클래스 보유 고객</div>
-  </div>
-  <div class="discount-row" style="padding:10px 0;">
-    <div class="discount-tag" style="background:rgba(91,163,204,0.15); border-color:#5ba3cc; color:#7ab3d4; min-width:76px; white-space:nowrap; font-size:13px;">신규</div>
-    <div class="discount-desc" style="color:rgba(255,255,255,0.85);">
-      <span style="color:#fff; font-weight:600;">MY27 S-Class F/L</span>
-      <span style="color:rgba(255,255,255,0.5); font-size:13px;"> (마이바흐 포함)</span>
-    </div>
-  </div>
-  <div class="discount-row" style="border-bottom:none; padding:10px 0 0;">
-    <div class="discount-tag" style="background:rgba(91,163,204,0.15); border-color:#5ba3cc; color:#7ab3d4; min-width:76px; white-space:nowrap; font-size:13px;">혜택</div>
-    <div class="discount-desc">
-      <div style="margin-bottom:10px;">
-        <span style="background:rgba(91,163,204,0.15); border:1px solid rgba(91,163,204,0.4); border-radius:4px; padding:2px 8px; font-size:13px; font-weight:700; color:#7ab3d4; margin-right:6px;">현금구매</span>
-        보증 연장 <span style="color:#7ab3d4; font-weight:700;">1년 / 3만km</span>
-      </div>
-      <div>
-        <span style="background:rgba(91,163,204,0.15); border:1px solid rgba(91,163,204,0.4); border-radius:4px; padding:2px 8px; font-size:13px; font-weight:700; color:#7ab3d4; margin-right:6px;">파이낸셜 이용</span>
-        보증 연장 <span style="color:#7ab3d4; font-weight:700;">2년 / 7만km</span>
-      </div>
-    </div>
-  </div>
-</div>
-
 <!-- FLEET 조건 안내 카드 -->
 <div class="fleet-card">
   <div class="fleet-card-question">우리회사는 추가할인이 될까?</div>
@@ -1405,7 +1383,7 @@ body {
       <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>장기렌트</th><th>실구매가</th></tr></thead>
       <tbody>
         <tr><td>A 220 Hatch</td><td class="col-price">48,100,000원</td><td class="col-promo">10%</td><td class="col-rent">+3%</td><td class="col-final">43,290,000원</td></tr>
-        <tr><td>Mercedes-AMG A 45 S 4MATIC+</td><td class="col-price">80,400,000원</td><td class="col-promo">9%</td><td class="col-rent">+3%</td><td class="col-final">73,160,000원</td></tr>
+        <tr><td>Mercedes-AMG A 45 S 4MATIC+</td><td class="col-price">80,400,000원</td><td class="col-promo">9%</td><td class="col-rent"><span style="display:block;">+4%</span><span style="display:block;font-size:10px;font-weight:600;color:#2980b9;margin-top:2px;">벤츠파이낸셜</span></td><td class="col-final">69,940,000원</td></tr>
         <tr><td>A 220 Sedan</td><td class="col-price">49,900,000원</td><td class="col-promo">5%</td><td class="col-rent">+3%</td><td class="col-final">47,400,000원</td></tr>
         <tr><td>Mercedes-AMG A 35 4MATIC</td><td class="col-price">67,700,000원</td><td class="col-dash">-</td><td class="col-rent">+3%</td><td class="col-final">67,700,000원</td></tr>
       </tbody>
@@ -1443,10 +1421,10 @@ body {
     <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><table class="price-table" style="min-width:340px;width:100%;">
       <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>장기렌트</th><th>실구매가</th></tr></thead>
       <tbody>
-        <tr><td>GLA 250 4MATIC AMG Line</td><td class="col-price">69,100,000원</td><td class="col-promo">11%</td><td class="col-rent">+3%</td><td class="col-final">61,490,000원</td></tr>
+        <tr><td>GLA 250 4MATIC AMG Line</td><td class="col-price">69,100,000원</td><td class="col-promo">11%</td><td class="col-rent"><span style="display:block;">+4%</span><span style="display:block;font-size:10px;font-weight:600;color:#2980b9;margin-top:2px;">벤츠파이낸셜</span></td><td class="col-final">58,730,000원</td></tr>
         <tr><td>GLB 200 d</td><td class="col-price">63,300,000원</td><td class="col-dash">-</td><td class="col-rent">+3%</td><td class="col-final">63,300,000원</td></tr>
-        <tr><td>GLB 250 4MATIC</td><td class="col-price">71,100,000원</td><td class="col-promo">11%</td><td class="col-rent">+3%</td><td class="col-final">63,270,000원</td></tr>
-        <tr><td>Mercedes-AMG GLB 35 4MATIC</td><td class="col-price">78,500,000원</td><td class="col-promo">11%</td><td class="col-rent">+3%</td><td class="col-final">69,860,000원</td></tr>
+        <tr><td>GLB 250 4MATIC</td><td class="col-price">71,100,000원</td><td class="col-promo">11%</td><td class="col-rent"><span style="display:block;">+4%</span><span style="display:block;font-size:10px;font-weight:600;color:#2980b9;margin-top:2px;">벤츠파이낸셜</span></td><td class="col-final">60,430,000원</td></tr>
+        <tr><td>Mercedes-AMG GLB 35 4MATIC</td><td class="col-price">78,500,000원</td><td class="col-promo">11%</td><td class="col-rent"><span style="display:block;">+4%</span><span style="display:block;font-size:10px;font-weight:600;color:#2980b9;margin-top:2px;">벤츠파이낸셜</span></td><td class="col-final">66,720,000원</td></tr>
       </tbody>
     </table>
   </div>
@@ -1733,10 +1711,10 @@ body {
     <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><table class="price-table" style="min-width:340px;width:100%;">
       <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>장기렌트</th><th>실구매가</th></tr></thead>
       <tbody>
-        <tr><td>EQA 250 Progressive</td><td class="col-price">70,000,000원</td><td class="col-promo">10%</td><td class="col-rent">+3%</td><td class="col-final">63,000,000원</td></tr>
-        <tr><td>EQA 250 AMG Line</td><td class="col-price">75,800,000원</td><td class="col-promo">10%</td><td class="col-rent">+3%</td><td class="col-final">68,220,000원</td></tr>
-        <tr><td>EQB 300 4MATIC Progressive</td><td class="col-price">78,800,000원</td><td class="col-promo">10%</td><td class="col-rent">+3%</td><td class="col-final">70,920,000원</td></tr>
-        <tr><td>EQB 300 4MATIC AMG Line</td><td class="col-price">84,300,000원</td><td class="col-promo">10%</td><td class="col-rent">+3%</td><td class="col-final">75,870,000원</td></tr>
+        <tr><td>EQA 250 Progressive</td><td class="col-price">70,000,000원</td><td class="col-promo">10%</td><td class="col-rent"><span style="display:block;">+4%</span><span style="display:block;font-size:10px;font-weight:600;color:#2980b9;margin-top:2px;">벤츠파이낸셜</span></td><td class="col-final">60,200,000원</td></tr>
+        <tr><td>EQA 250 AMG Line</td><td class="col-price">75,800,000원</td><td class="col-promo">10%</td><td class="col-rent"><span style="display:block;">+4%</span><span style="display:block;font-size:10px;font-weight:600;color:#2980b9;margin-top:2px;">벤츠파이낸셜</span></td><td class="col-final">65,180,000원</td></tr>
+        <tr><td>EQB 300 4MATIC Progressive</td><td class="col-price">78,800,000원</td><td class="col-promo">10%</td><td class="col-rent"><span style="display:block;">+4%</span><span style="display:block;font-size:10px;font-weight:600;color:#2980b9;margin-top:2px;">벤츠파이낸셜</span></td><td class="col-final">67,760,000원</td></tr>
+        <tr><td>EQB 300 4MATIC AMG Line</td><td class="col-price">84,300,000원</td><td class="col-promo">10%</td><td class="col-rent"><span style="display:block;">+4%</span><span style="display:block;font-size:10px;font-weight:600;color:#2980b9;margin-top:2px;">벤츠파이낸셜</span></td><td class="col-final">72,490,000원</td></tr>
         <tr><td>EQE 350+ SUV</td><td class="col-price">106,000,000원</td><td class="col-promo">10%</td><td class="col-rent">+3%</td><td class="col-final">95,400,000원</td></tr>
         <tr><td>EQE 350+</td><td class="col-price">110,000,000원</td><td class="col-promo">10%</td><td class="col-rent">+3%</td><td class="col-final">99,000,000원</td></tr>
         <tr><td>EQE 500 4MATIC SUV</td><td class="col-price">140,800,000원</td><td class="col-promo">10%</td><td class="col-rent">+3%</td><td class="col-final">126,720,000원</td></tr>
@@ -1860,7 +1838,7 @@ body {
       <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>장기렌트</th><th>실구매가</th></tr></thead>
       <tbody>
         <tr><td>A 220 Hatch</td><td class="col-price">48,100,000원</td><td class="col-promo">10%</td><td class="col-rent">+3%</td><td class="col-final">43,290,000원</td></tr>
-        <tr><td>Mercedes-AMG A 45 S 4MATIC+</td><td class="col-price">80,400,000원</td><td class="col-promo">9%</td><td class="col-rent">+3%</td><td class="col-final">73,160,000원</td></tr>
+        <tr><td>Mercedes-AMG A 45 S 4MATIC+</td><td class="col-price">80,400,000원</td><td class="col-promo">9%</td><td class="col-rent"><span style="display:block;">+4%</span><span style="display:block;font-size:10px;font-weight:600;color:#2980b9;margin-top:2px;">벤츠파이낸셜</span></td><td class="col-final">69,940,000원</td></tr>
         <tr><td>A 220 Sedan</td><td class="col-price">49,900,000원</td><td class="col-promo">5%</td><td class="col-rent">+3%</td><td class="col-final">47,400,000원</td></tr>
         <tr><td>Mercedes-AMG A 35 4MATIC</td><td class="col-price">67,700,000원</td><td class="col-dash">-</td><td class="col-rent">+3%</td><td class="col-final">67,700,000원</td></tr>
       </tbody>
@@ -1902,10 +1880,10 @@ body {
     <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><table class="price-table" style="min-width:340px;width:100%;">
       <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>장기렌트</th><th>실구매가</th></tr></thead>
       <tbody>
-        <tr><td>GLA 250 4MATIC AMG Line</td><td class="col-price">69,100,000원</td><td class="col-promo">11%</td><td class="col-rent">+3%</td><td class="col-final">61,490,000원</td></tr>
+        <tr><td>GLA 250 4MATIC AMG Line</td><td class="col-price">69,100,000원</td><td class="col-promo">11%</td><td class="col-rent"><span style="display:block;">+4%</span><span style="display:block;font-size:10px;font-weight:600;color:#2980b9;margin-top:2px;">벤츠파이낸셜</span></td><td class="col-final">58,730,000원</td></tr>
         <tr><td>GLB 200 d</td><td class="col-price">63,300,000원</td><td class="col-dash">-</td><td class="col-rent">+3%</td><td class="col-final">63,300,000원</td></tr>
-        <tr><td>GLB 250 4MATIC</td><td class="col-price">71,100,000원</td><td class="col-promo">11%</td><td class="col-rent">+3%</td><td class="col-final">63,270,000원</td></tr>
-        <tr><td>Mercedes-AMG GLB 35 4MATIC</td><td class="col-price">78,500,000원</td><td class="col-promo">11%</td><td class="col-rent">+3%</td><td class="col-final">69,860,000원</td></tr>
+        <tr><td>GLB 250 4MATIC</td><td class="col-price">71,100,000원</td><td class="col-promo">11%</td><td class="col-rent"><span style="display:block;">+4%</span><span style="display:block;font-size:10px;font-weight:600;color:#2980b9;margin-top:2px;">벤츠파이낸셜</span></td><td class="col-final">60,430,000원</td></tr>
+        <tr><td>Mercedes-AMG GLB 35 4MATIC</td><td class="col-price">78,500,000원</td><td class="col-promo">11%</td><td class="col-rent"><span style="display:block;">+4%</span><span style="display:block;font-size:10px;font-weight:600;color:#2980b9;margin-top:2px;">벤츠파이낸셜</span></td><td class="col-final">66,720,000원</td></tr>
       </tbody>
     </table>
   </div>
@@ -2177,10 +2155,10 @@ body {
     <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><table class="price-table" style="min-width:340px;width:100%;">
       <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>장기렌트</th><th>실구매가</th></tr></thead>
       <tbody>
-        <tr><td>EQA 250 Progressive</td><td class="col-price">70,000,000원</td><td class="col-promo">10%</td><td class="col-rent">+3%</td><td class="col-final">63,000,000원</td></tr>
-        <tr><td>EQA 250 AMG Line</td><td class="col-price">75,800,000원</td><td class="col-promo">10%</td><td class="col-rent">+3%</td><td class="col-final">68,220,000원</td></tr>
-        <tr><td>EQB 300 4MATIC Progressive</td><td class="col-price">78,800,000원</td><td class="col-promo">10%</td><td class="col-rent">+3%</td><td class="col-final">70,920,000원</td></tr>
-        <tr><td>EQB 300 4MATIC AMG Line</td><td class="col-price">84,300,000원</td><td class="col-promo">10%</td><td class="col-rent">+3%</td><td class="col-final">75,870,000원</td></tr>
+        <tr><td>EQA 250 Progressive</td><td class="col-price">70,000,000원</td><td class="col-promo">10%</td><td class="col-rent"><span style="display:block;">+4%</span><span style="display:block;font-size:10px;font-weight:600;color:#2980b9;margin-top:2px;">벤츠파이낸셜</span></td><td class="col-final">60,200,000원</td></tr>
+        <tr><td>EQA 250 AMG Line</td><td class="col-price">75,800,000원</td><td class="col-promo">10%</td><td class="col-rent"><span style="display:block;">+4%</span><span style="display:block;font-size:10px;font-weight:600;color:#2980b9;margin-top:2px;">벤츠파이낸셜</span></td><td class="col-final">65,180,000원</td></tr>
+        <tr><td>EQB 300 4MATIC Progressive</td><td class="col-price">78,800,000원</td><td class="col-promo">10%</td><td class="col-rent"><span style="display:block;">+4%</span><span style="display:block;font-size:10px;font-weight:600;color:#2980b9;margin-top:2px;">벤츠파이낸셜</span></td><td class="col-final">67,760,000원</td></tr>
+        <tr><td>EQB 300 4MATIC AMG Line</td><td class="col-price">84,300,000원</td><td class="col-promo">10%</td><td class="col-rent"><span style="display:block;">+4%</span><span style="display:block;font-size:10px;font-weight:600;color:#2980b9;margin-top:2px;">벤츠파이낸셜</span></td><td class="col-final">72,490,000원</td></tr>
         <tr><td>EQE 350+ SUV</td><td class="col-price">106,000,000원</td><td class="col-promo">10%</td><td class="col-rent">+3%</td><td class="col-final">95,400,000원</td></tr>
         <tr><td>EQE 350+</td><td class="col-price">110,000,000원</td><td class="col-promo">10%</td><td class="col-rent">+3%</td><td class="col-final">99,000,000원</td></tr>
         <tr><td>EQE 500 4MATIC SUV</td><td class="col-price">140,800,000원</td><td class="col-promo">10%</td><td class="col-rent">+3%</td><td class="col-final">126,720,000원</td></tr>
