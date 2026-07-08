@@ -587,7 +587,7 @@
     <!-- ↓↓↓ 모바일 히어로 이미지 경로로 교체하세요 ↓↓↓ -->
     <img
       class="hero-mobile-img"
-      src="https://github.com/JNOHJINGYU/images/blob/main/glc&glccp.png?raw=true"
+      src=""
       alt="Mercedes-Benz GLC"
       loading="eager"
       onerror="this.closest('.hero-mobile-img-wrap').style.background='linear-gradient(160deg,#dde5ef,#eaeff5)'; this.style.display='none';"
@@ -642,7 +642,7 @@
           <p class="card-code">GLC 220 d</p>
           <p class="card-tagline">경제성과 장거리 주행을 위한<br>디젤 SUV</p>
           <div class="card-foot">
-            <a class="card-btn" data-link="glc220d" href="glc220d.html">
+            <a class="card-btn" data-link="glc220d" href="https://JNOHJINGYU.github.io/glc/glc220d.html" target="_self">
               자세히 보기 <span class="arrow">→</span>
             </a>
           </div>
@@ -668,7 +668,7 @@
           <p class="card-code">GLC 300 4MATIC</p>
           <p class="card-tagline">가장 많은 고객이 선택하는<br>균형 잡힌 GLC</p>
           <div class="card-foot">
-            <a class="card-btn" data-link="glc300" href="glc300.html">
+            <a class="card-btn" data-link="glc300" href="https://JNOHJINGYU.github.io/glc/glc300.html" target="_self">
               자세히 보기 <span class="arrow">→</span>
             </a>
           </div>
@@ -694,7 +694,7 @@
           <p class="card-code">GLC 300 4MATIC Coupe</p>
           <p class="card-tagline">쿠페 스타일의<br>프리미엄 SUV</p>
           <div class="card-foot">
-            <a class="card-btn" data-link="glc300coupe" href="glc300coupe.html">
+            <a class="card-btn" data-link="glc300coupe" href="https://JNOHJINGYU.github.io/glc/glc300coupe.html" target="_self">
               자세히 보기 <span class="arrow">→</span>
             </a>
           </div>
@@ -721,7 +721,7 @@
           <p class="card-code">AMG GLC 43</p>
           <p class="card-tagline">AMG 퍼포먼스와<br>실용성을 모두 갖춘 SUV</p>
           <div class="card-foot">
-            <a class="card-btn" data-link="glc43" href="glc43.html">
+            <a class="card-btn" data-link="glc43" href="https://JNOHJINGYU.github.io/glc/glc43.html" target="_self">
               자세히 보기 <span class="arrow">→</span>
             </a>
           </div>
@@ -747,15 +747,37 @@
   /* ============================================================
      모델별 랜딩페이지 링크 — 여기서 한 번에 수정 가능
      ============================================================ */
+  /* ============================================================
+     모델별 랜딩페이지 링크
+     저장소: JNOHJINGYU/glc  (모든 파일이 루트에 위치)
+     어느 페이지에서 링크를 타고 들어와도 절대경로로 정확히 이동
+     ============================================================ */
   const MODEL_LINKS = {
-    glc220d:    'glc220d.html',      // GLC 220 d 랜딩페이지 경로
-    glc300:     'glc300.html',       // GLC 300 4MATIC 랜딩페이지 경로
-    glc300coupe:'glc300coupe.html',  // GLC 300 4MATIC Coupe 랜딩페이지 경로
-    glc43:      'glc43.html'         // AMG GLC 43 랜딩페이지 경로
+    glc220d:     'https://JNOHJINGYU.github.io/glc/glc220d.html',
+    glc300:      'https://JNOHJINGYU.github.io/glc/glc300.html',
+    glc300coupe: 'https://JNOHJINGYU.github.io/glc/glc300coupe.html',
+    glc43:       'https://JNOHJINGYU.github.io/glc/glc43.html'
   };
+
+  /* 버튼 href 절대경로 적용 */
   document.querySelectorAll('[data-link]').forEach((el) => {
     const key = el.getAttribute('data-link');
-    if (MODEL_LINKS[key]) el.setAttribute('href', MODEL_LINKS[key]);
+    if (MODEL_LINKS[key]) {
+      el.setAttribute('href', MODEL_LINKS[key]);
+      el.setAttribute('target', '_self');
+    }
+  });
+
+  /* 카드 전체 클릭 → 상세페이지 이동 (버튼 제외 영역 포함) */
+  document.querySelectorAll('.car-card').forEach((card) => {
+    const btn = card.querySelector('[data-link]');
+    if (!btn) return;
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', (e) => {
+      /* 버튼 자체를 클릭한 경우 기본 동작 유지 */
+      if (e.target.closest('[data-link]')) return;
+      window.location.href = btn.getAttribute('href');
+    });
   });
 
   /* ── 헤더 스크롤 처리 ── */
