@@ -1145,7 +1145,8 @@ body {
 /* 링크 URL을 변경할 때는 JS 상단의 ECLASS_LANDING_URL / SCLASS_LANDING_URL 값만 수정하세요 */
 
 .eclass-header-wrap,
-.glc-header-wrap {
+.glc-header-wrap,
+.cle-header-wrap {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1154,24 +1155,27 @@ body {
   width: 100%;
 }
 .eclass-title-group,
-.glc-title-group {
+.glc-title-group,
+.cle-title-group {
   display: flex;
   align-items: center;
   gap: 14px;
   flex-shrink: 0;
 }
 .eclass-cta-group,
-.glc-cta-group {
+.glc-cta-group,
+.cle-cta-group {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   gap: 5px;
 }
 
-/* 버튼 공통 스타일 (E/S/GLC 동일) */
+/* 버튼 공통 스타일 (E/S/GLC/CLE 동일) */
 .eclass-detail-btn,
 .sclass-detail-btn,
-.glc-detail-btn {
+.glc-detail-btn,
+.cle-detail-btn {
   display: inline-flex;
   align-items: center;
   gap: 9px;
@@ -1196,7 +1200,8 @@ body {
 }
 .eclass-detail-btn:hover,
 .sclass-detail-btn:hover,
-.glc-detail-btn:hover {
+.glc-detail-btn:hover,
+.cle-detail-btn:hover {
   background: linear-gradient(135deg, #23406F, #3E6EA8);
   border-color: #23406F;
   color: #FFFFFF;
@@ -1205,12 +1210,14 @@ body {
 }
 .eclass-detail-btn:hover .eclass-btn-arrow,
 .sclass-detail-btn:hover .eclass-btn-arrow,
-.glc-detail-btn:hover .eclass-btn-arrow {
+.glc-detail-btn:hover .eclass-btn-arrow,
+.cle-detail-btn:hover .eclass-btn-arrow {
   transform: translateX(4px);
 }
 .eclass-detail-btn:hover .eclass-btn-icon,
 .sclass-detail-btn:hover .eclass-btn-icon,
-.glc-detail-btn:hover .eclass-btn-icon {
+.glc-detail-btn:hover .eclass-btn-icon,
+.cle-detail-btn:hover .eclass-btn-icon {
   opacity: 1;
 }
 
@@ -1240,7 +1247,8 @@ body {
 @media (max-width: 768px) and (min-width: 601px) {
   .eclass-detail-btn,
   .sclass-detail-btn,
-  .glc-detail-btn {
+  .glc-detail-btn,
+  .cle-detail-btn {
     height: 40px;
     padding: 0 16px;
     font-size: 12.5px;
@@ -1254,18 +1262,21 @@ body {
 /* 모바일 (600px 이하): 세로 배치, 좌측 정렬 */
 @media (max-width: 600px) {
   .eclass-header-wrap,
-  .glc-header-wrap {
+  .glc-header-wrap,
+  .cle-header-wrap {
     flex-direction: column;
     align-items: flex-start;
   }
   .eclass-cta-group,
-  .glc-cta-group {
+  .glc-cta-group,
+  .cle-cta-group {
     align-items: flex-start;
     margin-top: 4px;
   }
   .eclass-detail-btn,
   .sclass-detail-btn,
-  .glc-detail-btn {
+  .glc-detail-btn,
+  .cle-detail-btn {
     height: 42px;
     padding: 0 18px;
     font-size: 13px;
@@ -1776,10 +1787,29 @@ body {
   <!-- CLE -->
   <div class="car-section" id="tab-cle-price">
     <div class="car-section-header">
-      <div class="car-badge">CLE</div>
-      <div class="car-section-info">
-        <div class="car-brand">Mercedes-Benz</div>
-        <div class="car-model-name">CLE</div>
+      <div class="cle-header-wrap">
+        <!-- 왼쪽: 배지 + 타이틀 -->
+        <div class="cle-title-group">
+          <div class="car-badge">CLE</div>
+          <div class="car-section-info">
+            <div class="car-brand">Mercedes-Benz</div>
+            <div class="car-model-name">CLE</div>
+          </div>
+        </div>
+        <!-- 오른쪽: CTA 버튼 + 안내문 -->
+        <div class="cle-cta-group">
+          <a href="#" class="cle-detail-btn" target="_blank" rel="noopener">
+            <svg class="eclass-btn-icon" width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 9.5h1M18 9.5h1M2.5 9.5H17.5M5 9.5L7 4.5h6l2 5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+              <ellipse cx="5.5" cy="10.5" rx="1.5" ry="1.5" stroke="currentColor" stroke-width="1.3"/>
+              <ellipse cx="14.5" cy="10.5" rx="1.5" ry="1.5" stroke="currentColor" stroke-width="1.3"/>
+              <path d="M7 4.5H5.5L3 7.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+            </svg>
+            CLE 상세보기
+            <span class="eclass-btn-arrow">→</span>
+          </a>
+          <span class="eclass-cta-hint">CLE 라인업 자세히 보기</span>
+        </div>
       </div>
     </div>
     <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><table class="price-table" style="min-width:340px;width:100%;">
@@ -2282,10 +2312,29 @@ body {
   </div>
   <div class="car-section">
     <div class="car-section-header">
-      <div class="car-badge">CLE</div>
-      <div class="car-section-info">
-        <div class="car-brand">Mercedes-Benz</div>
-        <div class="car-model-name">CLE</div>
+      <div class="cle-header-wrap">
+        <!-- 왼쪽: 배지 + 타이틀 -->
+        <div class="cle-title-group">
+          <div class="car-badge">CLE</div>
+          <div class="car-section-info">
+            <div class="car-brand">Mercedes-Benz</div>
+            <div class="car-model-name">CLE</div>
+          </div>
+        </div>
+        <!-- 오른쪽: CTA 버튼 + 안내문 -->
+        <div class="cle-cta-group">
+          <a href="#" class="cle-detail-btn" target="_blank" rel="noopener">
+            <svg class="eclass-btn-icon" width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 9.5h1M18 9.5h1M2.5 9.5H17.5M5 9.5L7 4.5h6l2 5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+              <ellipse cx="5.5" cy="10.5" rx="1.5" ry="1.5" stroke="currentColor" stroke-width="1.3"/>
+              <ellipse cx="14.5" cy="10.5" rx="1.5" ry="1.5" stroke="currentColor" stroke-width="1.3"/>
+              <path d="M7 4.5H5.5L3 7.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+            </svg>
+            CLE 상세보기
+            <span class="eclass-btn-arrow">→</span>
+          </a>
+          <span class="eclass-cta-hint">CLE 라인업 자세히 보기</span>
+        </div>
       </div>
     </div>
     <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><table class="price-table" style="min-width:340px;width:100%;">
@@ -2562,6 +2611,9 @@ var SCLASS_LANDING_URL = 's-class.html';
 
 // ★ GLC 랜딩페이지 URL – 변경 시 이 값만 수정하세요
 var GLC_LANDING_URL = 'glc-index.html';
+
+// ★ CLE 랜딩페이지 URL – 변경 시 이 값만 수정하세요
+var CLE_LANDING_URL = 'cle.html';
 // 실제 배포 후 GitHub Pages URL 예시:
 // var ECLASS_LANDING_URL = 'https://jnohjingyu.github.io/e-class/';
 
@@ -2575,6 +2627,9 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   document.querySelectorAll('.glc-detail-btn').forEach(function(btn) {
     btn.setAttribute('href', GLC_LANDING_URL);
+  });
+  document.querySelectorAll('.cle-detail-btn').forEach(function(btn) {
+    btn.setAttribute('href', CLE_LANDING_URL);
   });
 });
 
