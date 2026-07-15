@@ -976,6 +976,143 @@ body {
   font-weight: 600;
 }
 
+/* ── EQ FINANCE RATE TABLE (EQA·EQB 전용) ── */
+.eq-finance-card {
+  max-width: 860px;
+  margin: 40px auto 20px;
+  background: linear-gradient(135deg, #0f1628 0%, #1a1a2e 50%, #0d1a30 100%);
+  border: 1px solid rgba(184,151,90,0.4);
+  border-radius: 16px;
+  padding: 32px 28px 28px;
+  text-align: center;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+}
+.eq-finance-card.eq-finance-in-view {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s ease;
+}
+.eq-finance-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 34px rgba(0,0,0,0.35);
+}
+.eq-finance-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 20px;
+  padding: 6px 18px;
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.85);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+.eq-finance-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 10px;
+  word-break: keep-all;
+}
+.eq-finance-sub {
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.7;
+  margin-bottom: 26px;
+  word-break: keep-all;
+}
+.eq-finance-wrap {
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.eq-finance-table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+.eq-finance-table th, .eq-finance-table td {
+  padding: 16px 10px;
+  text-align: center;
+  transition: background 0.3s ease, color 0.3s ease, filter 0.3s ease;
+}
+.eq-finance-table thead th {
+  background: rgba(255,255,255,0.04);
+  color: rgba(255,255,255,0.55);
+  font-size: 12px;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.eq-finance-table thead th:first-child {
+  color: rgba(255,255,255,0.7);
+  font-weight: 600;
+}
+.eq-finance-table tbody th {
+  background: rgba(255,255,255,0.03);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  white-space: nowrap;
+}
+.eq-finance-table tbody td {
+  font-size: 14px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.85);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  line-height: 1.35;
+}
+.eq-finance-table tbody tr:last-child th,
+.eq-finance-table tbody tr:last-child td { border-bottom: none; }
+.eq-finance-table tbody tr:hover th,
+.eq-finance-table tbody tr:hover td.eq-finance-plain {
+  background: rgba(255,255,255,0.04);
+}
+.eq-finance-zero {
+  background: rgba(30,90,60,0.5);
+  color: #5fc98d;
+}
+.eq-finance-table tbody tr:hover .eq-finance-zero {
+  background: rgba(30,90,60,0.72);
+}
+.eq-finance-gold {
+  color: #f0c040;
+}
+.eq-finance-plain {
+  color: rgba(255,255,255,0.35);
+  font-weight: 400;
+  font-size: 13px;
+}
+.eq-finance-mint {
+  background: linear-gradient(135deg, rgba(42,150,120,0.55), rgba(28,112,90,0.5));
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 13px;
+}
+.eq-finance-table tbody tr:hover .eq-finance-mint {
+  filter: brightness(1.18);
+}
+.eq-finance-round-top { border-top-left-radius: 10px; border-top-right-radius: 10px; }
+.eq-finance-round-bottom { border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; }
+.eq-finance-foot {
+  margin-top: 18px;
+  font-size: 12px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.8;
+  word-break: keep-all;
+}
+.eq-finance-foot strong {
+  color: rgba(255,255,255,0.7);
+  font-weight: 600;
+}
+
 /* ── FOOTER ── */
 .footer {
   background: #111;
@@ -1057,6 +1194,12 @@ body {
     .rate-table th, .rate-table td { padding: 18px 14px; }
     .rate-table thead th { font-size: 13px; }
     .rate-table tbody th, .rate-table tbody td { font-size: 15px; }
+    .eq-finance-card { padding: 36px 40px 30px; }
+    .eq-finance-title { font-size: 26px; }
+    .eq-finance-sub { font-size: 14px; }
+    .eq-finance-table th, .eq-finance-table td { padding: 18px 14px; }
+    .eq-finance-table thead th { font-size: 13px; }
+    .eq-finance-table tbody th, .eq-finance-table tbody td { font-size: 15px; }
   }
 
   /* ── 모바일 (768px 이하) 글자 작게 ── */
@@ -1121,6 +1264,16 @@ body {
     .rate-table thead th { font-size: 10px; }
     .rate-table tbody th, .rate-table tbody td { font-size: 12px; }
     .rate-table-foot { font-size: 10px; }
+    .eq-finance-card { padding: 20px 16px 18px; }
+    .eq-finance-badge { font-size: 10px; padding: 5px 12px; }
+    .eq-finance-title { font-size: 17px; }
+    .eq-finance-sub { font-size: 11px; }
+    .eq-finance-table th, .eq-finance-table td { padding: 12px 6px; }
+    .eq-finance-table thead th { font-size: 10px; }
+    .eq-finance-table tbody th { font-size: 12px; }
+    .eq-finance-table tbody td { font-size: 12px; }
+    .eq-finance-plain, .eq-finance-mint { font-size: 10.5px; }
+    .eq-finance-foot { font-size: 10px; }
   }
 
   /* ── 소형 모바일 (400px 이하) ── */
@@ -1131,6 +1284,10 @@ body {
     .discount-tag { font-size: 15px; min-width: 60px; max-width: 76px; }
     .rate-value { font-size: 20px; }
     .ev-rate { font-size: 22px; }
+    .eq-finance-table th, .eq-finance-table td { padding: 10px 4px; }
+    .eq-finance-table tbody th { font-size: 11px; }
+    .eq-finance-table tbody td { font-size: 11px; }
+    .eq-finance-plain, .eq-finance-mint { font-size: 10px; }
   }
 
   /* 앵커 스크롤 시 네비바 높이만큼 여백 */
@@ -1559,6 +1716,47 @@ body {
       </table>
     </div>
     <div class="rate-table-foot">무이자 조건 · 선수금 65% · 24개월 → 무이자 0.00% · 중도상환수수료 <strong>0원</strong> &nbsp;&nbsp;그 외 전 구간 → 중도상환수수료 <strong>2%</strong></div>
+  </div>
+
+  <!-- EQA·EQB 전용 금리표 -->
+  <div class="eq-finance-card" id="eq-finance-card">
+    <div class="eq-finance-badge">EQ Finance Rate Table</div>
+    <div class="eq-finance-title">EQA · EQB 전용 금리표</div>
+    <div class="eq-finance-sub">전동화 프로그레시브 · AMG Line 4종<br>(EQA 250 · EQA 250 AMG · EQB 300 · EQB 300 AMG) 한정</div>
+    <div class="eq-finance-wrap">
+      <table class="eq-finance-table">
+        <thead>
+          <tr>
+            <th style="width:26%;">할부기간</th>
+            <th style="width:32%;">선수금 0% 금리</th>
+            <th style="width:42%;">비고 (무이자 조건)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>24개월</th>
+            <td class="eq-finance-zero eq-finance-round-top">무이자</td>
+            <td class="eq-finance-plain">-</td>
+          </tr>
+          <tr>
+            <th>36개월</th>
+            <td class="eq-finance-zero eq-finance-round-bottom">무이자</td>
+            <td class="eq-finance-plain">-</td>
+          </tr>
+          <tr>
+            <th>48개월</th>
+            <td class="eq-finance-gold">0.5%</td>
+            <td class="eq-finance-mint eq-finance-round-top">선수금 7% → 무이자</td>
+          </tr>
+          <tr>
+            <th>60개월</th>
+            <td class="eq-finance-gold">1.6%</td>
+            <td class="eq-finance-mint eq-finance-round-bottom">선수금 22% → 무이자</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="eq-finance-foot">EQA·EQB 전동화 프로그레시브 · AMG Line 한정 프로그램 · 모든 금리는 신용등급/심사 결과에 따라 변동될 수 있습니다</div>
   </div>
 
   <!-- 차종별 가격표 -->
@@ -2858,6 +3056,27 @@ function applyMobilePriceFormat() {
     });
   }
 }
+</script>
+
+<script>
+// EQA·EQB 전용 금리표 - 스크롤 Fade-up
+(function () {
+  var eqCard = document.getElementById('eq-finance-card');
+  if (!eqCard) return;
+  if (!('IntersectionObserver' in window)) {
+    eqCard.classList.add('eq-finance-in-view');
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('eq-finance-in-view');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+  io.observe(eqCard);
+})();
 </script>
 
 </body>
