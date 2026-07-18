@@ -697,7 +697,7 @@
           <p class="card-code">GLC 220 d</p>
           <p class="card-tagline">경제성과 장거리 주행을 위한<br>디젤 SUV</p>
           <div class="card-foot">
-            <a class="card-btn" data-link="glc220d" href="glc220d.html">
+            <a class="card-btn" data-link="glc220d" href="https://jnohjingyu.github.io/glc/glc220d.html">
               자세히 보기 <span class="arrow">→</span>
             </a>
           </div>
@@ -723,7 +723,7 @@
           <p class="card-code">GLC 300 4MATIC</p>
           <p class="card-tagline">가장 많은 고객이 선택하는<br>균형 잡힌 GLC</p>
           <div class="card-foot">
-            <a class="card-btn" data-link="glc300" href="glc300.html">
+            <a class="card-btn" data-link="glc300" href="https://jnohjingyu.github.io/glc/glc300.html">
               자세히 보기 <span class="arrow">→</span>
             </a>
           </div>
@@ -749,7 +749,7 @@
           <p class="card-code">GLC 300 4MATIC Coupe</p>
           <p class="card-tagline">쿠페 스타일의<br>프리미엄 SUV</p>
           <div class="card-foot">
-            <a class="card-btn" data-link="glc300coupe" href="glc300coupe.html">
+            <a class="card-btn" data-link="glc300coupe" href="https://jnohjingyu.github.io/glc/glc300coupe.html">
               자세히 보기 <span class="arrow">→</span>
             </a>
           </div>
@@ -776,7 +776,7 @@
           <p class="card-code">AMG GLC 43</p>
           <p class="card-tagline">AMG 퍼포먼스와<br>실용성을 모두 갖춘 SUV</p>
           <div class="card-foot">
-            <a class="card-btn" data-link="glc43" href="glc43.html">
+            <a class="card-btn" data-link="glc43" href="https://jnohjingyu.github.io/glc/glc43.html">
               자세히 보기 <span class="arrow">→</span>
             </a>
           </div>
@@ -794,7 +794,7 @@
           <!-- GLC 전기차 카드 이미지 경로로 교체하세요 -->
           <img
             class="card-image"
-            src="https://github.com/JNOHJINGYU/images/blob/main/GLC_EQ_FRONT.jpg?raw=true"
+            src="https://github.com/JNOHJINGYU/images/blob/main/glc-electric.jpg?raw=true"
             alt="The new GLC Electric"
             loading="lazy"
             onerror="this.closest('.card-image-wrap').classList.add('img-fallback')"
@@ -811,7 +811,7 @@
             <a
               class="card-btn"
               data-link="glcelectric"
-              href="./glc-electric.html"
+              href="https://jnohjingyu.github.io/glc/glc-electric.html"
               aria-label="The new GLC Electric 상세페이지 보기"
             >
               자세히 보기 <span class="arrow">→</span>
@@ -840,30 +840,33 @@
      모델별 랜딩페이지 링크 — 여기서 한 번에 수정 가능
      ============================================================ */
   /*
-    GLC 전기차 상세페이지 링크 변경 방법
+    GLC 모델별 상세페이지 링크 변경 방법
 
-    1. 같은 저장소의 HTML 파일 (현재 기본값)
-       glcelectric: './glc-electric.html'
+    현재 적용된 방식: 5개 모델 페이지가 모두 별도의 GitHub Pages
+    저장소인 'glc' 저장소 루트에 있어, 아래처럼 전체 주소로 연결되어 있습니다.
+      glc220d:     'https://jnohjingyu.github.io/glc/glc220d.html'
+      glc300:      'https://jnohjingyu.github.io/glc/glc300.html'
+      glc300coupe: 'https://jnohjingyu.github.io/glc/glc300coupe.html'
+      glc43:       'https://jnohjingyu.github.io/glc/glc43.html'
+      glcelectric: 'https://jnohjingyu.github.io/glc/glc-electric.html'
 
+    다른 방식으로 바꾸고 싶다면:
+    1. 같은 저장소의 HTML 파일 (glc-index.html과 같은 저장소에 둘 경우)
+       glc220d: './glc220d.html'
     2. 같은 저장소의 하위 폴더 (폴더 안에 index.html이 있는 경우)
-       glcelectric: './glc-electric/'
-
-    3. 별도 GitHub Pages 저장소의 전체 주소
-       glcelectric: 'https://사용자이름.github.io/저장소이름/'
+       glc220d: './glc220d/'
 
     GitHub 저장소 주소가 아니라 브라우저에서 실제로 열리는
     GitHub Pages 공개 주소를 입력해야 합니다.
-      잘못된 예: https://github.com/사용자이름/저장소이름
-      올바른 예: https://사용자이름.github.io/저장소이름/
+      잘못된 예: https://github.com/jnohjingyu/glc
+      올바른 예: https://jnohjingyu.github.io/glc/glc220d.html
   */
   const MODEL_LINKS = {
-    glc220d:    'glc220d.html',      // GLC 220 d 랜딩페이지 경로
-    glc300:     'glc300.html',       // GLC 300 4MATIC 랜딩페이지 경로
-    glc300coupe:'glc300coupe.html',  // GLC 300 4MATIC Coupe 랜딩페이지 경로
-    glc43:      'glc43.html',        // AMG GLC 43 랜딩페이지 경로
-
-    // GLC 전기차 랜딩페이지 — 실제 경로/주소로 변경은 이 값만 수정하면 됩니다.
-    glcelectric: './glc-electric.html'
+    glc220d:    'https://jnohjingyu.github.io/glc/glc220d.html',      // GLC 220 d 랜딩페이지
+    glc300:     'https://jnohjingyu.github.io/glc/glc300.html',       // GLC 300 4MATIC 랜딩페이지
+    glc300coupe:'https://jnohjingyu.github.io/glc/glc300coupe.html',  // GLC 300 4MATIC Coupe 랜딩페이지
+    glc43:      'https://jnohjingyu.github.io/glc/glc43.html',        // AMG GLC 43 랜딩페이지
+    glcelectric:'https://jnohjingyu.github.io/glc/glc-electric.html'  // GLC 전기차 랜딩페이지
   };
 
   /* [data-link] 요소에 MODEL_LINKS 주소를 적용.
