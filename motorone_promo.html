@@ -645,6 +645,28 @@ body {
 .price-table td[rowspan].col-dash,
 .price-table td[rowspan].col-rent { vertical-align: middle !important; }
 
+/* 140주년 Edition 모델 상세보기 링크 */
+.edition-detail-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  margin-top: 5px;
+  color: #23406F;
+  font-size: 11px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+.edition-detail-link:hover {
+  color: #102A4C;
+  transform: translateX(2px);
+}
+.edition-detail-link.is-disabled {
+  color: #999;
+  pointer-events: none;
+  cursor: default;
+}
+
 /* 기존재고/7월이후 두 줄을 하나의 그룹처럼 보이게 + 라인 높이 통일 */
 .price-table tr.dual-row-top { border-bottom: none !important; }
 .price-table tr.dual-row-top td { border-bottom: 1px dashed #eee; }
@@ -1241,6 +1263,7 @@ body {
     .price-table th:nth-child(4), .price-table td:nth-child(4) { width: 12%; text-align: center !important; }
     .price-table th:nth-child(5), .price-table td:nth-child(5) { width: 20%; text-align: right !important; }
     .col-price { word-break: break-all; line-height: 1.4; }
+    .edition-detail-link { font-size: 10px; margin-top: 4px; }
     .final-main { font-size: 12px !important; white-space: nowrap; }
     .promo-main { font-size: 11px; }
     .main { padding: 10px 14px; }
@@ -1288,6 +1311,7 @@ body {
     .eq-finance-table tbody th { font-size: 11px; }
     .eq-finance-table tbody td { font-size: 11px; }
     .eq-finance-plain, .eq-finance-mint { font-size: 10px; }
+    .edition-detail-link { font-size: 9px; margin-top: 3px; }
   }
 
   /* 앵커 스크롤 시 네비바 높이만큼 여백 */
@@ -2018,6 +2042,7 @@ body {
         <tr class="dual-row dual-row-top" data-model-id="cle-450-4matic-coup-amg-line"><td rowspan="2" class="model-cell">CLE 450 4MATIC Coupé AMG Line</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">98,400,000원</span></td><td rowspan="2" class="col-promo">9%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">89,540,000원</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="cle-450-4matic-coup-amg-line"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">99,700,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">90,720,000원</span></td></tr>
         <tr class="dual-row dual-row-top" data-model-id="mercedes-amg-cle-53-4matic-coup"><td rowspan="2" class="model-cell">Mercedes-AMG CLE 53 4MATIC+ Coupé</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">107,700,000원</span></td><td rowspan="2" class="col-promo">3%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">104,460,000원</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="mercedes-amg-cle-53-4matic-coup"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">109,100,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">105,820,000원</span></td></tr>
         <tr class="dual-row dual-row-top" data-model-id="cle-200-cabriolet-amg-line"><td rowspan="2" class="model-cell">CLE 200 Cabriolet AMG Line</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">82,100,000원</span></td><td rowspan="2" class="col-promo">4%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">78,810,000원</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="cle-200-cabriolet-amg-line"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">83,100,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">79,770,000원</span></td></tr>
+        <tr class="dual-row dual-row-top" data-model-id="cle-200-cabriolet-amg-line-140-edition"><td rowspan="2" class="model-cell">CLE 200 Cabriolet AMG Line<br><span style="font-size:90%;color:#5c5c5c;">140주년 Edition</span></td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">86,400,000원</span></td><td rowspan="2" class="col-promo">4%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">82,940,000원</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="cle-200-cabriolet-amg-line-140-edition"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">87,400,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">83,900,000원</span></td></tr>
         <tr class="dual-row dual-row-top" data-model-id="cle-450-4matic-cabriolet-amg-line"><td rowspan="2" class="model-cell">CLE 450 4MATIC Cabriolet AMG Line</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">102,600,000원</span></td><td rowspan="2" class="col-promo">6%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">96,440,000원</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="cle-450-4matic-cabriolet-amg-line"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">104,000,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">97,760,000원</span></td></tr>
         <tr class="dual-row dual-row-top" data-model-id="mercedes-amg-cle-53-4matic-cabriolet"><td rowspan="2" class="model-cell">Mercedes-AMG CLE 53 4MATIC+ Cabriolet</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">113,600,000원</span></td><td rowspan="2" class="col-promo">3%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">110,190,000원</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="mercedes-amg-cle-53-4matic-cabriolet"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">115,000,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">111,550,000원</span></td></tr>
       </tbody>
@@ -2545,6 +2570,7 @@ body {
         <tr class="dual-row dual-row-top"><td rowspan="2" class="model-cell">CLE 450 4MATIC Coupé AMG Line</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">98,400,000원</span></td><td rowspan="2" class="col-promo">9%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">89,540,000원</span></td></tr><tr class="dual-row dual-row-bottom"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">99,700,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">90,720,000원</span></td></tr>
         <tr class="dual-row dual-row-top"><td rowspan="2" class="model-cell">Mercedes-AMG CLE 53 4MATIC+ Coupé</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">107,700,000원</span></td><td rowspan="2" class="col-promo">3%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">104,460,000원</span></td></tr><tr class="dual-row dual-row-bottom"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">109,100,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">105,820,000원</span></td></tr>
         <tr class="dual-row dual-row-top"><td rowspan="2" class="model-cell">CLE 200 Cabriolet AMG Line</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">82,100,000원</span></td><td rowspan="2" class="col-promo">4%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">78,810,000원</span></td></tr><tr class="dual-row dual-row-bottom"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">83,100,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">79,770,000원</span></td></tr>
+        <tr class="dual-row dual-row-top"><td rowspan="2" class="model-cell">CLE 200 Cabriolet AMG Line<br><span style="font-size:90%;color:#5c5c5c;">140주년 Edition</span></td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">86,400,000원</span></td><td rowspan="2" class="col-promo">4%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">82,940,000원</span></td></tr><tr class="dual-row dual-row-bottom"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">87,400,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">83,900,000원</span></td></tr>
         <tr class="dual-row dual-row-top"><td rowspan="2" class="model-cell">CLE 450 4MATIC Cabriolet AMG Line</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">102,600,000원</span></td><td rowspan="2" class="col-promo">6%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">96,440,000원</span></td></tr><tr class="dual-row dual-row-bottom"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">104,000,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">97,760,000원</span></td></tr>
         <tr class="dual-row dual-row-top"><td rowspan="2" class="model-cell">Mercedes-AMG CLE 53 4MATIC+ Cabriolet</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">113,600,000원</span></td><td rowspan="2" class="col-promo">3%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">110,190,000원</span></td></tr><tr class="dual-row dual-row-bottom"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">115,000,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">111,550,000원</span></td></tr>
       </tbody>
@@ -2866,6 +2892,7 @@ const VEHICLE_DATA = {
   "cle-450-4matic-coup-amg-line": { model: "CLE 450 4MATIC Coupé AMG Line", oldPrice: 98400000, newPrice: 99700000, discount: 9, financeDiscount: null, rentDiscount: 3 },
   "mercedes-amg-cle-53-4matic-coup": { model: "Mercedes-AMG CLE 53 4MATIC+ Coupé", oldPrice: 107700000, newPrice: 109100000, discount: 3, financeDiscount: null, rentDiscount: 3 },
   "cle-200-cabriolet-amg-line": { model: "CLE 200 Cabriolet AMG Line", oldPrice: 82100000, newPrice: 83100000, discount: 4, financeDiscount: null, rentDiscount: 3 },
+  "cle-200-cabriolet-amg-line-140-edition": { model: "CLE 200 Cabriolet AMG Line 140주년 Edition", oldPrice: 86400000, newPrice: 87400000, discount: 4, financeDiscount: null, rentDiscount: 3 },
   "cle-450-4matic-cabriolet-amg-line": { model: "CLE 450 4MATIC Cabriolet AMG Line", oldPrice: 102600000, newPrice: 104000000, discount: 6, financeDiscount: null, rentDiscount: 3 },
   "mercedes-amg-cle-53-4matic-cabriolet": { model: "Mercedes-AMG CLE 53 4MATIC+ Cabriolet", oldPrice: 113600000, newPrice: 115000000, discount: 3, financeDiscount: null, rentDiscount: 3 },
 
@@ -2930,6 +2957,24 @@ const VEHICLE_DATA = {
   "mercedes-maybach-gls-600": { model: "Mercedes-Maybach GLS 600", oldPrice: 293600000, newPrice: 295000000, discount: 5, financeDiscount: null, rentDiscount: 3 },
   "mercedes-maybach-gls-600-manufaktur": { model: "Mercedes-Maybach GLS 600 MANUFAKTUR", oldPrice: 335600000, newPrice: 337000000, discount: 5, financeDiscount: null, rentDiscount: 3 },
   "mercedes-maybach-eqs-680-suv": { model: "Mercedes-Maybach EQS 680 SUV", oldPrice: 233600000, newPrice: 235000000, discount: null, financeDiscount: null, rentDiscount: 3 },
+};
+
+/* =====================================================
+   ★★★★★ 140주년 Edition 상세보기 링크 수정 영역 ★★★★★
+
+   아래 url의 구글 드라이브 주소만 변경하세요.
+   예: url: "GOOGLE_DRIVE_GLC_140_URL" → url: "https://drive.google.com/file/d/xxxxx/view?usp=sharing"
+
+   url이 "https://"로 시작해야만 실제 클릭 가능한 링크로 활성화됩니다.
+   (임시 문자열 상태에서는 "상세보기 →"가 비활성 표시로만 나타나고 클릭해도 아무 일도 일어나지 않습니다.)
+   ===================================================== */
+// 구글 드라이브 파일은 반드시
+// '링크가 있는 모든 사용자에게 공개' 또는
+// 고객이 열람 가능한 공유 권한으로 설정해야 합니다.
+const EDITION_DETAIL_LINKS = {
+  "glc-300-4matic-amg-line-140-edition": { url: "https://drive.google.com/file/d/1M6O3N9k3i-7RZzvoQ1FeligLnGwQ3jtI/view?usp=sharing" },
+  "cle-200-coup-amg-line-140-edition": { url: "https://drive.google.com/file/d/1M6O3N9k3i-7RZzvoQ1FeligLnGwQ3jtI/view?usp=sharing" },
+  "cle-200-cabriolet-amg-line-140-edition": { url: "https://drive.google.com/file/d/1M6O3N9k3i-7RZzvoQ1FeligLnGwQ3jtI/view?usp=sharing" }
 };
 
 /* =====================================================
@@ -3038,6 +3083,35 @@ function applyVehicleData() {
           if (newFinLabel) newFinLabel.remove();
         }
       }
+    });
+  });
+}
+
+// EDITION_DETAIL_LINKS 기준으로 모든 140주년 Edition 모델의 상세보기 링크를 자동 삽입
+// (data-model-id가 같은 모든 위치 — 메인 가격표 + 차종별 탭 가격표 — 에 동시 적용됨)
+function applyEditionDetailLinks() {
+  Object.keys(EDITION_DETAIL_LINKS).forEach(function (id) {
+    var linkData = EDITION_DETAIL_LINKS[id];
+    var url = linkData.url;
+    var isActive = typeof url === 'string' && url.indexOf('https://') === 0;
+
+    var rows = document.querySelectorAll('tr.dual-row-top[data-model-id="' + id + '"]');
+    rows.forEach(function (tr) {
+      var modelCell = tr.querySelector('.model-cell');
+      if (!modelCell) return;
+      if (modelCell.querySelector('.edition-detail-link')) return; // 중복 삽입 방지
+
+      var el = document.createElement(isActive ? 'a' : 'span');
+      el.className = 'edition-detail-link' + (isActive ? '' : ' is-disabled');
+      el.textContent = '상세보기 →';
+      if (isActive) {
+        el.setAttribute('href', url);
+        el.setAttribute('target', '_blank');
+        el.setAttribute('rel', 'noopener noreferrer');
+      }
+
+      modelCell.appendChild(document.createElement('br'));
+      modelCell.appendChild(el);
     });
   });
 }
@@ -3281,6 +3355,7 @@ document.addEventListener('DOMContentLoaded', function() {
   recalcExistingStockPrices();
   applyFinancialDiscounts();
   applyVehicleData();
+  applyEditionDetailLinks();
   applyMobilePriceFormat();
 });
 window.addEventListener('resize', applyMobilePriceFormat);
