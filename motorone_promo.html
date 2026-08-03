@@ -892,6 +892,139 @@ body {
   letter-spacing: 0.02em;
 }
 
+/* ── AUGUST SPOTLIGHT: 요약 카드 그리드 (할인확대/할인축소/신규추가) ── */
+.spotlight-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 22px;
+  margin-bottom: 16px;
+}
+.spotlight-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 18px 16px 14px;
+  display: flex;
+  flex-direction: column;
+}
+.spotlight-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.spotlight-card-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  white-space: nowrap;
+}
+.spotlight-card-icon { font-size: 13px; }
+.spotlight-icon-expand { color: #e0935a; }
+.spotlight-icon-reduce { color: #5ba3cc; }
+.spotlight-icon-new { color: #f0c040; }
+.spotlight-card-count {
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.45);
+  white-space: nowrap;
+}
+.spotlight-item {
+  padding: 9px 0;
+  border-bottom: 1px dashed rgba(255,255,255,0.08);
+}
+.spotlight-item:first-child { padding-top: 0; }
+.spotlight-item:last-child { border-bottom: none; padding-bottom: 0; }
+.spotlight-item-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 1.5;
+  word-break: keep-all;
+  margin-bottom: 5px;
+}
+.spotlight-item-sub {
+  font-size: 11px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.5;
+  word-break: keep-all;
+}
+.spotlight-item-change {
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: nowrap;
+}
+.spotlight-item-change .old-val { color: rgba(255,255,255,0.35); text-decoration: line-through; font-weight: 500; }
+.spotlight-item-change .arrow { color: rgba(255,255,255,0.3); font-weight: 400; }
+.spotlight-item-change .new-val { color: #f0c040; }
+
+.spotlight-end-card {
+  background: rgba(224,90,90,0.06);
+  border: 1px solid rgba(224,90,90,0.35);
+  border-radius: 12px;
+  padding: 16px 18px;
+  margin-bottom: 20px;
+}
+.spotlight-end-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.spotlight-end-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #e0935a;
+  word-break: keep-all;
+}
+.spotlight-end-badge {
+  font-size: 10px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.spotlight-end-desc {
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.7;
+  word-break: keep-all;
+}
+.spotlight-end-desc strong { color: #ffffff; font-weight: 600; }
+
+.spotlight-note {
+  font-size: 12px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.8;
+  word-break: keep-all;
+  margin-bottom: 20px;
+  padding: 14px 16px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.spotlight-note strong { color: #f0c040; font-weight: 600; }
+
+/* 공통 추가할인 안내 - EW(무상 보증 연장) 행 */
+.discount-tag.ew-tag { color: #5ba3cc; border-color: rgba(91,163,204,0.5); }
+.discount-desc .highlight.highlight-blue { color: #7ab3d4; }
+
 /* ── FINANCE RATE TABLE ── */
 .rate-table-card {
   max-width: 860px;
@@ -1264,6 +1397,17 @@ body {
     .price-table th:nth-child(5), .price-table td:nth-child(5) { width: 20%; text-align: right !important; }
     .col-price { word-break: break-all; line-height: 1.4; }
     .edition-detail-link { font-size: 10px; margin-top: 4px; }
+    .spotlight-grid { grid-template-columns: 1fr; gap: 12px; }
+    .spotlight-card { padding: 16px 14px 12px; }
+    .spotlight-card-title { font-size: 13px; }
+    .spotlight-card-count { font-size: 10px; }
+    .spotlight-item-name { font-size: 12.5px; }
+    .spotlight-item-sub { font-size: 10.5px; }
+    .spotlight-item-change { font-size: 12.5px; }
+    .spotlight-end-card { padding: 14px 14px; }
+    .spotlight-end-title { font-size: 14px; }
+    .spotlight-end-desc { font-size: 12.5px; }
+    .spotlight-note { font-size: 11.5px; padding: 12px 14px; }
     .final-main { font-size: 12px !important; white-space: nowrap; }
     .promo-main { font-size: 11px; }
     .main { padding: 10px 14px; }
@@ -1516,21 +1660,95 @@ body {
   ※ 본 페이지는 2026년 7월 메르세데스-벤츠 코리아 공식 프로모션 기준입니다. 표시 가격은 모두 <strong>VAT 포함</strong>, 만원 단위 절삭이며 옵션·재고 상황에 따라 실제 견적과 차이가 있을 수 있습니다.
 </div>
 
-<!-- JULY SPOTLIGHT 카드 -->
+<!-- AUGUST SPOTLIGHT 카드 -->
 <div class="june-spotlight-card">
-  <div class="june-spotlight-badge">JULY SPOTLIGHT · 핵심 캠페인</div>
-  <div class="june-spotlight-title">메르세데스 벤츠 파이낸셜 &amp; 모빌리티 조인트 캠페인 — 이번 달의 무기</div>
+  <div class="june-spotlight-badge">AUGUST SPOTLIGHT · 핵심 캠페인</div>
+  <div class="june-spotlight-title">메르세데스-벤츠 파이낸셜 &amp; 모빌리티 조인트 캠페인 — 이번 달의 무기</div>
   <div class="june-spotlight-desc">
-    7월부터 자동차 개별소비세 탄력세율 종료(5% 정상세율 복귀)로 권장소비자가격이 소폭 상승했지만, MBM 특별 할인 대상 차종이 확대되었습니다. (Compact GLA / GLB / AMG A45S / EQA / EQB 신규 편입)<br>
-    파이낸셜·모빌리티 조인트 캠페인(MBM JC)은 지속됩니다. 아래 모델은 기본 현금할인에 더해 해당 금융상품 이용 시 +4% ~ +7%의 추가할인이 중첩 적용됩니다. 표 안에서 <span style="color:#f0c040;font-weight:600;">금색 강조</span> 표시된 항목이 해당 모델입니다.
+    8월에도 개별소비세 5% 정상세율이 유지됩니다.<br>
+    지난달(7월) 대비 달라진 핵심만 한눈에 정리했습니다.
   </div>
+
+  <div class="spotlight-grid">
+    <div class="spotlight-card">
+      <div class="spotlight-card-head">
+        <div class="spotlight-card-title"><span class="spotlight-card-icon spotlight-icon-expand">▲</span> 할인 확대</div>
+        <div class="spotlight-card-count">3개 트림</div>
+      </div>
+      <div class="spotlight-item">
+        <div class="spotlight-item-name">GLC 300 AMG Line<br>140주년 Edition</div>
+        <div class="spotlight-item-change"><span class="old-val">6%</span><span class="arrow">→</span><span class="new-val">12%</span></div>
+      </div>
+      <div class="spotlight-item">
+        <div class="spotlight-item-name">CLE 200 Coupé AMG Line<br>140주년 Edition</div>
+        <div class="spotlight-item-change"><span class="old-val">2%</span><span class="arrow">→</span><span class="new-val">5%</span></div>
+      </div>
+      <div class="spotlight-item">
+        <div class="spotlight-item-name">CLE 200 Cabriolet AMG Line<br>140주년 Edition</div>
+        <div class="spotlight-item-change"><span class="old-val">2%</span><span class="arrow">→</span><span class="new-val">4%</span></div>
+      </div>
+    </div>
+
+    <div class="spotlight-card">
+      <div class="spotlight-card-head">
+        <div class="spotlight-card-title"><span class="spotlight-card-icon spotlight-icon-reduce">▼</span> 할인 축소</div>
+        <div class="spotlight-card-count">2개 그룹</div>
+      </div>
+      <div class="spotlight-item">
+        <div class="spotlight-item-name">GLE 450 4MATIC<br>AMG Line · Coupé AMG Line 관련 전 라인</div>
+        <div class="spotlight-item-change"><span class="old-val">13%</span><span class="arrow">→</span><span class="new-val">12%</span></div>
+      </div>
+      <div class="spotlight-item">
+        <div class="spotlight-item-name">GLC 300 AVANTGARDE<br>GLC 300 Coupé AVANTGARDE</div>
+        <div class="spotlight-item-change"><span class="old-val">8%</span><span class="arrow">→</span><span class="new-val">7%</span></div>
+      </div>
+    </div>
+
+    <div class="spotlight-card">
+      <div class="spotlight-card-head">
+        <div class="spotlight-card-title"><span class="spotlight-card-icon spotlight-icon-new">✨</span> 신규 추가</div>
+        <div class="spotlight-card-count">4건</div>
+      </div>
+      <div class="spotlight-item">
+        <div class="spotlight-item-name">C 200 Final Edition</div>
+        <div class="spotlight-item-sub">기본 10% + MBM 특별 +4% · 신규 편입</div>
+      </div>
+      <div class="spotlight-item">
+        <div class="spotlight-item-name">EQS 580 4MATIC SUV</div>
+        <div class="spotlight-item-sub">기본 10% · 무상 보증 연장</div>
+      </div>
+      <div class="spotlight-item">
+        <div class="spotlight-item-name">Mercedes-AMG GT 43<br>C192 · 2도어</div>
+        <div class="spotlight-item-sub">기본 9% · 신규 편입</div>
+      </div>
+      <div class="spotlight-item">
+        <div class="spotlight-item-name">MY26 E-Class</div>
+        <div class="spotlight-item-sub">최대 4년 / 13만km · 별도 비용 없음</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="spotlight-end-card">
+    <div class="spotlight-end-head">
+      <div class="spotlight-end-title"><span>⛔</span> MBM 조인트 캠페인 종료</div>
+      <div class="spotlight-end-badge">캠페인</div>
+    </div>
+    <div class="spotlight-end-desc"><strong>E 450 · GLC AMG Line · GLE 53 · GT 43</strong> 등 해당 트림의 파이낸셜 추가 할인 미적용</div>
+  </div>
+
+  <div class="spotlight-note">
+    📌 <strong>7월 1일 이후 통관 차량 기준</strong>으로 위 가격이 안내되며, 7월 1일 이전 통관을 완료한 특수 재고 차량은 개소세 인상 이전 가격이 적용되어 실구매가가 달라질 수 있습니다. 일부 차종은 벤츠파이낸셜 이용 시에만 추가 할인이 적용되며, 해당 모델은 아래 가격표 안에 별도로 할인율이 표시되어 있습니다. 정확한 적용 여부는 실제 차량 재고와 조건에 따라 달라질 수 있으니 상담 시 확인해 주세요.
+  </div>
+
   <div class="june-spotlight-badges">
     <span class="june-model-badge">GLA 250 · GLB 250 · AMG GLB35 · AMG A45 S +4% <span style="background:#1a6aaa;color:#fff;font-size:10px;padding:2px 6px;border-radius:4px;font-weight:700;margin-left:4px;vertical-align:middle;">NEW</span></span>
     <span class="june-model-badge">EQA250 · EQA AMG · EQB300 · EQB AMG +4% <span style="background:#1a6aaa;color:#fff;font-size:10px;padding:2px 6px;border-radius:4px;font-weight:700;margin-left:4px;vertical-align:middle;">NEW</span></span>
     <span class="june-model-badge">C 200 AV / AMG Line +4%</span>
     <span class="june-model-badge">E 200 EXCLUSIVE +7%</span>
     <span class="june-model-badge">E 200 AMG Line +4%</span>
-    <span class="june-model-badge">E 300 EX / AMG / 140주년 +4%</span>
+    <span class="june-model-badge">GLC 300 AMG Line 140주년 +4%</span>
+    <span class="june-model-badge">CLE 200 Coupé AMG Line 140주년 +4%</span>
+    <span class="june-model-badge">CLE 200 Cabriolet AMG Line 140주년 +4%</span>
     <span class="june-model-badge">S 450 SWB +4%</span>
     <span class="june-model-badge">GLC 300 AV / Coupé AV +4%</span>
     <span class="june-model-badge">GLE 450 / AMG / Coupé / Coupé AMG +4%</span>
@@ -1560,44 +1778,9 @@ body {
     <div class="discount-tag" style="white-space:normal; word-break:keep-all; line-height:1.5; min-width:76px; max-width:88px; font-size:13px; padding:6px 8px;">하자수리·<br>하이마일리지</div>
     <div class="discount-desc">하자수리 보증 연장 · 하이마일리지 해당 시 — 각 <span class="highlight">+1%</span> 추가</div>
   </div>
-</div>
-
-<!-- 사전계약 이벤트 카드 -->
-<div class="discount-box" style="max-width:860px; margin:0 auto 20px; border-color:#5ba3cc; position:relative; overflow:hidden;">
-  <div style="position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(to right, #5ba3cc, #7ab3d4, #5ba3cc);"></div>
-  <div style="display:flex; align-items:center; gap:10px; margin-bottom:20px;">
-    <span style="background:linear-gradient(135deg,#5ba3cc,#7ab3d4); color:#fff; font-size:13px; font-weight:700; padding:4px 10px; border-radius:4px; letter-spacing:0.1em;">EVENT</span>
-    <div class="discount-title" style="margin-bottom:0; font-size:22px; font-weight:700; color:#7ab3d4; letter-spacing:-0.02em;">신형 S클래스 사전계약 이벤트</div>
-  </div>
-  <div class="discount-row" style="padding:10px 0;">
-    <div class="discount-tag" style="background:rgba(91,163,204,0.15); border-color:#5ba3cc; color:#7ab3d4; min-width:76px; white-space:nowrap; font-size:13px;">기간</div>
-    <div class="discount-desc" style="color:rgba(255,255,255,0.9);">
-      <span style="color:#7ab3d4; font-weight:600;">5월 18일 ~ 6월 30일</span>
-    </div>
-  </div>
-  <div class="discount-row" style="padding:10px 0;">
-    <div class="discount-tag" style="background:rgba(91,163,204,0.15); border-color:#5ba3cc; color:#7ab3d4; min-width:76px; white-space:nowrap; font-size:13px;">기존</div>
-    <div class="discount-desc" style="color:rgba(255,255,255,0.85);">S클래스 보유 고객</div>
-  </div>
-  <div class="discount-row" style="padding:10px 0;">
-    <div class="discount-tag" style="background:rgba(91,163,204,0.15); border-color:#5ba3cc; color:#7ab3d4; min-width:76px; white-space:nowrap; font-size:13px;">신규</div>
-    <div class="discount-desc" style="color:rgba(255,255,255,0.85);">
-      <span style="color:#fff; font-weight:600;">MY27 S-Class F/L</span>
-      <span style="color:rgba(255,255,255,0.5); font-size:13px;"> (마이바흐 포함)</span>
-    </div>
-  </div>
-  <div class="discount-row" style="border-bottom:none; padding:10px 0 0;">
-    <div class="discount-tag" style="background:rgba(91,163,204,0.15); border-color:#5ba3cc; color:#7ab3d4; min-width:76px; white-space:nowrap; font-size:13px;">혜택</div>
-    <div class="discount-desc">
-      <div style="margin-bottom:10px;">
-        <span style="background:rgba(91,163,204,0.15); border:1px solid rgba(91,163,204,0.4); border-radius:4px; padding:2px 8px; font-size:13px; font-weight:700; color:#7ab3d4; margin-right:6px;">현금구매</span>
-        보증 연장 <span style="color:#7ab3d4; font-weight:700;">1년 / 3만km</span>
-      </div>
-      <div>
-        <span style="background:rgba(91,163,204,0.15); border:1px solid rgba(91,163,204,0.4); border-radius:4px; padding:2px 8px; font-size:13px; font-weight:700; color:#7ab3d4; margin-right:6px;">파이낸셜 이용</span>
-        보증 연장 <span style="color:#7ab3d4; font-weight:700;">2년 / 7만km</span>
-      </div>
-    </div>
+  <div class="discount-row">
+    <div class="discount-tag ew-tag">EW</div>
+    <div class="discount-desc">무상 보증 연장 <span style="color:rgba(255,255,255,0.5);font-weight:400;">(Extended Warranty)</span><br>전 EQ · Maybach S 580 / S 680 — <span class="highlight highlight-blue">최대 5년 / 17만km</span><br>MY26 E-Class 전 모델 신규 — <span class="highlight highlight-blue">최대 4년 / 13만km</span></div>
   </div>
 </div>
 
@@ -2902,7 +3085,7 @@ const VEHICLE_DATA = {
   "glc-300-4matic-amg-line": { model: "GLC 300 4MATIC AMG Line", oldPrice: 91400000, newPrice: 92500000, discount: 12, financeDiscount: null, rentDiscount: 3 },
   "glc-300-4matic-amg-line-140-edition": { model: "GLC 300 4MATIC AMG Line 140주년 Edition", oldPrice: 96800000, newPrice: 97900000, discount: 12, financeDiscount: null, rentDiscount: 3 },
   "mercedes-amg-glc-43-4matic": { model: "Mercedes-AMG GLC 43 4MATIC", oldPrice: 102300000, newPrice: 103600000, discount: 7, financeDiscount: null, rentDiscount: 3 },
-  "glc-300-4matic-coup-avantgarde": { model: "GLC 300 4MATIC Coupé AVANTGARDE", oldPrice: 85500000, newPrice: 86600000, discount: 7, financeDiscount: 4, rentDiscount: 3 },
+  "glc-300-4matic-coup-avantgarde": { model: "GLC 300 4MATIC Coupé AVANTGARDE", oldPrice: 85500000, newPrice: 86600000, discount: 8, financeDiscount: 4, rentDiscount: 3 },
   "glc-300-4matic-coup-amg-line": { model: "GLC 300 4MATIC Coupé AMG Line", oldPrice: 95700000, newPrice: 96900000, discount: 9, financeDiscount: null, rentDiscount: 3 },
   "mercedes-amg-glc-43-4matic-coup": { model: "Mercedes-AMG GLC 43 4MATIC Coupé", oldPrice: 106900000, newPrice: 108300000, discount: 3, financeDiscount: null, rentDiscount: 3 },
 
@@ -2972,9 +3155,9 @@ const VEHICLE_DATA = {
 // '링크가 있는 모든 사용자에게 공개' 또는
 // 고객이 열람 가능한 공유 권한으로 설정해야 합니다.
 const EDITION_DETAIL_LINKS = {
-  "glc-300-4matic-amg-line-140-edition": { url: "https://drive.google.com/file/d/1M6O3N9k3i-7RZzvoQ1FeligLnGwQ3jtI/view?usp=sharing" },
-  "cle-200-coup-amg-line-140-edition": { url: "https://drive.google.com/file/d/1M6O3N9k3i-7RZzvoQ1FeligLnGwQ3jtI/view?usp=sharing" },
-  "cle-200-cabriolet-amg-line-140-edition": { url: "https://drive.google.com/file/d/1M6O3N9k3i-7RZzvoQ1FeligLnGwQ3jtI/view?usp=sharing" }
+  "glc-300-4matic-amg-line-140-edition": { url: "GOOGLE_DRIVE_GLC_140_URL" },
+  "cle-200-coup-amg-line-140-edition": { url: "GOOGLE_DRIVE_CLE_COUPE_140_URL" },
+  "cle-200-cabriolet-amg-line-140-edition": { url: "GOOGLE_DRIVE_CLE_CABRIOLET_140_URL" }
 };
 
 /* =====================================================
