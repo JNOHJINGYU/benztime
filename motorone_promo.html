@@ -215,15 +215,6 @@ body {
   color: #f0c040;
   font-weight: 600;
 }
-.discount-desc .new-badge {
-  background: #1a6aaa;
-  color: white;
-  font-size: 10px;
-  padding: 2px 6px;
-  border-radius: 4px;
-  font-weight: 600;
-  margin-right: 6px;
-}
 
 /* ── SECTION ── */
 .section {
@@ -680,6 +671,53 @@ body {
   }
 }
 
+
+/* E클래스 무상 보증연장 안내 카드 */
+.eclass-warranty-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: linear-gradient(135deg, #10203a, #0d1a30);
+  border: 1px solid rgba(91,163,204,0.35);
+  border-radius: 12px;
+  padding: 14px 18px;
+  margin: 14px 0 20px;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.8);
+  word-break: keep-all;
+}
+.eclass-warranty-icon {
+  flex-shrink: 0;
+  width: 20px;
+  text-align: center;
+  color: #5ba3cc;
+  font-size: 15px;
+  margin-top: 1px;
+}
+.eclass-warranty-notice strong {
+  color: #7ab3d4;
+  font-weight: 700;
+}
+.eclass-warranty-highlight {
+  color: #ffffff;
+  font-weight: 700;
+}
+@media (max-width: 768px) {
+  .eclass-warranty-notice {
+    font-size: 12px;
+    padding: 12px 14px;
+    margin: 12px 0 16px;
+    gap: 8px;
+  }
+}
+@media (max-width: 400px) {
+  .eclass-warranty-notice {
+    font-size: 11px;
+    padding: 10px 12px;
+  }
+}
 
 .rent-note {
   margin-top: 12px;
@@ -1594,7 +1632,7 @@ body {
     <p class="hero-badge">Mercedes-Benz Official Dealer · Motor One</p>
     <h1 class="hero-title">가격 및 <span>프로모션</span></h1>
 
-    <p class="hero-date">2026.07 기준 / VAT 포함 / 단위: 원</p>
+    <p class="hero-date">2026.08 기준 / VAT 포함 / 단위: 원</p>
   </div>
 </div>
 
@@ -1704,8 +1742,8 @@ body {
   </div>
 
   <div class="june-spotlight-badges">
-    <span class="june-model-badge">GLA 250 · GLB 250 · AMG GLB35 · AMG A45 S +4% <span style="background:#1a6aaa;color:#fff;font-size:10px;padding:2px 6px;border-radius:4px;font-weight:700;margin-left:4px;vertical-align:middle;">NEW</span></span>
-    <span class="june-model-badge">EQA250 · EQA AMG · EQB300 · EQB AMG +4% <span style="background:#1a6aaa;color:#fff;font-size:10px;padding:2px 6px;border-radius:4px;font-weight:700;margin-left:4px;vertical-align:middle;">NEW</span></span>
+    <span class="june-model-badge">GLA 250 · GLB 250 · AMG GLB35 · AMG A45 S +4%</span>
+    <span class="june-model-badge">EQA250 · EQA AMG · EQB300 · EQB AMG +4%</span>
     <span class="june-model-badge">C 200 AV / AMG Line +4%</span>
     <span class="june-model-badge">E 200 EXCLUSIVE +7%</span>
     <span class="june-model-badge">E 200 AMG Line +4%</span>
@@ -1735,7 +1773,7 @@ body {
   </div>
   <div class="discount-row">
     <div class="discount-tag">전시차량</div>
-    <div class="discount-desc"><span style="background:#1a6aaa;color:white;font-size:10px;padding:2px 6px;border-radius:4px;font-weight:700;margin-right:6px;">NEW</span> 전시차 즉시 출고 가능 시 — <span class="highlight">+1%</span> 추가 할인</div>
+    <div class="discount-desc">전시차 즉시 출고 가능 시 — <span class="highlight">+1%</span> 추가 할인</div>
   </div>
   <div class="discount-row">
     <div class="discount-tag" style="white-space:normal; word-break:keep-all; line-height:1.5; min-width:76px; max-width:88px; font-size:13px; padding:6px 8px;">하자수리·<br>하이마일리지</div>
@@ -1999,6 +2037,7 @@ body {
       <tbody>
         <tr class="dual-row dual-row-top" data-model-id="c-200-avantgarde"><td rowspan="2" class="model-cell">C 200 AVANTGARDE</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">64,300,000원</span></td><td rowspan="2" class="col-promo"><span style="display:block;">10%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">57,870,000원</span><span class="stock-final-fin">55,290,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="c-200-avantgarde"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">65,100,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">58,590,000원</span><span class="stock-final-fin">55,980,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
         <tr class="dual-row dual-row-top" data-model-id="c-200-amg-line"><td rowspan="2" class="model-cell">C 200 AMG Line</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">67,500,000원</span></td><td rowspan="2" class="col-promo"><span style="display:block;">10%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">60,750,000원</span><span class="stock-final-fin">58,050,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="c-200-amg-line"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">68,300,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">61,470,000원</span><span class="stock-final-fin">58,730,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
+        <tr class="dual-row dual-row-top" data-model-id="c-200-final-edition"><td rowspan="2" class="model-cell">C 200 Final Edition</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">66,300,000원</span></td><td rowspan="2" class="col-promo"><span style="display:block;">10%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">59,670,000원</span><span class="stock-final-fin">57,010,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="c-200-final-edition"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">66,300,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">59,670,000원</span><span class="stock-final-fin">57,010,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
       </tbody>
     </table>
   </div>
@@ -2033,6 +2072,10 @@ body {
           <span class="eclass-cta-hint">E-Class 전체 라인업과 모델별 상세 정보를 확인해보세요.</span>
         </div>
       </div>
+    </div>
+    <div class="eclass-warranty-notice">
+      <span class="eclass-warranty-icon">🛡</span>
+      <span><strong>MY26 E클래스 전 모델 무상 보증연장 신규 적용</strong> — <span class="eclass-warranty-highlight">최대 4년 / 13만km</span> (Warranty Plus Advance 동일 범위). 별도 비용 없이 기본 제공됩니다.</span>
     </div>
     <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><table class="price-table" style="min-width:340px;width:100%;">
       <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>장기렌트</th><th>실구매가</th></tr></thead>
@@ -2307,6 +2350,7 @@ body {
       <tbody>
         <tr class="dual-row dual-row-top" data-model-id="mercedes-amg-sl-43"><td rowspan="2" class="model-cell">Mercedes-AMG SL 43</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">158,600,000원</span></td><td rowspan="2" class="col-promo">9%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">144,320,000원</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="mercedes-amg-sl-43"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">160,000,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">145,600,000원</span></td></tr>
         <tr class="dual-row dual-row-top" data-model-id="mercedes-amg-sl-63-4matic"><td rowspan="2" class="model-cell">Mercedes-AMG SL 63 4MATIC+</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">248,600,000원</span></td><td rowspan="2" class="col-dash">-</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">248,600,000원</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="mercedes-amg-sl-63-4matic"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">250,000,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">250,000,000원</span></td></tr>
+        <tr class="dual-row dual-row-top" data-model-id="mercedes-amg-gt-43-c192"><td rowspan="2" class="model-cell">Mercedes-AMG GT 43<br><span style="font-size:90%;color:#5c5c5c;">2도어(C192)</span></td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">149,500,000원</span></td><td rowspan="2" class="col-promo">9%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">136,040,000원</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="mercedes-amg-gt-43-c192"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">149,500,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">136,040,000원</span></td></tr>
         <tr class="dual-row dual-row-top" data-model-id="mercedes-amg-gt-55-4matic"><td rowspan="2" class="model-cell">Mercedes-AMG GT 55 4MATIC+</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">208,600,000원</span></td><td rowspan="2" class="col-promo">3%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">202,340,000원</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="mercedes-amg-gt-55-4matic"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">210,000,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">203,700,000원</span></td></tr>
         <tr class="dual-row dual-row-top" data-model-id="mercedes-amg-gt-63-s-e-performance"><td rowspan="2" class="model-cell">Mercedes-AMG GT 63 S E Performance</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">278,600,000원</span></td><td rowspan="2" class="col-promo">4%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">267,450,000원</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="mercedes-amg-gt-63-s-e-performance"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">280,000,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">268,800,000원</span></td></tr>
         <tr class="dual-row dual-row-top" data-model-id="mercedes-amg-gt-43-4matic"><td rowspan="2" class="model-cell">Mercedes-AMG GT 43 4MATIC+</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">162,600,000원</span></td><td rowspan="2" class="col-promo">9%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">147,960,000원</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="mercedes-amg-gt-43-4matic"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">164,000,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">149,240,000원</span></td></tr>
@@ -2336,7 +2380,7 @@ body {
         <tr class="dual-row dual-row-top" data-model-id="eqe-350"><td rowspan="2" class="model-cell">EQE 350+</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">110,000,000원</span></td><td rowspan="2" class="col-promo">10%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">99,000,000원</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="eqe-350"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">110,000,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">99,000,000원</span></td></tr>
         <tr class="dual-row dual-row-top" data-model-id="eqe-500-4matic-suv"><td rowspan="2" class="model-cell">EQE 500 4MATIC SUV</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">140,800,000원</span></td><td rowspan="2" class="col-promo">10%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">126,720,000원</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="eqe-500-4matic-suv"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">141,000,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">126,900,000원</span></td></tr>
         <tr class="dual-row dual-row-top" data-model-id="eqs-450-4matic-suv"><td rowspan="2" class="model-cell">EQS 450 4MATIC SUV</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">164,600,000원</span></td><td rowspan="2" class="col-promo">10%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">148,140,000원</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="eqs-450-4matic-suv"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">166,000,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">149,400,000원</span></td></tr>
-        <tr class="dual-row dual-row-top" data-model-id="eqs-580-4matic-suv"><td rowspan="2" class="model-cell">EQS 580 4MATIC SUV</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">190,600,000원</span></td><td rowspan="2" class="col-dash">-</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">190,600,000원</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="eqs-580-4matic-suv"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">192,000,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">192,000,000원</span></td></tr>
+        <tr class="dual-row dual-row-top" data-model-id="eqs-580-4matic-suv"><td rowspan="2" class="model-cell">EQS 580 4MATIC SUV</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">190,600,000원</span></td><td rowspan="2" class="col-promo">10%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">171,540,000원</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="eqs-580-4matic-suv"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">192,000,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">172,800,000원</span></td></tr>
         <tr class="dual-row dual-row-top" data-model-id="g-580-with-eq-technology"><td rowspan="2" class="model-cell">G 580 with EQ Technology</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">214,700,000원</span></td><td rowspan="2" class="col-dash">-</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">214,700,000원</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="g-580-with-eq-technology"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">216,100,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">216,100,000원</span></td></tr>
       </tbody>
     </table>
@@ -2527,6 +2571,7 @@ body {
       <tbody>
         <tr class="dual-row dual-row-top"><td rowspan="2" class="model-cell">C 200 AVANTGARDE</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">64,300,000원</span></td><td rowspan="2" class="col-promo"><span style="display:block;">11%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">57,220,000원</span><span class="stock-final-fin">54,650,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr><tr class="dual-row dual-row-bottom"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">65,100,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">57,930,000원</span><span class="stock-final-fin">55,330,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
         <tr class="dual-row dual-row-top"><td rowspan="2" class="model-cell">C 200 AMG Line</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">67,500,000원</span></td><td rowspan="2" class="col-promo"><span style="display:block;">11%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">60,070,000원</span><span class="stock-final-fin">57,370,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr><tr class="dual-row dual-row-bottom"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">68,300,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">60,780,000원</span><span class="stock-final-fin">58,050,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
+        <tr class="dual-row dual-row-top"><td rowspan="2" class="model-cell">C 200 Final Edition</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">66,300,000원</span></td><td rowspan="2" class="col-promo"><span style="display:block;">10%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">59,670,000원</span><span class="stock-final-fin">57,010,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr><tr class="dual-row dual-row-bottom"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">66,300,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">59,670,000원</span><span class="stock-final-fin">57,010,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
       </tbody>
     </table>
   </div>
@@ -2846,6 +2891,7 @@ body {
       <tbody>
         <tr class="dual-row dual-row-top"><td rowspan="2" class="model-cell">Mercedes-AMG SL 43</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">158,600,000원</span></td><td rowspan="2" class="col-promo">9%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">144,320,000원</span></td></tr><tr class="dual-row dual-row-bottom"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">160,000,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">145,600,000원</span></td></tr>
         <tr class="dual-row dual-row-top"><td rowspan="2" class="model-cell">Mercedes-AMG SL 63 4MATIC+</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">248,600,000원</span></td><td rowspan="2" class="col-dash">-</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">248,600,000원</span></td></tr><tr class="dual-row dual-row-bottom"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">250,000,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">250,000,000원</span></td></tr>
+        <tr class="dual-row dual-row-top"><td rowspan="2" class="model-cell">Mercedes-AMG GT 43<br><span style="font-size:90%;color:#5c5c5c;">2도어(C192)</span></td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">149,500,000원</span></td><td rowspan="2" class="col-promo">9%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">136,040,000원</span></td></tr><tr class="dual-row dual-row-bottom"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">149,500,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">136,040,000원</span></td></tr>
         <tr class="dual-row dual-row-top"><td rowspan="2" class="model-cell">Mercedes-AMG GT 55 4MATIC+</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">208,600,000원</span></td><td rowspan="2" class="col-promo">3%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">202,340,000원</span></td></tr><tr class="dual-row dual-row-bottom"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">210,000,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">203,700,000원</span></td></tr>
         <tr class="dual-row dual-row-top"><td rowspan="2" class="model-cell">Mercedes-AMG GT 63 S E Performance</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">278,600,000원</span></td><td rowspan="2" class="col-promo">4%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">267,450,000원</span></td></tr><tr class="dual-row dual-row-bottom"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">280,000,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">268,800,000원</span></td></tr>
         <tr class="dual-row dual-row-top"><td rowspan="2" class="model-cell">Mercedes-AMG GT 43 4MATIC+</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">162,600,000원</span></td><td rowspan="2" class="col-promo">9%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">147,960,000원</span></td></tr><tr class="dual-row dual-row-bottom"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">164,000,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">149,240,000원</span></td></tr>
@@ -2881,7 +2927,7 @@ body {
         <tr class="dual-row dual-row-top"><td rowspan="2" class="model-cell">EQE 350+</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">110,000,000원</span></td><td rowspan="2" class="col-promo">10%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">99,000,000원</span></td></tr><tr class="dual-row dual-row-bottom"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">110,000,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">99,000,000원</span></td></tr>
         <tr class="dual-row dual-row-top"><td rowspan="2" class="model-cell">EQE 500 4MATIC SUV</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">140,800,000원</span></td><td rowspan="2" class="col-promo">10%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">126,720,000원</span></td></tr><tr class="dual-row dual-row-bottom"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">141,000,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">126,900,000원</span></td></tr>
         <tr class="dual-row dual-row-top"><td rowspan="2" class="model-cell">EQS 450 4MATIC SUV</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">164,600,000원</span></td><td rowspan="2" class="col-promo">10%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">148,140,000원</span></td></tr><tr class="dual-row dual-row-bottom"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">166,000,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">149,400,000원</span></td></tr>
-        <tr class="dual-row dual-row-top"><td rowspan="2" class="model-cell">EQS 580 4MATIC SUV</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">190,600,000원</span></td><td rowspan="2" class="col-dash">-</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">190,600,000원</span></td></tr><tr class="dual-row dual-row-bottom"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">192,000,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">192,000,000원</span></td></tr>
+        <tr class="dual-row dual-row-top"><td rowspan="2" class="model-cell">EQS 580 4MATIC SUV</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">190,600,000원</span></td><td rowspan="2" class="col-promo">10%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">171,540,000원</span></td></tr><tr class="dual-row dual-row-bottom"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">192,000,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">172,800,000원</span></td></tr>
         <tr class="dual-row dual-row-top"><td rowspan="2" class="model-cell">G 580 with EQ Technology</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">214,700,000원</span></td><td rowspan="2" class="col-dash">-</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">214,700,000원</span></td></tr><tr class="dual-row dual-row-bottom"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">216,100,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">216,100,000원</span></td></tr>
       </tbody>
     </table>
@@ -2972,6 +3018,7 @@ const VEHICLE_DATA = {
   // C-Class
   "c-200-avantgarde": { model: "C 200 AVANTGARDE", oldPrice: 64300000, newPrice: 65100000, discount: 10, financeDiscount: 4, rentDiscount: 3 },
   "c-200-amg-line": { model: "C 200 AMG Line", oldPrice: 67500000, newPrice: 68300000, discount: 10, financeDiscount: 4, rentDiscount: 3 },
+  "c-200-final-edition": { model: "C 200 Final Edition", oldPrice: 66300000, newPrice: 66300000, discount: 10, financeDiscount: 4, rentDiscount: 3 },
 
   // E-Class
   "e-200-avantgarde": { model: "E 200 AVANTGARDE", oldPrice: 76500000, newPrice: 77500000, discount: 16, financeDiscount: null, rentDiscount: 3 },
@@ -3039,6 +3086,7 @@ const VEHICLE_DATA = {
   // AMG
   "mercedes-amg-sl-43": { model: "Mercedes-AMG SL 43", oldPrice: 158600000, newPrice: 160000000, discount: 9, financeDiscount: null, rentDiscount: 3 },
   "mercedes-amg-sl-63-4matic": { model: "Mercedes-AMG SL 63 4MATIC+", oldPrice: 248600000, newPrice: 250000000, discount: null, financeDiscount: null, rentDiscount: 3 },
+  "mercedes-amg-gt-43-c192": { model: "Mercedes-AMG GT 43 2도어(C192)", oldPrice: 149500000, newPrice: 149500000, discount: 9, financeDiscount: null, rentDiscount: 3 },
   "mercedes-amg-gt-55-4matic": { model: "Mercedes-AMG GT 55 4MATIC+", oldPrice: 208600000, newPrice: 210000000, discount: 3, financeDiscount: null, rentDiscount: 3 },
   "mercedes-amg-gt-63-s-e-performance": { model: "Mercedes-AMG GT 63 S E Performance", oldPrice: 278600000, newPrice: 280000000, discount: 4, financeDiscount: null, rentDiscount: 3 },
   "mercedes-amg-gt-43-4matic": { model: "Mercedes-AMG GT 43 4MATIC+", oldPrice: 162600000, newPrice: 164000000, discount: 9, financeDiscount: null, rentDiscount: 3 },
@@ -3052,7 +3100,7 @@ const VEHICLE_DATA = {
   "eqe-350": { model: "EQE 350+", oldPrice: 110000000, newPrice: 110000000, discount: 10, financeDiscount: null, rentDiscount: 3 },
   "eqe-500-4matic-suv": { model: "EQE 500 4MATIC SUV", oldPrice: 140800000, newPrice: 141000000, discount: 10, financeDiscount: null, rentDiscount: 3 },
   "eqs-450-4matic-suv": { model: "EQS 450 4MATIC SUV", oldPrice: 164600000, newPrice: 166000000, discount: 10, financeDiscount: null, rentDiscount: 3 },
-  "eqs-580-4matic-suv": { model: "EQS 580 4MATIC SUV", oldPrice: 190600000, newPrice: 192000000, discount: null, financeDiscount: null, rentDiscount: 3 },
+  "eqs-580-4matic-suv": { model: "EQS 580 4MATIC SUV", oldPrice: 190600000, newPrice: 192000000, discount: 10, financeDiscount: null, rentDiscount: 3 },
   "g-580-with-eq-technology": { model: "G 580 with EQ Technology", oldPrice: 214700000, newPrice: 216100000, discount: null, financeDiscount: null, rentDiscount: 3 },
 
   // Maybach
@@ -3078,9 +3126,9 @@ const VEHICLE_DATA = {
 // '링크가 있는 모든 사용자에게 공개' 또는
 // 고객이 열람 가능한 공유 권한으로 설정해야 합니다.
 const EDITION_DETAIL_LINKS = {
-  "glc-300-4matic-amg-line-140-edition": { url: "GOOGLE_DRIVE_GLC_140_URL" },
-  "cle-200-coup-amg-line-140-edition": { url: "GOOGLE_DRIVE_CLE_COUPE_140_URL" },
-  "cle-200-cabriolet-amg-line-140-edition": { url: "GOOGLE_DRIVE_CLE_CABRIOLET_140_URL" }
+  "glc-300-4matic-amg-line-140-edition": { url: "https://drive.google.com/file/d/1M6O3N9k3i-7RZzvoQ1FeligLnGwQ3jtI/view?usp=sharing" },
+  "cle-200-coup-amg-line-140-edition": { url: "https://drive.google.com/file/d/1M6O3N9k3i-7RZzvoQ1FeligLnGwQ3jtI/view?usp=sharing" },
+  "cle-200-cabriolet-amg-line-140-edition": { url: "https://drive.google.com/file/d/1M6O3N9k3i-7RZzvoQ1FeligLnGwQ3jtI/view?usp=sharing" }
 };
 
 /* =====================================================
