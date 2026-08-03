@@ -79,6 +79,7 @@ body {
   color: #ffffff;
   line-height: 1.2;
   margin-bottom: 16px;
+  word-break: keep-all;
 }
 
 .hero-title span {
@@ -348,46 +349,6 @@ body {
   color: rgba(255,255,255,0.4);
 }
 
-.vs-row {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-top: 16px;
-}
-.vs-cell {
-  flex: 1;
-  background: rgba(255,255,255,0.04);
-  border-radius: 10px;
-  padding: 20px;
-  text-align: center;
-}
-.vs-cell.highlight {
-  background: rgba(240,192,64,0.1);
-  border: 1px solid rgba(240,192,64,0.3);
-}
-.vs-label {
-  font-size: 12px;
-  color: rgba(255,255,255,0.5);
-  margin-bottom: 8px;
-}
-.vs-value {
-  font-size: 24px;
-  font-weight: 700;
-  color: #fff;
-}
-.vs-cell.highlight .vs-value {
-  color: #f0c040;
-}
-.vs-badge {
-  font-size: 11px;
-  color: rgba(255,255,255,0.4);
-  margin-top: 4px;
-}
-.vs-divider {
-  font-size: 14px;
-  font-weight: 600;
-  color: rgba(255,255,255,0.4);
-}
 .finance-footnote {
   font-size: 12px;
   color: rgba(255,255,255,0.4);
@@ -651,11 +612,19 @@ body {
   align-items: center;
   gap: 3px;
   margin-top: 5px;
+  padding: 6px 4px;
+  min-height: 30px;
+  box-sizing: border-box;
   color: #23406F;
   font-size: 11px;
   font-weight: 600;
   text-decoration: none;
   transition: color 0.2s ease, transform 0.2s ease;
+  position: relative;
+  z-index: 2;
+  pointer-events: auto;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(35,64,111,0.15);
 }
 .edition-detail-link:hover {
   color: #102A4C;
@@ -1295,11 +1264,10 @@ body {
 
 @media (max-width: 600px) {
   .hero { padding: 30px 24px 30px; min-height: 280px; }
-  .hero-title { font-size: 64px; }
+  .hero-title { font-size: clamp(38px, 11vw, 48px); line-height: 1.12; letter-spacing: -0.04em; margin-bottom: 12px; }
   .rate-grid { grid-template-columns: 1fr; }
   .ev-grid { grid-template-columns: 1fr; }
   .best-grid { grid-template-columns: 1fr; }
-  .vs-row { flex-direction: column; }
 }
 
   /* ── PC (768px 이상) 글자 크게 ── */
@@ -1326,8 +1294,6 @@ body {
     .ev-model { font-size: 16px; }
     .ev-rate { font-size: 36px; }
     .ev-note { font-size: 13px; }
-    .vs-label { font-size: 14px; }
-    .vs-value { font-size: 26px; }
     .finance-footnote { font-size: 13px; }
     .car-brand { font-size: 12px; }
     .car-model-name { font-size: 24px; }
@@ -1361,7 +1327,7 @@ body {
   @media (max-width: 768px) {
     body { font-size: 13px; }
     .nav-tab { font-size: 12px; padding: 13px 14px; }
-    .hero-title { font-size: 64px; }
+    .hero-title { font-size: clamp(38px, 11vw, 48px); line-height: 1.12; letter-spacing: -0.04em; margin-bottom: 12px; }
     .hero-badge { font-size: 10px; letter-spacing: 0.1em; }
     .hero-sub { font-size: 12px; }
     .hero-date { font-size: 11px; }
@@ -1381,8 +1347,6 @@ body {
     .ev-model { font-size: 13px; }
     .ev-rate { font-size: 26px; }
     .ev-note { font-size: 10px; }
-    .vs-label { font-size: 11px; }
-    .vs-value { font-size: 18px; }
     .finance-footnote { font-size: 10px; }
     .car-brand { font-size: 10px; }
     .car-model-name { font-size: 16px; }
@@ -1417,7 +1381,6 @@ body {
     .rate-grid { grid-template-columns: repeat(3,1fr); gap: 1px; }
     .ev-grid { grid-template-columns: 1fr 1fr; }
     .best-grid { grid-template-columns: 1fr; }
-    .vs-row { flex-direction: row; gap: 8px; }
     .june-spotlight-card { padding: 20px 16px 18px; }
     .june-spotlight-title { font-size: 16px; }
     .june-spotlight-desc { font-size: 12px; }
@@ -1447,7 +1410,7 @@ body {
   @media (max-width: 400px) {
     .price-table th { font-size: 10px; padding: 7px 4px; }
     .price-table td { font-size: 10px; padding: 9px 4px; }
-    .hero-title { font-size: 64px; }
+    .hero-title { font-size: clamp(34px, 10.5vw, 42px); line-height: 1.1; }
     .discount-tag { font-size: 15px; min-width: 60px; max-width: 76px; }
     .rate-value { font-size: 20px; }
     .ev-rate { font-size: 22px; }
@@ -1637,7 +1600,7 @@ body {
 
 <!-- NAV TABS -->
 <nav class="nav-tabs">
-  <a class="nav-tab star" href="#finance-section">★ 7월 베스트</a>
+  <a class="nav-tab star" href="#finance-section">★ 8월 베스트</a>
   <a class="nav-tab" data-tab="finance" href="#finance-section">금융</a>
   <a class="nav-tab" data-tab="a" href="#tab-a-price">A클래스</a>
   <a class="nav-tab" data-tab="cla" href="#tab-cla-price">CLA</a>
@@ -1657,7 +1620,7 @@ body {
 
 <!-- NOTICE -->
 <div class="notice">
-  ※ 본 페이지는 2026년 7월 메르세데스-벤츠 코리아 공식 프로모션 기준입니다. 표시 가격은 모두 <strong>VAT 포함</strong>, 만원 단위 절삭이며 옵션·재고 상황에 따라 실제 견적과 차이가 있을 수 있습니다.
+  ※ 본 페이지는 2026년 8월 메르세데스-벤츠 코리아 공식 프로모션 기준입니다. 표시 가격은 모두 <strong>VAT 포함</strong>, 만원 단위 절삭이며 옵션·재고 상황에 따라 실제 견적과 차이가 있을 수 있습니다.
 </div>
 
 <!-- AUGUST SPOTLIGHT 카드 -->
@@ -1730,10 +1693,10 @@ body {
 
   <div class="spotlight-end-card">
     <div class="spotlight-end-head">
-      <div class="spotlight-end-title"><span>⛔</span> MBM 조인트 캠페인 종료</div>
-      <div class="spotlight-end-badge">캠페인</div>
+      <div class="spotlight-end-title"><span>⛔</span> 저금리 할부 종료 모델</div>
+      <div class="spotlight-end-badge">종료 모델</div>
     </div>
-    <div class="spotlight-end-desc"><strong>E 450 · GLC AMG Line · GLE 53 · GT 43</strong> 등 해당 트림의 파이낸셜 추가 할인 미적용</div>
+    <div class="spotlight-end-desc"><strong>E 450 · GLC AMG Line · GLE 53 · GT 43</strong><br>해당 모델은 8월 저금리 특별 할부 적용 대상에서 제외됩니다.</div>
   </div>
 
   <div class="spotlight-note">
@@ -1793,13 +1756,13 @@ body {
   </a>
 </div>
 
-<!-- ★ 7월 BEST SECTION -->
+<!-- ★ 8월 BEST SECTION -->
 <div id="tab-best" class="section active">
 
-  <!-- 7월 금융 프로그램 -->
+  <!-- 8월 금융 프로그램 -->
   <div class="finance-header" id="finance-section">
-    <div class="finance-eyebrow">2026 July · Finance Program</div>
-    <h2 class="finance-title">7월 금융 프로그램</h2>
+    <div class="finance-eyebrow">2026 August · Finance Program</div>
+    <h2 class="finance-title">8월 금융 프로그램</h2>
     <div class="finance-divider"></div>
     <p class="finance-desc">할인은 그대로, 금융이 강해진 달입니다 · 산차교환보상 3년 기본 포함<br>모든 금리는 신용등급/심사 결과에 따라 변동될 수 있습니다</p>
   </div>
@@ -1822,7 +1785,7 @@ body {
 
   <div class="finance-card">
     <div class="finance-card-label">FOCUS · 특별 금리</div>
-    <div class="finance-card-subject">대상 — GLA 250 · GLB 250 · AMG_GLB 35 · AMG_A 45 · C 200 · E 200 · E 300 4MATIC · E 350 e · E 450 · S 450 SWB · GLC 300 AV(쿠페 포함) · GLE 450 (쿠페 포함)</div>
+    <div class="finance-card-subject">대상 — GLA 250 · GLB 250 · AMG_GLB 35 · AMG_A 45 · C 200 · E 200 · E 300 4MATIC · S 450 SWB · GLC 300 AV(쿠페 포함) · GLE 450 (쿠페 포함)</div>
     <div class="rate-grid">
       <div class="rate-cell">
         <div class="rate-period">24개월</div>
@@ -1842,27 +1805,6 @@ body {
     </div>
     
   </div>
-
-  <div class="finance-card">
-    <div class="finance-card-label">PREMIUM · 잔존가치 보장형 할부</div>
-    <div class="finance-card-subject">대상 — GLE 350 4MATIC · GLE 300d 4MATIC · GLE 450 d Coupé · GLE 53 4MATIC+ · GLE 53 4MATIC+ Coupé</div>
-    <div class="finance-card-sub">월 납입금 부담 최소화 · 타이어 교환 3년 무상 추가</div>
-    <div class="vs-row">
-      <div class="vs-cell">
-        <div class="vs-label">일반 할부</div>
-        <div class="vs-value">6.35~6.70%</div>
-      </div>
-      <div class="vs-divider">VS</div>
-      <div class="vs-cell highlight">
-        <div class="vs-label">잔존가치 보장형</div>
-        <div class="vs-value">3.77~4.83%</div>
-        <div class="vs-badge">최대 2.93%p 인하</div>
-      </div>
-    </div>
-    <div class="finance-footnote">잔존가치 보장형 할부 적용 시 일반 할부 대비 최대 <span class="gold">2.93%p 금리 인하</span> 가능</div>
-  </div>
-
-  <div style="height:40px;"></div>
 
   <!-- 금융 금리표 -->
   <div class="rate-table-card">
@@ -1968,7 +1910,7 @@ body {
 
   <!-- 차종별 가격표 -->
   <div style="text-align:center; margin-bottom:32px;">
-    <div class="finance-eyebrow">2026 July · Price List</div>
+    <div class="finance-eyebrow">2026 August · Price List</div>
     <h2 class="finance-title" style="color:#111;">차종별 가격표</h2>
     <div class="finance-divider"></div>
   </div>
@@ -2437,8 +2379,8 @@ body {
 <!-- 금융 SECTION -->
 <div id="tab-finance" class="section">
   <div class="finance-header">
-    <div class="finance-eyebrow">2026 July · Finance Program</div>
-    <h2 class="finance-title">7월 금융 프로그램</h2>
+    <div class="finance-eyebrow">2026 August · Finance Program</div>
+    <h2 class="finance-title">8월 금융 프로그램</h2>
     <div class="finance-divider"></div>
     <p class="finance-desc">할인은 그대로, 금융이 강해진 달입니다 · 산차교환보상 3년 기본 포함<br>모든 금리는 신용등급/심사 결과에 따라 변동될 수 있습니다</p>
   </div>
@@ -2461,7 +2403,7 @@ body {
 
   <div class="finance-card">
     <div class="finance-card-label">FOCUS · 특별 금리</div>
-    <div class="finance-card-subject">대상 — GLA 250 · GLB 250 · AMG_GLB 35 · AMG_A 45 · C 200 · E 200 · E 300 4MATIC · E 350 e · E 450 · S 450 SWB · GLC 300 AV(쿠페 포함) · GLE 450 (쿠페 포함)</div>
+    <div class="finance-card-subject">대상 — GLA 250 · GLB 250 · AMG_GLB 35 · AMG_A 45 · C 200 · E 200 · E 300 4MATIC · S 450 SWB · GLC 300 AV(쿠페 포함) · GLE 450 (쿠페 포함)</div>
     <div class="rate-grid">
       <div class="rate-cell">
         <div class="rate-period">24개월</div>
@@ -2480,25 +2422,6 @@ body {
       </div>
     </div>
     
-  </div>
-
-  <div class="finance-card">
-    <div class="finance-card-label">PREMIUM · 잔존가치 보장형 할부</div>
-    <div class="finance-card-subject">대상 — GLE 350 4MATIC · GLE 300d 4MATIC · GLE 450 d Coupé · GLE 53 4MATIC+ · GLE 53 4MATIC+ Coupé</div>
-    <div class="finance-card-sub">월 납입금 부담 최소화 · 타이어 교환 3년 무상 추가</div>
-    <div class="vs-row">
-      <div class="vs-cell">
-        <div class="vs-label">일반 할부</div>
-        <div class="vs-value">6.35~6.70%</div>
-      </div>
-      <div class="vs-divider">VS</div>
-      <div class="vs-cell highlight">
-        <div class="vs-label">잔존가치 보장형</div>
-        <div class="vs-value">3.77~4.83%</div>
-        <div class="vs-badge">최대 2.93%p 인하</div>
-      </div>
-    </div>
-    <div class="finance-footnote">잔존가치 보장형 할부 적용 시 일반 할부 대비 최대 <span class="gold">2.93%p 금리 인하</span> 가능</div>
   </div>
 </div>
 
@@ -3291,6 +3214,7 @@ function applyEditionDetailLinks() {
         el.setAttribute('href', url);
         el.setAttribute('target', '_blank');
         el.setAttribute('rel', 'noopener noreferrer');
+        el.addEventListener('click', function (ev) { ev.stopPropagation(); });
       }
 
       modelCell.appendChild(document.createElement('br'));
