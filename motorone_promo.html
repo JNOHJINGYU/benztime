@@ -672,6 +672,86 @@ body {
 }
 
 
+/* MBF 리텐션 바디케어 안내 카드 (S클래스 MY27 / 신형 Mercedes-Maybach S-Class) */
+.retention-bodycare-benefit {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: #f4f8fc;
+  border: 1px solid #b8d4ea;
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin: 14px 0 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.retention-bodycare-main {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  min-width: 0;
+}
+.retention-bodycare-icon {
+  flex-shrink: 0;
+  font-size: 18px;
+  color: #2461a8;
+}
+.retention-bodycare-text {
+  font-size: 13px;
+  font-weight: 400;
+  color: #333;
+  line-height: 1.6;
+  word-break: keep-all;
+}
+.retention-bodycare-text strong { color: #1a5aa8; font-weight: 700; }
+.retention-bodycare-text .rb-highlight { color: #1a5aa8; font-weight: 700; }
+.retention-bodycare-link {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  min-height: 30px;
+  padding: 6px 10px;
+  box-sizing: border-box;
+  color: #14428f;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  position: relative;
+  z-index: 2;
+  pointer-events: auto;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(20,66,143,0.15);
+}
+.retention-bodycare-link:hover { color: #0a2c5e; }
+.retention-bodycare-link.is-disabled { color: #999; pointer-events: none; cursor: default; }
+
+.maybach-retention-benefit { background: #faf6ef; border-color: #cbb27a; }
+.maybach-retention-benefit .retention-bodycare-icon { color: #8a6d3b; }
+.maybach-retention-benefit .retention-bodycare-text strong,
+.maybach-retention-benefit .retention-bodycare-text .rb-highlight { color: #8a6d3b; }
+.maybach-retention-benefit .retention-bodycare-link { color: #6b5228; }
+.maybach-retention-benefit .retention-bodycare-link:hover { color: #4a3818; }
+
+@media (max-width: 768px) {
+  .retention-bodycare-benefit {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px 14px;
+    margin: 12px 0 16px;
+  }
+  .retention-bodycare-text { font-size: 12px; }
+  .retention-bodycare-link { align-self: flex-start; margin-top: 0; }
+}
+@media (max-width: 400px) {
+  .retention-bodycare-text { font-size: 11.5px; }
+  .retention-bodycare-benefit { padding: 10px 12px; }
+}
+
 /* E클래스 무상 보증연장 안내 카드 */
 .eclass-warranty-notice {
   display: flex;
@@ -2123,7 +2203,7 @@ body {
   <div class="rent-note">※ 장기렌트는 <strong>벤츠파이낸셜 이용조건</strong>에서 추가 3%입니다.</div>
 
   <!-- S클래스 MY27 -->
-  <div class="car-section">
+  <div class="car-section" data-benefit-target="sclass-my27">
     <div class="car-section-header">
       <div class="eclass-header-wrap">
         <div class="eclass-title-group">
@@ -2161,6 +2241,14 @@ body {
       </tbody>
     </table></div>
   <div class="rent-note">※ 장기렌트는 <strong>벤츠파이낸셜 이용조건</strong>에서 추가 3%입니다.</div>
+    <div class="retention-bodycare-benefit sclass-retention-benefit" data-retention-target="sclass">
+      <div class="retention-bodycare-main">
+        <span class="retention-bodycare-icon">🛡</span>
+        <span class="retention-bodycare-text"><strong>MBF 리텐션(재이용) 고객</strong>이 신형 S클래스를 <span class="rb-highlight">운용리스</span>로 이용할 경우 <span class="rb-highlight">3년 바디케어 서비스</span> 이용이 가능합니다.</span>
+      </div>
+      <span class="retention-bodycare-link-slot" data-retention-link="sclass"></span>
+    </div>
+    <div data-benefit-target="maybach-sclass-my27">
     <p style="font-size:13px; font-weight:600; color:#7ab3d4; margin:0 0 10px; padding-bottom:6px; border-bottom:1px solid rgba(91,163,204,0.3);">TEV <span style="font-size:12px; font-weight:400; color:rgba(255,255,255,0.4);">Mercedes-Maybach</span></p>
     <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><table class="price-table" style="min-width:340px;width:100%;">
       <thead><tr><th>모델명</th><th>권장소비자가격</th><th>기본 할인</th><th>장기렌트</th><th>실구매가</th></tr></thead>
@@ -2171,6 +2259,14 @@ body {
       </tbody>
     </table></div>
   <div class="rent-note">※ 장기렌트는 <strong>벤츠파이낸셜 이용조건</strong>에서 추가 3%입니다.</div>
+    <div class="retention-bodycare-benefit maybach-retention-benefit" data-retention-target="maybachSClass">
+      <div class="retention-bodycare-main">
+        <span class="retention-bodycare-icon">🛡</span>
+        <span class="retention-bodycare-text"><strong>MBF 리텐션(재이용) 고객</strong>이 신형 Mercedes-Maybach S-Class를 <span class="rb-highlight">운용리스</span>로 이용할 경우 <span class="rb-highlight">3년 바디케어 서비스</span> 이용이 가능합니다.</span>
+      </div>
+      <span class="retention-bodycare-link-slot" data-retention-link="maybachSClass"></span>
+    </div>
+    </div>
   </div>
   </div>
 
@@ -3132,6 +3228,19 @@ const EDITION_DETAIL_LINKS = {
 };
 
 /* =====================================================
+   ★★★★★ 리텐션 바디케어 상세보기 링크 수정 영역 ★★★★★
+
+   아래 URL만 실제 상세페이지 또는 구글드라이브 링크로 교체하세요.
+   url이 "https://"로 시작해야만 실제 클릭 가능한 링크로 활성화됩니다.
+   ===================================================== */
+// 구글드라이브 파일은 고객이 열람할 수 있도록
+// '링크가 있는 모든 사용자' 공유 권한으로 설정해야 합니다.
+const RETENTION_BODYCARE_LINKS = {
+  sclass: { url: "https://drive.google.com/file/d/1Y7UCNcVDhQskjJbNQKkpjVYzkda0VYC-/view?usp=sharing" },
+  maybachSClass: { url: "https://drive.google.com/file/d/1Y7UCNcVDhQskjJbNQKkpjVYzkda0VYC-/view?usp=sharing" }
+};
+
+/* =====================================================
    ▲▲▲▲▲ 판매조건 수정 영역은 여기까지입니다 ▲▲▲▲▲
    아래부터는 자동 계산 로직이므로 수정하지 않아도 됩니다.
    ===================================================== */
@@ -3267,6 +3376,32 @@ function applyEditionDetailLinks() {
 
       modelCell.appendChild(document.createElement('br'));
       modelCell.appendChild(el);
+    });
+  });
+}
+
+// RETENTION_BODYCARE_LINKS 기준으로 MY27 S클래스 / 신형 Mercedes-Maybach S-Class 안내의
+// 상세보기 링크를 자동 삽입 (메인 가격표 + S클래스 탭 등 모든 중복 위치에 동시 적용됨)
+function applyRetentionBodycareBenefits() {
+  Object.keys(RETENTION_BODYCARE_LINKS).forEach(function (key) {
+    var linkData = RETENTION_BODYCARE_LINKS[key];
+    var url = linkData.url;
+    var isActive = typeof url === 'string' && url.indexOf('https://') === 0;
+
+    var slots = document.querySelectorAll('[data-retention-link="' + key + '"]');
+    slots.forEach(function (slot) {
+      if (slot.querySelector('.retention-bodycare-link')) return; // 중복 삽입 방지
+
+      var el = document.createElement(isActive ? 'a' : 'span');
+      el.className = 'retention-bodycare-link' + (isActive ? '' : ' is-disabled');
+      el.textContent = '상세보기 →';
+      if (isActive) {
+        el.setAttribute('href', url);
+        el.setAttribute('target', '_blank');
+        el.setAttribute('rel', 'noopener noreferrer');
+        el.addEventListener('click', function (ev) { ev.stopPropagation(); });
+      }
+      slot.appendChild(el);
     });
   });
 }
@@ -3511,6 +3646,7 @@ document.addEventListener('DOMContentLoaded', function() {
   applyFinancialDiscounts();
   applyVehicleData();
   applyEditionDetailLinks();
+  applyRetentionBodycareBenefits();
   applyMobilePriceFormat();
 });
 window.addEventListener('resize', applyMobilePriceFormat);
