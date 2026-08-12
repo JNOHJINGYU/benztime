@@ -1441,6 +1441,52 @@ body {
     .eq-finance-table tbody th, .eq-finance-table tbody td { font-size: 15px; }
   }
 
+  /* ── 태블릿 (768px~1023px) 좌우 안전 여백 확보 (폭은 과도하게 확대하지 않음) ── */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .notice,
+    .discount-box,
+    .june-spotlight-card,
+    .rate-table-card,
+    .eq-finance-card,
+    .fleet-card {
+      width: calc(100% - 32px);
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  /* ── PC 와이드 (1024px 이상) 콘텐츠 폭 확대 ── */
+  @media (min-width: 1024px) {
+    .main,
+    .section {
+      max-width: 1200px;
+    }
+
+    .notice,
+    .discount-box,
+    .june-spotlight-card,
+    .rate-table-card,
+    .eq-finance-card,
+    .fleet-card {
+      width: calc(100% - 40px);
+      max-width: 1160px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* 가격표 컬럼 비율: 모델명 24% · 가격 22% · 기본할인 17% · 장기렌트 14% · 실구매가 23% */
+    .price-table th:nth-child(1),
+    .price-table td:nth-child(1) { width: 24%; }
+    .price-table th:nth-child(2),
+    .price-table td:nth-child(2) { width: 22%; }
+    .price-table th:nth-child(3),
+    .price-table td:nth-child(3) { width: 17%; }
+    .price-table th:nth-child(4),
+    .price-table td:nth-child(4) { width: 14%; }
+    .price-table th:nth-child(5),
+    .price-table td:nth-child(5) { width: 23%; }
+  }
+
   /* ── 모바일 (768px 이하) 글자 작게 ── */
   @media (max-width: 768px) {
     body { font-size: 13px; }
@@ -1837,7 +1883,7 @@ body {
 </div>
 
 <!-- DISCOUNT BOX -->
-<div class="discount-box" style="max-width:860px; margin:0 auto 20px;">
+<div class="discount-box" style="margin:0 auto 20px;">
   <div class="discount-title" style="font-size:22px; font-weight:700; letter-spacing:-0.02em;">공통 추가 할인 적용 안내</div>
   <div class="discount-row">
     <div class="discount-tag">재구매 고객</div>
