@@ -594,24 +594,6 @@ body {
 /* 모델/기본할인/장기렌트: rowspan 셀 중앙 정렬 */
 .price-table .model-cell { vertical-align: middle !important; text-align: left !important; }
 
-/* MY27 (출시 전 신규 모델) 배지 */
-.my27-badge {
-  display: inline-block;
-  margin-left: 6px;
-  padding: 1px 7px;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  color: #4a6a8a;
-  background: #eef3f8;
-  border: 1px solid #c7d7e6;
-  border-radius: 4px;
-  vertical-align: middle;
-  white-space: nowrap;
-}
-@media (max-width: 768px) {
-  .my27-badge { font-size: 9px; padding: 1px 6px; margin-left: 4px; }
-}
 .price-table td[rowspan].col-promo,
 .price-table td[rowspan].col-dash,
 .price-table td[rowspan].col-rent { vertical-align: middle !important; }
@@ -2117,13 +2099,29 @@ body {
       <tbody>
         <tr class="dual-row dual-row-top" data-model-id="a-220-hatch"><td rowspan="2" class="model-cell">A 220 Hatch</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">48,100,000원</span></td><td rowspan="2" class="col-promo">10%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">43,290,000원</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="a-220-hatch"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">48,700,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">43,830,000원</span></td></tr>
         <tr class="dual-row dual-row-top" data-model-id="mercedes-amg-a-45-s-4matic"><td rowspan="2" class="model-cell">Mercedes-AMG A 45 S 4MATIC+</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">80,400,000원</span></td><td rowspan="2" class="col-promo"><span style="display:block;">7%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">74,770,000원</span><span class="stock-final-fin">71,550,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="mercedes-amg-a-45-s-4matic"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">81,400,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">75,700,000원</span><span class="stock-final-fin">72,440,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
-        <tr class="my27-row" data-model-id="mercedes-amg-a-45-s-4matic-my27"><td class="model-cell">Mercedes-AMG A 45 S 4MATIC+<span class="my27-badge">MY27</span></td><td class="price-cell single"><span class="stock-price-main">82,300,000원</span></td><td class="col-dash">-</td><td class="col-dash">-</td><td class="final-cell single"><span class="stock-final-main">82,300,000원</span></td></tr>
         <tr class="dual-row dual-row-top" data-model-id="a-220-sedan"><td rowspan="2" class="model-cell">A 220 Sedan</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">49,900,000원</span></td><td rowspan="2" class="col-promo">5%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">47,400,000원</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="a-220-sedan"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">50,500,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">47,970,000원</span></td></tr>
         <tr class="dual-row dual-row-top" data-model-id="mercedes-amg-a-35-4matic"><td rowspan="2" class="model-cell">Mercedes-AMG A 35 4MATIC</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">67,700,000원</span></td><td rowspan="2" class="col-dash">-</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">67,700,000원</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="mercedes-amg-a-35-4matic"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">68,600,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">68,600,000원</span></td></tr>
       </tbody>
     </table>
   </div>
   <div class="rent-note">※ 장기렌트는 <strong>벤츠파이낸셜 이용조건</strong>에서 추가 3%입니다.</div>
+
+  <!-- A클래스 MY27 -->
+  <div class="car-section" data-benefit-target="a-class-my27">
+    <div class="car-section-header">
+      <div class="car-badge">A</div>
+      <div class="car-section-info">
+        <div class="car-brand">Mercedes-Benz</div>
+        <div class="car-model-name">A클래스 <span style="font-size:14px; font-weight:400; color:#7ab3d4; margin-left:8px;">MY27</span></div>
+      </div>
+    </div>
+    <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><table class="price-table" style="min-width:340px;width:100%;">
+      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>장기렌트</th><th>실구매가</th></tr></thead>
+      <tbody>
+        <tr class="my27-row" data-model-id="mercedes-amg-a-45-s-4matic-my27"><td class="model-cell">Mercedes-AMG A 45 S 4MATIC+</td><td class="price-cell single"><span class="stock-price-main">82,300,000원</span></td><td class="col-dash">-</td><td class="col-dash">-</td><td class="final-cell single"><span class="stock-final-main">82,300,000원</span></td></tr>
+      </tbody>
+    </table></div>
+  </div>
   </div>
 
   <!-- CLA -->
@@ -2160,7 +2158,6 @@ body {
       <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>장기렌트</th><th>실구매가</th></tr></thead>
       <tbody>
         <tr class="dual-row dual-row-top" data-model-id="gla-250-4matic-amg-line"><td rowspan="2" class="model-cell">GLA 250 4MATIC AMG Line</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">69,100,000원</span></td><td rowspan="2" class="col-promo"><span style="display:block;">9%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">62,880,000원</span><span class="stock-final-fin">60,110,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="gla-250-4matic-amg-line"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">70,000,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">63,700,000원</span><span class="stock-final-fin">60,900,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
-        <tr class="my27-row" data-model-id="gla-250-4matic-amg-line-my27"><td class="model-cell">GLA 250 4MATIC AMG Line<span class="my27-badge">MY27</span></td><td class="price-cell single"><span class="stock-price-main">70,800,000원</span></td><td class="col-promo"><span style="display:block;">9%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td class="col-rent">+3%</td><td class="final-cell single"><span class="stock-final-main">64,420,000원</span><span class="stock-final-fin">61,590,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
         <tr class="dual-row dual-row-top" data-model-id="glb-200-d"><td rowspan="2" class="model-cell">GLB 200 d</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">63,300,000원</span></td><td rowspan="2" class="col-dash">-</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">63,300,000원</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="glb-200-d"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">64,300,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">64,300,000원</span></td></tr>
         <tr class="dual-row dual-row-top" data-model-id="glb-250-4matic"><td rowspan="2" class="model-cell">GLB 250 4MATIC</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">71,100,000원</span></td><td rowspan="2" class="col-promo"><span style="display:block;">9%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">64,700,000원</span><span class="stock-final-fin">61,850,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="glb-250-4matic"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">72,000,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">65,520,000원</span><span class="stock-final-fin">62,640,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
         <tr class="dual-row dual-row-top" data-model-id="mercedes-amg-glb-35-4matic"><td rowspan="2" class="model-cell">Mercedes-AMG GLB 35 4MATIC</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">78,500,000원</span></td><td rowspan="2" class="col-promo"><span style="display:block;">9%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">71,430,000원</span><span class="stock-final-fin">68,290,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="mercedes-amg-glb-35-4matic"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">79,500,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">72,340,000원</span><span class="stock-final-fin">69,160,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
@@ -2168,6 +2165,24 @@ body {
     </table>
   </div>
   <div class="rent-note">※ 장기렌트는 <strong>벤츠파이낸셜 이용조건</strong>에서 추가 3%입니다.</div>
+
+  <!-- GLA · GLB MY27 -->
+  <div class="car-section" data-benefit-target="gla-glb-my27">
+    <div class="car-section-header">
+      <div class="car-badge">GLA</div>
+      <div class="car-section-info">
+        <div class="car-brand">Mercedes-Benz</div>
+        <div class="car-model-name">GLA · GLB <span style="font-size:14px; font-weight:400; color:#7ab3d4; margin-left:8px;">MY27</span></div>
+      </div>
+    </div>
+    <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><table class="price-table" style="min-width:340px;width:100%;">
+      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>장기렌트</th><th>실구매가</th></tr></thead>
+      <tbody>
+        <tr class="my27-row" data-model-id="gla-250-4matic-amg-line-my27"><td class="model-cell">GLA 250 4MATIC AMG Line</td><td class="price-cell single"><span class="stock-price-main">70,800,000원</span></td><td class="col-promo"><span style="display:block;">9%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td class="col-rent">+3%</td><td class="final-cell single"><span class="stock-final-main">64,420,000원</span><span class="stock-final-fin">61,590,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
+      </tbody>
+    </table></div>
+    <div class="rent-note">※ 장기렌트는 <strong>벤츠파이낸셜 이용조건</strong>에서 추가 3%입니다.</div>
+  </div>
   </div>
 
   <!-- C클래스 -->
@@ -2535,9 +2550,7 @@ body {
       <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>장기렌트</th><th>실구매가</th></tr></thead>
       <tbody>
         <tr class="dual-row dual-row-top" data-model-id="eqa-250-progressive"><td rowspan="2" class="model-cell">EQA 250 Progressive</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">70,000,000원</span></td><td rowspan="2" class="col-promo"><span style="display:block;">10%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">63,000,000원</span><span class="stock-final-fin">60,200,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="eqa-250-progressive"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">70,000,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">63,000,000원</span><span class="stock-final-fin">60,200,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
-        <tr class="my27-row" data-model-id="eqa-250-progressive-my27"><td class="model-cell">EQA 250 Progressive<span class="my27-badge">MY27</span></td><td class="price-cell single"><span class="stock-price-main">70,800,000원</span></td><td class="col-promo"><span style="display:block;">10%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td class="col-rent">+3%</td><td class="final-cell single"><span class="stock-final-main">63,720,000원</span><span class="stock-final-fin">60,880,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
         <tr class="dual-row dual-row-top" data-model-id="eqa-250-amg-line"><td rowspan="2" class="model-cell">EQA 250 AMG Line</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">75,800,000원</span></td><td rowspan="2" class="col-promo"><span style="display:block;">10%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">68,220,000원</span><span class="stock-final-fin">65,180,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="eqa-250-amg-line"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">75,800,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">68,220,000원</span><span class="stock-final-fin">65,180,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
-        <tr class="my27-row" data-model-id="eqa-250-amg-line-my27"><td class="model-cell">EQA 250 AMG Line<span class="my27-badge">MY27</span></td><td class="price-cell single"><span class="stock-price-main">76,700,000원</span></td><td class="col-promo"><span style="display:block;">10%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td class="col-rent">+3%</td><td class="final-cell single"><span class="stock-final-main">69,030,000원</span><span class="stock-final-fin">65,960,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
         <tr class="dual-row dual-row-top" data-model-id="eqb-300-4matic-progressive"><td rowspan="2" class="model-cell">EQB 300 4MATIC Progressive</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">78,800,000원</span></td><td rowspan="2" class="col-promo"><span style="display:block;">10%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">70,920,000원</span><span class="stock-final-fin">67,760,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="eqb-300-4matic-progressive"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">78,800,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">70,920,000원</span><span class="stock-final-fin">67,760,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
         <tr class="dual-row dual-row-top" data-model-id="eqb-300-4matic-amg-line"><td rowspan="2" class="model-cell">EQB 300 4MATIC AMG Line</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">84,300,000원</span></td><td rowspan="2" class="col-promo"><span style="display:block;">10%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">75,870,000원</span><span class="stock-final-fin">72,490,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="eqb-300-4matic-amg-line"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">84,300,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">75,870,000원</span><span class="stock-final-fin">72,490,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
         <tr class="dual-row dual-row-top" data-model-id="eqe-350-suv"><td rowspan="2" class="model-cell">EQE 350+ SUV</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">106,000,000원</span></td><td rowspan="2" class="col-promo">10%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">95,400,000원</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="eqe-350-suv"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">106,000,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">95,400,000원</span></td></tr>
@@ -2550,6 +2563,24 @@ body {
     </table>
   </div>
   <div class="rent-note">※ 장기렌트는 <strong>벤츠파이낸셜 이용조건</strong>에서 추가 3%입니다.</div>
+  <!-- EQA MY27 -->
+  <div class="car-section" data-benefit-target="eqa-my27">
+    <div class="car-section-header">
+      <div class="car-badge">EQ</div>
+      <div class="car-section-info">
+        <div class="car-brand">Mercedes-Benz</div>
+        <div class="car-model-name">EQA <span style="font-size:14px; font-weight:400; color:#7ab3d4; margin-left:8px;">MY27</span></div>
+      </div>
+    </div>
+    <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><table class="price-table" style="min-width:340px;width:100%;">
+      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>장기렌트</th><th>실구매가</th></tr></thead>
+      <tbody>
+        <tr class="my27-row" data-model-id="eqa-250-progressive-my27"><td class="model-cell">EQA 250 Progressive</td><td class="price-cell single"><span class="stock-price-main">70,800,000원</span></td><td class="col-promo"><span style="display:block;">10%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td class="col-rent">+3%</td><td class="final-cell single"><span class="stock-final-main">63,720,000원</span><span class="stock-final-fin">60,880,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
+        <tr class="my27-row" data-model-id="eqa-250-amg-line-my27"><td class="model-cell">EQA 250 AMG Line</td><td class="price-cell single"><span class="stock-price-main">76,700,000원</span></td><td class="col-promo"><span style="display:block;">10%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td class="col-rent">+3%</td><td class="final-cell single"><span class="stock-final-main">69,030,000원</span><span class="stock-final-fin">65,960,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
+      </tbody>
+    </table></div>
+    <div class="rent-note">※ 장기렌트는 <strong>벤츠파이낸셜 이용조건</strong>에서 추가 3%입니다.</div>
+  </div>
   </div>
 
   <!-- Maybach -->
@@ -2652,13 +2683,28 @@ body {
       <tbody>
         <tr class="dual-row dual-row-top"><td rowspan="2" class="model-cell">A 220 Hatch</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">48,100,000원</span></td><td rowspan="2" class="col-promo">10%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">43,290,000원</span></td></tr><tr class="dual-row dual-row-bottom"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">48,700,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">43,830,000원</span></td></tr>
         <tr class="dual-row dual-row-top"><td rowspan="2" class="model-cell">Mercedes-AMG A 45 S 4MATIC+</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">80,400,000원</span></td><td rowspan="2" class="col-promo"><span style="display:block;">7%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">74,770,000원</span><span class="stock-final-fin">71,550,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr><tr class="dual-row dual-row-bottom"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">81,400,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">75,700,000원</span><span class="stock-final-fin">72,440,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
-        <tr class="my27-row"><td class="model-cell">Mercedes-AMG A 45 S 4MATIC+<span class="my27-badge">MY27</span></td><td class="price-cell single"><span class="stock-price-main">82,300,000원</span></td><td class="col-dash">-</td><td class="col-dash">-</td><td class="final-cell single"><span class="stock-final-main">82,300,000원</span></td></tr>
         <tr class="dual-row dual-row-top"><td rowspan="2" class="model-cell">A 220 Sedan</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">49,900,000원</span></td><td rowspan="2" class="col-promo">5%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">47,400,000원</span></td></tr><tr class="dual-row dual-row-bottom"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">50,500,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">47,970,000원</span></td></tr>
         <tr class="dual-row dual-row-top"><td rowspan="2" class="model-cell">Mercedes-AMG A 35 4MATIC</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">67,700,000원</span></td><td rowspan="2" class="col-dash">-</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">67,700,000원</span></td></tr><tr class="dual-row dual-row-bottom"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">68,600,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">68,600,000원</span></td></tr>
       </tbody>
     </table>
   </div>
   <div class="rent-note">※ 장기렌트는 <strong>벤츠파이낸셜 이용조건</strong>에서 추가 3%입니다.</div>
+
+  <div class="car-section">
+    <div class="car-section-header">
+      <div class="car-badge">A</div>
+      <div class="car-section-info">
+        <div class="car-brand">Mercedes-Benz</div>
+        <div class="car-model-name">A클래스 <span style="font-size:14px; font-weight:400; color:#7ab3d4; margin-left:8px;">MY27</span></div>
+      </div>
+    </div>
+    <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><table class="price-table" style="min-width:340px;width:100%;">
+      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>장기렌트</th><th>실구매가</th></tr></thead>
+      <tbody>
+        <tr class="my27-row"><td class="model-cell">Mercedes-AMG A 45 S 4MATIC+</td><td class="price-cell single"><span class="stock-price-main">82,300,000원</span></td><td class="col-dash">-</td><td class="col-dash">-</td><td class="final-cell single"><span class="stock-final-main">82,300,000원</span></td></tr>
+      </tbody>
+    </table></div>
+  </div>
 </div>
 </div>
 
@@ -2707,7 +2753,6 @@ body {
       <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>장기렌트</th><th>실구매가</th></tr></thead>
       <tbody>
         <tr class="dual-row dual-row-top"><td rowspan="2" class="model-cell">GLA 250 4MATIC AMG Line</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">69,100,000원</span></td><td rowspan="2" class="col-promo"><span style="display:block;">9%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">62,880,000원</span><span class="stock-final-fin">60,110,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr><tr class="dual-row dual-row-bottom"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">70,000,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">63,700,000원</span><span class="stock-final-fin">60,900,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
-        <tr class="my27-row"><td class="model-cell">GLA 250 4MATIC AMG Line<span class="my27-badge">MY27</span></td><td class="price-cell single"><span class="stock-price-main">70,800,000원</span></td><td class="col-promo"><span style="display:block;">9%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td class="col-rent">+3%</td><td class="final-cell single"><span class="stock-final-main">64,420,000원</span><span class="stock-final-fin">61,590,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
         <tr class="dual-row dual-row-top"><td rowspan="2" class="model-cell">GLB 200 d</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">63,300,000원</span></td><td rowspan="2" class="col-dash">-</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">63,300,000원</span></td></tr><tr class="dual-row dual-row-bottom"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">64,300,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">64,300,000원</span></td></tr>
         <tr class="dual-row dual-row-top"><td rowspan="2" class="model-cell">GLB 250 4MATIC</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">71,100,000원</span></td><td rowspan="2" class="col-promo"><span style="display:block;">9%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">64,700,000원</span><span class="stock-final-fin">61,850,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr><tr class="dual-row dual-row-bottom"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">72,000,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">65,520,000원</span><span class="stock-final-fin">62,640,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
         <tr class="dual-row dual-row-top"><td rowspan="2" class="model-cell">Mercedes-AMG GLB 35 4MATIC</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">78,500,000원</span></td><td rowspan="2" class="col-promo"><span style="display:block;">9%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">71,430,000원</span><span class="stock-final-fin">68,290,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr><tr class="dual-row dual-row-bottom"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">79,500,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">72,340,000원</span><span class="stock-final-fin">69,160,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
@@ -2715,6 +2760,23 @@ body {
     </table>
   </div>
   <div class="rent-note">※ 장기렌트는 <strong>벤츠파이낸셜 이용조건</strong>에서 추가 3%입니다.</div>
+
+  <div class="car-section">
+    <div class="car-section-header">
+      <div class="car-badge">GLA</div>
+      <div class="car-section-info">
+        <div class="car-brand">Mercedes-Benz</div>
+        <div class="car-model-name">GLA · GLB <span style="font-size:14px; font-weight:400; color:#7ab3d4; margin-left:8px;">MY27</span></div>
+      </div>
+    </div>
+    <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><table class="price-table" style="min-width:340px;width:100%;">
+      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>장기렌트</th><th>실구매가</th></tr></thead>
+      <tbody>
+        <tr class="my27-row"><td class="model-cell">GLA 250 4MATIC AMG Line</td><td class="price-cell single"><span class="stock-price-main">70,800,000원</span></td><td class="col-promo"><span style="display:block;">9%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td class="col-rent">+3%</td><td class="final-cell single"><span class="stock-final-main">64,420,000원</span><span class="stock-final-fin">61,590,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
+      </tbody>
+    </table></div>
+    <div class="rent-note">※ 장기렌트는 <strong>벤츠파이낸셜 이용조건</strong>에서 추가 3%입니다.</div>
+  </div>
 </div>
 </div>
 
@@ -3085,9 +3147,7 @@ body {
       <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>장기렌트</th><th>실구매가</th></tr></thead>
       <tbody>
         <tr class="dual-row dual-row-top"><td rowspan="2" class="model-cell">EQA 250 Progressive</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">70,000,000원</span></td><td rowspan="2" class="col-promo"><span style="display:block;">10%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">63,000,000원</span><span class="stock-final-fin">60,200,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr><tr class="dual-row dual-row-bottom"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">70,000,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">63,000,000원</span><span class="stock-final-fin">60,200,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
-        <tr class="my27-row"><td class="model-cell">EQA 250 Progressive<span class="my27-badge">MY27</span></td><td class="price-cell single"><span class="stock-price-main">70,800,000원</span></td><td class="col-promo"><span style="display:block;">10%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td class="col-rent">+3%</td><td class="final-cell single"><span class="stock-final-main">63,720,000원</span><span class="stock-final-fin">60,880,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
         <tr class="dual-row dual-row-top"><td rowspan="2" class="model-cell">EQA 250 AMG Line</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">75,800,000원</span></td><td rowspan="2" class="col-promo"><span style="display:block;">10%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">68,220,000원</span><span class="stock-final-fin">65,180,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr><tr class="dual-row dual-row-bottom"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">75,800,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">68,220,000원</span><span class="stock-final-fin">65,180,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
-        <tr class="my27-row"><td class="model-cell">EQA 250 AMG Line<span class="my27-badge">MY27</span></td><td class="price-cell single"><span class="stock-price-main">76,700,000원</span></td><td class="col-promo"><span style="display:block;">10%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td class="col-rent">+3%</td><td class="final-cell single"><span class="stock-final-main">69,030,000원</span><span class="stock-final-fin">65,960,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
         <tr class="dual-row dual-row-top"><td rowspan="2" class="model-cell">EQB 300 4MATIC Progressive</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">78,800,000원</span></td><td rowspan="2" class="col-promo"><span style="display:block;">10%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">70,920,000원</span><span class="stock-final-fin">67,760,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr><tr class="dual-row dual-row-bottom"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">78,800,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">70,920,000원</span><span class="stock-final-fin">67,760,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
         <tr class="dual-row dual-row-top"><td rowspan="2" class="model-cell">EQB 300 4MATIC AMG Line</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">84,300,000원</span></td><td rowspan="2" class="col-promo"><span style="display:block;">10%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">75,870,000원</span><span class="stock-final-fin">72,490,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr><tr class="dual-row dual-row-bottom"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">84,300,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">75,870,000원</span><span class="stock-final-fin">72,490,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
         <tr class="dual-row dual-row-top"><td rowspan="2" class="model-cell">EQE 350+ SUV</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">106,000,000원</span></td><td rowspan="2" class="col-promo">10%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">95,400,000원</span></td></tr><tr class="dual-row dual-row-bottom"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">106,000,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">95,400,000원</span></td></tr>
@@ -3100,6 +3160,24 @@ body {
     </table>
   </div>
   <div class="rent-note">※ 장기렌트는 <strong>벤츠파이낸셜 이용조건</strong>에서 추가 3%입니다.</div>
+
+  <div class="car-section">
+    <div class="car-section-header">
+      <div class="car-badge">EQ</div>
+      <div class="car-section-info">
+        <div class="car-brand">Mercedes-Benz</div>
+        <div class="car-model-name">EQA <span style="font-size:14px; font-weight:400; color:#7ab3d4; margin-left:8px;">MY27</span></div>
+      </div>
+    </div>
+    <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><table class="price-table" style="min-width:340px;width:100%;">
+      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>장기렌트</th><th>실구매가</th></tr></thead>
+      <tbody>
+        <tr class="my27-row"><td class="model-cell">EQA 250 Progressive</td><td class="price-cell single"><span class="stock-price-main">70,800,000원</span></td><td class="col-promo"><span style="display:block;">10%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td class="col-rent">+3%</td><td class="final-cell single"><span class="stock-final-main">63,720,000원</span><span class="stock-final-fin">60,880,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
+        <tr class="my27-row"><td class="model-cell">EQA 250 AMG Line</td><td class="price-cell single"><span class="stock-price-main">76,700,000원</span></td><td class="col-promo"><span style="display:block;">10%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td class="col-rent">+3%</td><td class="final-cell single"><span class="stock-final-main">69,030,000원</span><span class="stock-final-fin">65,960,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
+      </tbody>
+    </table></div>
+    <div class="rent-note">※ 장기렌트는 <strong>벤츠파이낸셜 이용조건</strong>에서 추가 3%입니다.</div>
+  </div>
 </div>
 </div>
 
