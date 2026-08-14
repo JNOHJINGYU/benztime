@@ -3422,6 +3422,14 @@ function formatWon(value) {
   return value.toLocaleString('ko-KR') + '원';
 }
 
+// 기존재고 실구매가 계산 (기본/벤츠파이낸셜/운용리스 공통 규칙)
+// 기존재고 차량가격에 할인율을 직접 곱하지 않는다.
+// 반드시 "7월 이후 통관 실구매가(이미 절삭됨) − (7월 이후 통관 차량가격 − 기존재고 차량가격)" 순서로 계산한다.
+function calculateExistingStockFinalPrice(oldPrice, newPrice, newFinalPrice) {
+  var increase = newPrice - oldPrice;
+  return floorToTenThousand(newFinalPrice - increase);
+}
+
 // data-model-id 가 붙은 모든 행(메인 가격표 + 차종별 탭 가격표)을 VEHICLE_DATA 기준으로 동시 갱신
 function applyVehicleData() {
   Object.keys(VEHICLE_DATA).forEach(function (id) {
@@ -3469,12 +3477,18 @@ function applyVehicleData() {
         var oldPriceEl = tr.querySelector('.price-cell.top .stock-price-main');
         if (oldPriceEl && data.oldPrice) oldPriceEl.textContent = formatWon(data.oldPrice);
 
+        // 기존재고 실구매가는 오른쪽(7월 이후 통관) 실구매가에서 차량가격 차액을 뺀 값이어야 하며,
+        // 기존재고 차량가격에 할인율을 직접 곱해서는 안 된다.
         var oldFinalEl = tr.querySelector('.final-cell.top .stock-final-main');
-        if (oldFinalEl && data.oldPrice) oldFinalEl.textContent = formatWon(calculateFinalPrice(data.oldPrice, data.discount));
+        if (oldFinalEl && data.oldPrice && data.newPrice) {
+          var newFinalForOld = calculateFinalPrice(data.newPrice, data.discount);
+          oldFinalEl.textContent = formatWon(calculateExistingStockFinalPrice(data.oldPrice, data.newPrice, newFinalForOld));
+        }
 
         var oldFinEl = tr.querySelector('.final-cell.top .stock-final-fin');
-        if (hasFinance && data.oldPrice) {
-          var oldFinVal = formatWon(calculateFinanceFinalPrice(data.oldPrice, data.discount, data.financeDiscount));
+        if (hasFinance && data.oldPrice && data.newPrice) {
+          var newFinForOld = calculateFinanceFinalPrice(data.newPrice, data.discount, data.financeDiscount);
+          var oldFinVal = formatWon(calculateExistingStockFinalPrice(data.oldPrice, data.newPrice, newFinForOld));
           if (oldFinEl) {
             oldFinEl.textContent = oldFinVal;
           } else {
@@ -3782,6 +3796,56 @@ function recalcExistingStockPrices() {
   });
 }
 
+// ── 개발 검수용: 전체 dual-row 차량의 기존재고 실구매가를 검사 ──
+// 기준: expectedOldFinal = floorToTenThousand(newFinal - (newPrice - oldPrice))
+// 화면에 표시된 값과 다르면 console.warn으로만 알린다 (정상이면 로그 없음).
+// 콘솔에서 언제든 validateExistingStockPrices() 를 직접 호출해 재검수할 수 있다.
+function validateExistingStockPrices() {
+  var checked = 0, mismatches = 0;
+  document.querySelectorAll('tr.dual-row-top').forEach(function (topRow) {
+    var bottomRow = topRow.nextElementSibling;
+    if (!bottomRow || !bottomRow.classList.contains('dual-row-bottom')) return;
+
+    var modelEl = topRow.querySelector('.model-cell');
+    var modelName = modelEl ? modelEl.textContent.replace(/\s+/g, ' ').trim() : '(모델명 없음)';
+
+    var topPriceMain = topRow.querySelector('.price-cell.top .stock-price-main');
+    var bottomPriceMain = bottomRow.querySelector('.price-cell.bottom .stock-price-main');
+    if (!topPriceMain || !bottomPriceMain) return;
+    var oldMsrp = parseInt(topPriceMain.textContent.replace(/[^0-9]/g, ''));
+    var newMsrp = parseInt(bottomPriceMain.textContent.replace(/[^0-9]/g, ''));
+    if (!oldMsrp || !newMsrp) return;
+    var increase = newMsrp - oldMsrp;
+
+    var topFinalCell = topRow.querySelector('.final-cell.top');
+    var bottomFinalCell = bottomRow.querySelector('.final-cell.bottom');
+    if (!topFinalCell || !bottomFinalCell) return;
+
+    [
+      ['.stock-final-main', '기본'],
+      ['.stock-final-fin', '벤츠파이낸셜'],
+      ['.stock-final-lease', '운용리스'],
+    ].forEach(function (pair) {
+      var selector = pair[0], label = pair[1];
+      var bEl = bottomFinalCell.querySelector(selector);
+      var tEl = topFinalCell.querySelector(selector);
+      if (!bEl || !tEl) return;
+      var newVal = parseInt(bEl.textContent.replace(/[^0-9]/g, ''));
+      var current = parseInt(tEl.textContent.replace(/[^0-9]/g, ''));
+      if (!newVal || !current) return;
+      checked++;
+      var expected = floorToTenThousand(newVal - increase);
+      if (current !== expected) {
+        mismatches++;
+        console.warn('[가격오류]', modelName, '(' + label + ')', '현재:', formatWon(current), '정상:', formatWon(expected));
+      }
+    });
+  });
+  if (mismatches === 0) {
+    console.log('[가격검수] 이상 없음 — dual-row 실구매가 ' + checked + '건 확인 완료');
+  }
+}
+
 // ── 통합 가격표 페이지(-price) → 개별 차종 탭 페이지 자동 동기화 ──
 // 통합 가격표(예: #tab-e-price)를 유일한 원본(source of truth)으로 삼아,
 // 개별 탭 페이지(예: #tab-e)의 표/장기렌트 안내문을 페이지 로드 시마다 그대로 복제합니다.
@@ -3837,12 +3901,18 @@ function syncDuplicatePriceTables() {
 
 document.addEventListener('DOMContentLoaded', function() {
   syncDuplicatePriceTables();
-  recalcExistingStockPrices();
   applyFinancialDiscounts();
   applyVehicleData();
+
+  // 반드시 applyVehicleData() 이후에 실행 — VEHICLE_DATA 기반 계산이 모두 반영된 뒤,
+  // 기존재고 실구매가(기본/벤츠파이낸셜/운용리스)를 "7월 이후 통관 실구매가 − 차량가격 차액"
+  // 규칙으로 최종 확정한다.
+  recalcExistingStockPrices();
+
   applyEditionDetailLinks();
   applyRetentionBodycareBenefits();
   applyMobilePriceFormat();
+  validateExistingStockPrices();
 });
 window.addEventListener('resize', applyMobilePriceFormat);
 
