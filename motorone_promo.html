@@ -215,6 +215,34 @@ body {
   color: #f0c040;
   font-weight: 600;
 }
+.discount-exclusive-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(224,90,90,0.1);
+  border: 1px solid rgba(224,90,90,0.4);
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-bottom: 18px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #e0935a;
+  line-height: 1.6;
+  word-break: keep-all;
+}
+.discount-exclusive-note strong { color: #ffffff; font-weight: 800; }
+.discount-desc .rule-note {
+  display: block;
+  margin-top: 6px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: #e0935a;
+  word-break: keep-all;
+}
+@media (max-width: 768px) {
+  .discount-exclusive-note { font-size: 12px; padding: 9px 12px; }
+  .discount-desc .rule-note { font-size: 11.5px; }
+}
 
 /* ── SECTION ── */
 .section {
@@ -254,6 +282,67 @@ body {
   font-size: 13px;
   color: #555;
   line-height: 1.7;
+}
+
+/* ── G-Class 계약 필수 안내 (근저당/수출방지) ── */
+.gclass-contract-warning {
+  max-width: 1160px;
+  margin: 24px auto 0;
+  background: rgba(226,124,100,0.08);
+  border: 1px solid #e27c64;
+  border-radius: 16px;
+  padding: 26px 30px;
+}
+.gclass-warning-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 19px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 10px;
+  word-break: keep-all;
+}
+.gclass-warning-title .icon { color: #e27c64; }
+.gclass-warning-intro {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.7;
+  margin-bottom: 20px;
+  word-break: keep-all;
+}
+.gclass-warning-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.gclass-warning-item {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(226,124,100,0.35);
+  border-radius: 12px;
+  padding: 18px 20px;
+}
+.gclass-warning-item-title {
+  font-size: 14px;
+  font-weight: 800;
+  color: #e27c64;
+  margin-bottom: 10px;
+}
+.gclass-warning-item-desc {
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.82);
+  line-height: 1.9;
+  word-break: keep-all;
+}
+.gclass-warning-item-desc strong { color: #ffffff; font-weight: 700; }
+@media (max-width: 768px) {
+  .gclass-contract-warning { padding: 20px 18px; }
+  .gclass-warning-title { font-size: 16px; }
+  .gclass-warning-intro { font-size: 13px; margin-bottom: 16px; }
+  .gclass-warning-grid { grid-template-columns: 1fr; gap: 12px; }
+  .gclass-warning-item { padding: 16px 18px; }
 }
 
 /* ── 벤츠 파이낸셜 9월 핵심 혜택 블록 (신설 카드 + 6개월 지원표) ── */
@@ -2255,7 +2344,7 @@ body {
 
 <!-- NAV TABS -->
 <nav class="nav-tabs">
-  <a class="nav-tab star" href="#finance-section">★ 9월 베스트</a>
+  <a class="nav-tab star" href="#september-policy">★ 9월 베스트</a>
   <a class="nav-tab" data-tab="finance" href="#finance-section">금융</a>
   <a class="nav-tab" data-tab="a" href="#tab-a-price">A클래스</a>
   <a class="nav-tab" data-tab="cla" href="#tab-cla-price">CLA</a>
@@ -2279,7 +2368,7 @@ body {
 </div>
 
 <!-- 9월 구매 기준 안내 카드 -->
-<div class="policy-update-card">
+<div class="policy-update-card" id="september-policy">
   <div class="policy-update-badge">2026.09.01 시행 · 필독</div>
   <div class="policy-update-title">9월부터 달라지는 구매 기준 2가지</div>
   <div class="policy-update-grid">
@@ -2428,6 +2517,7 @@ body {
 <!-- DISCOUNT BOX -->
 <div class="discount-box" style="margin:0 auto 20px;">
   <div class="discount-title" style="font-size:22px; font-weight:700; letter-spacing:-0.02em;">공통 추가 할인 적용 안내</div>
+  <div class="discount-exclusive-note">⚠ <strong>재구매 고객(Cash Retention)</strong>과 <strong>타 브랜드 보유(Conquest)</strong>는 <strong>택 1</strong>만 적용 가능합니다.</div>
   <div class="discount-row">
     <div class="discount-tag">재구매 고객</div>
     <div class="discount-desc">벤츠 재구매 고객 — AMG · Maybach · S-Class · G-Class <span class="highlight">+2%</span><br>그 외 모든 차량 <span class="highlight">+1%</span></div>
@@ -2438,7 +2528,7 @@ body {
   </div>
   <div class="discount-row">
     <div class="discount-tag">트레이드인</div>
-    <div class="discount-desc">전 차종 트레이드인(중고차 매각 동시 진행) 시 — 모든 차량 <span class="highlight">+1%</span> · 타 프로모션과 중복 가능</div>
+    <div class="discount-desc">벤츠 <strong>재구매 고객(Cash Retention)</strong> 적용 고객이 기존 차량을 인증중고차로 매각할 경우 — <span class="highlight">+1%</span> 추가 적용<span class="rule-note">※ 재구매 고객 선택 시에만 가능 · 타 브랜드 보유(Conquest)와는 중복 불가</span></div>
   </div>
   <div class="discount-row">
     <div class="discount-tag">전시차량</div>
@@ -2742,7 +2832,7 @@ body {
       </tbody>
     </table>
   </div>
-  <div class="rent-note">※ 장기렌트는 <strong>벤츠파이낸셜 이용조건</strong>에서 추가 3%입니다.</div>
+  <div class="rent-note">※ 장기렌트 추가 할인율은 모델별 9월 MBMK 프로모션 조건에 따라 상이합니다. Fleet 할인은 별도 조건이며 장기렌트 추가 현금할인과 중복 여부를 별도로 확인해야 합니다.</div>
 
   <!-- A클래스 MY27 -->
   <div class="car-section" data-benefit-target="a-class-my27">
@@ -2780,7 +2870,7 @@ body {
       </tbody>
     </table>
   </div>
-  <div class="rent-note">※ 장기렌트는 <strong>벤츠파이낸셜 이용조건</strong>에서 추가 3%입니다.</div>
+  <div class="rent-note">※ 장기렌트 추가 할인율은 모델별 9월 MBMK 프로모션 조건에 따라 상이합니다. Fleet 할인은 별도 조건이며 장기렌트 추가 현금할인과 중복 여부를 별도로 확인해야 합니다.</div>
   </div>
 
   <!-- GLA·GLB -->
@@ -2802,7 +2892,7 @@ body {
       </tbody>
     </table>
   </div>
-  <div class="rent-note">※ 장기렌트는 <strong>벤츠파이낸셜 이용조건</strong>에서 추가 3%입니다.</div>
+  <div class="rent-note">※ 장기렌트 추가 할인율은 모델별 9월 MBMK 프로모션 조건에 따라 상이합니다. Fleet 할인은 별도 조건이며 장기렌트 추가 현금할인과 중복 여부를 별도로 확인해야 합니다.</div>
 
   <!-- GLA · GLB MY27 -->
   <div class="car-section" data-benefit-target="gla-glb-my27">
@@ -2819,7 +2909,7 @@ body {
         <tr class="my27-row" data-model-id="gla-250-4matic-amg-line-my27"><td class="model-cell">GLA 250 4MATIC AMG Line</td><td class="price-cell single"><span class="stock-price-main">70,800,000원</span></td><td class="col-promo"><span style="display:block;">9%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td class="col-rent">+3%</td><td class="final-cell single"><span class="stock-final-main">64,420,000원</span><span class="stock-final-fin">61,590,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
       </tbody>
     </table></div>
-    <div class="rent-note">※ 장기렌트는 <strong>벤츠파이낸셜 이용조건</strong>에서 추가 3%입니다.</div>
+    <div class="rent-note">※ 장기렌트 추가 할인율은 모델별 9월 MBMK 프로모션 조건에 따라 상이합니다. Fleet 할인은 별도 조건이며 장기렌트 추가 현금할인과 중복 여부를 별도로 확인해야 합니다.</div>
   </div>
   </div>
 
@@ -2841,7 +2931,7 @@ body {
       </tbody>
     </table>
   </div>
-  <div class="rent-note">※ 장기렌트는 <strong>벤츠파이낸셜 이용조건</strong>에서 추가 3%입니다.</div>
+  <div class="rent-note">※ 장기렌트 추가 할인율은 모델별 9월 MBMK 프로모션 조건에 따라 상이합니다. Fleet 할인은 별도 조건이며 장기렌트 추가 현금할인과 중복 여부를 별도로 확인해야 합니다.</div>
   </div>
 
   <!-- E클래스 -->
@@ -2879,11 +2969,11 @@ body {
         <tr class="dual-row dual-row-top" data-model-id="e-200-avantgarde"><td rowspan="2" class="model-cell">E 200 AVANTGARDE</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">76,500,000원</span></td><td rowspan="2" class="col-promo">16%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">64,260,000원</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="e-200-avantgarde"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">77,500,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">65,100,000원</span></td></tr>
         <tr class="dual-row dual-row-top" data-model-id="e-200-exclusive"><td rowspan="2" class="model-cell">E 200 EXCLUSIVE</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">76,600,000원</span></td><td rowspan="2" class="col-promo"><span style="display:block;">8%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+7% 벤츠파이낸셜</span></td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">70,400,000원</span><span class="stock-final-fin">64,970,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="e-200-exclusive"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">77,500,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">71,300,000원</span><span class="stock-final-fin">65,870,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
         <tr class="dual-row dual-row-top" data-model-id="e-200-amg-line"><td rowspan="2" class="model-cell">E 200 AMG Line</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">80,000,000원</span></td><td rowspan="2" class="col-promo"><span style="display:block;">12%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">70,280,000원</span><span class="stock-final-fin">67,040,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="e-200-amg-line"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">81,000,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">71,280,000원</span><span class="stock-final-fin">68,040,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
-        <tr><td>E 200 AMG Line RoF Edition</td><td class="col-price">81,710,000원</td><td class="col-promo">10%</td><td class="col-rent">+3%</td><td class="col-final">73,690,000원</td></tr>
+        <tr><td>E 200 AMG Line RoF Edition</td><td class="col-price">81,710,000원</td><td class="col-promo">10%</td><td class="col-rent">+4%</td><td class="col-final">73,690,000원</td></tr>
         <tr class="dual-row dual-row-top" data-model-id="e-220-d-4matic-exclusive"><td rowspan="2" class="model-cell">E 220 d 4MATIC EXCLUSIVE</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">86,100,000원</span></td><td rowspan="2" class="col-promo">9%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">78,350,000원</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="e-220-d-4matic-exclusive"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">87,200,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">79,350,000원</span></td></tr>
         <tr class="dual-row dual-row-top" data-model-id="e-300-4matic-exclusive"><td rowspan="2" class="model-cell">E 300 4MATIC EXCLUSIVE</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">93,600,000원</span></td><td rowspan="2" class="col-promo"><span style="display:block;">10%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">84,240,000원</span><span class="stock-final-fin">80,490,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="e-300-4matic-exclusive"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">94,800,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">85,320,000원</span><span class="stock-final-fin">81,520,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
         <tr class="dual-row dual-row-top" data-model-id="e-300-4matic-amg-line"><td rowspan="2" class="model-cell">E 300 4MATIC AMG Line</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">97,700,000원</span></td><td rowspan="2" class="col-promo"><span style="display:block;">10%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">87,930,000원</span><span class="stock-final-fin">84,020,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="e-300-4matic-amg-line"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">99,000,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">89,100,000원</span><span class="stock-final-fin">85,140,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
-        <tr><td>E 300 4MATIC AMG Line 140주년 Edition</td><td class="col-price">104,700,000원</td><td class="col-promo">10%</td><td class="col-rent">+3%</td><td class="col-final">94,230,000원</td></tr>
+        <tr><td>E 300 4MATIC AMG Line 140주년 Edition</td><td class="col-price">104,700,000원</td><td class="col-promo">10%</td><td class="col-rent">+4%</td><td class="col-final">94,230,000원</td></tr>
         <tr class="dual-row dual-row-top" data-model-id="e-350-e-4matic-exclusive"><td rowspan="2" class="model-cell">E 350 e 4MATIC EXCLUSIVE</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">98,700,000원</span></td><td rowspan="2" class="col-promo">11%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">87,840,000원</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="e-350-e-4matic-exclusive"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">100,000,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">89,000,000원</span></td></tr>
         <tr class="dual-row dual-row-top" data-model-id="e-450-4matic-amg-line"><td rowspan="2" class="model-cell">E 450 4MATIC AMG Line</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">114,600,000원</span></td><td rowspan="2" class="col-promo">11%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">101,990,000원</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="e-450-4matic-amg-line"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">116,000,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">103,240,000원</span></td></tr>
         <tr class="dual-row dual-row-top" data-model-id="e-450-4matic-exclusive"><td rowspan="2" class="model-cell">E 450 4MATIC EXCLUSIVE</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">128,200,000원</span></td><td rowspan="2" class="col-promo">11%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">114,090,000원</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="e-450-4matic-exclusive"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">129,600,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">115,340,000원</span></td></tr>
@@ -2891,7 +2981,7 @@ body {
       </tbody>
     </table>
   </div>
-  <div class="rent-note">※ 장기렌트는 <strong>벤츠파이낸셜 이용조건</strong>에서 추가 3%입니다.</div>
+  <div class="rent-note">※ 장기렌트 추가 할인율은 모델별 9월 MBMK 프로모션 조건에 따라 상이합니다. Fleet 할인은 별도 조건이며 장기렌트 추가 현금할인과 중복 여부를 별도로 확인해야 합니다.</div>
   </div>
 
   <!-- S클래스 -->
@@ -2907,7 +2997,7 @@ body {
       <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>장기렌트</th><th>실구매가</th></tr></thead>
       <tbody>
         <tr class="dual-row dual-row-top" data-model-id="s-350-d-4matic"><td rowspan="2" class="model-cell">S 350 d 4MATIC</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">153,600,000원</span></td><td rowspan="2" class="col-promo">10%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">138,240,000원</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="s-350-d-4matic"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">155,000,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">139,500,000원</span></td></tr>
-        <tr class="dual-row dual-row-top"><td rowspan="2" class="model-cell">S 450 4MATIC SWB</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">159,600,000원</span></td><td rowspan="2" class="col-promo" style="text-align:center;"><span style="display:block;color:#e67e22;font-weight:700;">7%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:3px;">+4% 할부이용시</span><span style="display:block;font-size:11px;font-weight:700;color:#8e44ad;margin-top:2px;">+6% 운용리스</span></td><td rowspan="2" class="col-rent"><span style="display:block;">+3%</span><span style="display:block;font-size:10px;font-weight:500;color:#888;margin-top:2px;">(운용리스조건)</span></td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">148,420,000원</span><span class="stock-final-fin">142,040,000원</span><span class="stock-fin-label">(할부이용시)</span><span class="stock-final-lease">138,850,000원</span><span class="stock-lease-label">(운용리스)</span></td></tr><tr class="dual-row dual-row-bottom"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">162,000,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">150,660,000원</span><span class="stock-final-fin">144,180,000원</span><span class="stock-fin-label">(할부이용시)</span><span class="stock-final-lease">140,940,000원</span><span class="stock-lease-label">(운용리스)</span></td></tr>
+        <tr class="dual-row dual-row-top"><td rowspan="2" class="model-cell">S 450 4MATIC SWB</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">159,600,000원</span></td><td rowspan="2" class="col-promo" style="text-align:center;"><span style="display:block;color:#e67e22;font-weight:700;">7%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:3px;">+4% 할부이용시</span><span style="display:block;font-size:11px;font-weight:700;color:#8e44ad;margin-top:2px;">+6% 운용리스</span></td><td rowspan="2" class="col-rent">+6%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">148,420,000원</span><span class="stock-final-fin">142,040,000원</span><span class="stock-fin-label">(할부이용시)</span><span class="stock-final-lease">138,850,000원</span><span class="stock-lease-label">(운용리스)</span></td></tr><tr class="dual-row dual-row-bottom"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">162,000,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">150,660,000원</span><span class="stock-final-fin">144,180,000원</span><span class="stock-fin-label">(할부이용시)</span><span class="stock-final-lease">140,940,000원</span><span class="stock-lease-label">(운용리스)</span></td></tr>
         <tr class="dual-row dual-row-top" data-model-id="s-450-4matic-long"><td rowspan="2" class="model-cell">S 450 4MATIC (Long)</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">193,600,000원</span></td><td rowspan="2" class="col-promo">10%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">174,240,000원</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="s-450-4matic-long"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">193,000,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">173,700,000원</span></td></tr>
         <tr class="dual-row dual-row-top" data-model-id="s-500-4matic"><td rowspan="2" class="model-cell">S 500 4MATIC</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">213,600,000원</span></td><td rowspan="2" class="col-promo">10%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">192,240,000원</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="s-500-4matic"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">215,000,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">193,500,000원</span></td></tr>
         
@@ -2916,7 +3006,7 @@ body {
       </tbody>
     </table>
   </div>
-  <div class="rent-note">※ 장기렌트는 <strong>벤츠파이낸셜 이용조건</strong>에서 추가 3%입니다.</div>
+  <div class="rent-note">※ 장기렌트 추가 할인율은 모델별 9월 MBMK 프로모션 조건에 따라 상이합니다. Fleet 할인은 별도 조건이며 장기렌트 추가 현금할인과 중복 여부를 별도로 확인해야 합니다.</div>
 
   <!-- S클래스 MY27 -->
   <div class="car-section" data-benefit-target="sclass-my27">
@@ -2956,7 +3046,7 @@ body {
         <tr><td>S 580 4MATIC Long</td><td class="col-price">270,000,000원</td><td class="col-dash">-</td><td class="col-rent">+3%</td><td class="col-final">270,000,000원</td></tr>
       </tbody>
     </table></div>
-  <div class="rent-note">※ 장기렌트는 <strong>벤츠파이낸셜 이용조건</strong>에서 추가 3%입니다.</div>
+  <div class="rent-note">※ 장기렌트 추가 할인율은 모델별 9월 MBMK 프로모션 조건에 따라 상이합니다. Fleet 할인은 별도 조건이며 장기렌트 추가 현금할인과 중복 여부를 별도로 확인해야 합니다.</div>
     <div class="retention-bodycare-benefit sclass-retention-benefit" data-retention-target="sclass">
       <div class="retention-bodycare-main">
         <span class="retention-bodycare-icon">🛡</span>
@@ -2974,7 +3064,7 @@ body {
         <tr><td>Mercedes-Maybach S 680</td><td class="col-price">407,000,000원</td><td class="col-dash">-</td><td class="col-rent">+3%</td><td class="col-final">407,000,000원</td></tr>
       </tbody>
     </table></div>
-  <div class="rent-note">※ 장기렌트는 <strong>벤츠파이낸셜 이용조건</strong>에서 추가 3%입니다.</div>
+  <div class="rent-note">※ 장기렌트 추가 할인율은 모델별 9월 MBMK 프로모션 조건에 따라 상이합니다. Fleet 할인은 별도 조건이며 장기렌트 추가 현금할인과 중복 여부를 별도로 확인해야 합니다.</div>
     <div class="retention-bodycare-benefit maybach-retention-benefit" data-retention-target="maybachSClass">
       <div class="retention-bodycare-main">
         <span class="retention-bodycare-icon">🛡</span>
@@ -3028,7 +3118,7 @@ body {
       </tbody>
     </table>
   </div>
-  <div class="rent-note">※ 장기렌트는 <strong>벤츠파이낸셜 이용조건</strong>에서 추가 3%입니다.</div>
+  <div class="rent-note">※ 장기렌트 추가 할인율은 모델별 9월 MBMK 프로모션 조건에 따라 상이합니다. Fleet 할인은 별도 조건이며 장기렌트 추가 현금할인과 중복 여부를 별도로 확인해야 합니다.</div>
 
   <!-- CLE MY27 -->
   <div class="car-section" data-benefit-target="cle-my27">
@@ -3085,17 +3175,17 @@ body {
       <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>장기렌트</th><th>실구매가</th></tr></thead>
       <tbody>
         <tr class="dual-row dual-row-top" data-model-id="glc-220-d-4matic"><td rowspan="2" class="model-cell">GLC 220 d 4MATIC</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">81,200,000원</span></td><td rowspan="2" class="col-promo">7%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">75,510,000원</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="glc-220-d-4matic"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">82,200,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">76,440,000원</span></td></tr>
-        <tr class="dual-row dual-row-top" data-model-id="glc-300-4matic-avantgarde"><td rowspan="2" class="model-cell">GLC 300 4MATIC AVANTGARDE</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">81,400,000원</span></td><td rowspan="2" class="col-promo"><span style="display:block;">8%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">74,880,000원</span><span class="stock-final-fin">71,630,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="glc-300-4matic-avantgarde"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">82,500,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">75,900,000원</span><span class="stock-final-fin">72,600,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
+        <tr class="dual-row dual-row-top" data-model-id="glc-300-4matic-avantgarde"><td rowspan="2" class="model-cell">GLC 300 4MATIC AVANTGARDE</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">81,400,000원</span></td><td rowspan="2" class="col-promo"><span style="display:block;">7%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td rowspan="2" class="col-rent">+4%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">75,620,000원</span><span class="stock-final-fin">72,320,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="glc-300-4matic-avantgarde"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">82,500,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">76,720,000원</span><span class="stock-final-fin">73,420,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
         <tr class="dual-row dual-row-top" data-model-id="glc-300-4matic-amg-line"><td rowspan="2" class="model-cell">GLC 300 4MATIC AMG Line</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">91,400,000원</span></td><td rowspan="2" class="col-promo"><span style="display:block;">12%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">80,300,000원</span><span class="stock-final-fin">76,600,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="glc-300-4matic-amg-line"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">92,500,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">81,400,000원</span><span class="stock-final-fin">77,700,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
         <tr class="dual-row dual-row-top" data-model-id="glc-300-4matic-amg-line-140-edition"><td rowspan="2" class="model-cell">GLC 300 4MATIC AMG Line<br><span style="font-size:90%;color:#5c5c5c;">140주년 Edition</span></td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">96,800,000원</span></td><td rowspan="2" class="col-promo"><span style="display:block;">12%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">85,050,000원</span><span class="stock-final-fin">81,130,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="glc-300-4matic-amg-line-140-edition"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">97,900,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">86,150,000원</span><span class="stock-final-fin">82,230,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
         <tr class="dual-row dual-row-top" data-model-id="mercedes-amg-glc-43-4matic"><td rowspan="2" class="model-cell">Mercedes-AMG GLC 43 4MATIC</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">102,300,000원</span></td><td rowspan="2" class="col-promo">7%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">95,130,000원</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="mercedes-amg-glc-43-4matic"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">103,600,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">96,340,000원</span></td></tr>
-        <tr class="dual-row dual-row-top" data-model-id="glc-300-4matic-coup-avantgarde"><td rowspan="2" class="model-cell">GLC 300 4MATIC Coupé AVANTGARDE</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">85,500,000원</span></td><td rowspan="2" class="col-promo"><span style="display:block;">8%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">78,660,000원</span><span class="stock-final-fin">75,240,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="glc-300-4matic-coup-avantgarde"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">86,600,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">79,670,000원</span><span class="stock-final-fin">76,200,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
+        <tr class="dual-row dual-row-top" data-model-id="glc-300-4matic-coup-avantgarde"><td rowspan="2" class="model-cell">GLC 300 4MATIC Coupé AVANTGARDE</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">85,500,000원</span></td><td rowspan="2" class="col-promo"><span style="display:block;">7%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td rowspan="2" class="col-rent">+4%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">79,430,000원</span><span class="stock-final-fin">75,970,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="glc-300-4matic-coup-avantgarde"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">86,600,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">80,530,000원</span><span class="stock-final-fin">77,070,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
         <tr class="dual-row dual-row-top" data-model-id="glc-300-4matic-coup-amg-line"><td rowspan="2" class="model-cell">GLC 300 4MATIC Coupé AMG Line</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">95,700,000원</span></td><td rowspan="2" class="col-promo"><span style="display:block;">9%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">86,970,000원</span><span class="stock-final-fin">83,100,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="glc-300-4matic-coup-amg-line"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">96,900,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">88,170,000원</span><span class="stock-final-fin">84,300,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
         <tr class="dual-row dual-row-top" data-model-id="mercedes-amg-glc-43-4matic-coup"><td rowspan="2" class="model-cell">Mercedes-AMG GLC 43 4MATIC Coupé</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">106,900,000원</span></td><td rowspan="2" class="col-promo">3%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">103,690,000원</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="mercedes-amg-glc-43-4matic-coup"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">108,300,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">105,050,000원</span></td></tr>
       </tbody>
     </table>
   </div>
-  <div class="rent-note">※ 장기렌트는 <strong>벤츠파이낸셜 이용조건</strong>에서 추가 3%입니다.</div>
+  <div class="rent-note">※ 장기렌트 추가 할인율은 모델별 9월 MBMK 프로모션 조건에 따라 상이합니다. Fleet 할인은 별도 조건이며 장기렌트 추가 현금할인과 중복 여부를 별도로 확인해야 합니다.</div>
 
   <!-- GLC electric MY27 -->
   <div class="car-section" data-benefit-target="glc-electric-my27">
@@ -3139,7 +3229,7 @@ body {
       </tbody>
     </table>
   </div>
-  <div class="rent-note">※ 장기렌트는 <strong>벤츠파이낸셜 이용조건</strong>에서 추가 3%입니다.</div>
+  <div class="rent-note">※ 장기렌트 추가 할인율은 모델별 9월 MBMK 프로모션 조건에 따라 상이합니다. Fleet 할인은 별도 조건이며 장기렌트 추가 현금할인과 중복 여부를 별도로 확인해야 합니다.</div>
   </div>
 
   <!-- GLS -->
@@ -3163,7 +3253,7 @@ body {
       </tbody>
     </table>
   </div>
-  <div class="rent-note">※ 장기렌트는 <strong>벤츠파이낸셜 이용조건</strong>에서 추가 3%입니다.</div>
+  <div class="rent-note">※ 장기렌트 추가 할인율은 모델별 9월 MBMK 프로모션 조건에 따라 상이합니다. Fleet 할인은 별도 조건이며 장기렌트 추가 현금할인과 중복 여부를 별도로 확인해야 합니다.</div>
   </div>
 
   <!-- G클래스 -->
@@ -3205,6 +3295,21 @@ body {
       </tbody>
     </table></div>
   </div>
+
+  <div class="gclass-contract-warning">
+    <div class="gclass-warning-title"><span class="icon">⚠</span> G-Class 계약 필수 안내</div>
+    <div class="gclass-warning-intro">2026년 9월 7일 이후 생성되는 G-Class(MY26 · MY27 전 모델) 계약은 아래 절차가 필수로 적용됩니다.</div>
+    <div class="gclass-warning-grid">
+      <div class="gclass-warning-item">
+        <div class="gclass-warning-item-title">현금 · 할부</div>
+        <div class="gclass-warning-item-desc">수출방지 서약 작성<br>근저당 관련 계약서 작성<br>차량 등록 후 근저당 설정<br>근저당 설정 후 <strong>6개월 경과 시 해지</strong></div>
+      </div>
+      <div class="gclass-warning-item">
+        <div class="gclass-warning-item-title">리스 · 렌트</div>
+        <div class="gclass-warning-item-desc">근저당 설정 — <strong>해당 없음</strong><br>수출방지 서약 — <strong>필수</strong><br>위반 시 위약벌 <strong>5,000만원</strong></div>
+      </div>
+    </div>
+  </div>
   </div>
 
   <!-- AMG GT·SL -->
@@ -3228,7 +3333,7 @@ body {
       </tbody>
     </table>
   </div>
-  <div class="rent-note">※ 장기렌트는 <strong>벤츠파이낸셜 이용조건</strong>에서 추가 3%입니다.</div>
+  <div class="rent-note">※ 장기렌트 추가 할인율은 모델별 9월 MBMK 프로모션 조건에 따라 상이합니다. Fleet 할인은 별도 조건이며 장기렌트 추가 현금할인과 중복 여부를 별도로 확인해야 합니다.</div>
   </div>
 
   <!-- 전동화 EQ -->
@@ -3256,7 +3361,7 @@ body {
       </tbody>
     </table>
   </div>
-  <div class="rent-note">※ 장기렌트는 <strong>벤츠파이낸셜 이용조건</strong>에서 추가 3%입니다.</div>
+  <div class="rent-note">※ 장기렌트 추가 할인율은 모델별 9월 MBMK 프로모션 조건에 따라 상이합니다. Fleet 할인은 별도 조건이며 장기렌트 추가 현금할인과 중복 여부를 별도로 확인해야 합니다.</div>
   <!-- EQA MY27 -->
   <div class="car-section" data-benefit-target="eqa-my27">
     <div class="car-section-header">
@@ -3273,7 +3378,7 @@ body {
         <tr class="my27-row" data-model-id="eqa-250-amg-line-my27"><td class="model-cell">EQA 250 AMG Line</td><td class="price-cell single"><span class="stock-price-main">76,700,000원</span></td><td class="col-promo"><span style="display:block;">10%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td class="col-rent">+3%</td><td class="final-cell single"><span class="stock-final-main">69,030,000원</span><span class="stock-final-fin">65,960,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
       </tbody>
     </table></div>
-    <div class="rent-note">※ 장기렌트는 <strong>벤츠파이낸셜 이용조건</strong>에서 추가 3%입니다.</div>
+    <div class="rent-note">※ 장기렌트 추가 할인율은 모델별 9월 MBMK 프로모션 조건에 따라 상이합니다. Fleet 할인은 별도 조건이며 장기렌트 추가 현금할인과 중복 여부를 별도로 확인해야 합니다.</div>
   </div>
   </div>
 
@@ -3322,7 +3427,7 @@ body {
       </tbody>
     </table>
   </div>
-  <div class="rent-note">※ 장기렌트는 <strong>벤츠파이낸셜 이용조건</strong>에서 추가 3%입니다.</div>
+  <div class="rent-note">※ 장기렌트 추가 할인율은 모델별 9월 MBMK 프로모션 조건에 따라 상이합니다. Fleet 할인은 별도 조건이며 장기렌트 추가 현금할인과 중복 여부를 별도로 확인해야 합니다.</div>
 </div>
 </div>
 
@@ -3399,7 +3504,7 @@ body {
       </tbody>
     </table>
   </div>
-  <div class="rent-note">※ 장기렌트는 <strong>벤츠파이낸셜 이용조건</strong>에서 추가 3%입니다.</div>
+  <div class="rent-note">※ 장기렌트 추가 할인율은 모델별 9월 MBMK 프로모션 조건에 따라 상이합니다. Fleet 할인은 별도 조건이며 장기렌트 추가 현금할인과 중복 여부를 별도로 확인해야 합니다.</div>
 
   <div class="car-section">
     <div class="car-section-header">
@@ -3442,7 +3547,7 @@ body {
       </tbody>
     </table>
   </div>
-  <div class="rent-note">※ 장기렌트는 <strong>벤츠파이낸셜 이용조건</strong>에서 추가 3%입니다.</div>
+  <div class="rent-note">※ 장기렌트 추가 할인율은 모델별 9월 MBMK 프로모션 조건에 따라 상이합니다. Fleet 할인은 별도 조건이며 장기렌트 추가 현금할인과 중복 여부를 별도로 확인해야 합니다.</div>
 </div>
 </div>
 
@@ -3470,7 +3575,7 @@ body {
       </tbody>
     </table>
   </div>
-  <div class="rent-note">※ 장기렌트는 <strong>벤츠파이낸셜 이용조건</strong>에서 추가 3%입니다.</div>
+  <div class="rent-note">※ 장기렌트 추가 할인율은 모델별 9월 MBMK 프로모션 조건에 따라 상이합니다. Fleet 할인은 별도 조건이며 장기렌트 추가 현금할인과 중복 여부를 별도로 확인해야 합니다.</div>
 
   <div class="car-section">
     <div class="car-section-header">
@@ -3486,7 +3591,7 @@ body {
         <tr class="my27-row"><td class="model-cell">GLA 250 4MATIC AMG Line</td><td class="price-cell single"><span class="stock-price-main">70,800,000원</span></td><td class="col-promo"><span style="display:block;">9%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td class="col-rent">+3%</td><td class="final-cell single"><span class="stock-final-main">64,420,000원</span><span class="stock-final-fin">61,590,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
       </tbody>
     </table></div>
-    <div class="rent-note">※ 장기렌트는 <strong>벤츠파이낸셜 이용조건</strong>에서 추가 3%입니다.</div>
+    <div class="rent-note">※ 장기렌트 추가 할인율은 모델별 9월 MBMK 프로모션 조건에 따라 상이합니다. Fleet 할인은 별도 조건이며 장기렌트 추가 현금할인과 중복 여부를 별도로 확인해야 합니다.</div>
   </div>
 </div>
 </div>
@@ -3514,7 +3619,7 @@ body {
       </tbody>
     </table>
   </div>
-  <div class="rent-note">※ 장기렌트는 <strong>벤츠파이낸셜 이용조건</strong>에서 추가 3%입니다.</div>
+  <div class="rent-note">※ 장기렌트 추가 할인율은 모델별 9월 MBMK 프로모션 조건에 따라 상이합니다. Fleet 할인은 별도 조건이며 장기렌트 추가 현금할인과 중복 여부를 별도로 확인해야 합니다.</div>
 </div>
 </div>
 
@@ -3555,11 +3660,11 @@ body {
         <tr class="dual-row dual-row-top"><td rowspan="2" class="model-cell">E 200 AVANTGARDE</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">76,500,000원</span></td><td rowspan="2" class="col-promo">16%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">64,260,000원</span></td></tr><tr class="dual-row dual-row-bottom"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">77,500,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">65,100,000원</span></td></tr>
         <tr class="dual-row dual-row-top"><td rowspan="2" class="model-cell">E 200 EXCLUSIVE</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">76,600,000원</span></td><td rowspan="2" class="col-promo"><span style="display:block;">5%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+7% 벤츠파이낸셜</span></td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">72,770,000원</span><span class="stock-final-fin">67,400,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr><tr class="dual-row dual-row-bottom"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">77,500,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">73,620,000원</span><span class="stock-final-fin">68,200,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
         <tr class="dual-row dual-row-top"><td rowspan="2" class="model-cell">E 200 AMG Line</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">80,000,000원</span></td><td rowspan="2" class="col-promo"><span style="display:block;">11%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">71,200,000원</span><span class="stock-final-fin">68,000,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr><tr class="dual-row dual-row-bottom"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">81,000,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">72,090,000원</span><span class="stock-final-fin">68,850,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
-        <tr><td>E 200 AMG Line RoF Edition</td><td class="col-price">82,800,000원</td><td class="col-promo">11%</td><td class="col-rent">+3%</td><td class="col-final">73,690,000원</td></tr>
+        <tr><td>E 200 AMG Line RoF Edition</td><td class="col-price">82,800,000원</td><td class="col-promo">11%</td><td class="col-rent">+4%</td><td class="col-final">73,690,000원</td></tr>
         <tr class="dual-row dual-row-top"><td rowspan="2" class="model-cell">E 220 d 4MATIC EXCLUSIVE</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">86,100,000원</span></td><td rowspan="2" class="col-promo">9%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">78,350,000원</span></td></tr><tr class="dual-row dual-row-bottom"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">87,200,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">79,350,000원</span></td></tr>
         <tr class="dual-row dual-row-top"><td rowspan="2" class="model-cell">E 300 4MATIC EXCLUSIVE</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">93,600,000원</span></td><td rowspan="2" class="col-promo"><span style="display:block;">11%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">83,300,000원</span><span class="stock-final-fin">79,560,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr><tr class="dual-row dual-row-bottom"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">94,800,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">84,370,000원</span><span class="stock-final-fin">80,580,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
         <tr class="dual-row dual-row-top"><td rowspan="2" class="model-cell">E 300 4MATIC AMG Line</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">97,700,000원</span></td><td rowspan="2" class="col-promo"><span style="display:block;">11%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">86,950,000원</span><span class="stock-final-fin">83,040,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr><tr class="dual-row dual-row-bottom"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">99,000,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">88,110,000원</span><span class="stock-final-fin">84,150,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
-        <tr><td>E 300 4MATIC AMG Line 140주년 Edition</td><td class="col-price">104,700,000원</td><td class="col-promo">10%</td><td class="col-rent">+3%</td><td class="col-final">94,230,000원</td></tr>
+        <tr><td>E 300 4MATIC AMG Line 140주년 Edition</td><td class="col-price">104,700,000원</td><td class="col-promo">10%</td><td class="col-rent">+4%</td><td class="col-final">94,230,000원</td></tr>
         <tr class="dual-row dual-row-top"><td rowspan="2" class="model-cell">E 350 e 4MATIC EXCLUSIVE</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">98,700,000원</span></td><td rowspan="2" class="col-promo">11%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">87,840,000원</span></td></tr><tr class="dual-row dual-row-bottom"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">100,000,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">89,000,000원</span></td></tr>
         <tr class="dual-row dual-row-top"><td rowspan="2" class="model-cell">E 450 4MATIC AMG Line</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">114,600,000원</span></td><td rowspan="2" class="col-promo">11%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">101,990,000원</span></td></tr><tr class="dual-row dual-row-bottom"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">116,000,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">103,240,000원</span></td></tr>
         <tr class="dual-row dual-row-top"><td rowspan="2" class="model-cell">E 450 4MATIC EXCLUSIVE</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">128,200,000원</span></td><td rowspan="2" class="col-promo">11%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">114,090,000원</span></td></tr><tr class="dual-row dual-row-bottom"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">129,600,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">115,340,000원</span></td></tr>
@@ -3567,7 +3672,7 @@ body {
       </tbody>
     </table>
   </div>
-  <div class="rent-note">※ 장기렌트는 <strong>벤츠파이낸셜 이용조건</strong>에서 추가 3%입니다.</div>
+  <div class="rent-note">※ 장기렌트 추가 할인율은 모델별 9월 MBMK 프로모션 조건에 따라 상이합니다. Fleet 할인은 별도 조건이며 장기렌트 추가 현금할인과 중복 여부를 별도로 확인해야 합니다.</div>
 </div>
 </div>
 
@@ -3606,7 +3711,7 @@ body {
       <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>장기렌트</th><th>실구매가</th></tr></thead>
       <tbody>
         <tr class="dual-row dual-row-top"><td rowspan="2" class="model-cell">S 350 d 4MATIC</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">153,600,000원</span></td><td rowspan="2" class="col-promo">10%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">138,240,000원</span></td></tr><tr class="dual-row dual-row-bottom"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">155,000,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">139,500,000원</span></td></tr>
-        <tr class="dual-row dual-row-top"><td rowspan="2" class="model-cell">S 450 4MATIC SWB</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">159,600,000원</span></td><td rowspan="2" class="col-promo" style="text-align:center;"><span style="display:block;color:#e67e22;font-weight:700;">7%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:3px;">+4% 할부이용시</span><span style="display:block;font-size:11px;font-weight:700;color:#8e44ad;margin-top:2px;">+6% 운용리스</span></td><td rowspan="2" class="col-rent"><span style="display:block;">+3%</span><span style="display:block;font-size:10px;font-weight:500;color:#888;margin-top:2px;">(운용리스조건)</span></td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">148,420,000원</span><span class="stock-final-fin">142,040,000원</span><span class="stock-fin-label">(할부이용시)</span><span class="stock-final-lease">138,850,000원</span><span class="stock-lease-label">(운용리스)</span></td></tr><tr class="dual-row dual-row-bottom"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">162,000,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">150,660,000원</span><span class="stock-final-fin">144,180,000원</span><span class="stock-fin-label">(할부이용시)</span><span class="stock-final-lease">140,940,000원</span><span class="stock-lease-label">(운용리스)</span></td></tr>
+        <tr class="dual-row dual-row-top"><td rowspan="2" class="model-cell">S 450 4MATIC SWB</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">159,600,000원</span></td><td rowspan="2" class="col-promo" style="text-align:center;"><span style="display:block;color:#e67e22;font-weight:700;">7%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:3px;">+4% 할부이용시</span><span style="display:block;font-size:11px;font-weight:700;color:#8e44ad;margin-top:2px;">+6% 운용리스</span></td><td rowspan="2" class="col-rent">+6%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">148,420,000원</span><span class="stock-final-fin">142,040,000원</span><span class="stock-fin-label">(할부이용시)</span><span class="stock-final-lease">138,850,000원</span><span class="stock-lease-label">(운용리스)</span></td></tr><tr class="dual-row dual-row-bottom"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">162,000,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">150,660,000원</span><span class="stock-final-fin">144,180,000원</span><span class="stock-fin-label">(할부이용시)</span><span class="stock-final-lease">140,940,000원</span><span class="stock-lease-label">(운용리스)</span></td></tr>
         <tr class="dual-row dual-row-top"><td rowspan="2" class="model-cell">S 450 4MATIC (Long)</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">193,600,000원</span></td><td rowspan="2" class="col-promo">10%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">174,240,000원</span></td></tr><tr class="dual-row dual-row-bottom"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">193,000,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">173,700,000원</span></td></tr>
         <tr class="dual-row dual-row-top"><td rowspan="2" class="model-cell">S 500 4MATIC</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">213,600,000원</span></td><td rowspan="2" class="col-promo">10%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">192,240,000원</span></td></tr><tr class="dual-row dual-row-bottom"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">215,000,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">193,500,000원</span></td></tr>
         
@@ -3615,7 +3720,7 @@ body {
       </tbody>
     </table>
   </div>
-  <div class="rent-note">※ 장기렌트는 <strong>벤츠파이낸셜 이용조건</strong>에서 추가 3%입니다.</div>
+  <div class="rent-note">※ 장기렌트 추가 할인율은 모델별 9월 MBMK 프로모션 조건에 따라 상이합니다. Fleet 할인은 별도 조건이며 장기렌트 추가 현금할인과 중복 여부를 별도로 확인해야 합니다.</div>
 </div>
 </div>
 
@@ -3666,7 +3771,7 @@ body {
       </tbody>
     </table>
   </div>
-  <div class="rent-note">※ 장기렌트는 <strong>벤츠파이낸셜 이용조건</strong>에서 추가 3%입니다.</div>
+  <div class="rent-note">※ 장기렌트 추가 할인율은 모델별 9월 MBMK 프로모션 조건에 따라 상이합니다. Fleet 할인은 별도 조건이며 장기렌트 추가 현금할인과 중복 여부를 별도로 확인해야 합니다.</div>
 </div>
 </div>
 
@@ -3707,17 +3812,17 @@ body {
       <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>장기렌트</th><th>실구매가</th></tr></thead>
       <tbody>
         <tr class="dual-row dual-row-top"><td rowspan="2" class="model-cell">GLC 220 d 4MATIC</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">81,200,000원</span></td><td rowspan="2" class="col-promo">7%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">75,510,000원</span></td></tr><tr class="dual-row dual-row-bottom"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">82,200,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">76,440,000원</span></td></tr>
-        <tr class="dual-row dual-row-top"><td rowspan="2" class="model-cell">GLC 300 4MATIC AVANTGARDE</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">81,400,000원</span></td><td rowspan="2" class="col-promo"><span style="display:block;">9%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">74,070,000원</span><span class="stock-final-fin">70,810,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr><tr class="dual-row dual-row-bottom"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">82,500,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">75,070,000원</span><span class="stock-final-fin">71,770,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
+        <tr class="dual-row dual-row-top"><td rowspan="2" class="model-cell">GLC 300 4MATIC AVANTGARDE</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">81,400,000원</span></td><td rowspan="2" class="col-promo"><span style="display:block;">7%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td rowspan="2" class="col-rent">+4%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">75,620,000원</span><span class="stock-final-fin">72,320,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr><tr class="dual-row dual-row-bottom"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">82,500,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">76,720,000원</span><span class="stock-final-fin">73,420,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
         <tr class="dual-row dual-row-top"><td rowspan="2" class="model-cell">GLC 300 4MATIC AMG Line</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">91,400,000원</span></td><td rowspan="2" class="col-promo">12%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">80,430,000원</span></td></tr><tr class="dual-row dual-row-bottom"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">92,500,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">81,400,000원</span></td></tr>
         <tr class="dual-row dual-row-top"><td rowspan="2" class="model-cell">GLC 300 4MATIC AMG Line<br><span style="font-size:90%;color:#5c5c5c;">140주년 Edition</span></td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">96,800,000원</span></td><td rowspan="2" class="col-promo">12%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">85,180,000원</span></td></tr><tr class="dual-row dual-row-bottom"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">97,900,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">86,150,000원</span></td></tr>
         <tr class="dual-row dual-row-top"><td rowspan="2" class="model-cell">Mercedes-AMG GLC 43 4MATIC</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">102,300,000원</span></td><td rowspan="2" class="col-promo">7%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">95,130,000원</span></td></tr><tr class="dual-row dual-row-bottom"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">103,600,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">96,340,000원</span></td></tr>
-        <tr class="dual-row dual-row-top"><td rowspan="2" class="model-cell">GLC 300 4MATIC Coupé AVANTGARDE</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">85,500,000원</span></td><td rowspan="2" class="col-promo"><span style="display:block;">8%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">78,660,000원</span><span class="stock-final-fin">75,240,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr><tr class="dual-row dual-row-bottom"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">86,600,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">79,670,000원</span><span class="stock-final-fin">76,200,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
+        <tr class="dual-row dual-row-top"><td rowspan="2" class="model-cell">GLC 300 4MATIC Coupé AVANTGARDE</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">85,500,000원</span></td><td rowspan="2" class="col-promo"><span style="display:block;">7%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td rowspan="2" class="col-rent">+4%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">79,430,000원</span><span class="stock-final-fin">75,970,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr><tr class="dual-row dual-row-bottom"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">86,600,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">80,530,000원</span><span class="stock-final-fin">77,070,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
         <tr class="dual-row dual-row-top"><td rowspan="2" class="model-cell">GLC 300 4MATIC Coupé AMG Line</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">95,700,000원</span></td><td rowspan="2" class="col-promo">9%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">87,080,000원</span></td></tr><tr class="dual-row dual-row-bottom"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">96,900,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">88,170,000원</span></td></tr>
         <tr class="dual-row dual-row-top"><td rowspan="2" class="model-cell">Mercedes-AMG GLC 43 4MATIC Coupé</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">106,900,000원</span></td><td rowspan="2" class="col-promo">3%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">103,690,000원</span></td></tr><tr class="dual-row dual-row-bottom"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">108,300,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">105,050,000원</span></td></tr>
       </tbody>
     </table>
   </div>
-  <div class="rent-note">※ 장기렌트는 <strong>벤츠파이낸셜 이용조건</strong>에서 추가 3%입니다.</div>
+  <div class="rent-note">※ 장기렌트 추가 할인율은 모델별 9월 MBMK 프로모션 조건에 따라 상이합니다. Fleet 할인은 별도 조건이며 장기렌트 추가 현금할인과 중복 여부를 별도로 확인해야 합니다.</div>
 </div>
 </div>
 
@@ -3749,7 +3854,7 @@ body {
       </tbody>
     </table>
   </div>
-  <div class="rent-note">※ 장기렌트는 <strong>벤츠파이낸셜 이용조건</strong>에서 추가 3%입니다.</div>
+  <div class="rent-note">※ 장기렌트 추가 할인율은 모델별 9월 MBMK 프로모션 조건에 따라 상이합니다. Fleet 할인은 별도 조건이며 장기렌트 추가 현금할인과 중복 여부를 별도로 확인해야 합니다.</div>
 </div>
 </div>
 
@@ -3779,7 +3884,7 @@ body {
       </tbody>
     </table>
   </div>
-  <div class="rent-note">※ 장기렌트는 <strong>벤츠파이낸셜 이용조건</strong>에서 추가 3%입니다.</div>
+  <div class="rent-note">※ 장기렌트 추가 할인율은 모델별 9월 MBMK 프로모션 조건에 따라 상이합니다. Fleet 할인은 별도 조건이며 장기렌트 추가 현금할인과 중복 여부를 별도로 확인해야 합니다.</div>
 </div>
 </div>
 
@@ -3836,7 +3941,7 @@ body {
       </tbody>
     </table>
   </div>
-  <div class="rent-note">※ 장기렌트는 <strong>벤츠파이낸셜 이용조건</strong>에서 추가 3%입니다.</div>
+  <div class="rent-note">※ 장기렌트 추가 할인율은 모델별 9월 MBMK 프로모션 조건에 따라 상이합니다. Fleet 할인은 별도 조건이며 장기렌트 추가 현금할인과 중복 여부를 별도로 확인해야 합니다.</div>
 </div>
 </div>
 
@@ -3870,7 +3975,7 @@ body {
       </tbody>
     </table>
   </div>
-  <div class="rent-note">※ 장기렌트는 <strong>벤츠파이낸셜 이용조건</strong>에서 추가 3%입니다.</div>
+  <div class="rent-note">※ 장기렌트 추가 할인율은 모델별 9월 MBMK 프로모션 조건에 따라 상이합니다. Fleet 할인은 별도 조건이며 장기렌트 추가 현금할인과 중복 여부를 별도로 확인해야 합니다.</div>
 
   <div class="car-section">
     <div class="car-section-header">
@@ -3887,7 +3992,7 @@ body {
         <tr class="my27-row"><td class="model-cell">EQA 250 AMG Line</td><td class="price-cell single"><span class="stock-price-main">76,700,000원</span></td><td class="col-promo"><span style="display:block;">10%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td class="col-rent">+3%</td><td class="final-cell single"><span class="stock-final-main">69,030,000원</span><span class="stock-final-fin">65,960,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
       </tbody>
     </table></div>
-    <div class="rent-note">※ 장기렌트는 <strong>벤츠파이낸셜 이용조건</strong>에서 추가 3%입니다.</div>
+    <div class="rent-note">※ 장기렌트 추가 할인율은 모델별 9월 MBMK 프로모션 조건에 따라 상이합니다. Fleet 할인은 별도 조건이며 장기렌트 추가 현금할인과 중복 여부를 별도로 확인해야 합니다.</div>
   </div>
 </div>
 </div>
@@ -3942,7 +4047,7 @@ body {
       </tbody>
     </table>
   </div>
-  <div class="rent-note">※ 장기렌트는 <strong>벤츠파이낸셜 이용조건</strong>에서 추가 3%입니다.</div>
+  <div class="rent-note">※ 장기렌트 추가 할인율은 모델별 9월 MBMK 프로모션 조건에 따라 상이합니다. Fleet 할인은 별도 조건이며 장기렌트 추가 현금할인과 중복 여부를 별도로 확인해야 합니다.</div>
 </div>
 </div>
 
@@ -3972,97 +4077,97 @@ body {
    ===================================================== */
 const VEHICLE_DATA = {
   // A-Class
-  "a-220-hatch": { model: "A 220 Hatch", oldPrice: 48100000, newPrice: 48700000, discount: 10, financeDiscount: null, rentDiscount: 3 },
-  "mercedes-amg-a-45-s-4matic": { model: "Mercedes-AMG A 45 S 4MATIC+", oldPrice: 80400000, newPrice: 81400000, discount: 7, financeDiscount: 4, rentDiscount: 3 },
+  "a-220-hatch": { model: "A 220 Hatch", oldPrice: 48100000, newPrice: 48700000, discount: 10, financeDiscount: null, rentDiscount: null },
+  "mercedes-amg-a-45-s-4matic": { model: "Mercedes-AMG A 45 S 4MATIC+", oldPrice: 80400000, newPrice: 81400000, discount: 7, financeDiscount: 4, rentDiscount: 4 },
   // MY27 신규 모델 (출시 전, 기존재고 없음 — 판매조건 없음)
   "mercedes-amg-a-45-s-4matic-my27": { model: "Mercedes-AMG A 45 S 4MATIC+", modelYear: "MY27", oldPrice: null, newPrice: 82300000, discount: null, financeDiscount: null, rentDiscount: null },
-  "a-220-sedan": { model: "A 220 Sedan", oldPrice: 49900000, newPrice: 50500000, discount: 5, financeDiscount: null, rentDiscount: 3 },
-  "mercedes-amg-a-35-4matic": { model: "Mercedes-AMG A 35 4MATIC", oldPrice: 67700000, newPrice: 68600000, discount: null, financeDiscount: null, rentDiscount: 3 },
+  "a-220-sedan": { model: "A 220 Sedan", oldPrice: 49900000, newPrice: 50500000, discount: 5, financeDiscount: null, rentDiscount: null },
+  "mercedes-amg-a-35-4matic": { model: "Mercedes-AMG A 35 4MATIC", oldPrice: 67700000, newPrice: 68600000, discount: null, financeDiscount: null, rentDiscount: null },
 
   // CLA
-  "cla-250-4matic-amg-line": { model: "CLA 250 4MATIC AMG Line", oldPrice: 63700000, newPrice: 64500000, discount: 7, financeDiscount: null, rentDiscount: 3 },
-  "mercedes-amg-cla-45-s-4matic": { model: "Mercedes-AMG CLA 45 S 4MATIC+", oldPrice: 90600000, newPrice: 91800000, discount: 5, financeDiscount: null, rentDiscount: 3 },
-  "mercedes-amg-cla-45-s-4matic-final-edition": { model: "Mercedes-AMG CLA 45 S 4MATIC+ Final Edition", oldPrice: 95800000, newPrice: 97000000, discount: null, financeDiscount: null, rentDiscount: 3 },
+  "cla-250-4matic-amg-line": { model: "CLA 250 4MATIC AMG Line", oldPrice: 63700000, newPrice: 64500000, discount: 7, financeDiscount: null, rentDiscount: null },
+  "mercedes-amg-cla-45-s-4matic": { model: "Mercedes-AMG CLA 45 S 4MATIC+", oldPrice: 90600000, newPrice: 91800000, discount: 5, financeDiscount: null, rentDiscount: null },
+  "mercedes-amg-cla-45-s-4matic-final-edition": { model: "Mercedes-AMG CLA 45 S 4MATIC+ Final Edition", oldPrice: 95800000, newPrice: 97000000, discount: null, financeDiscount: null, rentDiscount: null },
 
   // GLA · GLB
-  "gla-250-4matic-amg-line": { model: "GLA 250 4MATIC AMG Line", oldPrice: 69100000, newPrice: 70000000, discount: 9, financeDiscount: 4, rentDiscount: 3 },
+  "gla-250-4matic-amg-line": { model: "GLA 250 4MATIC AMG Line", oldPrice: 69100000, newPrice: 70000000, discount: 9, financeDiscount: 4, rentDiscount: 4 },
   // MY27 신규 모델 (출시 전, 기존재고 없음 — MY26과 동일 판매조건, 가격만 신규)
-  "gla-250-4matic-amg-line-my27": { model: "GLA 250 4MATIC AMG Line", modelYear: "MY27", oldPrice: null, newPrice: 70800000, discount: 9, financeDiscount: 4, rentDiscount: 3 },
-  "glb-200-d": { model: "GLB 200 d", oldPrice: 63300000, newPrice: 64300000, discount: null, financeDiscount: null, rentDiscount: 3 },
-  "glb-250-4matic": { model: "GLB 250 4MATIC", oldPrice: 71100000, newPrice: 72000000, discount: 9, financeDiscount: 4, rentDiscount: 3 },
-  "mercedes-amg-glb-35-4matic": { model: "Mercedes-AMG GLB 35 4MATIC", oldPrice: 78500000, newPrice: 79500000, discount: 9, financeDiscount: 4, rentDiscount: 3 },
+  "gla-250-4matic-amg-line-my27": { model: "GLA 250 4MATIC AMG Line", modelYear: "MY27", oldPrice: null, newPrice: 70800000, discount: 9, financeDiscount: 4, rentDiscount: 4 },
+  "glb-200-d": { model: "GLB 200 d", oldPrice: 63300000, newPrice: 64300000, discount: null, financeDiscount: null, rentDiscount: null },
+  "glb-250-4matic": { model: "GLB 250 4MATIC", oldPrice: 71100000, newPrice: 72000000, discount: 9, financeDiscount: 4, rentDiscount: 4 },
+  "mercedes-amg-glb-35-4matic": { model: "Mercedes-AMG GLB 35 4MATIC", oldPrice: 78500000, newPrice: 79500000, discount: 9, financeDiscount: 4, rentDiscount: 4 },
 
   // C-Class
-  "c-200-avantgarde": { model: "C 200 AVANTGARDE", oldPrice: 64300000, newPrice: 65100000, discount: 10, financeDiscount: 4, rentDiscount: 3 },
-  "c-200-amg-line": { model: "C 200 AMG Line", oldPrice: 67500000, newPrice: 68300000, discount: 10, financeDiscount: 4, rentDiscount: 3 },
-  "c-200-final-edition": { model: "C 200 Final Edition", oldPrice: 66300000, newPrice: 66300000, discount: 10, financeDiscount: 4, rentDiscount: 3 },
+  "c-200-avantgarde": { model: "C 200 AVANTGARDE", oldPrice: 64300000, newPrice: 65100000, discount: 10, financeDiscount: 4, rentDiscount: 4 },
+  "c-200-amg-line": { model: "C 200 AMG Line", oldPrice: 67500000, newPrice: 68300000, discount: 10, financeDiscount: 4, rentDiscount: 4 },
+  "c-200-final-edition": { model: "C 200 Final Edition", oldPrice: 66300000, newPrice: 66300000, discount: 10, financeDiscount: 4, rentDiscount: 4 },
 
   // E-Class
-  "e-200-avantgarde": { model: "E 200 AVANTGARDE", oldPrice: 76500000, newPrice: 77500000, discount: 16, financeDiscount: null, rentDiscount: 3 },
-  "e-200-exclusive": { model: "E 200 EXCLUSIVE", oldPrice: 76600000, newPrice: 77500000, discount: 8, financeDiscount: 7, rentDiscount: 3 },
-  "e-200-amg-line": { model: "E 200 AMG Line", oldPrice: 80000000, newPrice: 81000000, discount: 12, financeDiscount: 4, rentDiscount: 3 },
-  "e-220-d-4matic-exclusive": { model: "E 220 d 4MATIC EXCLUSIVE", oldPrice: 86100000, newPrice: 87200000, discount: 9, financeDiscount: null, rentDiscount: 3 },
-  "e-300-4matic-exclusive": { model: "E 300 4MATIC EXCLUSIVE", oldPrice: 93600000, newPrice: 94800000, discount: 10, financeDiscount: 4, rentDiscount: 3 },
-  "e-300-4matic-amg-line": { model: "E 300 4MATIC AMG Line", oldPrice: 97700000, newPrice: 99000000, discount: 10, financeDiscount: 4, rentDiscount: 3 },
-  "e-350-e-4matic-exclusive": { model: "E 350 e 4MATIC EXCLUSIVE", oldPrice: 98700000, newPrice: 100000000, discount: 11, financeDiscount: null, rentDiscount: 3 },
-  "e-450-4matic-amg-line": { model: "E 450 4MATIC AMG Line", oldPrice: 114600000, newPrice: 116000000, discount: 11, financeDiscount: null, rentDiscount: 3 },
-  "e-450-4matic-exclusive": { model: "E 450 4MATIC EXCLUSIVE", oldPrice: 128200000, newPrice: 129600000, discount: 11, financeDiscount: null, rentDiscount: 3 },
-  "mercedes-amg-e-53-hybrid-4matic": { model: "Mercedes-AMG E 53 HYBRID 4MATIC+", oldPrice: 141600000, newPrice: 143000000, discount: 10, financeDiscount: null, rentDiscount: 3 },
+  "e-200-avantgarde": { model: "E 200 AVANTGARDE", oldPrice: 76500000, newPrice: 77500000, discount: 16, financeDiscount: null, rentDiscount: null },
+  "e-200-exclusive": { model: "E 200 EXCLUSIVE", oldPrice: 76600000, newPrice: 77500000, discount: 8, financeDiscount: 7, rentDiscount: 7 },
+  "e-200-amg-line": { model: "E 200 AMG Line", oldPrice: 80000000, newPrice: 81000000, discount: 12, financeDiscount: 4, rentDiscount: 4 },
+  "e-220-d-4matic-exclusive": { model: "E 220 d 4MATIC EXCLUSIVE", oldPrice: 86100000, newPrice: 87200000, discount: 9, financeDiscount: null, rentDiscount: null },
+  "e-300-4matic-exclusive": { model: "E 300 4MATIC EXCLUSIVE", oldPrice: 93600000, newPrice: 94800000, discount: 10, financeDiscount: 4, rentDiscount: 4 },
+  "e-300-4matic-amg-line": { model: "E 300 4MATIC AMG Line", oldPrice: 97700000, newPrice: 99000000, discount: 10, financeDiscount: 4, rentDiscount: 4 },
+  "e-350-e-4matic-exclusive": { model: "E 350 e 4MATIC EXCLUSIVE", oldPrice: 98700000, newPrice: 100000000, discount: 11, financeDiscount: null, rentDiscount: null },
+  "e-450-4matic-amg-line": { model: "E 450 4MATIC AMG Line", oldPrice: 114600000, newPrice: 116000000, discount: 11, financeDiscount: null, rentDiscount: null },
+  "e-450-4matic-exclusive": { model: "E 450 4MATIC EXCLUSIVE", oldPrice: 128200000, newPrice: 129600000, discount: 11, financeDiscount: null, rentDiscount: null },
+  "mercedes-amg-e-53-hybrid-4matic": { model: "Mercedes-AMG E 53 HYBRID 4MATIC+", oldPrice: 141600000, newPrice: 143000000, discount: 10, financeDiscount: null, rentDiscount: null },
 
   // S-Class
-  "s-350-d-4matic": { model: "S 350 d 4MATIC", oldPrice: 153600000, newPrice: 155000000, discount: 10, financeDiscount: null, rentDiscount: 3 },
-  "s-450-4matic-long": { model: "S 450 4MATIC (Long)", oldPrice: 193600000, newPrice: 193000000, discount: 10, financeDiscount: null, rentDiscount: 3 },
-  "s-500-4matic": { model: "S 500 4MATIC", oldPrice: 213600000, newPrice: 215000000, discount: 10, financeDiscount: null, rentDiscount: 3 },
-  "s-580-4matic": { model: "S 580 4MATIC", oldPrice: 258600000, newPrice: 260000000, discount: 10, financeDiscount: null, rentDiscount: 3 },
-  "mercedes-amg-s-63-e-performance": { model: "Mercedes-AMG S 63 E Performance", oldPrice: 297600000, newPrice: 299000000, discount: 10, financeDiscount: null, rentDiscount: 3 },
+  "s-350-d-4matic": { model: "S 350 d 4MATIC", oldPrice: 153600000, newPrice: 155000000, discount: 10, financeDiscount: null, rentDiscount: null },
+  "s-450-4matic-long": { model: "S 450 4MATIC (Long)", oldPrice: 193600000, newPrice: 193000000, discount: 10, financeDiscount: null, rentDiscount: null },
+  "s-500-4matic": { model: "S 500 4MATIC", oldPrice: 213600000, newPrice: 215000000, discount: 10, financeDiscount: null, rentDiscount: null },
+  "s-580-4matic": { model: "S 580 4MATIC", oldPrice: 258600000, newPrice: 260000000, discount: 10, financeDiscount: null, rentDiscount: null },
+  "mercedes-amg-s-63-e-performance": { model: "Mercedes-AMG S 63 E Performance", oldPrice: 297600000, newPrice: 299000000, discount: 10, financeDiscount: null, rentDiscount: null },
 
   // CLE
-  "cle-200-coup-amg-line": { model: "CLE 200 Coupé AMG Line", oldPrice: 75700000, newPrice: 76700000, discount: 5, financeDiscount: null, rentDiscount: 3 },
-  "cle-200-coup-amg-line-140-edition": { model: "CLE 200 Coupé AMG Line 140주년 Edition", oldPrice: 80200000, newPrice: 81200000, discount: 5, financeDiscount: null, rentDiscount: 3 },
-  "cle-450-4matic-coup-amg-line": { model: "CLE 450 4MATIC Coupé AMG Line", oldPrice: 98400000, newPrice: 99700000, discount: 9, financeDiscount: null, rentDiscount: 3 },
-  "mercedes-amg-cle-53-4matic-coup": { model: "Mercedes-AMG CLE 53 4MATIC+ Coupé", oldPrice: 107700000, newPrice: 109100000, discount: 3, financeDiscount: null, rentDiscount: 3 },
-  "cle-200-cabriolet-amg-line": { model: "CLE 200 Cabriolet AMG Line", oldPrice: 82100000, newPrice: 83100000, discount: 4, financeDiscount: null, rentDiscount: 3 },
-  "cle-200-cabriolet-amg-line-140-edition": { model: "CLE 200 Cabriolet AMG Line 140주년 Edition", oldPrice: 86400000, newPrice: 87400000, discount: 4, financeDiscount: null, rentDiscount: 3 },
-  "cle-450-4matic-cabriolet-amg-line": { model: "CLE 450 4MATIC Cabriolet AMG Line", oldPrice: 102600000, newPrice: 104000000, discount: 6, financeDiscount: null, rentDiscount: 3 },
-  "mercedes-amg-cle-53-4matic-cabriolet": { model: "Mercedes-AMG CLE 53 4MATIC+ Cabriolet", oldPrice: 113600000, newPrice: 115000000, discount: 3, financeDiscount: null, rentDiscount: 3 },
+  "cle-200-coup-amg-line": { model: "CLE 200 Coupé AMG Line", oldPrice: 75700000, newPrice: 76700000, discount: 5, financeDiscount: null, rentDiscount: null },
+  "cle-200-coup-amg-line-140-edition": { model: "CLE 200 Coupé AMG Line 140주년 Edition", oldPrice: 80200000, newPrice: 81200000, discount: 5, financeDiscount: null, rentDiscount: null },
+  "cle-450-4matic-coup-amg-line": { model: "CLE 450 4MATIC Coupé AMG Line", oldPrice: 98400000, newPrice: 99700000, discount: 9, financeDiscount: null, rentDiscount: null },
+  "mercedes-amg-cle-53-4matic-coup": { model: "Mercedes-AMG CLE 53 4MATIC+ Coupé", oldPrice: 107700000, newPrice: 109100000, discount: 3, financeDiscount: null, rentDiscount: null },
+  "cle-200-cabriolet-amg-line": { model: "CLE 200 Cabriolet AMG Line", oldPrice: 82100000, newPrice: 83100000, discount: 4, financeDiscount: null, rentDiscount: null },
+  "cle-200-cabriolet-amg-line-140-edition": { model: "CLE 200 Cabriolet AMG Line 140주년 Edition", oldPrice: 86400000, newPrice: 87400000, discount: 4, financeDiscount: null, rentDiscount: null },
+  "cle-450-4matic-cabriolet-amg-line": { model: "CLE 450 4MATIC Cabriolet AMG Line", oldPrice: 102600000, newPrice: 104000000, discount: 6, financeDiscount: null, rentDiscount: null },
+  "mercedes-amg-cle-53-4matic-cabriolet": { model: "Mercedes-AMG CLE 53 4MATIC+ Cabriolet", oldPrice: 113600000, newPrice: 115000000, discount: 3, financeDiscount: null, rentDiscount: null },
   // CLE MY27 (판매조건 미확정 — 권장소비자가격만 등록)
-  "cle-200-coupe-my27": { model: "CLE 200 Coupé", modelYear: "MY27", oldPrice: null, newPrice: 77600000, discount: null, financeDiscount: null, rentDiscount: null },
+  "cle-200-coupe-my27": { model: "CLE 200 Coupé", modelYear: "MY27", oldPrice: null, newPrice: 77600000, discount: 2, financeDiscount: null, rentDiscount: null },
   "cle-450-4matic-coupe-my27": { model: "CLE 450 4MATIC Coupé", modelYear: "MY27", oldPrice: null, newPrice: 100800000, discount: 2, financeDiscount: null, rentDiscount: null },
   "mercedes-amg-cle-53-4matic-coupe-my27": { model: "Mercedes-AMG CLE 53 4MATIC+ Coupé", modelYear: "MY27", oldPrice: null, newPrice: 110600000, discount: null, financeDiscount: null, rentDiscount: null },
-  "cle-200-cabriolet-my27": { model: "CLE 200 Cabriolet", modelYear: "MY27", oldPrice: null, newPrice: 84100000, discount: null, financeDiscount: null, rentDiscount: null },
+  "cle-200-cabriolet-my27": { model: "CLE 200 Cabriolet", modelYear: "MY27", oldPrice: null, newPrice: 84100000, discount: 2, financeDiscount: null, rentDiscount: null },
   "cle-450-4matic-cabriolet-my27": { model: "CLE 450 4MATIC Cabriolet", modelYear: "MY27", oldPrice: null, newPrice: 105200000, discount: 2, financeDiscount: null, rentDiscount: null },
-  "mercedes-amg-cle-53-4matic-cabriolet-my27": { model: "Mercedes-AMG CLE 53 4MATIC+ Cabriolet", modelYear: "MY27", oldPrice: null, newPrice: 116600000, discount: null, financeDiscount: null, rentDiscount: null },
+  "mercedes-amg-cle-53-4matic-cabriolet-my27": { model: "Mercedes-AMG CLE 53 4MATIC+ Cabriolet", modelYear: "MY27", oldPrice: null, newPrice: 116600000, discount: 2, financeDiscount: null, rentDiscount: null },
 
   // GLC
-  "glc-220-d-4matic": { model: "GLC 220 d 4MATIC", oldPrice: 81200000, newPrice: 82200000, discount: 7, financeDiscount: null, rentDiscount: 3 },
-  "glc-300-4matic-avantgarde": { model: "GLC 300 4MATIC AVANTGARDE", oldPrice: 81400000, newPrice: 82500000, discount: 7, financeDiscount: 4, rentDiscount: 3 },
-  "glc-300-4matic-amg-line": { model: "GLC 300 4MATIC AMG Line", oldPrice: 91400000, newPrice: 92500000, discount: 12, financeDiscount: 4, rentDiscount: 3 },
-  "glc-300-4matic-amg-line-140-edition": { model: "GLC 300 4MATIC AMG Line 140주년 Edition", oldPrice: 96800000, newPrice: 97900000, discount: 12, financeDiscount: 4, rentDiscount: 3 },
-  "mercedes-amg-glc-43-4matic": { model: "Mercedes-AMG GLC 43 4MATIC", oldPrice: 102300000, newPrice: 103600000, discount: 7, financeDiscount: null, rentDiscount: 3 },
-  "glc-300-4matic-coup-avantgarde": { model: "GLC 300 4MATIC Coupé AVANTGARDE", oldPrice: 85500000, newPrice: 86600000, discount: 7, financeDiscount: 4, rentDiscount: 3 },
-  "glc-300-4matic-coup-amg-line": { model: "GLC 300 4MATIC Coupé AMG Line", oldPrice: 95700000, newPrice: 96900000, discount: 9, financeDiscount: 4, rentDiscount: 3 },
-  "mercedes-amg-glc-43-4matic-coup": { model: "Mercedes-AMG GLC 43 4MATIC Coupé", oldPrice: 106900000, newPrice: 108300000, discount: 3, financeDiscount: null, rentDiscount: 3 },
+  "glc-220-d-4matic": { model: "GLC 220 d 4MATIC", oldPrice: 81200000, newPrice: 82200000, discount: 7, financeDiscount: null, rentDiscount: null },
+  "glc-300-4matic-avantgarde": { model: "GLC 300 4MATIC AVANTGARDE", oldPrice: 81400000, newPrice: 82500000, discount: 7, financeDiscount: 4, rentDiscount: 4 },
+  "glc-300-4matic-amg-line": { model: "GLC 300 4MATIC AMG Line", oldPrice: 91400000, newPrice: 92500000, discount: 12, financeDiscount: 4, rentDiscount: 4 },
+  "glc-300-4matic-amg-line-140-edition": { model: "GLC 300 4MATIC AMG Line 140주년 Edition", oldPrice: 96800000, newPrice: 97900000, discount: 12, financeDiscount: 4, rentDiscount: null },
+  "mercedes-amg-glc-43-4matic": { model: "Mercedes-AMG GLC 43 4MATIC", oldPrice: 102300000, newPrice: 103600000, discount: 7, financeDiscount: null, rentDiscount: null },
+  "glc-300-4matic-coup-avantgarde": { model: "GLC 300 4MATIC Coupé AVANTGARDE", oldPrice: 85500000, newPrice: 86600000, discount: 7, financeDiscount: 4, rentDiscount: 4 },
+  "glc-300-4matic-coup-amg-line": { model: "GLC 300 4MATIC Coupé AMG Line", oldPrice: 95700000, newPrice: 96900000, discount: 9, financeDiscount: 4, rentDiscount: 4 },
+  "mercedes-amg-glc-43-4matic-coup": { model: "Mercedes-AMG GLC 43 4MATIC Coupé", oldPrice: 106900000, newPrice: 108300000, discount: 3, financeDiscount: null, rentDiscount: null },
   // GLC electric MY27 (판매조건 미확정 — 권장소비자가격만 등록, 기존 내연기관 GLC와 별도)
   "glc-300-4matic-amg-line-electric-launch-edition-my27": { model: "GLC 300 4MATIC AMG Line electric (Launch Edition)", modelYear: "MY27", oldPrice: null, newPrice: 90000000, discount: null, financeDiscount: null, rentDiscount: null },
   "glc-300-4matic-amg-line-plus-electric-launch-edition-my27": { model: "GLC 300 4MATIC AMG Line+ electric (Launch Edition)", modelYear: "MY27", oldPrice: null, newPrice: 94800000, discount: null, financeDiscount: null, rentDiscount: null },
 
   // GLE
-  "gle-350-4matic": { model: "GLE 350 4MATIC", oldPrice: 116600000, newPrice: 118000000, discount: 10, financeDiscount: null, rentDiscount: 3 },
-  "gle-300-d-4matic": { model: "GLE 300 d 4MATIC", oldPrice: 117800000, newPrice: 119200000, discount: 8, financeDiscount: null, rentDiscount: 3 },
-  "gle-450-4matic": { model: "GLE 450 4MATIC", oldPrice: 127600000, newPrice: 129000000, discount: 12, financeDiscount: 4, rentDiscount: 3 },
-  "gle-450-4matic-amg-line": { model: "GLE 450 4MATIC AMG Line", oldPrice: 137600000, newPrice: 139000000, discount: 12, financeDiscount: 4, rentDiscount: 3 },
-  "mercedes-amg-gle-53-4matic": { model: "Mercedes-AMG GLE 53 4MATIC+", oldPrice: 164600000, newPrice: 166000000, discount: 8, financeDiscount: null, rentDiscount: 3 },
-  "gle-450-d-4matic-coup-amg-line": { model: "GLE 450 d 4MATIC Coupé AMG Line", oldPrice: 132600000, newPrice: 134000000, discount: 8, financeDiscount: null, rentDiscount: 3 },
-  "gle-450-4matic-coup-amg-line": { model: "GLE 450 4MATIC Coupé AMG Line", oldPrice: 141100000, newPrice: 142500000, discount: 12, financeDiscount: 4, rentDiscount: 3 },
-  "mercedes-amg-gle-53-4matic-coup": { model: "Mercedes-AMG GLE 53 4MATIC+ Coupé", oldPrice: 168600000, newPrice: 170000000, discount: 5, financeDiscount: null, rentDiscount: 3 },
+  "gle-350-4matic": { model: "GLE 350 4MATIC", oldPrice: 116600000, newPrice: 118000000, discount: 10, financeDiscount: null, rentDiscount: null },
+  "gle-300-d-4matic": { model: "GLE 300 d 4MATIC", oldPrice: 117800000, newPrice: 119200000, discount: 8, financeDiscount: null, rentDiscount: null },
+  "gle-450-4matic": { model: "GLE 450 4MATIC", oldPrice: 127600000, newPrice: 129000000, discount: 12, financeDiscount: 4, rentDiscount: 4 },
+  "gle-450-4matic-amg-line": { model: "GLE 450 4MATIC AMG Line", oldPrice: 137600000, newPrice: 139000000, discount: 12, financeDiscount: 4, rentDiscount: 4 },
+  "mercedes-amg-gle-53-4matic": { model: "Mercedes-AMG GLE 53 4MATIC+", oldPrice: 164600000, newPrice: 166000000, discount: 8, financeDiscount: null, rentDiscount: null },
+  "gle-450-d-4matic-coup-amg-line": { model: "GLE 450 d 4MATIC Coupé AMG Line", oldPrice: 132600000, newPrice: 134000000, discount: 8, financeDiscount: null, rentDiscount: 4 },
+  "gle-450-4matic-coup-amg-line": { model: "GLE 450 4MATIC Coupé AMG Line", oldPrice: 141100000, newPrice: 142500000, discount: 12, financeDiscount: 4, rentDiscount: 4 },
+  "mercedes-amg-gle-53-4matic-coup": { model: "Mercedes-AMG GLE 53 4MATIC+ Coupé", oldPrice: 168600000, newPrice: 170000000, discount: 5, financeDiscount: null, rentDiscount: null },
 
   // GLS
-  "gls-450-d-4matic-amg-line": { model: "GLS 450 d 4MATIC AMG Line", oldPrice: 152600000, newPrice: 154000000, discount: 2, financeDiscount: null, rentDiscount: 3 },
-  "gls-450-4matic-amg-line": { model: "GLS 450 4MATIC AMG Line", oldPrice: 152600000, newPrice: 154000000, discount: 5, financeDiscount: null, rentDiscount: 3 },
-  "gls-450-d-4matic-amg-line-premium": { model: "GLS 450 d 4MATIC AMG Line Premium", oldPrice: 157100000, newPrice: 158500000, discount: null, financeDiscount: null, rentDiscount: 3 },
-  "gls-450-4matic-amg-line-premium": { model: "GLS 450 4MATIC AMG Line Premium", oldPrice: 157100000, newPrice: 158500000, discount: null, financeDiscount: null, rentDiscount: 3 },
-  "gls-580-4matic-amg-line": { model: "GLS 580 4MATIC AMG Line", oldPrice: 192000000, newPrice: 193400000, discount: 6, financeDiscount: null, rentDiscount: 3 },
-  "mercedes-amg-gls-63-4matic": { model: "Mercedes-AMG GLS 63 4MATIC+", oldPrice: 208600000, newPrice: 210000000, discount: 1, financeDiscount: null, rentDiscount: 3 },
+  "gls-450-d-4matic-amg-line": { model: "GLS 450 d 4MATIC AMG Line", oldPrice: 152600000, newPrice: 154000000, discount: 2, financeDiscount: null, rentDiscount: null },
+  "gls-450-4matic-amg-line": { model: "GLS 450 4MATIC AMG Line", oldPrice: 152600000, newPrice: 154000000, discount: 5, financeDiscount: null, rentDiscount: null },
+  "gls-450-d-4matic-amg-line-premium": { model: "GLS 450 d 4MATIC AMG Line Premium", oldPrice: 157100000, newPrice: 158500000, discount: null, financeDiscount: null, rentDiscount: null },
+  "gls-450-4matic-amg-line-premium": { model: "GLS 450 4MATIC AMG Line Premium", oldPrice: 157100000, newPrice: 158500000, discount: null, financeDiscount: null, rentDiscount: null },
+  "gls-580-4matic-amg-line": { model: "GLS 580 4MATIC AMG Line", oldPrice: 192000000, newPrice: 193400000, discount: 6, financeDiscount: null, rentDiscount: null },
+  "mercedes-amg-gls-63-4matic": { model: "Mercedes-AMG GLS 63 4MATIC+", oldPrice: 208600000, newPrice: 210000000, discount: 1, financeDiscount: null, rentDiscount: null },
 
   // G-Class
   "g-450-d": { model: "G 450 d", oldPrice: 193500000, newPrice: 194900000, discount: null, financeDiscount: null, rentDiscount: null },
@@ -4076,36 +4181,36 @@ const VEHICLE_DATA = {
   "mercedes-amg-g-63-manufaktur-my27": { model: "Mercedes-AMG G 63 MANUFAKTUR", modelYear: "MY27", oldPrice: null, newPrice: 301000000, discount: null, financeDiscount: null, rentDiscount: null },
 
   // AMG
-  "mercedes-amg-sl-43": { model: "Mercedes-AMG SL 43", oldPrice: 158600000, newPrice: 160000000, discount: 9, financeDiscount: null, rentDiscount: 3 },
-  "mercedes-amg-sl-63-4matic": { model: "Mercedes-AMG SL 63 4MATIC+", oldPrice: 248600000, newPrice: 250000000, discount: null, financeDiscount: null, rentDiscount: 3 },
-  "mercedes-amg-gt-43-c192": { model: "Mercedes-AMG GT 43 2도어(C192)", oldPrice: 149500000, newPrice: 149500000, discount: 9, financeDiscount: null, rentDiscount: 3 },
-  "mercedes-amg-gt-55-4matic": { model: "Mercedes-AMG GT 55 4MATIC+", oldPrice: 208600000, newPrice: 210000000, discount: 3, financeDiscount: null, rentDiscount: 3 },
-  "mercedes-amg-gt-63-s-e-performance": { model: "Mercedes-AMG GT 63 S E Performance", oldPrice: 278600000, newPrice: 280000000, discount: 4, financeDiscount: null, rentDiscount: 3 },
-  "mercedes-amg-gt-43-4matic": { model: "Mercedes-AMG GT 43 4MATIC+", oldPrice: 162600000, newPrice: 164000000, discount: 9, financeDiscount: null, rentDiscount: 3 },
+  "mercedes-amg-sl-43": { model: "Mercedes-AMG SL 43", oldPrice: 158600000, newPrice: 160000000, discount: 9, financeDiscount: null, rentDiscount: null },
+  "mercedes-amg-sl-63-4matic": { model: "Mercedes-AMG SL 63 4MATIC+", oldPrice: 248600000, newPrice: 250000000, discount: null, financeDiscount: null, rentDiscount: null },
+  "mercedes-amg-gt-43-c192": { model: "Mercedes-AMG GT 43 2도어(C192)", oldPrice: 149500000, newPrice: 149500000, discount: 9, financeDiscount: null, rentDiscount: null },
+  "mercedes-amg-gt-55-4matic": { model: "Mercedes-AMG GT 55 4MATIC+", oldPrice: 208600000, newPrice: 210000000, discount: 3, financeDiscount: null, rentDiscount: null },
+  "mercedes-amg-gt-63-s-e-performance": { model: "Mercedes-AMG GT 63 S E Performance", oldPrice: 278600000, newPrice: 280000000, discount: 4, financeDiscount: null, rentDiscount: null },
+  "mercedes-amg-gt-43-4matic": { model: "Mercedes-AMG GT 43 4MATIC+", oldPrice: 162600000, newPrice: 164000000, discount: 9, financeDiscount: null, rentDiscount: null },
 
   // EQ
-  "eqa-250-progressive": { model: "EQA 250 Progressive", oldPrice: 70000000, newPrice: 70000000, discount: 10, financeDiscount: 4, rentDiscount: 3 },
+  "eqa-250-progressive": { model: "EQA 250 Progressive", oldPrice: 70000000, newPrice: 70000000, discount: 10, financeDiscount: 4, rentDiscount: 4 },
   // MY27 신규 모델 (출시 전, 기존재고 없음 — MY26과 동일 판매조건, 가격만 신규)
-  "eqa-250-progressive-my27": { model: "EQA 250 Progressive", modelYear: "MY27", oldPrice: null, newPrice: 70800000, discount: 10, financeDiscount: 4, rentDiscount: 3 },
-  "eqa-250-amg-line": { model: "EQA 250 AMG Line", oldPrice: 75800000, newPrice: 75800000, discount: 10, financeDiscount: 4, rentDiscount: 3 },
-  "eqa-250-amg-line-my27": { model: "EQA 250 AMG Line", modelYear: "MY27", oldPrice: null, newPrice: 76700000, discount: 10, financeDiscount: 4, rentDiscount: 3 },
-  "eqb-300-4matic-progressive": { model: "EQB 300 4MATIC Progressive", oldPrice: 78800000, newPrice: 78800000, discount: 10, financeDiscount: 4, rentDiscount: 3 },
-  "eqb-300-4matic-amg-line": { model: "EQB 300 4MATIC AMG Line", oldPrice: 84300000, newPrice: 84300000, discount: 10, financeDiscount: 4, rentDiscount: 3 },
-  "eqe-350-suv": { model: "EQE 350+ SUV", oldPrice: 106000000, newPrice: 106000000, discount: 10, financeDiscount: null, rentDiscount: 3 },
-  "eqe-350": { model: "EQE 350+", oldPrice: 110000000, newPrice: 110000000, discount: 10, financeDiscount: null, rentDiscount: 3 },
-  "eqe-500-4matic-suv": { model: "EQE 500 4MATIC SUV", oldPrice: 140800000, newPrice: 141000000, discount: 10, financeDiscount: null, rentDiscount: 3 },
-  "eqs-450-4matic-suv": { model: "EQS 450 4MATIC SUV", oldPrice: 164600000, newPrice: 166000000, discount: 10, financeDiscount: null, rentDiscount: 3 },
-  "eqs-580-4matic-suv": { model: "EQS 580 4MATIC SUV", oldPrice: 190600000, newPrice: 192000000, discount: 10, financeDiscount: null, rentDiscount: 3 },
+  "eqa-250-progressive-my27": { model: "EQA 250 Progressive", modelYear: "MY27", oldPrice: null, newPrice: 70800000, discount: 10, financeDiscount: 4, rentDiscount: 4 },
+  "eqa-250-amg-line": { model: "EQA 250 AMG Line", oldPrice: 75800000, newPrice: 75800000, discount: 10, financeDiscount: 4, rentDiscount: 4 },
+  "eqa-250-amg-line-my27": { model: "EQA 250 AMG Line", modelYear: "MY27", oldPrice: null, newPrice: 76700000, discount: 10, financeDiscount: 4, rentDiscount: 4 },
+  "eqb-300-4matic-progressive": { model: "EQB 300 4MATIC Progressive", oldPrice: 78800000, newPrice: 78800000, discount: 10, financeDiscount: 4, rentDiscount: 4 },
+  "eqb-300-4matic-amg-line": { model: "EQB 300 4MATIC AMG Line", oldPrice: 84300000, newPrice: 84300000, discount: 10, financeDiscount: 4, rentDiscount: 4 },
+  "eqe-350-suv": { model: "EQE 350+ SUV", oldPrice: 106000000, newPrice: 106000000, discount: 10, financeDiscount: null, rentDiscount: null },
+  "eqe-350": { model: "EQE 350+", oldPrice: 110000000, newPrice: 110000000, discount: 10, financeDiscount: null, rentDiscount: null },
+  "eqe-500-4matic-suv": { model: "EQE 500 4MATIC SUV", oldPrice: 140800000, newPrice: 141000000, discount: 10, financeDiscount: null, rentDiscount: null },
+  "eqs-450-4matic-suv": { model: "EQS 450 4MATIC SUV", oldPrice: 164600000, newPrice: 166000000, discount: 10, financeDiscount: null, rentDiscount: null },
+  "eqs-580-4matic-suv": { model: "EQS 580 4MATIC SUV", oldPrice: 190600000, newPrice: 192000000, discount: 10, financeDiscount: null, rentDiscount: null },
   "g-580-with-eq-technology": { model: "G 580 with EQ Technology", oldPrice: 214700000, newPrice: 216100000, discount: null, financeDiscount: null, rentDiscount: null },
 
   // Maybach
-  "mercedes-maybach-s-580": { model: "Mercedes-Maybach S 580", oldPrice: 315600000, newPrice: 317000000, discount: 9, financeDiscount: null, rentDiscount: 3 },
-  "mercedes-maybach-s-680": { model: "Mercedes-Maybach S 680", oldPrice: 401600000, newPrice: 403000000, discount: 9, financeDiscount: null, rentDiscount: 3 },
+  "mercedes-maybach-s-580": { model: "Mercedes-Maybach S 580", oldPrice: 315600000, newPrice: 317000000, discount: 9, financeDiscount: null, rentDiscount: null },
+  "mercedes-maybach-s-680": { model: "Mercedes-Maybach S 680", oldPrice: 401600000, newPrice: 403000000, discount: 9, financeDiscount: null, rentDiscount: null },
   "mercedes-maybach-s-680-v12-edition": { model: "Mercedes-Maybach S 680 \"V12 Edition\"", oldPrice: 478000000, newPrice: 479400000, discount: null, financeDiscount: null, rentDiscount: 3 },
-  "mercedes-maybach-sl-680": { model: "Mercedes-Maybach SL 680", oldPrice: 342600000, newPrice: 344000000, discount: 2, financeDiscount: null, rentDiscount: 3 },
-  "mercedes-maybach-gls-600": { model: "Mercedes-Maybach GLS 600", oldPrice: 293600000, newPrice: 295000000, discount: 5, financeDiscount: null, rentDiscount: 3 },
-  "mercedes-maybach-gls-600-manufaktur": { model: "Mercedes-Maybach GLS 600 MANUFAKTUR", oldPrice: 335600000, newPrice: 337000000, discount: 5, financeDiscount: null, rentDiscount: 3 },
-  "mercedes-maybach-eqs-680-suv": { model: "Mercedes-Maybach EQS 680 SUV", oldPrice: 233600000, newPrice: 235000000, discount: null, financeDiscount: null, rentDiscount: 3 },
+  "mercedes-maybach-sl-680": { model: "Mercedes-Maybach SL 680", oldPrice: 342600000, newPrice: 344000000, discount: 2, financeDiscount: null, rentDiscount: null },
+  "mercedes-maybach-gls-600": { model: "Mercedes-Maybach GLS 600", oldPrice: 293600000, newPrice: 295000000, discount: 5, financeDiscount: null, rentDiscount: null },
+  "mercedes-maybach-gls-600-manufaktur": { model: "Mercedes-Maybach GLS 600 MANUFAKTUR", oldPrice: 335600000, newPrice: 337000000, discount: 5, financeDiscount: null, rentDiscount: null },
+  "mercedes-maybach-eqs-680-suv": { model: "Mercedes-Maybach EQS 680 SUV", oldPrice: 233600000, newPrice: 235000000, discount: null, financeDiscount: null, rentDiscount: null },
 };
 
 /* =====================================================
@@ -4393,7 +4498,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-// 부드러운 스크롤 + 탭 활성화
+// 상단 네비 클릭 시 즉시 이동(애니메이션 없음) + 탭 활성화
 document.querySelectorAll('.nav-tab[href]').forEach(function(tab) {
   tab.addEventListener('click', function(e) {
     e.preventDefault();
@@ -4405,10 +4510,10 @@ document.querySelectorAll('.nav-tab[href]').forEach(function(tab) {
     document.querySelectorAll('.nav-tab').forEach(function(t) { t.classList.remove('active'); });
     tab.classList.add('active');
 
-    // 네비바 높이만큼 보정해서 스크롤
+    // 네비바 높이만큼 보정해서 스크롤 (즉시 이동, 애니메이션 없음)
     var navH = document.querySelector('.nav-tabs').offsetHeight;
     var top = target.getBoundingClientRect().top + window.pageYOffset - navH - 12;
-    window.scrollTo({ top: top, behavior: 'smooth' });
+    window.scrollTo({ top: top, behavior: 'auto' });
   });
 });
 
