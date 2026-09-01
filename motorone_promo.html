@@ -256,6 +256,143 @@ body {
   line-height: 1.7;
 }
 
+/* ── 벤츠 파이낸셜 9월 핵심 혜택 블록 (신설 카드 + 6개월 지원표) ── */
+.finance-hero-block {
+  max-width: 1160px;
+  margin: 0 auto 28px;
+  background: linear-gradient(135deg, #0f1628 0%, #1a1a2e 50%, #0d1a30 100%);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 28px 32px;
+}
+.finance-hero-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 30px;
+}
+.finance-hero-item {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 18px 20px;
+}
+.finance-hero-item.finance-hero-item-new {
+  border-color: rgba(95,201,141,0.4);
+  background: rgba(95,201,141,0.05);
+}
+.finance-hero-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.6);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+.finance-hero-item-new .finance-hero-tag {
+  background: rgba(95,201,141,0.15);
+  color: #5fc98d;
+  border: 1px solid rgba(95,201,141,0.4);
+}
+.finance-hero-item-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 8px;
+  word-break: keep-all;
+}
+.finance-hero-item-desc {
+  font-size: 12.5px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.6;
+  word-break: keep-all;
+}
+.finance-support-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+.finance-support-desc {
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.7;
+  margin-bottom: 18px;
+  word-break: keep-all;
+}
+.finance-support-table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.08);
+  margin-bottom: 22px;
+}
+.finance-support-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 640px;
+}
+.finance-support-table th {
+  background: rgba(255,255,255,0.04);
+  color: rgba(255,255,255,0.6);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 12px 14px;
+  text-align: center;
+  white-space: nowrap;
+}
+.finance-support-table th:first-child { text-align: left; }
+.finance-support-table td {
+  padding: 14px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.85);
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.finance-support-table td:first-child {
+  text-align: left;
+  font-weight: 600;
+  color: #ffffff;
+}
+.finance-support-sub {
+  font-size: 11px;
+  color: rgba(255,255,255,0.4);
+  font-weight: 400;
+}
+.finance-support-highlight {
+  background: rgba(240,192,64,0.1);
+}
+.finance-support-highlight strong {
+  color: #f0c040;
+  font-weight: 800;
+}
+.finance-hero-footnotes {
+  font-size: 12.5px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.9;
+  word-break: keep-all;
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .finance-hero-grid { grid-template-columns: 1fr 1fr; }
+  .finance-hero-grid .finance-hero-item:last-child { grid-column: 1 / -1; }
+}
+@media (max-width: 768px) {
+  .finance-hero-block { padding: 20px 18px; margin-bottom: 20px; }
+  .finance-hero-grid { grid-template-columns: 1fr; gap: 10px; margin-bottom: 22px; }
+  .finance-hero-item { padding: 14px 16px; }
+  .finance-hero-item-name { font-size: 14px; }
+  .finance-hero-item-desc { font-size: 12px; }
+  .finance-support-title { font-size: 16px; }
+  .finance-support-desc { font-size: 12px; }
+  .finance-hero-footnotes { font-size: 11px; }
+}
+
 .finance-card {
   background: #1a1a2e;
   border: 1px solid #2e2e50;
@@ -753,53 +890,6 @@ body {
   .retention-bodycare-benefit { padding: 10px 12px; }
 }
 
-/* E클래스 무상 보증연장 안내 카드 */
-.eclass-warranty-notice {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  background: linear-gradient(135deg, #10203a, #0d1a30);
-  border: 1px solid rgba(91,163,204,0.35);
-  border-radius: 12px;
-  padding: 14px 18px;
-  margin: 14px 0 20px;
-  font-size: 13px;
-  font-weight: 300;
-  line-height: 1.6;
-  color: rgba(255,255,255,0.8);
-  word-break: keep-all;
-}
-.eclass-warranty-icon {
-  flex-shrink: 0;
-  width: 20px;
-  text-align: center;
-  color: #5ba3cc;
-  font-size: 15px;
-  margin-top: 1px;
-}
-.eclass-warranty-notice strong {
-  color: #7ab3d4;
-  font-weight: 700;
-}
-.eclass-warranty-highlight {
-  color: #ffffff;
-  font-weight: 700;
-}
-@media (max-width: 768px) {
-  .eclass-warranty-notice {
-    font-size: 12px;
-    padding: 12px 14px;
-    margin: 12px 0 16px;
-    gap: 8px;
-  }
-}
-@media (max-width: 400px) {
-  .eclass-warranty-notice {
-    font-size: 11px;
-    padding: 10px 12px;
-  }
-}
-
 .rent-note {
   margin-top: 12px;
   margin-bottom: 34px;
@@ -980,7 +1070,135 @@ body {
   letter-spacing: 0.02em;
 }
 
-/* ── AUGUST SPOTLIGHT: 요약 카드 그리드 (할인확대/할인축소/신규추가) ── */
+/* ── 9월 구매 기준 안내 카드 (필독) ── */
+.policy-update-card {
+  max-width: 860px;
+  margin: 0 auto 20px;
+  background: linear-gradient(135deg, #10203a, #0d1a30);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 34px 38px;
+}
+.policy-update-badge {
+  display: inline-block;
+  background: rgba(224,90,90,0.15);
+  border: 1px solid rgba(224,90,90,0.4);
+  color: #e0935a;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 20px;
+  letter-spacing: 0.03em;
+  margin-bottom: 16px;
+}
+.policy-update-title {
+  font-size: 26px;
+  line-height: 1.35;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 26px;
+  word-break: keep-all;
+}
+.policy-update-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.policy-update-item {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 24px 26px;
+}
+.policy-update-item-title {
+  font-size: 18px;
+  line-height: 1.45;
+  font-weight: 700;
+  color: #f0c040;
+  margin-bottom: 14px;
+  word-break: keep-all;
+}
+.policy-update-item-desc {
+  font-size: 15px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.82);
+  line-height: 1.8;
+  word-break: keep-all;
+}
+.policy-update-item-note {
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.75;
+  margin-top: 14px;
+  word-break: keep-all;
+}
+.policy-update-old {
+  text-decoration: line-through;
+  color: rgba(255,255,255,0.4);
+}
+.policy-update-new {
+  color: #f0c040;
+  font-weight: 700;
+}
+.policy-key-message {
+  display: block;
+  margin-top: 16px;
+  padding: 12px 16px;
+  background: rgba(240,192,64,0.1);
+  border-left: 3px solid #f0c040;
+  border-radius: 6px;
+  color: #f0c040;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.6;
+  word-break: keep-all;
+}
+.policy-amount-block {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin: 14px 0;
+  flex-wrap: wrap;
+}
+.policy-amount-old {
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.4);
+  text-decoration: line-through;
+}
+.policy-amount-arrow {
+  font-size: 16px;
+  color: rgba(255,255,255,0.3);
+}
+.policy-amount-new {
+  font-size: 24px;
+  font-weight: 800;
+  color: #f0c040;
+}
+.policy-500-highlight {
+  color: #f0c040;
+  font-weight: 800;
+  font-size: 1.05em;
+}
+@media (min-width: 769px) and (max-width: 900px) {
+  .policy-update-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .policy-update-card { padding: 22px 20px; }
+  .policy-update-badge { font-size: 12px; padding: 5px 12px; }
+  .policy-update-title { font-size: 21px; margin-bottom: 18px; }
+  .policy-update-grid { grid-template-columns: 1fr; gap: 12px; }
+  .policy-update-item { padding: 18px 18px; }
+  .policy-update-item-title { font-size: 16px; margin-bottom: 10px; }
+  .policy-update-item-desc { font-size: 14px; line-height: 1.7; }
+  .policy-update-item-note { font-size: 12px; margin-top: 12px; }
+  .policy-key-message { font-size: 13px; padding: 10px 14px; }
+  .policy-amount-new { font-size: 20px; }
+  .policy-amount-old { font-size: 14px; }
+}
+
+/* ── SEPTEMBER SPOTLIGHT: 요약 카드 그리드 (최종 할인 강화/연식변경 비교/고객 혜택) ── */
 .spotlight-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1042,6 +1260,114 @@ body {
   color: rgba(255,255,255,0.55);
   line-height: 1.5;
   word-break: keep-all;
+}
+
+/* 최종 할인 강화 카드: %와 실구매가를 한 줄에 */
+.spotlight-deal-value {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 4px;
+  flex-wrap: nowrap;
+}
+.spotlight-deal-pct {
+  font-size: 17px;
+  font-weight: 700;
+  color: #5fc98d;
+  white-space: nowrap;
+}
+.spotlight-deal-price {
+  font-size: 14px;
+  font-weight: 700;
+  color: #5fc98d;
+  white-space: nowrap;
+}
+
+/* 연식변경 차량 조건 비교 카드 */
+.spotlight-compare-value {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  flex-wrap: nowrap;
+}
+.spotlight-compare-value .cmp-old { color: rgba(255,255,255,0.5); white-space: nowrap; }
+.spotlight-compare-value .cmp-arrow { color: rgba(255,255,255,0.3); font-weight: 400; }
+.spotlight-compare-value .cmp-new { color: #e0935a; white-space: nowrap; }
+.spotlight-compare-diff {
+  margin-left: auto;
+  color: #e0935a;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.spotlight-compare-warn {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px dashed rgba(255,255,255,0.15);
+  font-size: 11px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.6;
+  word-break: keep-all;
+}
+.spotlight-compare-warn .warn-strong {
+  color: #e0935a;
+  font-weight: 700;
+}
+
+/* BEST TIMING 카드 */
+.best-timing-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: linear-gradient(135deg, rgba(224,90,90,0.08), rgba(224,90,90,0.03));
+  border: 1px solid rgba(224,90,90,0.3);
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin-bottom: 20px;
+}
+.best-timing-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  color: #e0935a;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.best-timing-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 6px;
+  word-break: keep-all;
+  line-height: 1.4;
+}
+.best-timing-desc {
+  font-size: 12px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.6;
+  word-break: keep-all;
+}
+.best-timing-arrow {
+  font-size: 22px;
+  color: #e0935a;
+  flex-shrink: 0;
+}
+@media (max-width: 768px) {
+  .spotlight-deal-pct { font-size: 15px; }
+  .spotlight-deal-price { font-size: 12.5px; }
+  .spotlight-compare-value { font-size: 12px; }
+  .spotlight-compare-diff { font-size: 11px; }
+  .spotlight-compare-warn { font-size: 10.5px; }
+  .best-timing-card { padding: 14px 16px; gap: 10px; }
+  .best-timing-title { font-size: 13px; }
+  .best-timing-desc { font-size: 11px; }
+  .best-timing-arrow { font-size: 18px; }
 }
 .spotlight-item-change {
   font-size: 13px;
@@ -1115,7 +1441,7 @@ body {
 
 /* ── FINANCE RATE TABLE ── */
 .rate-table-card {
-  max-width: 860px;
+  max-width: 1160px;
   margin: 0 auto 20px;
   background: linear-gradient(135deg, #0f1628 0%, #1a1a2e 50%, #0d1a30 100%);
   border: 1px solid rgba(184,151,90,0.4);
@@ -1147,9 +1473,161 @@ body {
   font-weight: 300;
   color: rgba(255,255,255,0.55);
   line-height: 1.7;
+  margin-bottom: 8px;
+  word-break: keep-all;
+}
+.rate-table-e200-notice {
+  font-size: 16px;
+  font-weight: 700;
+  color: #e0935a;
+  margin-bottom: 24px;
+  word-break: keep-all;
+}
+
+/* E200 전용 금리 안내 카드 */
+.e200-rate-card {
+  width: 100%;
+  max-width: 1160px;
+  margin: 0 auto 24px;
+  background: linear-gradient(135deg, #101725 0%, #121b2d 55%, #0d1a30 100%);
+  border: 1px solid rgba(224,90,90,0.55);
+  border-radius: 16px;
+  padding: 32px 36px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+}
+.e200-rate-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 22px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 18px;
+  word-break: keep-all;
+}
+.e200-rate-icon { color: #e0935a; font-size: 20px; }
+.e200-rate-warning {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.7;
+  margin-bottom: 10px;
+  word-break: keep-all;
+}
+.e200-rate-warning strong { color: #e0935a; font-weight: 700; }
+.e200-rate-warning-sub {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.88);
+  line-height: 1.7;
   margin-bottom: 26px;
   word-break: keep-all;
 }
+.e200-highlight-rate { color: #e0935a; font-weight: 800; }
+.e200-highlight-mbm { color: #f0c040; font-weight: 700; }
+.e200-highlight-support { color: #5fc98d; font-weight: 700; }
+
+.e200-compare-row {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+.e200-compare-cell {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 12px;
+  padding: 20px 22px;
+  text-align: center;
+}
+.e200-compare-cell-highlight {
+  background: rgba(224,90,90,0.1);
+  border: 1px solid rgba(224,90,90,0.55);
+}
+.e200-compare-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 6px;
+  word-break: keep-all;
+}
+.e200-compare-cond {
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.72);
+  margin-bottom: 10px;
+}
+.e200-compare-value {
+  font-size: 32px;
+  font-weight: 800;
+}
+.e200-compare-value span { font-size: 14px; font-weight: 700; margin-left: 5px; }
+.e200-compare-value-normal { color: #5fc98d; }
+.e200-compare-value-alert { font-size: 34px; color: #e0935a; }
+.e200-compare-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.25);
+  font-size: 13px;
+  font-weight: 800;
+  color: rgba(255,255,255,0.75);
+}
+
+.e200-model-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.e200-model-card {
+  background: rgba(255,255,255,0.035);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 12px;
+  padding: 20px 22px;
+  transition: border-color 0.2s ease;
+}
+.e200-model-card:hover { border-color: rgba(255,255,255,0.24); }
+.e200-model-name {
+  font-size: 17px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 14px;
+}
+.e200-stat {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 0;
+  font-size: 14px;
+}
+.e200-stat-label { color: rgba(255,255,255,0.75); }
+.e200-stat-value { font-size: 16px; font-weight: 800; }
+.e200-stat-value-rate { color: #e0935a; }
+.e200-stat-value-mbm { color: #f0c040; }
+.e200-stat-value-support { color: #5fc98d; }
+@media (min-width: 768px) and (max-width: 900px) {
+  .e200-compare-row { grid-template-columns: 1fr; }
+  .e200-compare-arrow { display: none; }
+  .e200-model-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .rate-table-e200-notice { font-size: 13px; margin-bottom: 18px; }
+  .e200-rate-card { padding: 22px 20px; }
+  .e200-rate-title { font-size: 17px; line-height: 1.45; }
+  .e200-rate-warning { font-size: 14px; }
+  .e200-rate-warning-sub { font-size: 14px; margin-bottom: 20px; }
+  .e200-compare-row { grid-template-columns: 1fr; gap: 12px; }
+  .e200-compare-arrow { display: none; }
+  .e200-compare-value-alert { font-size: 28px; }
+  .e200-compare-value-normal { font-size: 26px; }
+  .e200-model-grid { grid-template-columns: 1fr; gap: 12px; }
+  .e200-model-card { padding: 16px 18px; }
+}
+
 .rate-table-wrap {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
@@ -1453,6 +1931,12 @@ body {
       width: calc(100% - 32px);
       margin-left: auto;
       margin-right: auto;
+    }
+    .spotlight-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+    .spotlight-grid .spotlight-card:last-child {
+      grid-column: 1 / -1;
     }
   }
 
@@ -1765,13 +2249,13 @@ body {
     <p class="hero-badge">Mercedes-Benz Official Dealer · Motor One</p>
     <h1 class="hero-title">가격 및 <span>프로모션</span></h1>
 
-    <p class="hero-date">2026.08 기준 / VAT 포함 / 단위: 원</p>
+    <p class="hero-date">2026.09 기준 / VAT 포함 / 단위: 원</p>
   </div>
 </div>
 
 <!-- NAV TABS -->
 <nav class="nav-tabs">
-  <a class="nav-tab star" href="#finance-section">★ 8월 베스트</a>
+  <a class="nav-tab star" href="#finance-section">★ 9월 베스트</a>
   <a class="nav-tab" data-tab="finance" href="#finance-section">금융</a>
   <a class="nav-tab" data-tab="a" href="#tab-a-price">A클래스</a>
   <a class="nav-tab" data-tab="cla" href="#tab-cla-price">CLA</a>
@@ -1791,83 +2275,136 @@ body {
 
 <!-- NOTICE -->
 <div class="notice">
-  ※ 본 페이지는 2026년 8월 메르세데스-벤츠 코리아 공식 프로모션 기준입니다. 표시 가격은 모두 <strong>VAT 포함</strong>, 만원 단위 절삭이며 옵션·재고 상황에 따라 실제 견적과 차이가 있을 수 있습니다.
+  ※ 본 페이지는 2026년 9월 메르세데스-벤츠 코리아 공식 프로모션 기준이며, 권장 소비자가격은 <strong>2026년 8월 13일자 공식 가격표(MY26 · MY27)</strong>를 반영했습니다. 표시 가격은 모두 <strong>VAT 포함</strong>, 만원 단위 절삭이며, 옵션·재고 상황에 따라 실제 견적과 차이가 있을 수 있습니다.
 </div>
 
-<!-- AUGUST SPOTLIGHT 카드 -->
+<!-- 9월 구매 기준 안내 카드 -->
+<div class="policy-update-card">
+  <div class="policy-update-badge">2026.09.01 시행 · 필독</div>
+  <div class="policy-update-title">9월부터 달라지는 구매 기준 2가지</div>
+  <div class="policy-update-grid">
+    <div class="policy-update-item">
+      <div class="policy-update-item-title">① 당월 조건은 당월 출고 건에만 적용</div>
+      <div class="policy-update-item-desc">9월 판매조건은 9월 중 잔금 납입 및 출고(등록)까지 완료되는 계약에만 적용됩니다.</div>
+      <strong class="policy-key-message">9월 계약이라도 출고가 10월이면 10월 판매조건이 적용됩니다.</strong>
+      <div class="policy-update-item-note">※ 9월 조건 적용 가능 인도 예정일: 2026.9.1 ~ 10.6<br>(9월 30일까지 계약 마감 처리 필수)</div>
+    </div>
+    <div class="policy-update-item">
+      <div class="policy-update-item-title">② 계약금 기준 상향</div>
+      <div class="policy-update-item-desc">전 차종 계약금이 상향됐습니다.</div>
+      <div class="policy-amount-block">
+        <span class="policy-amount-old">100만원</span>
+        <span class="policy-amount-arrow">→</span>
+        <span class="policy-amount-new">300만원</span>
+      </div>
+      <div class="policy-update-item-desc">S클래스(마이바흐 포함) · G클래스 · BTO 주문은 계약금 <span class="policy-500-highlight">500만원</span>입니다.</div>
+      <div class="policy-update-item-note">※ 2026년 9월 1일 이후 생성되는 계약부터 적용<br>※ 향후 출시 모델의 사전계약 계약금은 차종별로 다를 수 있습니다.</div>
+    </div>
+  </div>
+</div>
+
+<!-- SEPTEMBER SPOTLIGHT 카드 -->
 <div class="june-spotlight-card">
-  <div class="june-spotlight-badge">AUGUST SPOTLIGHT · 핵심 캠페인</div>
+  <div class="june-spotlight-badge">SEPTEMBER SPOTLIGHT · 핵심 캠페인</div>
   <div class="june-spotlight-title">메르세데스-벤츠 파이낸셜 &amp; 모빌리티 조인트 캠페인 — 이번 달의 무기</div>
   <div class="june-spotlight-desc">
-    8월에도 개별소비세 5% 정상세율이 유지됩니다.<br>
-    지난달(7월) 대비 달라진 핵심만 한눈에 정리했습니다.
+    E 200과 GLC 300 AMG Line의 판매조건이 대폭 강화됐습니다. 반대로 연식이 바뀐 GLC와 CLE는 MY27로 넘어가면서 할인율이 절반 이하로 줄었습니다.<br>
+    <span style="color:#f0c040;font-weight:600;">강화된 조건은 MY26 재고에만 붙습니다. 재고가 빠지면 같은 차를 MY27 가격과 조건으로 사야 합니다.</span>
   </div>
 
   <div class="spotlight-grid">
     <div class="spotlight-card">
       <div class="spotlight-card-head">
-        <div class="spotlight-card-title"><span class="spotlight-card-icon spotlight-icon-expand">▲</span> 할인 확대</div>
-        <div class="spotlight-card-count">3개 트림</div>
+        <div class="spotlight-card-title"><span class="spotlight-card-icon spotlight-icon-expand">▲</span> 최종 할인 강화</div>
+        <div class="spotlight-card-count">실구매가 기준</div>
       </div>
       <div class="spotlight-item">
-        <div class="spotlight-item-name">GLC 300 AMG Line<br>140주년 Edition</div>
-        <div class="spotlight-item-change"><span class="old-val">6%</span><span class="arrow">→</span><span class="new-val">12%</span></div>
+        <div class="spotlight-item-name">E 200 AVANTGARDE</div>
+        <div class="spotlight-deal-value"><span class="spotlight-deal-pct">16%</span><span class="spotlight-deal-price">6,510만원</span></div>
+        <div class="spotlight-item-sub">기본 할인 단일 · E클래스 최대 할인율</div>
       </div>
       <div class="spotlight-item">
-        <div class="spotlight-item-name">CLE 200 Coupé AMG Line<br>140주년 Edition</div>
-        <div class="spotlight-item-change"><span class="old-val">2%</span><span class="arrow">→</span><span class="new-val">5%</span></div>
+        <div class="spotlight-item-name">E 200 EXCLUSIVE</div>
+        <div class="spotlight-deal-value"><span class="spotlight-deal-pct">15%</span><span class="spotlight-deal-price">6,587만원</span></div>
+        <div class="spotlight-item-sub">기본 8% (4%→8%) + MBM 특별 7%</div>
       </div>
       <div class="spotlight-item">
-        <div class="spotlight-item-name">CLE 200 Cabriolet AMG Line<br>140주년 Edition</div>
-        <div class="spotlight-item-change"><span class="old-val">2%</span><span class="arrow">→</span><span class="new-val">4%</span></div>
+        <div class="spotlight-item-name">E 200 AMG Line RoF 포함</div>
+        <div class="spotlight-deal-value"><span class="spotlight-deal-pct">16%</span><span class="spotlight-deal-price">6,804만원</span></div>
+        <div class="spotlight-item-sub">기본 12% (10%→12%) + MBM 특별 4%</div>
+      </div>
+      <div class="spotlight-item">
+        <div class="spotlight-item-name">GLC 300 AMG Line<br>RoF · 140주년</div>
+        <div class="spotlight-deal-value"><span class="spotlight-deal-pct">16%</span><span class="spotlight-deal-price">7,770만원</span></div>
+        <div class="spotlight-item-sub">기본 12% + MBM 특별 4% 신규 적용</div>
+      </div>
+      <div class="spotlight-item">
+        <div class="spotlight-item-name">GLC 300 Coupé AMG Line<br>RoF · 140주년</div>
+        <div class="spotlight-deal-value"><span class="spotlight-deal-pct">13%</span><span class="spotlight-deal-price">8,430만원</span></div>
+        <div class="spotlight-item-sub">기본 9% + MBM 특별 4% 신규 적용</div>
       </div>
     </div>
 
     <div class="spotlight-card">
       <div class="spotlight-card-head">
-        <div class="spotlight-card-title"><span class="spotlight-card-icon spotlight-icon-reduce">▼</span> 할인 축소</div>
-        <div class="spotlight-card-count">2개 그룹</div>
+        <div class="spotlight-card-title"><span class="spotlight-card-icon" style="color:#e0935a;">⚠</span> 연식변경 차량 조건 비교</div>
+        <div class="spotlight-card-count">최종 할인율</div>
       </div>
       <div class="spotlight-item">
-        <div class="spotlight-item-name">GLE 450 4MATIC<br>AMG Line · Coupé AMG Line 관련 전 라인</div>
-        <div class="spotlight-item-change"><span class="old-val">13%</span><span class="arrow">→</span><span class="new-val">12%</span></div>
+        <div class="spotlight-item-name">GLC 300 AMG Line</div>
+        <div class="spotlight-compare-value"><span class="cmp-old">MY26 16%</span><span class="cmp-arrow">→</span><span class="cmp-new">MY27 7%</span></div>
+        <div class="spotlight-item-sub">MY27는 MBM 특별할인 +4% 미적용</div>
       </div>
       <div class="spotlight-item">
-        <div class="spotlight-item-name">GLC 300 AVANTGARDE<br>GLC 300 Coupé AVANTGARDE</div>
-        <div class="spotlight-item-change"><span class="old-val">8%</span><span class="arrow">→</span><span class="new-val">7%</span></div>
+        <div class="spotlight-item-name">GLC 300 Coupé AMG Line</div>
+        <div class="spotlight-compare-value"><span class="cmp-old">MY26 13%</span><span class="cmp-arrow">→</span><span class="cmp-new">MY27 5%</span></div>
+        <div class="spotlight-item-sub">MY27는 MBM 특별할인 +4% 미적용</div>
       </div>
+      <div class="spotlight-item">
+        <div class="spotlight-item-name">GLC 300 AVANTGARDE</div>
+        <div class="spotlight-compare-value"><span class="cmp-old">MY26 11%</span><span class="cmp-arrow">→</span><span class="cmp-new">MY27 7%</span></div>
+        <div class="spotlight-item-sub">Coupé AVANTGARDE는 11% → 5%</div>
+      </div>
+      <div class="spotlight-item">
+        <div class="spotlight-item-name">CLE 450 4MATIC Coupé</div>
+        <div class="spotlight-compare-value"><span class="cmp-old">MY26 9%</span><span class="cmp-arrow">→</span><span class="cmp-new">MY27 2%</span><span class="spotlight-compare-diff">+806만</span></div>
+        <div class="spotlight-item-sub">실구매 9,072만 → 9,878만</div>
+      </div>
+      <div class="spotlight-item">
+        <div class="spotlight-item-name">CLE 450 4MATIC Cabriolet</div>
+        <div class="spotlight-compare-value"><span class="cmp-old">MY26 6%</span><span class="cmp-arrow">→</span><span class="cmp-new">MY27 2%</span><span class="spotlight-compare-diff">+533만</span></div>
+        <div class="spotlight-item-sub">실구매 9,776만 → 1억309만</div>
+      </div>
+      <div class="spotlight-compare-warn"><span class="warn-strong">MY26 재고 소진 = 조건 종료.</span> 위 할인율은 남아있는 MY26 재고에만 적용되며, 재고가 빠진 사양은 MY27 조건으로 계약해야 합니다.<br><br>GLA 250 · EQA 250은 MY27도 동일 조건(13% / 14%)이라 연식 차이에 따른 손해가 없습니다.</div>
     </div>
 
     <div class="spotlight-card">
       <div class="spotlight-card-head">
-        <div class="spotlight-card-title"><span class="spotlight-card-icon spotlight-icon-new">✨</span> 신규 추가</div>
-        <div class="spotlight-card-count">4건</div>
+        <div class="spotlight-card-title"><span class="spotlight-card-icon">🎁</span> 고객 혜택</div>
+        <div class="spotlight-card-count">신규 3건</div>
       </div>
       <div class="spotlight-item">
-        <div class="spotlight-item-name">C 200 Final Edition</div>
-        <div class="spotlight-item-sub">기본 10% + MBM 특별 +4% · 신규 편입</div>
+        <div class="spotlight-item-name">골든타임 프로그램</div>
+        <div class="spotlight-item-sub">계약금 입금일부터 잔금 납입일까지 7일 이내인 계약에 MB 컬렉션 증정<br>2026년 9월 1일 ~ 9월 30일 · G클래스 제외 · MY27 S클래스 사전계약 고객은 전원 제공<br>골프백 세트 / 캠핑 체어 2개 / 토트백 / 피크닉 매트·테이블 중 차량 등급별 1개</div>
       </div>
       <div class="spotlight-item">
-        <div class="spotlight-item-name">EQS 580 4MATIC SUV</div>
-        <div class="spotlight-item-sub">기본 10% · 무상 보증 연장</div>
+        <div class="spotlight-item-name">6개월 월 납입금 지원</div>
+        <div class="spotlight-item-sub">안심보장할부 이용 시 초기 6개월 납입금 지원<br>대상: C 200 · E 200 · E 300 · GLC 300 · GLE 450<br>월 약 30~60만원 × 6개월</div>
       </div>
       <div class="spotlight-item">
-        <div class="spotlight-item-name">Mercedes-AMG GT 43<br>C192 · 2도어</div>
-        <div class="spotlight-item-sub">기본 9% · 신규 편입</div>
-      </div>
-      <div class="spotlight-item">
-        <div class="spotlight-item-name">MY26 E-Class</div>
-        <div class="spotlight-item-sub">최대 4년 / 13만km · 별도 비용 없음</div>
+        <div class="spotlight-item-name">AMG 구매 고객 혜택</div>
+        <div class="spotlight-item-sub">대상: MY26 AMG A 45 S · S 63 · GLC 43 · GLC 43 Coupé · GLE 53 · GLE 53 Coupé<br>윔블던 백(약 54만원 상당) 증정 · 9월 1일 ~ 30일</div>
       </div>
     </div>
   </div>
 
-  <div class="spotlight-end-card">
-    <div class="spotlight-end-head">
-      <div class="spotlight-end-title"><span>⛔</span> 저금리 할부 종료 모델</div>
-      <div class="spotlight-end-badge">종료 모델</div>
+  <div class="best-timing-card">
+    <div>
+      <div class="best-timing-eyebrow">Best Timing</div>
+      <div class="best-timing-title">지금은 MY26 남은 재고를 빠르게 잡는 것이 가장 중요한 타이밍입니다</div>
+      <div class="best-timing-desc">9월 강화 조건은 MY26 재고 한정 · 원하는 색상 · 사양이 소진되면 MY27 가격과 조건으로 넘어갑니다. 실시간 즉시출고 재고를 먼저 확인해 보세요.</div>
     </div>
-    <div class="spotlight-end-desc"><strong>E 450 · GLC AMG Line · GLE 53 · GT 43</strong><br>해당 모델은 8월 저금리 특별 할부 적용 대상에서 제외됩니다.</div>
+    <div class="best-timing-arrow">→</div>
   </div>
 
   <div class="spotlight-note">
@@ -1877,14 +2414,13 @@ body {
   <div class="june-spotlight-badges">
     <span class="june-model-badge">GLA 250 · GLB 250 · AMG GLB35 · AMG A45 S +4%</span>
     <span class="june-model-badge">EQA250 · EQA AMG · EQB300 · EQB AMG +4%</span>
-    <span class="june-model-badge">C 200 AV / AMG Line +4%</span>
+    <span class="june-model-badge">C 200 AV / AMG Line / Final Edition +4%</span>
     <span class="june-model-badge">E 200 EXCLUSIVE +7%</span>
     <span class="june-model-badge">E 200 AMG Line +4%</span>
-    <span class="june-model-badge">GLC 300 AMG Line 140주년 +4%</span>
-    <span class="june-model-badge">CLE 200 Coupé AMG Line 140주년 +4%</span>
-    <span class="june-model-badge">CLE 200 Cabriolet AMG Line 140주년 +4%</span>
+    <span class="june-model-badge">E 300 EX / AMG / 140주년 +4%</span>
     <span class="june-model-badge">S 450 SWB +4%</span>
     <span class="june-model-badge">GLC 300 AV / Coupé AV +4%</span>
+    <span class="june-model-badge">GLC 300 AMG Line / Coupé AMG Line +4% <span style="font-size:9px;font-weight:800;color:#f0c040;opacity:0.8;margin-left:2px;">NEW</span></span>
     <span class="june-model-badge">GLE 450 / AMG / Coupé / Coupé AMG +4%</span>
   </div>
 </div>
@@ -1914,7 +2450,7 @@ body {
   </div>
   <div class="discount-row">
     <div class="discount-tag ew-tag">EW</div>
-    <div class="discount-desc">무상 보증 연장 <span style="color:rgba(255,255,255,0.5);font-weight:400;">(Extended Warranty)</span><br>전 EQ · Maybach S 580 / S 680 — <span class="highlight highlight-blue">최대 5년 / 17만km</span><br>MY26 E-Class 전 모델 신규 — <span class="highlight highlight-blue">최대 4년 / 13만km</span></div>
+    <div class="discount-desc">무상 보증 연장 <span style="color:rgba(255,255,255,0.5);font-weight:400;">(Extended Warranty)</span><br>전 EQ · Maybach S 580 / S 680 — <span class="highlight highlight-blue">최대 5년 / 17만km</span></div>
   </div>
 </div>
 
@@ -1927,15 +2463,70 @@ body {
   </a>
 </div>
 
-<!-- ★ 8월 BEST SECTION -->
+<!-- ★ 9월 BEST SECTION -->
 <div id="tab-best" class="section active">
 
-  <!-- 8월 금융 프로그램 -->
+  <!-- 9월 금융 프로그램 -->
   <div class="finance-header" id="finance-section">
-    <div class="finance-eyebrow">2026 August · Finance Program</div>
-    <h2 class="finance-title">8월 금융 프로그램</h2>
+    <div class="finance-eyebrow">MBFSK · 2026.09 FINANCE PROGRAM</div>
+    <h2 class="finance-title">벤츠 파이낸셜 9월 금융 프로그램</h2>
     <div class="finance-divider"></div>
-    <p class="finance-desc">할인은 그대로, 금융이 강해진 달입니다 · 산차교환보상 3년 기본 포함<br>모든 금리는 신용등급/심사 결과에 따라 변동될 수 있습니다</p>
+    <p class="finance-desc">적용 기간 2026년 9월 1일 ~ 9월 30일 (견적 생성 및 금융 계약 실행 기준)</p>
+  </div>
+
+  <div class="finance-hero-block">
+    <div class="finance-hero-grid">
+      <div class="finance-hero-item finance-hero-item-new">
+        <div class="finance-hero-tag">9월 신설</div>
+        <div class="finance-hero-item-name">GLC 300 AMG Line</div>
+        <div class="finance-hero-item-desc">AVANTGARDE와 동일하게 MBM 추가할인 + 특별 저금리 신설</div>
+      </div>
+      <div class="finance-hero-item finance-hero-item-new">
+        <div class="finance-hero-tag">9월 신설</div>
+        <div class="finance-hero-item-name">마이바흐 MY26 S 580 · S 680</div>
+        <div class="finance-hero-item-desc">운용리스 이용 시 추가 2% 할인</div>
+      </div>
+      <div class="finance-hero-item">
+        <div class="finance-hero-tag finance-hero-tag-neutral">전월 동일</div>
+        <div class="finance-hero-item-name">그 외 추가할인 · 금리인하 차종</div>
+        <div class="finance-hero-item-desc">대상 차종 및 상품 조건 모두 8월과 동일하게 유지</div>
+      </div>
+    </div>
+
+    <div class="finance-support-block">
+      <div class="finance-support-title">6개월 월 납입금 지원</div>
+      <div class="finance-support-desc">안심보장할부(MB-Sure) 이용 시 초기 6개월치 월 납입금을 벤츠파이낸셜이 지원합니다. 최대 360만원 상당. 아래 선수금과 월 납입금은 36개월 기준 예시입니다.</div>
+      <div class="finance-support-table-wrap">
+        <table class="finance-support-table">
+          <thead>
+            <tr>
+              <th>모델</th>
+              <th>36개월 선수금<br>연 1만km</th>
+              <th>36개월 선수금<br>연 2만km</th>
+              <th>예상 월 납입금</th>
+              <th>월 납입금 지원 혜택</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>C 200 AVANTGARDE · AMG Line</td><td>약 30%</td><td>약 35%</td><td>30만원</td><td class="finance-support-highlight">월 <strong>30만원</strong> × <strong>6개월</strong></td></tr>
+            <tr><td>E 200 EXCLUSIVE</td><td>약 24%</td><td>약 28%</td><td>35만원</td><td class="finance-support-highlight">월 <strong>35만원</strong> × <strong>6개월</strong></td></tr>
+            <tr><td>E 200 AMG Line</td><td>약 26%</td><td>약 29%</td><td>37만원</td><td class="finance-support-highlight">월 <strong>37만원</strong> × <strong>6개월</strong></td></tr>
+            <tr><td>E 300 4MATIC</td><td>약 27%</td><td>약 31%</td><td>45만원</td><td class="finance-support-highlight">월 <strong>45만원</strong> × <strong>6개월</strong></td></tr>
+            <tr><td>GLC 300 4MATIC AVANTGARDE<br><span class="finance-support-sub">SUV · 쿠페</span></td><td>약 31%</td><td>약 36%</td><td>40만원</td><td class="finance-support-highlight">월 <strong>40만원</strong> × <strong>6개월</strong></td></tr>
+            <tr><td>GLC 300 4MATIC AMG Line<br><span class="finance-support-sub">SUV · 쿠페</span></td><td>약 27%</td><td>약 32%</td><td>45만원</td><td class="finance-support-highlight">월 <strong>45만원</strong> × <strong>6개월</strong></td></tr>
+            <tr><td>GLE 450 4MATIC AMG Line<br><span class="finance-support-sub">SUV · 쿠페</span></td><td>약 28%</td><td>약 32%</td><td>60만원</td><td class="finance-support-highlight">월 <strong>60만원</strong> × <strong>6개월</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="finance-hero-footnotes">
+      · 특별 저금리 할부는 신차교환보상 3년, 안심보장할부·운용리스는 신차교환보상 + 타이어교환 3년이 포함됩니다.<br>
+      · 모델별 적용 금리는 아래 금리표를 참고해 주세요.<br>
+      · 법인(Fleet) 특별금융은 E 200 AVANTGARDE · E 220 d · E 350 e · E 450 · M-AMG E 53 대상이며, 법인 할부 5.89%가 적용됩니다.<br>
+      · 운용리스 교환보상 서비스는 동일하게 적용됩니다.<br>
+      · SUV · S클래스 등 그 외 세그먼트의 금리와 실제 월 납입금은 차량 사양·주행거리·심사 결과에 따라 달라질 수 있습니다.
+    </div>
   </div>
 
   <div class="finance-card">
@@ -1981,7 +2572,8 @@ body {
   <div class="rate-table-card">
     <div class="rate-table-badge">Finance Rate Table</div>
     <div class="rate-table-title">벤츠 금리표</div>
-    <div class="rate-table-sub">C 200 · E 200/300 · S 450 SWB · GLC 300 · GLE 450 · GLA/GLB · AMG A45S/GLB35 · EQA/EQB — MBM 특별 할인 대상 모델</div>
+    <div class="rate-table-sub">C 200 · E 300 · S 450 SWB · GLC 300 · GLE 450 · GLA/GLB · AMG A45S/GLB35 — MBM 특별 할인 대상 모델</div>
+    <div class="rate-table-e200-notice">※ E 200 EXCLUSIVE · E 200 AMG Line은 별도 금리 적용 (아래 참조)</div>
     <div class="rate-table-wrap">
       <table class="rate-table">
         <thead>
@@ -2003,7 +2595,7 @@ body {
             <td>3.45%</td>
             <td class="rate-low">2.69%</td>
             <td class="rate-low">1.16%</td>
-            <td class="rate-zero"><span class="rate-zero-pill">무이자</span></td>
+            <td class="rate-zero"><span class="rate-zero-pill">무이자*</span></td>
           </tr>
           <tr>
             <th>36개월</th>
@@ -2035,7 +2627,47 @@ body {
         </tbody>
       </table>
     </div>
-    <div class="rate-table-foot">무이자 조건 · 선수금 65% · 24개월 → 무이자 0.00% · 중도상환수수료 <strong>0원</strong> &nbsp;&nbsp;그 외 전 구간 → 중도상환수수료 <strong>2%</strong></div>
+    <div class="rate-table-foot">무이자 조건 · 선수금 65% · 24개월 → 무이자 0.00% · 중도상환수수료 <strong>0원</strong> &nbsp;&nbsp;그 외 전 구간 → 중도상환수수료 <strong>2%</strong><br>* E 200 EXCLUSIVE / AMG Line 제외</div>
+  </div>
+
+  <!-- E200 전용 금리 안내 카드 -->
+  <div class="e200-rate-card">
+    <div class="e200-rate-title"><span class="e200-rate-icon">⚠</span> E 200 EXCLUSIVE · E 200 AMG Line 별도 금리 적용</div>
+    <div class="e200-rate-warning">E 200 EXCLUSIVE / AMG Line은 일반 금리표의 <strong>65% 선수금 · 24개월 무이자</strong> 조건이 적용되지 않습니다.</div>
+    <div class="e200-rate-warning-sub">대신 <span class="e200-highlight-rate">2.2%</span> 금리 + <span class="e200-highlight-mbm">MBM 특별 할인</span> + <span class="e200-highlight-support">6개월 월 납입금 지원</span>이 적용됩니다.</div>
+
+    <div class="e200-compare-row">
+      <div class="e200-compare-cell">
+        <div class="e200-compare-label">일반 대상 모델</div>
+        <div class="e200-compare-cond">65% 선수금 · 24개월</div>
+        <div class="e200-compare-value e200-compare-value-normal">0.00% <span>무이자</span></div>
+      </div>
+      <div class="e200-compare-arrow">vs</div>
+      <div class="e200-compare-cell e200-compare-cell-highlight">
+        <div class="e200-compare-label">E 200 EXCLUSIVE / AMG Line</div>
+        <div class="e200-compare-cond">65% 선수금 · 24개월</div>
+        <div class="e200-compare-value e200-compare-value-alert">2.2%</div>
+      </div>
+    </div>
+
+    <div class="e200-model-grid">
+      <div class="e200-model-card">
+        <div class="e200-model-name">E 200 EXCLUSIVE</div>
+        <div class="e200-model-stats">
+          <div class="e200-stat"><span class="e200-stat-label">금리</span><span class="e200-stat-value e200-stat-value-rate">2.2%</span></div>
+          <div class="e200-stat"><span class="e200-stat-label">MBM</span><span class="e200-stat-value e200-stat-value-mbm">+7%</span></div>
+          <div class="e200-stat"><span class="e200-stat-label">납입금 지원</span><span class="e200-stat-value e200-stat-value-support">35만원 × 6개월</span></div>
+        </div>
+      </div>
+      <div class="e200-model-card">
+        <div class="e200-model-name">E 200 AMG Line</div>
+        <div class="e200-model-stats">
+          <div class="e200-stat"><span class="e200-stat-label">금리</span><span class="e200-stat-value e200-stat-value-rate">2.2%</span></div>
+          <div class="e200-stat"><span class="e200-stat-label">MBM</span><span class="e200-stat-value e200-stat-value-mbm">+4%</span></div>
+          <div class="e200-stat"><span class="e200-stat-label">납입금 지원</span><span class="e200-stat-value e200-stat-value-support">37만원 × 6개월</span></div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- EQA·EQB 전용 금리표 -->
@@ -2081,7 +2713,7 @@ body {
 
   <!-- 차종별 가격표 -->
   <div style="text-align:center; margin-bottom:32px;">
-    <div class="finance-eyebrow">2026 August · Price List</div>
+    <div class="finance-eyebrow">2026 September · Price List</div>
     <h2 class="finance-title" style="color:#111;">차종별 가격표</h2>
     <div class="finance-divider"></div>
   </div>
@@ -2241,16 +2873,12 @@ body {
         </div>
       </div>
     </div>
-    <div class="eclass-warranty-notice">
-      <span class="eclass-warranty-icon">🛡</span>
-      <span><strong>MY26 E클래스 전 모델 무상 보증연장 신규 적용</strong> — <span class="eclass-warranty-highlight">최대 4년 / 13만km</span> (Warranty Plus Advance 동일 범위). 별도 비용 없이 기본 제공됩니다.</span>
-    </div>
     <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><table class="price-table" style="min-width:340px;width:100%;">
       <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>장기렌트</th><th>실구매가</th></tr></thead>
       <tbody>
         <tr class="dual-row dual-row-top" data-model-id="e-200-avantgarde"><td rowspan="2" class="model-cell">E 200 AVANTGARDE</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">76,500,000원</span></td><td rowspan="2" class="col-promo">16%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">64,260,000원</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="e-200-avantgarde"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">77,500,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">65,100,000원</span></td></tr>
-        <tr class="dual-row dual-row-top" data-model-id="e-200-exclusive"><td rowspan="2" class="model-cell">E 200 EXCLUSIVE</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">76,600,000원</span></td><td rowspan="2" class="col-promo"><span style="display:block;">4%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+7% 벤츠파이낸셜</span></td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">73,530,000원</span><span class="stock-final-fin">68,170,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="e-200-exclusive"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">77,500,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">74,400,000원</span><span class="stock-final-fin">68,970,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
-        <tr class="dual-row dual-row-top" data-model-id="e-200-amg-line"><td rowspan="2" class="model-cell">E 200 AMG Line</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">80,000,000원</span></td><td rowspan="2" class="col-promo"><span style="display:block;">10%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">72,000,000원</span><span class="stock-final-fin">68,800,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="e-200-amg-line"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">81,000,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">72,900,000원</span><span class="stock-final-fin">69,660,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
+        <tr class="dual-row dual-row-top" data-model-id="e-200-exclusive"><td rowspan="2" class="model-cell">E 200 EXCLUSIVE</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">76,600,000원</span></td><td rowspan="2" class="col-promo"><span style="display:block;">8%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+7% 벤츠파이낸셜</span></td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">70,400,000원</span><span class="stock-final-fin">64,970,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="e-200-exclusive"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">77,500,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">71,300,000원</span><span class="stock-final-fin">65,870,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
+        <tr class="dual-row dual-row-top" data-model-id="e-200-amg-line"><td rowspan="2" class="model-cell">E 200 AMG Line</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">80,000,000원</span></td><td rowspan="2" class="col-promo"><span style="display:block;">12%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">70,280,000원</span><span class="stock-final-fin">67,040,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="e-200-amg-line"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">81,000,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">71,280,000원</span><span class="stock-final-fin">68,040,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
         <tr><td>E 200 AMG Line RoF Edition</td><td class="col-price">81,710,000원</td><td class="col-promo">10%</td><td class="col-rent">+3%</td><td class="col-final">73,690,000원</td></tr>
         <tr class="dual-row dual-row-top" data-model-id="e-220-d-4matic-exclusive"><td rowspan="2" class="model-cell">E 220 d 4MATIC EXCLUSIVE</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">86,100,000원</span></td><td rowspan="2" class="col-promo">9%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">78,350,000원</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="e-220-d-4matic-exclusive"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">87,200,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">79,350,000원</span></td></tr>
         <tr class="dual-row dual-row-top" data-model-id="e-300-4matic-exclusive"><td rowspan="2" class="model-cell">E 300 4MATIC EXCLUSIVE</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">93,600,000원</span></td><td rowspan="2" class="col-promo"><span style="display:block;">10%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">84,240,000원</span><span class="stock-final-fin">80,490,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="e-300-4matic-exclusive"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">94,800,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">85,320,000원</span><span class="stock-final-fin">81,520,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
@@ -2415,10 +3043,10 @@ body {
       <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>장기렌트</th><th>실구매가</th></tr></thead>
       <tbody>
         <tr class="my27-row" data-model-id="cle-200-coupe-my27"><td class="model-cell">CLE 200 Coupé</td><td class="price-cell single"><span class="stock-price-main">77,600,000원</span></td><td class="col-dash">-</td><td class="col-dash">-</td><td class="final-cell single"><span class="stock-final-main">77,600,000원</span></td></tr>
-        <tr class="my27-row" data-model-id="cle-450-4matic-coupe-my27"><td class="model-cell">CLE 450 4MATIC Coupé</td><td class="price-cell single"><span class="stock-price-main">100,800,000원</span></td><td class="col-dash">-</td><td class="col-dash">-</td><td class="final-cell single"><span class="stock-final-main">100,800,000원</span></td></tr>
+        <tr class="my27-row" data-model-id="cle-450-4matic-coupe-my27"><td class="model-cell">CLE 450 4MATIC Coupé</td><td class="price-cell single"><span class="stock-price-main">100,800,000원</span></td><td class="col-promo">2%</td><td class="col-dash">-</td><td class="final-cell single"><span class="stock-final-main">98,780,000원</span></td></tr>
         <tr class="my27-row" data-model-id="mercedes-amg-cle-53-4matic-coupe-my27"><td class="model-cell">Mercedes-AMG CLE 53 4MATIC+ Coupé</td><td class="price-cell single"><span class="stock-price-main">110,600,000원</span></td><td class="col-dash">-</td><td class="col-dash">-</td><td class="final-cell single"><span class="stock-final-main">110,600,000원</span></td></tr>
         <tr class="my27-row" data-model-id="cle-200-cabriolet-my27"><td class="model-cell">CLE 200 Cabriolet</td><td class="price-cell single"><span class="stock-price-main">84,100,000원</span></td><td class="col-dash">-</td><td class="col-dash">-</td><td class="final-cell single"><span class="stock-final-main">84,100,000원</span></td></tr>
-        <tr class="my27-row" data-model-id="cle-450-4matic-cabriolet-my27"><td class="model-cell">CLE 450 4MATIC Cabriolet</td><td class="price-cell single"><span class="stock-price-main">105,200,000원</span></td><td class="col-dash">-</td><td class="col-dash">-</td><td class="final-cell single"><span class="stock-final-main">105,200,000원</span></td></tr>
+        <tr class="my27-row" data-model-id="cle-450-4matic-cabriolet-my27"><td class="model-cell">CLE 450 4MATIC Cabriolet</td><td class="price-cell single"><span class="stock-price-main">105,200,000원</span></td><td class="col-promo">2%</td><td class="col-dash">-</td><td class="final-cell single"><span class="stock-final-main">103,090,000원</span></td></tr>
         <tr class="my27-row" data-model-id="mercedes-amg-cle-53-4matic-cabriolet-my27"><td class="model-cell">Mercedes-AMG CLE 53 4MATIC+ Cabriolet</td><td class="price-cell single"><span class="stock-price-main">116,600,000원</span></td><td class="col-dash">-</td><td class="col-dash">-</td><td class="final-cell single"><span class="stock-final-main">116,600,000원</span></td></tr>
       </tbody>
     </table></div>
@@ -2458,11 +3086,11 @@ body {
       <tbody>
         <tr class="dual-row dual-row-top" data-model-id="glc-220-d-4matic"><td rowspan="2" class="model-cell">GLC 220 d 4MATIC</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">81,200,000원</span></td><td rowspan="2" class="col-promo">7%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">75,510,000원</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="glc-220-d-4matic"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">82,200,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">76,440,000원</span></td></tr>
         <tr class="dual-row dual-row-top" data-model-id="glc-300-4matic-avantgarde"><td rowspan="2" class="model-cell">GLC 300 4MATIC AVANTGARDE</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">81,400,000원</span></td><td rowspan="2" class="col-promo"><span style="display:block;">8%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">74,880,000원</span><span class="stock-final-fin">71,630,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="glc-300-4matic-avantgarde"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">82,500,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">75,900,000원</span><span class="stock-final-fin">72,600,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
-        <tr class="dual-row dual-row-top" data-model-id="glc-300-4matic-amg-line"><td rowspan="2" class="model-cell">GLC 300 4MATIC AMG Line</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">91,400,000원</span></td><td rowspan="2" class="col-promo">12%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">80,430,000원</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="glc-300-4matic-amg-line"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">92,500,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">81,400,000원</span></td></tr>
-        <tr class="dual-row dual-row-top" data-model-id="glc-300-4matic-amg-line-140-edition"><td rowspan="2" class="model-cell">GLC 300 4MATIC AMG Line<br><span style="font-size:90%;color:#5c5c5c;">140주년 Edition</span></td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">96,800,000원</span></td><td rowspan="2" class="col-promo">12%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">85,180,000원</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="glc-300-4matic-amg-line-140-edition"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">97,900,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">86,150,000원</span></td></tr>
+        <tr class="dual-row dual-row-top" data-model-id="glc-300-4matic-amg-line"><td rowspan="2" class="model-cell">GLC 300 4MATIC AMG Line</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">91,400,000원</span></td><td rowspan="2" class="col-promo"><span style="display:block;">12%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">80,300,000원</span><span class="stock-final-fin">76,600,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="glc-300-4matic-amg-line"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">92,500,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">81,400,000원</span><span class="stock-final-fin">77,700,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
+        <tr class="dual-row dual-row-top" data-model-id="glc-300-4matic-amg-line-140-edition"><td rowspan="2" class="model-cell">GLC 300 4MATIC AMG Line<br><span style="font-size:90%;color:#5c5c5c;">140주년 Edition</span></td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">96,800,000원</span></td><td rowspan="2" class="col-promo"><span style="display:block;">12%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">85,050,000원</span><span class="stock-final-fin">81,130,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="glc-300-4matic-amg-line-140-edition"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">97,900,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">86,150,000원</span><span class="stock-final-fin">82,230,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
         <tr class="dual-row dual-row-top" data-model-id="mercedes-amg-glc-43-4matic"><td rowspan="2" class="model-cell">Mercedes-AMG GLC 43 4MATIC</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">102,300,000원</span></td><td rowspan="2" class="col-promo">7%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">95,130,000원</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="mercedes-amg-glc-43-4matic"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">103,600,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">96,340,000원</span></td></tr>
         <tr class="dual-row dual-row-top" data-model-id="glc-300-4matic-coup-avantgarde"><td rowspan="2" class="model-cell">GLC 300 4MATIC Coupé AVANTGARDE</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">85,500,000원</span></td><td rowspan="2" class="col-promo"><span style="display:block;">8%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">78,660,000원</span><span class="stock-final-fin">75,240,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="glc-300-4matic-coup-avantgarde"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">86,600,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">79,670,000원</span><span class="stock-final-fin">76,200,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
-        <tr class="dual-row dual-row-top" data-model-id="glc-300-4matic-coup-amg-line"><td rowspan="2" class="model-cell">GLC 300 4MATIC Coupé AMG Line</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">95,700,000원</span></td><td rowspan="2" class="col-promo">9%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">87,080,000원</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="glc-300-4matic-coup-amg-line"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">96,900,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">88,170,000원</span></td></tr>
+        <tr class="dual-row dual-row-top" data-model-id="glc-300-4matic-coup-amg-line"><td rowspan="2" class="model-cell">GLC 300 4MATIC Coupé AMG Line</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">95,700,000원</span></td><td rowspan="2" class="col-promo"><span style="display:block;">9%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">86,970,000원</span><span class="stock-final-fin">83,100,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="glc-300-4matic-coup-amg-line"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">96,900,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">88,170,000원</span><span class="stock-final-fin">84,300,000원</span><span class="stock-fin-label">(벤츠파이낸셜)</span></td></tr>
         <tr class="dual-row dual-row-top" data-model-id="mercedes-amg-glc-43-4matic-coup"><td rowspan="2" class="model-cell">Mercedes-AMG GLC 43 4MATIC Coupé</td><td class="price-cell top"><span class="badge badge-old">🟢 기존재고</span><span class="stock-price-main">106,900,000원</span></td><td rowspan="2" class="col-promo">3%</td><td rowspan="2" class="col-rent">+3%</td><td class="final-cell top"><span class="badge badge-old">기존재고</span><span class="stock-final-main">103,690,000원</span></td></tr><tr class="dual-row dual-row-bottom" data-model-id="mercedes-amg-glc-43-4matic-coup"><td class="price-cell bottom"><span class="badge badge-new">🔵 7월 이후 통관</span><span class="stock-price-main">108,300,000원</span></td><td class="final-cell bottom"><span class="badge badge-new">7월 이후 통관</span><span class="stock-final-main">105,050,000원</span></td></tr>
       </tbody>
     </table>
@@ -2701,10 +3329,10 @@ body {
 <!-- 금융 SECTION -->
 <div id="tab-finance" class="section">
   <div class="finance-header">
-    <div class="finance-eyebrow">2026 August · Finance Program</div>
-    <h2 class="finance-title">8월 금융 프로그램</h2>
+    <div class="finance-eyebrow">MBFSK · 2026.09 FINANCE PROGRAM</div>
+    <h2 class="finance-title">벤츠 파이낸셜 9월 금융 프로그램</h2>
     <div class="finance-divider"></div>
-    <p class="finance-desc">할인은 그대로, 금융이 강해진 달입니다 · 산차교환보상 3년 기본 포함<br>모든 금리는 신용등급/심사 결과에 따라 변동될 수 있습니다</p>
+    <p class="finance-desc">적용 기간 2026년 9월 1일 ~ 9월 30일 (견적 생성 및 금융 계약 실행 기준)</p>
   </div>
 
   <div class="finance-card">
@@ -3371,8 +3999,8 @@ const VEHICLE_DATA = {
 
   // E-Class
   "e-200-avantgarde": { model: "E 200 AVANTGARDE", oldPrice: 76500000, newPrice: 77500000, discount: 16, financeDiscount: null, rentDiscount: 3 },
-  "e-200-exclusive": { model: "E 200 EXCLUSIVE", oldPrice: 76600000, newPrice: 77500000, discount: 4, financeDiscount: 7, rentDiscount: 3 },
-  "e-200-amg-line": { model: "E 200 AMG Line", oldPrice: 80000000, newPrice: 81000000, discount: 10, financeDiscount: 4, rentDiscount: 3 },
+  "e-200-exclusive": { model: "E 200 EXCLUSIVE", oldPrice: 76600000, newPrice: 77500000, discount: 8, financeDiscount: 7, rentDiscount: 3 },
+  "e-200-amg-line": { model: "E 200 AMG Line", oldPrice: 80000000, newPrice: 81000000, discount: 12, financeDiscount: 4, rentDiscount: 3 },
   "e-220-d-4matic-exclusive": { model: "E 220 d 4MATIC EXCLUSIVE", oldPrice: 86100000, newPrice: 87200000, discount: 9, financeDiscount: null, rentDiscount: 3 },
   "e-300-4matic-exclusive": { model: "E 300 4MATIC EXCLUSIVE", oldPrice: 93600000, newPrice: 94800000, discount: 10, financeDiscount: 4, rentDiscount: 3 },
   "e-300-4matic-amg-line": { model: "E 300 4MATIC AMG Line", oldPrice: 97700000, newPrice: 99000000, discount: 10, financeDiscount: 4, rentDiscount: 3 },
@@ -3399,20 +4027,20 @@ const VEHICLE_DATA = {
   "mercedes-amg-cle-53-4matic-cabriolet": { model: "Mercedes-AMG CLE 53 4MATIC+ Cabriolet", oldPrice: 113600000, newPrice: 115000000, discount: 3, financeDiscount: null, rentDiscount: 3 },
   // CLE MY27 (판매조건 미확정 — 권장소비자가격만 등록)
   "cle-200-coupe-my27": { model: "CLE 200 Coupé", modelYear: "MY27", oldPrice: null, newPrice: 77600000, discount: null, financeDiscount: null, rentDiscount: null },
-  "cle-450-4matic-coupe-my27": { model: "CLE 450 4MATIC Coupé", modelYear: "MY27", oldPrice: null, newPrice: 100800000, discount: null, financeDiscount: null, rentDiscount: null },
+  "cle-450-4matic-coupe-my27": { model: "CLE 450 4MATIC Coupé", modelYear: "MY27", oldPrice: null, newPrice: 100800000, discount: 2, financeDiscount: null, rentDiscount: null },
   "mercedes-amg-cle-53-4matic-coupe-my27": { model: "Mercedes-AMG CLE 53 4MATIC+ Coupé", modelYear: "MY27", oldPrice: null, newPrice: 110600000, discount: null, financeDiscount: null, rentDiscount: null },
   "cle-200-cabriolet-my27": { model: "CLE 200 Cabriolet", modelYear: "MY27", oldPrice: null, newPrice: 84100000, discount: null, financeDiscount: null, rentDiscount: null },
-  "cle-450-4matic-cabriolet-my27": { model: "CLE 450 4MATIC Cabriolet", modelYear: "MY27", oldPrice: null, newPrice: 105200000, discount: null, financeDiscount: null, rentDiscount: null },
+  "cle-450-4matic-cabriolet-my27": { model: "CLE 450 4MATIC Cabriolet", modelYear: "MY27", oldPrice: null, newPrice: 105200000, discount: 2, financeDiscount: null, rentDiscount: null },
   "mercedes-amg-cle-53-4matic-cabriolet-my27": { model: "Mercedes-AMG CLE 53 4MATIC+ Cabriolet", modelYear: "MY27", oldPrice: null, newPrice: 116600000, discount: null, financeDiscount: null, rentDiscount: null },
 
   // GLC
   "glc-220-d-4matic": { model: "GLC 220 d 4MATIC", oldPrice: 81200000, newPrice: 82200000, discount: 7, financeDiscount: null, rentDiscount: 3 },
   "glc-300-4matic-avantgarde": { model: "GLC 300 4MATIC AVANTGARDE", oldPrice: 81400000, newPrice: 82500000, discount: 7, financeDiscount: 4, rentDiscount: 3 },
-  "glc-300-4matic-amg-line": { model: "GLC 300 4MATIC AMG Line", oldPrice: 91400000, newPrice: 92500000, discount: 12, financeDiscount: null, rentDiscount: 3 },
-  "glc-300-4matic-amg-line-140-edition": { model: "GLC 300 4MATIC AMG Line 140주년 Edition", oldPrice: 96800000, newPrice: 97900000, discount: 12, financeDiscount: null, rentDiscount: 3 },
+  "glc-300-4matic-amg-line": { model: "GLC 300 4MATIC AMG Line", oldPrice: 91400000, newPrice: 92500000, discount: 12, financeDiscount: 4, rentDiscount: 3 },
+  "glc-300-4matic-amg-line-140-edition": { model: "GLC 300 4MATIC AMG Line 140주년 Edition", oldPrice: 96800000, newPrice: 97900000, discount: 12, financeDiscount: 4, rentDiscount: 3 },
   "mercedes-amg-glc-43-4matic": { model: "Mercedes-AMG GLC 43 4MATIC", oldPrice: 102300000, newPrice: 103600000, discount: 7, financeDiscount: null, rentDiscount: 3 },
   "glc-300-4matic-coup-avantgarde": { model: "GLC 300 4MATIC Coupé AVANTGARDE", oldPrice: 85500000, newPrice: 86600000, discount: 7, financeDiscount: 4, rentDiscount: 3 },
-  "glc-300-4matic-coup-amg-line": { model: "GLC 300 4MATIC Coupé AMG Line", oldPrice: 95700000, newPrice: 96900000, discount: 9, financeDiscount: null, rentDiscount: 3 },
+  "glc-300-4matic-coup-amg-line": { model: "GLC 300 4MATIC Coupé AMG Line", oldPrice: 95700000, newPrice: 96900000, discount: 9, financeDiscount: 4, rentDiscount: 3 },
   "mercedes-amg-glc-43-4matic-coup": { model: "Mercedes-AMG GLC 43 4MATIC Coupé", oldPrice: 106900000, newPrice: 108300000, discount: 3, financeDiscount: null, rentDiscount: 3 },
   // GLC electric MY27 (판매조건 미확정 — 권장소비자가격만 등록, 기존 내연기관 GLC와 별도)
   "glc-300-4matic-amg-line-electric-launch-edition-my27": { model: "GLC 300 4MATIC AMG Line electric (Launch Edition)", modelYear: "MY27", oldPrice: null, newPrice: 90000000, discount: null, financeDiscount: null, rentDiscount: null },
