@@ -143,7 +143,7 @@ body {
 .main {
   background: #ffffff;
   padding: 20px;
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -247,7 +247,7 @@ body {
 /* ── SECTION ── */
 .section {
   padding: 40px 20px;
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
   display: none;
 }
@@ -483,11 +483,16 @@ body {
 }
 
 .finance-card {
+  width: 100%;
+  max-width: 1160px;
+  margin-left: auto;
+  margin-right: auto;
   background: #1a1a2e;
   border: 1px solid #2e2e50;
   border-radius: 16px;
   padding: 28px 32px;
   margin-bottom: 20px;
+  box-sizing: border-box;
 }
 .finance-card-label {
   font-size: 11px;
@@ -1142,31 +1147,17 @@ body {
   margin-bottom: 22px;
   word-break: keep-all;
 }
-.june-spotlight-badges {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-.june-model-badge {
-  background: linear-gradient(135deg, rgba(40,35,20,0.9), rgba(55,45,20,0.8));
-  border: 1px solid rgba(184,151,90,0.6);
-  border-radius: 20px;
-  padding: 7px 16px;
-  font-size: 13px;
-  font-weight: 600;
-  color: #f0c040;
-  white-space: nowrap;
-  letter-spacing: 0.02em;
-}
 
 /* ── 9월 구매 기준 안내 카드 (필독) ── */
 .policy-update-card {
-  max-width: 860px;
+  width: 100%;
+  max-width: 1160px;
   margin: 0 auto 20px;
   background: linear-gradient(135deg, #10203a, #0d1a30);
   border: 1px solid rgba(255,255,255,0.08);
   border-radius: 16px;
   padding: 34px 38px;
+  box-sizing: border-box;
 }
 .policy-update-badge {
   display: inline-block;
@@ -1408,55 +1399,12 @@ body {
 }
 
 /* BEST TIMING 카드 */
-.best-timing-card {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  background: linear-gradient(135deg, rgba(224,90,90,0.08), rgba(224,90,90,0.03));
-  border: 1px solid rgba(224,90,90,0.3);
-  border-radius: 12px;
-  padding: 18px 20px;
-  margin-bottom: 20px;
-}
-.best-timing-eyebrow {
-  font-size: 10px;
-  font-weight: 700;
-  color: #e0935a;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin-bottom: 6px;
-}
-.best-timing-title {
-  font-size: 15px;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 6px;
-  word-break: keep-all;
-  line-height: 1.4;
-}
-.best-timing-desc {
-  font-size: 12px;
-  font-weight: 300;
-  color: rgba(255,255,255,0.65);
-  line-height: 1.6;
-  word-break: keep-all;
-}
-.best-timing-arrow {
-  font-size: 22px;
-  color: #e0935a;
-  flex-shrink: 0;
-}
 @media (max-width: 768px) {
   .spotlight-deal-pct { font-size: 15px; }
   .spotlight-deal-price { font-size: 12.5px; }
   .spotlight-compare-value { font-size: 12px; }
   .spotlight-compare-diff { font-size: 11px; }
   .spotlight-compare-warn { font-size: 10.5px; }
-  .best-timing-card { padding: 14px 16px; gap: 10px; }
-  .best-timing-title { font-size: 13px; }
-  .best-timing-desc { font-size: 11px; }
-  .best-timing-arrow { font-size: 18px; }
 }
 .spotlight-item-change {
   font-size: 13px;
@@ -1509,20 +1457,6 @@ body {
   word-break: keep-all;
 }
 .spotlight-end-desc strong { color: #ffffff; font-weight: 600; }
-
-.spotlight-note {
-  font-size: 12px;
-  font-weight: 300;
-  color: rgba(255,255,255,0.6);
-  line-height: 1.8;
-  word-break: keep-all;
-  margin-bottom: 20px;
-  padding: 14px 16px;
-  background: rgba(255,255,255,0.03);
-  border-radius: 10px;
-  border: 1px solid rgba(255,255,255,0.06);
-}
-.spotlight-note strong { color: #f0c040; font-weight: 600; }
 
 /* 공통 추가할인 안내 - EW(무상 보증 연장) 행 */
 .discount-tag.ew-tag { color: #5ba3cc; border-color: rgba(91,163,204,0.5); }
@@ -1994,7 +1928,6 @@ body {
     .june-spotlight-card { padding: 36px 40px 30px; }
     .june-spotlight-title { font-size: 26px; }
     .june-spotlight-desc { font-size: 15px; }
-    .june-model-badge { font-size: 14px; padding: 8px 18px; }
     .rate-table-card { padding: 36px 40px 30px; }
     .rate-table-title { font-size: 26px; }
     .rate-table-sub { font-size: 14px; }
@@ -2016,7 +1949,12 @@ body {
     .june-spotlight-card,
     .rate-table-card,
     .eq-finance-card,
-    .fleet-card {
+    .fleet-card,
+    .policy-update-card,
+    .finance-hero-block,
+    .e200-rate-card,
+    .finance-card,
+    .gclass-contract-warning {
       width: calc(100% - 32px);
       margin-left: auto;
       margin-right: auto;
@@ -2041,7 +1979,12 @@ body {
     .june-spotlight-card,
     .rate-table-card,
     .eq-finance-card,
-    .fleet-card {
+    .fleet-card,
+    .policy-update-card,
+    .finance-hero-block,
+    .e200-rate-card,
+    .finance-card,
+    .gclass-contract-warning {
       width: calc(100% - 40px);
       max-width: 1160px;
       margin-left: auto;
@@ -2109,7 +2052,6 @@ body {
     .spotlight-end-card { padding: 14px 14px; }
     .spotlight-end-title { font-size: 14px; }
     .spotlight-end-desc { font-size: 12.5px; }
-    .spotlight-note { font-size: 11.5px; padding: 12px 14px; }
     .final-main { font-size: 12px !important; white-space: nowrap; }
     .promo-main { font-size: 11px; }
     .main { padding: 10px 14px; }
@@ -2122,7 +2064,6 @@ body {
     .june-spotlight-card { padding: 20px 16px 18px; }
     .june-spotlight-title { font-size: 16px; }
     .june-spotlight-desc { font-size: 12px; }
-    .june-model-badge { font-size: 11px; padding: 5px 12px; }
     .june-spotlight-badge { font-size: 10px; padding: 4px 10px; }
     .rate-table-card { padding: 20px 16px 18px; }
     .rate-table-badge { font-size: 10px; padding: 5px 12px; }
@@ -2485,32 +2426,6 @@ body {
         <div class="spotlight-item-sub">대상: MY26 AMG A 45 S · S 63 · GLC 43 · GLC 43 Coupé · GLE 53 · GLE 53 Coupé<br>윔블던 백(약 54만원 상당) 증정 · 9월 1일 ~ 30일</div>
       </div>
     </div>
-  </div>
-
-  <div class="best-timing-card">
-    <div>
-      <div class="best-timing-eyebrow">Best Timing</div>
-      <div class="best-timing-title">지금은 MY26 남은 재고를 빠르게 잡는 것이 가장 중요한 타이밍입니다</div>
-      <div class="best-timing-desc">9월 강화 조건은 MY26 재고 한정 · 원하는 색상 · 사양이 소진되면 MY27 가격과 조건으로 넘어갑니다. 실시간 즉시출고 재고를 먼저 확인해 보세요.</div>
-    </div>
-    <div class="best-timing-arrow">→</div>
-  </div>
-
-  <div class="spotlight-note">
-    📌 <strong>7월 1일 이후 통관 차량 기준</strong>으로 위 가격이 안내되며, 7월 1일 이전 통관을 완료한 특수 재고 차량은 개소세 인상 이전 가격이 적용되어 실구매가가 달라질 수 있습니다. 일부 차종은 벤츠파이낸셜 이용 시에만 추가 할인이 적용되며, 해당 모델은 아래 가격표 안에 별도로 할인율이 표시되어 있습니다. 정확한 적용 여부는 실제 차량 재고와 조건에 따라 달라질 수 있으니 상담 시 확인해 주세요.
-  </div>
-
-  <div class="june-spotlight-badges">
-    <span class="june-model-badge">GLA 250 · GLB 250 · AMG GLB35 · AMG A45 S +4%</span>
-    <span class="june-model-badge">EQA250 · EQA AMG · EQB300 · EQB AMG +4%</span>
-    <span class="june-model-badge">C 200 AV / AMG Line / Final Edition +4%</span>
-    <span class="june-model-badge">E 200 EXCLUSIVE +7%</span>
-    <span class="june-model-badge">E 200 AMG Line +4%</span>
-    <span class="june-model-badge">E 300 EX / AMG / 140주년 +4%</span>
-    <span class="june-model-badge">S 450 SWB +4%</span>
-    <span class="june-model-badge">GLC 300 AV / Coupé AV +4%</span>
-    <span class="june-model-badge">GLC 300 AMG Line / Coupé AMG Line +4% <span style="font-size:9px;font-weight:800;color:#f0c040;opacity:0.8;margin-left:2px;">NEW</span></span>
-    <span class="june-model-badge">GLE 450 / AMG / Coupé / Coupé AMG +4%</span>
   </div>
 </div>
 
