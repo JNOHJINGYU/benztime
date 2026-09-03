@@ -3992,23 +3992,23 @@ body {
    ===================================================== */
 const VEHICLE_DATA = {
   // A-Class
-  "a-220-hatch": { model: "A 220 Hatch", oldPrice: 48100000, newPrice: 48700000, discount: 10, financeDiscount: null, rentDiscount: null },
+  "a-220-hatch": { model: "A 220 Hatch", oldPrice: 48100000, newPrice: 48700000, discount: 10, financeDiscount: null, rentDiscount: 3 },
   "mercedes-amg-a-45-s-4matic": { model: "Mercedes-AMG A 45 S 4MATIC+", oldPrice: 80400000, newPrice: 81400000, discount: 7, financeDiscount: 4, rentDiscount: 4 },
   // MY27 신규 모델 (출시 전, 기존재고 없음 — 판매조건 없음)
-  "mercedes-amg-a-45-s-4matic-my27": { model: "Mercedes-AMG A 45 S 4MATIC+", modelYear: "MY27", oldPrice: null, newPrice: 82300000, discount: null, financeDiscount: null, rentDiscount: null },
-  "a-220-sedan": { model: "A 220 Sedan", oldPrice: 49900000, newPrice: 50500000, discount: 5, financeDiscount: null, rentDiscount: null },
-  "mercedes-amg-a-35-4matic": { model: "Mercedes-AMG A 35 4MATIC", oldPrice: 67700000, newPrice: 68600000, discount: null, financeDiscount: null, rentDiscount: null },
+  "mercedes-amg-a-45-s-4matic-my27": { model: "Mercedes-AMG A 45 S 4MATIC+", modelYear: "MY27", oldPrice: null, newPrice: 82300000, discount: null, financeDiscount: null, rentDiscount: 3 },
+  "a-220-sedan": { model: "A 220 Sedan", oldPrice: 49900000, newPrice: 50500000, discount: 5, financeDiscount: null, rentDiscount: 3 },
+  "mercedes-amg-a-35-4matic": { model: "Mercedes-AMG A 35 4MATIC", oldPrice: 67700000, newPrice: 68600000, discount: null, financeDiscount: null, rentDiscount: 3 },
 
   // CLA
-  "cla-250-4matic-amg-line": { model: "CLA 250 4MATIC AMG Line", oldPrice: 63700000, newPrice: 64500000, discount: 7, financeDiscount: null, rentDiscount: null },
-  "mercedes-amg-cla-45-s-4matic": { model: "Mercedes-AMG CLA 45 S 4MATIC+", oldPrice: 90600000, newPrice: 91800000, discount: 5, financeDiscount: null, rentDiscount: null },
-  "mercedes-amg-cla-45-s-4matic-final-edition": { model: "Mercedes-AMG CLA 45 S 4MATIC+ Final Edition", oldPrice: 95800000, newPrice: 97000000, discount: null, financeDiscount: null, rentDiscount: null },
+  "cla-250-4matic-amg-line": { model: "CLA 250 4MATIC AMG Line", oldPrice: 63700000, newPrice: 64500000, discount: 7, financeDiscount: null, rentDiscount: 3 },
+  "mercedes-amg-cla-45-s-4matic": { model: "Mercedes-AMG CLA 45 S 4MATIC+", oldPrice: 90600000, newPrice: 91800000, discount: 5, financeDiscount: null, rentDiscount: 3 },
+  "mercedes-amg-cla-45-s-4matic-final-edition": { model: "Mercedes-AMG CLA 45 S 4MATIC+ Final Edition", oldPrice: 95800000, newPrice: 97000000, discount: null, financeDiscount: null, rentDiscount: 3 },
 
   // GLA · GLB
   "gla-250-4matic-amg-line": { model: "GLA 250 4MATIC AMG Line", oldPrice: 69100000, newPrice: 70000000, discount: 9, financeDiscount: 4, rentDiscount: 4 },
   // MY27 신규 모델 (출시 전, 기존재고 없음 — MY26과 동일 판매조건, 가격만 신규)
   "gla-250-4matic-amg-line-my27": { model: "GLA 250 4MATIC AMG Line", modelYear: "MY27", oldPrice: null, newPrice: 70800000, discount: 9, financeDiscount: 4, rentDiscount: 4 },
-  "glb-200-d": { model: "GLB 200 d", oldPrice: 63300000, newPrice: 64300000, discount: null, financeDiscount: null, rentDiscount: null },
+  "glb-200-d": { model: "GLB 200 d", oldPrice: 63300000, newPrice: 64300000, discount: null, financeDiscount: null, rentDiscount: 3 },
   "glb-250-4matic": { model: "GLB 250 4MATIC", oldPrice: 71100000, newPrice: 72000000, discount: 9, financeDiscount: 4, rentDiscount: 4 },
   "mercedes-amg-glb-35-4matic": { model: "Mercedes-AMG GLB 35 4MATIC", oldPrice: 78500000, newPrice: 79500000, discount: 9, financeDiscount: 4, rentDiscount: 4 },
 
@@ -4018,71 +4018,71 @@ const VEHICLE_DATA = {
   "c-200-final-edition": { model: "C 200 Final Edition", oldPrice: 66300000, newPrice: 66300000, discount: 10, financeDiscount: 4, rentDiscount: 4 },
 
   // E-Class
-  "e-200-avantgarde": { model: "E 200 AVANTGARDE", oldPrice: 76500000, newPrice: 77500000, discount: 16, financeDiscount: null, rentDiscount: null },
+  "e-200-avantgarde": { model: "E 200 AVANTGARDE", oldPrice: 76500000, newPrice: 77500000, discount: 16, financeDiscount: null, rentDiscount: 3 },
   "e-200-exclusive": { model: "E 200 EXCLUSIVE", oldPrice: 76600000, newPrice: 77500000, discount: 8, financeDiscount: 7, rentDiscount: 7 },
   "e-200-amg-line": { model: "E 200 AMG Line", oldPrice: 80000000, newPrice: 81000000, discount: 12, financeDiscount: 4, rentDiscount: 4 },
-  "e-220-d-4matic-exclusive": { model: "E 220 d 4MATIC EXCLUSIVE", oldPrice: 86100000, newPrice: 87200000, discount: 9, financeDiscount: null, rentDiscount: null },
+  "e-220-d-4matic-exclusive": { model: "E 220 d 4MATIC EXCLUSIVE", oldPrice: 86100000, newPrice: 87200000, discount: 9, financeDiscount: null, rentDiscount: 3 },
   "e-300-4matic-exclusive": { model: "E 300 4MATIC EXCLUSIVE", oldPrice: 93600000, newPrice: 94800000, discount: 10, financeDiscount: 4, rentDiscount: 4 },
   "e-300-4matic-amg-line": { model: "E 300 4MATIC AMG Line", oldPrice: 97700000, newPrice: 99000000, discount: 10, financeDiscount: 4, rentDiscount: 4 },
-  "e-350-e-4matic-exclusive": { model: "E 350 e 4MATIC EXCLUSIVE", oldPrice: 98700000, newPrice: 100000000, discount: 11, financeDiscount: null, rentDiscount: null },
-  "e-450-4matic-amg-line": { model: "E 450 4MATIC AMG Line", oldPrice: 114600000, newPrice: 116000000, discount: 11, financeDiscount: null, rentDiscount: null },
-  "e-450-4matic-exclusive": { model: "E 450 4MATIC EXCLUSIVE", oldPrice: 128200000, newPrice: 129600000, discount: 11, financeDiscount: null, rentDiscount: null },
-  "mercedes-amg-e-53-hybrid-4matic": { model: "Mercedes-AMG E 53 HYBRID 4MATIC+", oldPrice: 141600000, newPrice: 143000000, discount: 10, financeDiscount: null, rentDiscount: null },
+  "e-350-e-4matic-exclusive": { model: "E 350 e 4MATIC EXCLUSIVE", oldPrice: 98700000, newPrice: 100000000, discount: 11, financeDiscount: null, rentDiscount: 3 },
+  "e-450-4matic-amg-line": { model: "E 450 4MATIC AMG Line", oldPrice: 114600000, newPrice: 116000000, discount: 11, financeDiscount: null, rentDiscount: 3 },
+  "e-450-4matic-exclusive": { model: "E 450 4MATIC EXCLUSIVE", oldPrice: 128200000, newPrice: 129600000, discount: 11, financeDiscount: null, rentDiscount: 3 },
+  "mercedes-amg-e-53-hybrid-4matic": { model: "Mercedes-AMG E 53 HYBRID 4MATIC+", oldPrice: 141600000, newPrice: 143000000, discount: 10, financeDiscount: null, rentDiscount: 3 },
 
   // S-Class
-  "s-350-d-4matic": { model: "S 350 d 4MATIC", oldPrice: 153600000, newPrice: 155000000, discount: 10, financeDiscount: null, rentDiscount: null },
-  "s-450-4matic-long": { model: "S 450 4MATIC (Long)", oldPrice: 193600000, newPrice: 193000000, discount: 10, financeDiscount: null, rentDiscount: null },
-  "s-500-4matic": { model: "S 500 4MATIC", oldPrice: 213600000, newPrice: 215000000, discount: 10, financeDiscount: null, rentDiscount: null },
-  "s-580-4matic": { model: "S 580 4MATIC", oldPrice: 258600000, newPrice: 260000000, discount: 10, financeDiscount: null, rentDiscount: null },
-  "mercedes-amg-s-63-e-performance": { model: "Mercedes-AMG S 63 E Performance", oldPrice: 297600000, newPrice: 299000000, discount: 10, financeDiscount: null, rentDiscount: null },
+  "s-350-d-4matic": { model: "S 350 d 4MATIC", oldPrice: 153600000, newPrice: 155000000, discount: 10, financeDiscount: null, rentDiscount: 3 },
+  "s-450-4matic-long": { model: "S 450 4MATIC (Long)", oldPrice: 193600000, newPrice: 193000000, discount: 10, financeDiscount: null, rentDiscount: 3 },
+  "s-500-4matic": { model: "S 500 4MATIC", oldPrice: 213600000, newPrice: 215000000, discount: 10, financeDiscount: null, rentDiscount: 3 },
+  "s-580-4matic": { model: "S 580 4MATIC", oldPrice: 258600000, newPrice: 260000000, discount: 10, financeDiscount: null, rentDiscount: 3 },
+  "mercedes-amg-s-63-e-performance": { model: "Mercedes-AMG S 63 E Performance", oldPrice: 297600000, newPrice: 299000000, discount: 10, financeDiscount: null, rentDiscount: 3 },
 
   // CLE
-  "cle-200-coup-amg-line": { model: "CLE 200 Coupé AMG Line", oldPrice: 75700000, newPrice: 76700000, discount: 5, financeDiscount: null, rentDiscount: null },
-  "cle-200-coup-amg-line-140-edition": { model: "CLE 200 Coupé AMG Line 140주년 Edition", oldPrice: 80200000, newPrice: 81200000, discount: 5, financeDiscount: null, rentDiscount: null },
-  "cle-450-4matic-coup-amg-line": { model: "CLE 450 4MATIC Coupé AMG Line", oldPrice: 98400000, newPrice: 99700000, discount: 9, financeDiscount: null, rentDiscount: null },
-  "mercedes-amg-cle-53-4matic-coup": { model: "Mercedes-AMG CLE 53 4MATIC+ Coupé", oldPrice: 107700000, newPrice: 109100000, discount: 3, financeDiscount: null, rentDiscount: null },
-  "cle-200-cabriolet-amg-line": { model: "CLE 200 Cabriolet AMG Line", oldPrice: 82100000, newPrice: 83100000, discount: 4, financeDiscount: null, rentDiscount: null },
-  "cle-200-cabriolet-amg-line-140-edition": { model: "CLE 200 Cabriolet AMG Line 140주년 Edition", oldPrice: 86400000, newPrice: 87400000, discount: 4, financeDiscount: null, rentDiscount: null },
-  "cle-450-4matic-cabriolet-amg-line": { model: "CLE 450 4MATIC Cabriolet AMG Line", oldPrice: 102600000, newPrice: 104000000, discount: 6, financeDiscount: null, rentDiscount: null },
-  "mercedes-amg-cle-53-4matic-cabriolet": { model: "Mercedes-AMG CLE 53 4MATIC+ Cabriolet", oldPrice: 113600000, newPrice: 115000000, discount: 3, financeDiscount: null, rentDiscount: null },
+  "cle-200-coup-amg-line": { model: "CLE 200 Coupé AMG Line", oldPrice: 75700000, newPrice: 76700000, discount: 5, financeDiscount: null, rentDiscount: 3 },
+  "cle-200-coup-amg-line-140-edition": { model: "CLE 200 Coupé AMG Line 140주년 Edition", oldPrice: 80200000, newPrice: 81200000, discount: 5, financeDiscount: null, rentDiscount: 3 },
+  "cle-450-4matic-coup-amg-line": { model: "CLE 450 4MATIC Coupé AMG Line", oldPrice: 98400000, newPrice: 99700000, discount: 9, financeDiscount: null, rentDiscount: 3 },
+  "mercedes-amg-cle-53-4matic-coup": { model: "Mercedes-AMG CLE 53 4MATIC+ Coupé", oldPrice: 107700000, newPrice: 109100000, discount: 3, financeDiscount: null, rentDiscount: 3 },
+  "cle-200-cabriolet-amg-line": { model: "CLE 200 Cabriolet AMG Line", oldPrice: 82100000, newPrice: 83100000, discount: 4, financeDiscount: null, rentDiscount: 3 },
+  "cle-200-cabriolet-amg-line-140-edition": { model: "CLE 200 Cabriolet AMG Line 140주년 Edition", oldPrice: 86400000, newPrice: 87400000, discount: 4, financeDiscount: null, rentDiscount: 3 },
+  "cle-450-4matic-cabriolet-amg-line": { model: "CLE 450 4MATIC Cabriolet AMG Line", oldPrice: 102600000, newPrice: 104000000, discount: 6, financeDiscount: null, rentDiscount: 3 },
+  "mercedes-amg-cle-53-4matic-cabriolet": { model: "Mercedes-AMG CLE 53 4MATIC+ Cabriolet", oldPrice: 113600000, newPrice: 115000000, discount: 3, financeDiscount: null, rentDiscount: 3 },
   // CLE MY27 (판매조건 미확정 — 권장소비자가격만 등록)
-  "cle-200-coupe-my27": { model: "CLE 200 Coupé", modelYear: "MY27", oldPrice: null, newPrice: 77600000, discount: 2, financeDiscount: null, rentDiscount: null },
-  "cle-450-4matic-coupe-my27": { model: "CLE 450 4MATIC Coupé", modelYear: "MY27", oldPrice: null, newPrice: 100800000, discount: 2, financeDiscount: null, rentDiscount: null },
-  "mercedes-amg-cle-53-4matic-coupe-my27": { model: "Mercedes-AMG CLE 53 4MATIC+ Coupé", modelYear: "MY27", oldPrice: null, newPrice: 110600000, discount: null, financeDiscount: null, rentDiscount: null },
-  "cle-200-cabriolet-my27": { model: "CLE 200 Cabriolet", modelYear: "MY27", oldPrice: null, newPrice: 84100000, discount: 2, financeDiscount: null, rentDiscount: null },
-  "cle-450-4matic-cabriolet-my27": { model: "CLE 450 4MATIC Cabriolet", modelYear: "MY27", oldPrice: null, newPrice: 105200000, discount: 2, financeDiscount: null, rentDiscount: null },
-  "mercedes-amg-cle-53-4matic-cabriolet-my27": { model: "Mercedes-AMG CLE 53 4MATIC+ Cabriolet", modelYear: "MY27", oldPrice: null, newPrice: 116600000, discount: 2, financeDiscount: null, rentDiscount: null },
+  "cle-200-coupe-my27": { model: "CLE 200 Coupé", modelYear: "MY27", oldPrice: null, newPrice: 77600000, discount: 2, financeDiscount: null, rentDiscount: 3 },
+  "cle-450-4matic-coupe-my27": { model: "CLE 450 4MATIC Coupé", modelYear: "MY27", oldPrice: null, newPrice: 100800000, discount: 2, financeDiscount: null, rentDiscount: 3 },
+  "mercedes-amg-cle-53-4matic-coupe-my27": { model: "Mercedes-AMG CLE 53 4MATIC+ Coupé", modelYear: "MY27", oldPrice: null, newPrice: 110600000, discount: null, financeDiscount: null, rentDiscount: 3 },
+  "cle-200-cabriolet-my27": { model: "CLE 200 Cabriolet", modelYear: "MY27", oldPrice: null, newPrice: 84100000, discount: 2, financeDiscount: null, rentDiscount: 3 },
+  "cle-450-4matic-cabriolet-my27": { model: "CLE 450 4MATIC Cabriolet", modelYear: "MY27", oldPrice: null, newPrice: 105200000, discount: 2, financeDiscount: null, rentDiscount: 3 },
+  "mercedes-amg-cle-53-4matic-cabriolet-my27": { model: "Mercedes-AMG CLE 53 4MATIC+ Cabriolet", modelYear: "MY27", oldPrice: null, newPrice: 116600000, discount: 2, financeDiscount: null, rentDiscount: 3 },
 
   // GLC
-  "glc-220-d-4matic": { model: "GLC 220 d 4MATIC", oldPrice: 81200000, newPrice: 82200000, discount: 7, financeDiscount: null, rentDiscount: null },
+  "glc-220-d-4matic": { model: "GLC 220 d 4MATIC", oldPrice: 81200000, newPrice: 82200000, discount: 7, financeDiscount: null, rentDiscount: 3 },
   "glc-300-4matic-avantgarde": { model: "GLC 300 4MATIC AVANTGARDE", oldPrice: 81400000, newPrice: 82500000, discount: 7, financeDiscount: 4, rentDiscount: 4 },
   "glc-300-4matic-amg-line": { model: "GLC 300 4MATIC AMG Line", oldPrice: 91400000, newPrice: 92500000, discount: 12, financeDiscount: 4, rentDiscount: 4 },
-  "glc-300-4matic-amg-line-140-edition": { model: "GLC 300 4MATIC AMG Line 140주년 Edition", oldPrice: 96800000, newPrice: 97900000, discount: 12, financeDiscount: 4, rentDiscount: null },
-  "mercedes-amg-glc-43-4matic": { model: "Mercedes-AMG GLC 43 4MATIC", oldPrice: 102300000, newPrice: 103600000, discount: 7, financeDiscount: null, rentDiscount: null },
+  "glc-300-4matic-amg-line-140-edition": { model: "GLC 300 4MATIC AMG Line 140주년 Edition", oldPrice: 96800000, newPrice: 97900000, discount: 12, financeDiscount: 4, rentDiscount: 3 },
+  "mercedes-amg-glc-43-4matic": { model: "Mercedes-AMG GLC 43 4MATIC", oldPrice: 102300000, newPrice: 103600000, discount: 7, financeDiscount: null, rentDiscount: 3 },
   "glc-300-4matic-coup-avantgarde": { model: "GLC 300 4MATIC Coupé AVANTGARDE", oldPrice: 85500000, newPrice: 86600000, discount: 7, financeDiscount: 4, rentDiscount: 4 },
   "glc-300-4matic-coup-amg-line": { model: "GLC 300 4MATIC Coupé AMG Line", oldPrice: 95700000, newPrice: 96900000, discount: 9, financeDiscount: 4, rentDiscount: 4 },
-  "mercedes-amg-glc-43-4matic-coup": { model: "Mercedes-AMG GLC 43 4MATIC Coupé", oldPrice: 106900000, newPrice: 108300000, discount: 3, financeDiscount: null, rentDiscount: null },
+  "mercedes-amg-glc-43-4matic-coup": { model: "Mercedes-AMG GLC 43 4MATIC Coupé", oldPrice: 106900000, newPrice: 108300000, discount: 3, financeDiscount: null, rentDiscount: 3 },
   // GLC electric MY27 (판매조건 미확정 — 권장소비자가격만 등록, 기존 내연기관 GLC와 별도)
-  "glc-300-4matic-amg-line-electric-launch-edition-my27": { model: "GLC 300 4MATIC AMG Line electric (Launch Edition)", modelYear: "MY27", oldPrice: null, newPrice: 90000000, discount: null, financeDiscount: null, rentDiscount: null },
-  "glc-300-4matic-amg-line-plus-electric-launch-edition-my27": { model: "GLC 300 4MATIC AMG Line+ electric (Launch Edition)", modelYear: "MY27", oldPrice: null, newPrice: 94800000, discount: null, financeDiscount: null, rentDiscount: null },
+  "glc-300-4matic-amg-line-electric-launch-edition-my27": { model: "GLC 300 4MATIC AMG Line electric (Launch Edition)", modelYear: "MY27", oldPrice: null, newPrice: 90000000, discount: null, financeDiscount: null, rentDiscount: 3 },
+  "glc-300-4matic-amg-line-plus-electric-launch-edition-my27": { model: "GLC 300 4MATIC AMG Line+ electric (Launch Edition)", modelYear: "MY27", oldPrice: null, newPrice: 94800000, discount: null, financeDiscount: null, rentDiscount: 3 },
 
   // GLE
-  "gle-350-4matic": { model: "GLE 350 4MATIC", oldPrice: 116600000, newPrice: 118000000, discount: 10, financeDiscount: null, rentDiscount: null },
-  "gle-300-d-4matic": { model: "GLE 300 d 4MATIC", oldPrice: 117800000, newPrice: 119200000, discount: 8, financeDiscount: null, rentDiscount: null },
+  "gle-350-4matic": { model: "GLE 350 4MATIC", oldPrice: 116600000, newPrice: 118000000, discount: 10, financeDiscount: null, rentDiscount: 3 },
+  "gle-300-d-4matic": { model: "GLE 300 d 4MATIC", oldPrice: 117800000, newPrice: 119200000, discount: 8, financeDiscount: null, rentDiscount: 3 },
   "gle-450-4matic": { model: "GLE 450 4MATIC", oldPrice: 127600000, newPrice: 129000000, discount: 12, financeDiscount: 4, rentDiscount: 4 },
   "gle-450-4matic-amg-line": { model: "GLE 450 4MATIC AMG Line", oldPrice: 137600000, newPrice: 139000000, discount: 12, financeDiscount: 4, rentDiscount: 4 },
-  "mercedes-amg-gle-53-4matic": { model: "Mercedes-AMG GLE 53 4MATIC+", oldPrice: 164600000, newPrice: 166000000, discount: 8, financeDiscount: null, rentDiscount: null },
+  "mercedes-amg-gle-53-4matic": { model: "Mercedes-AMG GLE 53 4MATIC+", oldPrice: 164600000, newPrice: 166000000, discount: 8, financeDiscount: null, rentDiscount: 3 },
   "gle-450-d-4matic-coup-amg-line": { model: "GLE 450 d 4MATIC Coupé AMG Line", oldPrice: 132600000, newPrice: 134000000, discount: 8, financeDiscount: null, rentDiscount: 4 },
   "gle-450-4matic-coup-amg-line": { model: "GLE 450 4MATIC Coupé AMG Line", oldPrice: 141100000, newPrice: 142500000, discount: 12, financeDiscount: 4, rentDiscount: 4 },
-  "mercedes-amg-gle-53-4matic-coup": { model: "Mercedes-AMG GLE 53 4MATIC+ Coupé", oldPrice: 168600000, newPrice: 170000000, discount: 5, financeDiscount: null, rentDiscount: null },
+  "mercedes-amg-gle-53-4matic-coup": { model: "Mercedes-AMG GLE 53 4MATIC+ Coupé", oldPrice: 168600000, newPrice: 170000000, discount: 5, financeDiscount: null, rentDiscount: 3 },
 
   // GLS
-  "gls-450-d-4matic-amg-line": { model: "GLS 450 d 4MATIC AMG Line", oldPrice: 152600000, newPrice: 154000000, discount: 2, financeDiscount: null, rentDiscount: null },
-  "gls-450-4matic-amg-line": { model: "GLS 450 4MATIC AMG Line", oldPrice: 152600000, newPrice: 154000000, discount: 5, financeDiscount: null, rentDiscount: null },
-  "gls-450-d-4matic-amg-line-premium": { model: "GLS 450 d 4MATIC AMG Line Premium", oldPrice: 157100000, newPrice: 158500000, discount: null, financeDiscount: null, rentDiscount: null },
-  "gls-450-4matic-amg-line-premium": { model: "GLS 450 4MATIC AMG Line Premium", oldPrice: 157100000, newPrice: 158500000, discount: null, financeDiscount: null, rentDiscount: null },
-  "gls-580-4matic-amg-line": { model: "GLS 580 4MATIC AMG Line", oldPrice: 192000000, newPrice: 193400000, discount: 6, financeDiscount: null, rentDiscount: null },
-  "mercedes-amg-gls-63-4matic": { model: "Mercedes-AMG GLS 63 4MATIC+", oldPrice: 208600000, newPrice: 210000000, discount: 1, financeDiscount: null, rentDiscount: null },
+  "gls-450-d-4matic-amg-line": { model: "GLS 450 d 4MATIC AMG Line", oldPrice: 152600000, newPrice: 154000000, discount: 2, financeDiscount: null, rentDiscount: 3 },
+  "gls-450-4matic-amg-line": { model: "GLS 450 4MATIC AMG Line", oldPrice: 152600000, newPrice: 154000000, discount: 5, financeDiscount: null, rentDiscount: 3 },
+  "gls-450-d-4matic-amg-line-premium": { model: "GLS 450 d 4MATIC AMG Line Premium", oldPrice: 157100000, newPrice: 158500000, discount: null, financeDiscount: null, rentDiscount: 3 },
+  "gls-450-4matic-amg-line-premium": { model: "GLS 450 4MATIC AMG Line Premium", oldPrice: 157100000, newPrice: 158500000, discount: null, financeDiscount: null, rentDiscount: 3 },
+  "gls-580-4matic-amg-line": { model: "GLS 580 4MATIC AMG Line", oldPrice: 192000000, newPrice: 193400000, discount: 6, financeDiscount: null, rentDiscount: 3 },
+  "mercedes-amg-gls-63-4matic": { model: "Mercedes-AMG GLS 63 4MATIC+", oldPrice: 208600000, newPrice: 210000000, discount: 1, financeDiscount: null, rentDiscount: 3 },
 
   // G-Class
   "g-450-d": { model: "G 450 d", oldPrice: 193500000, newPrice: 194900000, discount: null, financeDiscount: null, rentDiscount: null },
@@ -4096,12 +4096,12 @@ const VEHICLE_DATA = {
   "mercedes-amg-g-63-manufaktur-my27": { model: "Mercedes-AMG G 63 MANUFAKTUR", modelYear: "MY27", oldPrice: null, newPrice: 301000000, discount: null, financeDiscount: null, rentDiscount: null },
 
   // AMG
-  "mercedes-amg-sl-43": { model: "Mercedes-AMG SL 43", oldPrice: 158600000, newPrice: 160000000, discount: 9, financeDiscount: null, rentDiscount: null },
-  "mercedes-amg-sl-63-4matic": { model: "Mercedes-AMG SL 63 4MATIC+", oldPrice: 248600000, newPrice: 250000000, discount: null, financeDiscount: null, rentDiscount: null },
-  "mercedes-amg-gt-43-c192": { model: "Mercedes-AMG GT 43 2도어(C192)", oldPrice: 149500000, newPrice: 149500000, discount: 9, financeDiscount: null, rentDiscount: null },
-  "mercedes-amg-gt-55-4matic": { model: "Mercedes-AMG GT 55 4MATIC+", oldPrice: 208600000, newPrice: 210000000, discount: 3, financeDiscount: null, rentDiscount: null },
-  "mercedes-amg-gt-63-s-e-performance": { model: "Mercedes-AMG GT 63 S E Performance", oldPrice: 278600000, newPrice: 280000000, discount: 4, financeDiscount: null, rentDiscount: null },
-  "mercedes-amg-gt-43-4matic": { model: "Mercedes-AMG GT 43 4MATIC+", oldPrice: 162600000, newPrice: 164000000, discount: 9, financeDiscount: null, rentDiscount: null },
+  "mercedes-amg-sl-43": { model: "Mercedes-AMG SL 43", oldPrice: 158600000, newPrice: 160000000, discount: 9, financeDiscount: null, rentDiscount: 3 },
+  "mercedes-amg-sl-63-4matic": { model: "Mercedes-AMG SL 63 4MATIC+", oldPrice: 248600000, newPrice: 250000000, discount: null, financeDiscount: null, rentDiscount: 3 },
+  "mercedes-amg-gt-43-c192": { model: "Mercedes-AMG GT 43 2도어(C192)", oldPrice: 149500000, newPrice: 149500000, discount: 9, financeDiscount: null, rentDiscount: 3 },
+  "mercedes-amg-gt-55-4matic": { model: "Mercedes-AMG GT 55 4MATIC+", oldPrice: 208600000, newPrice: 210000000, discount: 3, financeDiscount: null, rentDiscount: 3 },
+  "mercedes-amg-gt-63-s-e-performance": { model: "Mercedes-AMG GT 63 S E Performance", oldPrice: 278600000, newPrice: 280000000, discount: 4, financeDiscount: null, rentDiscount: 3 },
+  "mercedes-amg-gt-43-4matic": { model: "Mercedes-AMG GT 43 4MATIC+", oldPrice: 162600000, newPrice: 164000000, discount: 9, financeDiscount: null, rentDiscount: 3 },
 
   // EQ
   "eqa-250-progressive": { model: "EQA 250 Progressive", oldPrice: 70000000, newPrice: 70000000, discount: 10, financeDiscount: 4, rentDiscount: 4 },
@@ -4111,21 +4111,21 @@ const VEHICLE_DATA = {
   "eqa-250-amg-line-my27": { model: "EQA 250 AMG Line", modelYear: "MY27", oldPrice: null, newPrice: 76700000, discount: 10, financeDiscount: 4, rentDiscount: 4 },
   "eqb-300-4matic-progressive": { model: "EQB 300 4MATIC Progressive", oldPrice: 78800000, newPrice: 78800000, discount: 10, financeDiscount: 4, rentDiscount: 4 },
   "eqb-300-4matic-amg-line": { model: "EQB 300 4MATIC AMG Line", oldPrice: 84300000, newPrice: 84300000, discount: 10, financeDiscount: 4, rentDiscount: 4 },
-  "eqe-350-suv": { model: "EQE 350+ SUV", oldPrice: 106000000, newPrice: 106000000, discount: 10, financeDiscount: null, rentDiscount: null },
-  "eqe-350": { model: "EQE 350+", oldPrice: 110000000, newPrice: 110000000, discount: 10, financeDiscount: null, rentDiscount: null },
-  "eqe-500-4matic-suv": { model: "EQE 500 4MATIC SUV", oldPrice: 140800000, newPrice: 141000000, discount: 10, financeDiscount: null, rentDiscount: null },
-  "eqs-450-4matic-suv": { model: "EQS 450 4MATIC SUV", oldPrice: 164600000, newPrice: 166000000, discount: 10, financeDiscount: null, rentDiscount: null },
-  "eqs-580-4matic-suv": { model: "EQS 580 4MATIC SUV", oldPrice: 190600000, newPrice: 192000000, discount: 10, financeDiscount: null, rentDiscount: null },
+  "eqe-350-suv": { model: "EQE 350+ SUV", oldPrice: 106000000, newPrice: 106000000, discount: 10, financeDiscount: null, rentDiscount: 3 },
+  "eqe-350": { model: "EQE 350+", oldPrice: 110000000, newPrice: 110000000, discount: 10, financeDiscount: null, rentDiscount: 3 },
+  "eqe-500-4matic-suv": { model: "EQE 500 4MATIC SUV", oldPrice: 140800000, newPrice: 141000000, discount: 10, financeDiscount: null, rentDiscount: 3 },
+  "eqs-450-4matic-suv": { model: "EQS 450 4MATIC SUV", oldPrice: 164600000, newPrice: 166000000, discount: 10, financeDiscount: null, rentDiscount: 3 },
+  "eqs-580-4matic-suv": { model: "EQS 580 4MATIC SUV", oldPrice: 190600000, newPrice: 192000000, discount: 10, financeDiscount: null, rentDiscount: 3 },
   "g-580-with-eq-technology": { model: "G 580 with EQ Technology", oldPrice: 214700000, newPrice: 216100000, discount: null, financeDiscount: null, rentDiscount: null },
 
   // Maybach
-  "mercedes-maybach-s-580": { model: "Mercedes-Maybach S 580", oldPrice: 315600000, newPrice: 317000000, discount: 9, financeDiscount: null, rentDiscount: null },
-  "mercedes-maybach-s-680": { model: "Mercedes-Maybach S 680", oldPrice: 401600000, newPrice: 403000000, discount: 9, financeDiscount: null, rentDiscount: null },
+  "mercedes-maybach-s-580": { model: "Mercedes-Maybach S 580", oldPrice: 315600000, newPrice: 317000000, discount: 9, financeDiscount: null, rentDiscount: 3 },
+  "mercedes-maybach-s-680": { model: "Mercedes-Maybach S 680", oldPrice: 401600000, newPrice: 403000000, discount: 9, financeDiscount: null, rentDiscount: 3 },
   "mercedes-maybach-s-680-v12-edition": { model: "Mercedes-Maybach S 680 \"V12 Edition\"", oldPrice: 478000000, newPrice: 479400000, discount: null, financeDiscount: null, rentDiscount: 3 },
-  "mercedes-maybach-sl-680": { model: "Mercedes-Maybach SL 680", oldPrice: 342600000, newPrice: 344000000, discount: 2, financeDiscount: null, rentDiscount: null },
-  "mercedes-maybach-gls-600": { model: "Mercedes-Maybach GLS 600", oldPrice: 293600000, newPrice: 295000000, discount: 5, financeDiscount: null, rentDiscount: null },
-  "mercedes-maybach-gls-600-manufaktur": { model: "Mercedes-Maybach GLS 600 MANUFAKTUR", oldPrice: 335600000, newPrice: 337000000, discount: 5, financeDiscount: null, rentDiscount: null },
-  "mercedes-maybach-eqs-680-suv": { model: "Mercedes-Maybach EQS 680 SUV", oldPrice: 233600000, newPrice: 235000000, discount: null, financeDiscount: null, rentDiscount: null },
+  "mercedes-maybach-sl-680": { model: "Mercedes-Maybach SL 680", oldPrice: 342600000, newPrice: 344000000, discount: 2, financeDiscount: null, rentDiscount: 3 },
+  "mercedes-maybach-gls-600": { model: "Mercedes-Maybach GLS 600", oldPrice: 293600000, newPrice: 295000000, discount: 5, financeDiscount: null, rentDiscount: 3 },
+  "mercedes-maybach-gls-600-manufaktur": { model: "Mercedes-Maybach GLS 600 MANUFAKTUR", oldPrice: 335600000, newPrice: 337000000, discount: 5, financeDiscount: null, rentDiscount: 3 },
+  "mercedes-maybach-eqs-680-suv": { model: "Mercedes-Maybach EQS 680 SUV", oldPrice: 233600000, newPrice: 235000000, discount: null, financeDiscount: null, rentDiscount: 3 },
 };
 
 /* =====================================================
