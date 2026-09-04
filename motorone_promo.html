@@ -1003,6 +1003,102 @@ body {
   }
 }
 
+/* ── 안심보장할부(MB-Sure) 6개월 월 납입금 지원: 가격표 모델 하단 안내 ── */
+.mbsure-benefit-row {
+  border-bottom: 1px solid #e8edf4 !important;
+  background: transparent !important;
+}
+.mbsure-benefit-row:hover { background: transparent !important; }
+.mbsure-benefit-row > td {
+  padding: 0 12px 16px !important;
+  text-align: left !important;
+  background: #fff !important;
+}
+.mbsure-benefit {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  padding: 11px 16px;
+  border: 1px solid #c8dcef;
+  border-radius: 10px;
+  background: #f5f9fd;
+  box-sizing: border-box;
+}
+.mbsure-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  min-width: 72px;
+  height: 28px;
+  padding: 0 11px;
+  border-radius: 999px;
+  background: #173a67;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+.mbsure-copy {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
+  flex-wrap: wrap;
+}
+.mbsure-title {
+  color: #173a67;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.mbsure-monthly {
+  color: #1f5f9f;
+  font-size: 14px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+.mbsure-total {
+  margin-left: auto;
+  color: #0f4f88;
+  font-size: 14px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+.mbsure-total strong { color: #d47a17; font-weight: 900; }
+
+@media (max-width: 900px) {
+  .mbsure-benefit { gap: 10px; padding: 10px 12px; }
+  .mbsure-copy { gap: 5px 8px; }
+  .mbsure-title { font-size: 12px; }
+  .mbsure-monthly, .mbsure-total { font-size: 13px; }
+}
+
+@media (max-width: 600px) {
+  .mbsure-benefit-row > td { padding: 0 6px 12px !important; }
+  .mbsure-benefit {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 7px 10px;
+    padding: 10px 11px;
+  }
+  .mbsure-badge { min-width: 62px; height: 24px; font-size: 10px; padding: 0 9px; }
+  .mbsure-copy {
+    display: block;
+    min-width: 0;
+  }
+  .mbsure-title { display: block; font-size: 11.5px; white-space: normal; line-height: 1.45; }
+  .mbsure-monthly { display: block; margin-top: 2px; font-size: 12.5px; }
+  .mbsure-total {
+    grid-column: 2;
+    margin-left: 0;
+    font-size: 12.5px;
+  }
+}
+
 /* ── FLEET 카드 ── */
 .fleet-card {
   max-width: 860px;
@@ -4130,6 +4226,37 @@ const SALES_CONDITIONS = {
 };
 
 /* =====================================================
+   ★★★★★ 안심보장할부 6개월 지원금 수정 영역 ★★★★★
+
+   monthly = 월 지원금(만원)
+   months  = 지원 개월 수
+
+   아래 숫자만 수정하면 해당 모델 가격표 하단 안내가 자동 변경됩니다.
+   총 지원금은 monthly × months 로 자동 계산합니다.
+   ===================================================== */
+const MBSURE_SUPPORT = {
+  // C-Class
+  "c-200-avantgarde": { monthly: 30, months: 6 },
+  "c-200-amg-line": { monthly: 30, months: 6 },
+
+  // E-Class
+  "e-200-exclusive": { monthly: 35, months: 6 },
+  "e-200-amg-line": { monthly: 37, months: 6 },
+  "e-300-4matic-exclusive": { monthly: 45, months: 6 },
+  "e-300-4matic-amg-line": { monthly: 45, months: 6 },
+
+  // GLC: SUV / Coupé
+  "glc-300-4matic-avantgarde": { monthly: 40, months: 6 },
+  "glc-300-4matic-coup-avantgarde": { monthly: 40, months: 6 },
+  "glc-300-4matic-amg-line": { monthly: 45, months: 6 },
+  "glc-300-4matic-coup-amg-line": { monthly: 45, months: 6 },
+
+  // GLE 450: SUV / Coupé
+  "gle-450-4matic-amg-line": { monthly: 60, months: 6 },
+  "gle-450-4matic-coup-amg-line": { monthly: 60, months: 6 }
+};
+
+/* =====================================================
    ★★★★★ 차량가격 수정 영역 ★★★★★
 
    oldPrice = 기존재고 가격
@@ -4495,6 +4622,69 @@ function applyVehicleData() {
         }
       }
     });
+  });
+}
+
+// ── 안심보장할부(MB-Sure) 지원 안내를 해당 모델 가격표 바로 아래에 자동 삽입 ──
+function applyMBSureSupportBenefits() {
+  // 재실행/탭 동기화 시 중복 생성을 방지한다.
+  document.querySelectorAll('.mbsure-benefit-row').forEach(function (row) { row.remove(); });
+
+  Object.keys(MBSURE_SUPPORT).forEach(function (id) {
+    var support = MBSURE_SUPPORT[id];
+    if (!support || typeof support.monthly !== 'number' || typeof support.months !== 'number') return;
+
+    var rows = Array.from(document.querySelectorAll('tr[data-model-id="' + id + '"]'));
+    if (!rows.length) return;
+
+    // 메인 통합 가격표와 개별 차종 탭처럼 같은 모델이 여러 표에 존재할 수 있으므로 tbody별로 1회만 삽입한다.
+    var tbodies = [];
+    rows.forEach(function (row) {
+      var tbody = row.parentElement;
+      if (tbody && !tbodies.includes(tbody)) tbodies.push(tbody);
+    });
+
+    tbodies.forEach(function (tbody) {
+      var modelRows = Array.from(tbody.querySelectorAll('tr[data-model-id="' + id + '"]'));
+      if (!modelRows.length) return;
+      var lastRow = modelRows[modelRows.length - 1];
+      if (lastRow.nextElementSibling && lastRow.nextElementSibling.classList.contains('mbsure-benefit-row')) return;
+
+      var table = tbody.closest('table');
+      var colCount = table ? table.querySelectorAll('thead th').length : 5;
+      if (!colCount) colCount = 5;
+
+      var total = support.monthly * support.months;
+      var benefitRow = document.createElement('tr');
+      benefitRow.className = 'mbsure-benefit-row';
+      benefitRow.setAttribute('data-mbsure-for', id);
+      benefitRow.innerHTML =
+        '<td colspan="' + colCount + '">' +
+          '<div class="mbsure-benefit">' +
+            '<span class="mbsure-badge">MB-Sure</span>' +
+            '<div class="mbsure-copy">' +
+              '<span class="mbsure-title">안심보장할부 이용 시 6개월 월 납입금 지원</span>' +
+              '<span class="mbsure-monthly">월 ' + support.monthly.toLocaleString('ko-KR') + '만원 × ' + support.months + '개월</span>' +
+            '</div>' +
+            '<span class="mbsure-total">총 <strong>' + total.toLocaleString('ko-KR') + '만원</strong> 지원</span>' +
+          '</div>' +
+        '</td>';
+
+      lastRow.insertAdjacentElement('afterend', benefitRow);
+    });
+  });
+}
+
+// 개발 검수용: 지원 대상 ID가 실제 차량 데이터/가격표에 모두 존재하는지 확인
+function validateMBSureSupport() {
+  Object.keys(MBSURE_SUPPORT).forEach(function (id) {
+    if (!(id in VEHICLE_DATA)) {
+      console.warn('[안심보장할부 모델ID 오류]', id, '— VEHICLE_DATA에 없습니다.');
+      return;
+    }
+    if (!document.querySelector('tr[data-model-id="' + id + '"]')) {
+      console.warn('[안심보장할부 가격표 누락]', VEHICLE_DATA[id].model || id, '(' + id + ')');
+    }
   });
 }
 
@@ -4936,6 +5126,7 @@ document.addEventListener('DOMContentLoaded', function() {
   syncDuplicatePriceTables();
   applyFinancialDiscounts();
   applyVehicleData();
+  applyMBSureSupportBenefits();
 
   // 반드시 applyVehicleData() 이후에 실행 — VEHICLE_DATA 기반 계산이 모두 반영된 뒤,
   // 기존재고 실구매가(기본/벤츠파이낸셜/운용리스)를 "7월 이후 통관 실구매가 − 차량가격 차액"
@@ -4947,6 +5138,7 @@ document.addEventListener('DOMContentLoaded', function() {
   applyMobilePriceFormat();
   validateExistingStockPrices();
   validateSalesConditions();
+  validateMBSureSupport();
 });
 window.addEventListener('resize', applyMobilePriceFormat);
 
