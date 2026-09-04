@@ -658,6 +658,18 @@ body {
 }
 .price-table .col-dash { color: #bbb; }
 
+/* ── 모델 그룹 구분 행 (예: ALL-NEW CLA Electric / Mild Hybrid) ── */
+.price-table .model-group-label td {
+  padding: 8px 12px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: #7ab3d4;
+  background: #f7fafc;
+  text-align: left;
+}
+.price-table tr.model-group-label:hover { background: #f7fafc; }
+
 /* ── 파이낸셜 할인 추가 행 ── */
 .price-table .col-promo-fin {
   color: #2980b9;
@@ -2882,6 +2894,32 @@ body {
     </table>
   </div>
   <div class="rent-note">※ 장기렌트 이용 시 전 모델 +3% 추가 할인이 적용됩니다. Fleet 할인은 별도 조건으로, 장기렌트 추가 현금할인과 중복 여부는 별도로 확인해야 합니다.</div>
+
+  <!-- CLA MY27 -->
+  <div class="car-section" data-benefit-target="cla-my27">
+    <div class="car-section-header">
+      <div class="car-badge">CLA</div>
+      <div class="car-section-info">
+        <div class="car-brand">Mercedes-Benz</div>
+        <div class="car-model-name">CLA <span style="font-size:14px; font-weight:400; color:#7ab3d4; margin-left:8px;">MY27</span></div>
+      </div>
+    </div>
+    <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><table class="price-table" style="min-width:340px;width:100%;">
+      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>장기렌트</th><th>실구매가</th></tr></thead>
+      <tbody>
+        <tr class="model-group-label"><td colspan="5">ALL-NEW CLA Electric</td></tr>
+        <tr class="my27-row" data-model-id="cla-200-electric-essential-my27"><td class="model-cell">CLA 200 일렉트릭 에센셜</td><td class="price-cell single"><span class="stock-price-main">52,900,000원</span></td><td class="col-dash">-</td><td class="col-rent">+3%</td><td class="final-cell single"><span class="stock-final-main">52,900,000원</span></td></tr>
+        <tr class="my27-row" data-model-id="cla-200-electric-advanced-my27"><td class="model-cell">CLA 200 일렉트릭 어드밴스드</td><td class="price-cell single"><span class="stock-price-main">55,800,000원</span></td><td class="col-dash">-</td><td class="col-rent">+3%</td><td class="final-cell single"><span class="stock-final-main">55,800,000원</span></td></tr>
+        <tr class="my27-row" data-model-id="cla-200-electric-amg-line-launch-edition-my27"><td class="model-cell">CLA 200 일렉트릭 AMG 라인 론치 에디션</td><td class="price-cell single"><span class="stock-price-main">58,900,000원</span></td><td class="col-dash">-</td><td class="col-rent">+3%</td><td class="final-cell single"><span class="stock-final-main">58,900,000원</span></td></tr>
+        <tr class="my27-row" data-model-id="cla-250-plus-electric-my27"><td class="model-cell">CLA 250+ 일렉트릭</td><td class="price-cell single"><span class="stock-price-main">63,700,000원</span></td><td class="col-dash">-</td><td class="col-rent">+3%</td><td class="final-cell single"><span class="stock-final-main">63,700,000원</span></td></tr>
+        <tr class="my27-row" data-model-id="cla-250-plus-electric-amg-line-launch-edition-my27"><td class="model-cell">CLA 250+ 일렉트릭 AMG 라인 론치 에디션</td><td class="price-cell single"><span class="stock-price-main">67,700,000원</span></td><td class="col-dash">-</td><td class="col-rent">+3%</td><td class="final-cell single"><span class="stock-final-main">67,700,000원</span></td></tr>
+        <tr class="model-group-label"><td colspan="5">ALL-NEW CLA Mild Hybrid</td></tr>
+        <tr class="my27-row" data-model-id="cla-220-my27"><td class="model-cell">CLA 220</td><td class="price-cell single"><span class="stock-price-main">59,900,000원</span></td><td class="col-dash">-</td><td class="col-rent">+3%</td><td class="final-cell single"><span class="stock-final-main">59,900,000원</span></td></tr>
+        <tr class="my27-row" data-model-id="cla-220-amg-line-launch-edition-my27"><td class="model-cell">CLA 220 AMG 라인 론치 에디션</td><td class="price-cell single"><span class="stock-price-main">62,900,000원</span></td><td class="col-dash">-</td><td class="col-rent">+3%</td><td class="final-cell single"><span class="stock-final-main">62,900,000원</span></td></tr>
+      </tbody>
+    </table></div>
+    <div class="rent-note">※ 장기렌트 이용 시 전 모델 +3% 추가 할인이 적용됩니다. Fleet 할인은 별도 조건으로, 장기렌트 추가 현금할인과 중복 여부는 별도로 확인해야 합니다.</div>
+  </div>
   </div>
 
   <!-- GLA·GLB -->
@@ -4098,6 +4136,14 @@ const SALES_CONDITIONS = {
   "cla-250-4matic-amg-line": { basic: 7, finance: null, rent: 3 },
   "mercedes-amg-cla-45-s-4matic": { basic: 5, finance: null, rent: 3 },
   "mercedes-amg-cla-45-s-4matic-final-edition": { basic: null, finance: null, rent: 3 },
+  // CLA MY27 · ALL-NEW (판매조건 미확정 — basic/finance는 확정 후 숫자만 입력)
+  "cla-200-electric-essential-my27": { basic: null, finance: null, rent: 3 },
+  "cla-200-electric-advanced-my27": { basic: null, finance: null, rent: 3 },
+  "cla-200-electric-amg-line-launch-edition-my27": { basic: null, finance: null, rent: 3 },
+  "cla-250-plus-electric-my27": { basic: null, finance: null, rent: 3 },
+  "cla-250-plus-electric-amg-line-launch-edition-my27": { basic: null, finance: null, rent: 3 },
+  "cla-220-my27": { basic: null, finance: null, rent: 3 },
+  "cla-220-amg-line-launch-edition-my27": { basic: null, finance: null, rent: 3 },
   // GLA · GLB
   "gla-250-4matic-amg-line": { basic: 9, finance: 4, rent: 3 },
   // MY27
@@ -4280,6 +4326,14 @@ const VEHICLE_DATA = {
   "cla-250-4matic-amg-line": { model: "CLA 250 4MATIC AMG Line", oldPrice: 63700000, newPrice: 64500000 },
   "mercedes-amg-cla-45-s-4matic": { model: "Mercedes-AMG CLA 45 S 4MATIC+", oldPrice: 90600000, newPrice: 91800000 },
   "mercedes-amg-cla-45-s-4matic-final-edition": { model: "Mercedes-AMG CLA 45 S 4MATIC+ Final Edition", oldPrice: 95800000, newPrice: 97000000 },
+  // CLA MY27 신규 모델 (출시 전, 기존재고 없음 — 판매조건 없음)
+  "cla-200-electric-essential-my27": { model: "CLA 200 일렉트릭 에센셜", modelYear: "MY27", oldPrice: null, newPrice: 52900000 },
+  "cla-200-electric-advanced-my27": { model: "CLA 200 일렉트릭 어드밴스드", modelYear: "MY27", oldPrice: null, newPrice: 55800000 },
+  "cla-200-electric-amg-line-launch-edition-my27": { model: "CLA 200 일렉트릭 AMG 라인 론치 에디션", modelYear: "MY27", oldPrice: null, newPrice: 58900000 },
+  "cla-250-plus-electric-my27": { model: "CLA 250+ 일렉트릭", modelYear: "MY27", oldPrice: null, newPrice: 63700000 },
+  "cla-250-plus-electric-amg-line-launch-edition-my27": { model: "CLA 250+ 일렉트릭 AMG 라인 론치 에디션", modelYear: "MY27", oldPrice: null, newPrice: 67700000 },
+  "cla-220-my27": { model: "CLA 220", modelYear: "MY27", oldPrice: null, newPrice: 59900000 },
+  "cla-220-amg-line-launch-edition-my27": { model: "CLA 220 AMG 라인 론치 에디션", modelYear: "MY27", oldPrice: null, newPrice: 62900000 },
   // GLA · GLB
   "gla-250-4matic-amg-line": { model: "GLA 250 4MATIC AMG Line", oldPrice: 69100000, newPrice: 70000000 },
   // MY27 신규 모델 (출시 전, 기존재고 없음 — MY26과 동일 판매조건, 가격만 신규)
