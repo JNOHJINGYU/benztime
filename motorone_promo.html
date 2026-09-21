@@ -299,7 +299,7 @@ body {
   gap: 8px;
   font-size: 19px;
   font-weight: 800;
-  color: #ffffff;
+  color: #1a1a1a;
   margin-bottom: 10px;
   word-break: keep-all;
 }
@@ -307,7 +307,7 @@ body {
 .gclass-warning-intro {
   font-size: 14px;
   font-weight: 500;
-  color: rgba(255,255,255,0.85);
+  color: #333333;
   line-height: 1.7;
   margin-bottom: 20px;
   word-break: keep-all;
@@ -318,7 +318,7 @@ body {
   gap: 16px;
 }
 .gclass-warning-item {
-  background: rgba(255,255,255,0.04);
+  background: #ffffff;
   border: 1px solid rgba(226,124,100,0.35);
   border-radius: 12px;
   padding: 18px 20px;
@@ -326,17 +326,17 @@ body {
 .gclass-warning-item-title {
   font-size: 14px;
   font-weight: 800;
-  color: #e27c64;
+  color: #c4452b;
   margin-bottom: 10px;
 }
 .gclass-warning-item-desc {
   font-size: 13px;
   font-weight: 400;
-  color: rgba(255,255,255,0.82);
+  color: #333333;
   line-height: 1.9;
   word-break: keep-all;
 }
-.gclass-warning-item-desc strong { color: #ffffff; font-weight: 700; }
+.gclass-warning-item-desc strong { color: #c4452b; font-weight: 700; }
 @media (max-width: 768px) {
   .gclass-contract-warning { padding: 20px 18px; }
   .gclass-warning-title { font-size: 16px; }
@@ -4066,16 +4066,16 @@ const SALES_CONDITIONS = {
   "gls-450-4matic-amg-line-premium": { basic: null, finance: null, rent: 3 },
   "gls-580-4matic-amg-line": { basic: 6, finance: null, rent: 3 },
   "mercedes-amg-gls-63-4matic": { basic: 1, finance: null, rent: 3 },
-  // G-Class
-  "g-450-d": { basic: null, finance: null, rent: 3 },
-  "g-450-d-manufaktur": { basic: null, finance: null, rent: 3 },
-  "mercedes-amg-g-63": { basic: null, finance: null, rent: 3 },
-  "mercedes-amg-g-63-manufaktur": { basic: null, finance: null, rent: 3 },
+  // G-Class (2026.9 기준 장기렌트 추가 조건 삭제 → rent: null)
+  "g-450-d": { basic: null, finance: null, rent: null },
+  "g-450-d-manufaktur": { basic: null, finance: null, rent: null },
+  "mercedes-amg-g-63": { basic: null, finance: null, rent: null },
+  "mercedes-amg-g-63-manufaktur": { basic: null, finance: null, rent: null },
   // G클래스 MY27 (판매조건 미확정 — 권장소비자가격만 등록, 기존 MY26과 별도)
-  "g-450-d-my27": { basic: null, finance: null, rent: 3 },
-  "g-450-d-manufaktur-my27": { basic: null, finance: null, rent: 3 },
-  "mercedes-amg-g-63-my27": { basic: null, finance: null, rent: 3 },
-  "mercedes-amg-g-63-manufaktur-my27": { basic: null, finance: null, rent: 3 },
+  "g-450-d-my27": { basic: null, finance: null, rent: null },
+  "g-450-d-manufaktur-my27": { basic: null, finance: null, rent: null },
+  "mercedes-amg-g-63-my27": { basic: null, finance: null, rent: null },
+  "mercedes-amg-g-63-manufaktur-my27": { basic: null, finance: null, rent: null },
   // AMG
   "mercedes-amg-sl-43": { basic: 9, finance: null, rent: 3 },
   "mercedes-amg-sl-63-4matic": { basic: null, finance: null, rent: 3 },
@@ -4559,7 +4559,10 @@ function validateSalesConditions() {
         invalidValues.push({ id: id, model: modelName, key: key, value: c[key] });
       }
     });
-    if (c.rent !== 3) {
+    var gclassNoRentIds = ['g-450-d','g-450-d-manufaktur','mercedes-amg-g-63','mercedes-amg-g-63-manufaktur',
+      'g-450-d-my27','g-450-d-manufaktur-my27','mercedes-amg-g-63-my27','mercedes-amg-g-63-manufaktur-my27'];
+    var isGclassNoRent = gclassNoRentIds.indexOf(id) !== -1 && c.rent === null;
+    if (c.rent !== 3 && !isGclassNoRent) {
       rentIssues.push({ id: id, model: modelName, value: c.rent });
     }
   });
